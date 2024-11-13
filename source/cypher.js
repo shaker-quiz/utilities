@@ -16,6 +16,6 @@ export let cypher = driver(
   url({
     base: `bolt://${Deno.env.get(Environment.CypherContainer)}/`,
     port: Deno.env.get(Environment.CypherBoltPort),
-  }),
+  }).href,
   authorization,
 )
