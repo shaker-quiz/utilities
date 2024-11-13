@@ -1,8 +1,8 @@
 import { HttpMethods } from '@yurkimus/http-methods'
 
-import { Environment } from 'source/environment.js'
-import { readMessage } from 'source/http.js'
-import { url } from 'source/url.js'
+import { Environment } from './environment.js'
+import { readMessage } from './http.js'
+import { url } from './url.js'
 
 /**
  * @param {Request} request

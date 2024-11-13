@@ -1,6 +1,5 @@
 {
   "imports": {
-    "source/": "./source/",
     "@yurkimus/types": "https://raw.githubusercontent.com/yurkimus/types/main/source/index.js",
     "@yurkimus/curry": "https://raw.githubusercontent.com/yurkimus/curry/main/source/index.js",
     "@yurkimus/functions": "https://raw.githubusercontent.com/yurkimus/functions/main/source/index.js",
@@ -8,6 +7,7 @@
     "@yurkimus/response-status": "https://raw.githubusercontent.com/yurkimus/response-status/main/source/index.js",
     "@yurkimus/http-methods": "https://raw.githubusercontent.com/yurkimus/http-methods/main/source/index.js",
     "@yurkimus/http-method": "https://raw.githubusercontent.com/yurkimus/http-method/main/source/index.js",
+
     "djwt": "https://deno.land/x/djwt@v3.0.2/mod.ts",
     "postgresjs": "https://deno.land/x/postgresjs@v3.4.3/mod.js",
     "neo4j": "https://deno.land/x/neo4j_driver_lite@5.25.0/mod.ts"
