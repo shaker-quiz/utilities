@@ -1,7 +1,7 @@
 import { driver } from 'neo4j'
 
-import { Environment } from 'source/environment.js'
-import { url } from 'source/url.js'
+import { Environment } from './environment.js'
+import { url } from './url.js'
 
 /**
  * @type {import("neo4j").AuthToken}

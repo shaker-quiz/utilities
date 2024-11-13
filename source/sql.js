@@ -1,6 +1,6 @@
 import postgresjs from 'postgresjs'
 
-import { Environment } from 'source/environment.js'
+import { Environment } from './environment.js'
 
 let Options = {
   [Environment.PostgresContainer]: 'host',
