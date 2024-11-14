@@ -1,5 +1,5 @@
 export let Buckets = /** @type {const} */ ({
-  Reviews: 'Reviews',
+  Reviews: 'reviews',
 })
 
 export let UserRoles = /** @type {const} */ ({
