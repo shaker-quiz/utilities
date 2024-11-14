@@ -1,22 +1,25 @@
 /**
- * @type {WeakMap<Request | Response, any>}
+ * @param {Request | Response} message
+ * @returns
  */
-let cache = new WeakMap()
+export let readContentType = message =>
+  message
+    .headers
+    .get('content-type')
+    ?.split(';')
+    ?.at(0)
+    ?? ''
 
 /**
  * @param {Request | Response} message
  *
  * @returns {Promise<string | FormData | object | any[]>}
  */
-export let readBody = message => {
-  let content = message
-    .headers
-    .get('content-type')
-    ?.split(';')
-    ?.at(0)
+export let readMessageBody = message => {
+  let content = readContentType(message)
 
   switch (content) {
-    case undefined:
+    case '':
       return null
 
     case 'text/plain':
@@ -30,9 +33,7 @@ export let readBody = message => {
       return message.formData()
 
     default:
-      throw new TypeError(
-        `No handler for media-type '${content}' has been registered yet.`,
-      )
+      throw new TypeError(`No handler found for media-type '${content}'.`)
   }
 }
 
@@ -50,14 +51,11 @@ export let cloneMessage = message => [message, message.clone()]
  *
  * @param {HttpMessage} message
  *
- * @returns {[HttpMessage, Awaited<ReturnType<typeof readBody>>]}
+ * @returns {[HttpMessage, Awaited<ReturnType<typeof readMessageBody>>]}
  */
-export let readMessage = message => {
-  if (cache.has(message))
-    return Promise
-      .resolve([message, cache.get(message)])
-  else
-    return Promise
-      .all([message, readBody(message)])
-      .then(pair => (cache.set(...pair), pair))
-}
+export let readMessage = message =>
+  Promise
+    .resolve(message)
+    .then(cloneMessage)
+    .then(([message, clone]) => [message, readMessageBody(clone)])
+    .then(Promise.all.bind(Promise))
