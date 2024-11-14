@@ -3,6 +3,7 @@
 deno.lock
 
 vendor
+node_modules
 
 # macOS
 

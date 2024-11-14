@@ -19,6 +19,15 @@ export let Environment = /** @type {const} */ ({
   CypherPassword: 'CypherPassword',
   CypherHostname: 'CypherHostname',
 
+  /* --- (Minio) --- */
+  MinioContainer: 'MinioContainer',
+  MinioStoragePort: 'MinioStoragePort',
+  MinioConsolePort: 'MinioConsolePort',
+  MinioUsername: 'MinioUsername',
+  MinioPassword: 'MinioPassword',
+  MinioStorageHostname: 'MinioStorageHostname',
+  MinioConsoleHostname: 'MinioConsoleHostname',
+
   /* --- (Checkin) --- */
   CheckinContainer: 'CheckinContainer',
   CheckinPort: 'CheckinPort',

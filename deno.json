@@ -10,7 +10,8 @@
 
     "djwt": "https://deno.land/x/djwt@v3.0.2/mod.ts",
     "postgresjs": "https://deno.land/x/postgresjs@v3.4.3/mod.js",
-    "neo4j": "https://deno.land/x/neo4j_driver_lite@5.25.0/mod.ts"
+    "neo4j": "https://deno.land/x/neo4j_driver_lite@5.25.0/mod.ts",
+    "minio": "npm:minio@8.0.2"
   },
 
   "vendor": true
