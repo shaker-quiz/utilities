@@ -1,3 +1,7 @@
+export let Buckets = /** @type {const} */ ({
+  Reviews: 'Reviews',
+})
+
 export let UserRoles = /** @type {const} */ ({
   Admin: 'admin',
   Manager: 'manager',
