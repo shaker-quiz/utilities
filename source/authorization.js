@@ -1,38 +1,32 @@
 import { HttpMethods } from '@yurkimus/http-methods'
 
-import { Environment } from './environment.js'
 import { readMessage } from './http.js'
-import { url } from './url.js'
 
 /**
+ * @param {URL} url
  * @param {Request} request
  */
-export let authorize = request =>
+export let authorize = (url, request) =>
   Promise
     .resolve(request)
-    .then(request =>
-      Promise.all([
-        request,
-        fetch(
-          url({
-            base: `http://${Deno.env.get(Environment.CheckinContainer)}/`,
-            pathname: 'authorization',
-          }),
-          {
-            method: HttpMethods.Get,
-            headers: new Headers([
-              ['Authorization', request.headers.get('Authorization')],
-            ]),
-          },
-        ),
-      ])
-    )
-    .then(([request, response]) =>
-      Promise.all([
-        request,
-        readMessage(response),
-      ])
-    )
+    .then(request => [
+      request,
+      fetch(
+        url,
+        {
+          method: HttpMethods.Get,
+          headers: new Headers([
+            ['Authorization', request.headers.get('Authorization')],
+          ]),
+        },
+      ),
+    ])
+    .then(Promise.all.bind(Promise))
+    .then(([request, response]) => [
+      request,
+      readMessage(response),
+    ])
+    .then(Promise.all.bind(Promise))
     .then(([request, [response, body]]) => {
       switch (response.status) {
         case 200:
