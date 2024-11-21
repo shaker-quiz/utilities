@@ -6,7 +6,7 @@ import { readMessage } from './http.js'
  * @param {URL} url
  * @param {Request} request
  */
-export let authorize = (url, request) =>
+export let authorization = (url, request) =>
   Promise
     .resolve(request)
     .then(request => [
