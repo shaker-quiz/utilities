@@ -1,8 +1,0 @@
-{
-  "version": "4",
-  "remote": {
-    "https://raw.githubusercontent.com/yurkimus/http-methods/main/source/index.js": "9fee4938b21095874e6d1b9452fa8c00bdd3c548576622d49b4db257d9ad09f6",
-    "https://raw.githubusercontent.com/yurkimus/http-statuses/main/source/index.js": "19bc441255c04740e9625cf51f6eb07e9b4bbbe2ff7c62388ab2e6a25361ffe4",
-    "https://raw.githubusercontent.com/yurkimus/response-status/main/source/index.js": "b2c04398567e1d0eca21cd83f56e1bce2d6b7b9aa78678de23bc2ffd4c2f0991"
-  }
-}

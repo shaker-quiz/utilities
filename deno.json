@@ -1,15 +1,3 @@
 {
-  "version": "0.0.0",
-
-  "imports": {
-    "@yurkimus/response-status": "https://raw.githubusercontent.com/yurkimus/response-status/main/source/index.js",
-    "@yurkimus/http-methods": "https://raw.githubusercontent.com/yurkimus/http-methods/main/source/index.js",
-    "@yurkimus/http-statuses": "https://raw.githubusercontent.com/yurkimus/http-statuses/main/source/index.js",
-
-    "@yurkimus/types": "https://raw.githubusercontent.com/yurkimus/types/main/source/index.js",
-    "@yurkimus/curry": "https://raw.githubusercontent.com/yurkimus/curry/main/source/index.js",
-    "@yurkimus/functions": "https://raw.githubusercontent.com/yurkimus/functions/main/source/index.js",
-
-    "@yurkimus/url": "https://raw.githubusercontent.com/yurkimus/url/main/source/index.js"
-  }
+  "version": "0.1.0"
 }
