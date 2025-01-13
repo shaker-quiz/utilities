@@ -18,108 +18,110 @@ export let useRequest: <
   feature: Feature,
   method: Method,
   network: Network,
-) => (options: URLOptions, init: RequestInit) => {
-  [Features.Checkin]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: CheckinResult
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+) => (options: URLOptions, init: RequestInit) => Promise<
+  {
+    [Features.Checkin]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: CheckinResult
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.City]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: CityResult
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.City]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: CityResult
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.Cities]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: CityResult[]
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.Cities]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: CityResult[]
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.CityPublic]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: CityPublicResult
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.CityPublic]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: CityPublicResult
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.CitiesPublic]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: CityPublicResult[]
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.CitiesPublic]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: CityPublicResult[]
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.Game]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: unknown
-    [Methods.OPTIONS]: GameResult
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.Game]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: unknown
+      [Methods.OPTIONS]: GameResult
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.Games]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: GameResult[]
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.Games]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: GameResult[]
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.GamePublic]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: GamePublicResult
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.GamePublic]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: GamePublicResult
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.GamesPublic]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: GamePublicResult[]
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.GamesPublic]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: GamePublicResult[]
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.Theme]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: unknown
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.Theme]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: unknown
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.Themes]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: unknown
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.Themes]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: unknown
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.User]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: unknown
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
+    [Features.User]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: unknown
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
 
-  [Features.Users]: {
-    [Methods.DELETE]: unknown
-    [Methods.GET]: unknown
-    [Methods.OPTIONS]: unknown
-    [Methods.PATCH]: unknown
-    [Methods.POST]: unknown
-  }
-}[Feature][Method]
+    [Features.Users]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: unknown
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
+  }[Feature][Method]
+>
