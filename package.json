@@ -1,0 +1,17 @@
+{
+  "name": "utilities",
+  "version": "0.1.0",
+  "author": "yurkimus <yurkimus@gmail.com>",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "import": "./soruce/index.js"
+    }
+  },
+  "dependencies": {
+    "@yurkimus/errors": "0.1.3",
+    "@yurkimus/message": "0.0.13",
+    "@yurkimus/response-status": "0.1.0",
+    "@yurkimus/url": "0.2.7"
+  }
+}
