@@ -4,6 +4,12 @@ import { Features } from '../enumerations/features'
 import { Methods } from '../enumerations/methods'
 import { Networks } from '../enumerations/networks'
 
+export let Extensions: WeakMap<Function, {
+  onbefore: Set<Function>
+  onfulfilled: Set<Function>
+  onrejected: Set<Function>
+}>
+
 export let useRequest: <
   Feature extends keyof typeof Features,
   Method extends keyof typeof Methods,

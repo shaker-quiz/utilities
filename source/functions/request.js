@@ -81,11 +81,7 @@ let makeRequest = (feature, method, network, options, init) => {
 }
 
 /**
- * @type {WeakMap<Function, {
- *  onbefore: Set<Function>
- *  onfulfilled: Set<Function>
- *  onrejected: Set<Function>
- * }>}
+ * @type {WeakMap<Function, Record<'onbefore' | 'onfulfilled' | 'onrejected', Set<Function>>>
  */
 export let Extensions = new WeakMap()
 
