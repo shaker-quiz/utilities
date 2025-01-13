@@ -1,11 +1,11 @@
 {
   "name": "@shakerquiz/utilities",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "exports": {
     ".": {
-      "import": "./soruce/index.js"
+      "import": "./source/index.js"
     }
   },
   "dependencies": {
