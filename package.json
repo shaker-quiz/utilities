@@ -1,6 +1,6 @@
 {
-  "name": "utilities",
-  "version": "0.1.0",
+  "name": "@shakerquiz/utilities",
+  "version": "0.1.1",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "exports": {
