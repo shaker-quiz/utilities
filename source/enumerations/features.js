@@ -1,4 +1,4 @@
-import { Kinds } from 'source/enumerations/kinds'
+import { Kinds } from 'source/enumerations/kinds.js'
 
 export let Features = {
   Checkin: 'Checkin',
