@@ -69,7 +69,7 @@ let makeRequest = (feature, method, network, options, init) => {
       'application/json',
     )
 
-  if (!request.headers.has('Authorization'))
+  if ('cookie' in init)
     request.headers.set(
       'Authorization',
       cookies.read('Authorization', init.cookie),
