@@ -126,23 +126,42 @@ export let useRequest = (feature, method, network) => {
    * @param {RequestInit} init
    */
   let request = (options, init) => {
-    let onbefore = () =>
-      Extensions
+    let onbefore = () => {
+      let predicates = Extensions
         .get(request)
         .onbefore
-        .forEach(onbefore => onbefore())
 
-    let onfulfilled = contract =>
-      Extensions
+      return predicates.size
+        ? Array
+          .from(predicates)
+          .forEach(onbefore => onbefore)
+        : undefined
+    }
+
+    let onfulfilled = contract => {
+      let predicates = Extensions
         .get(request)
         .onfulfilled
-        .forEach(onfulfilled => onfulfilled(contract))
 
-    let onrejected = reason =>
-      Extensions
+      return predicates.size
+        ? Array
+          .from(predicates)
+          .reduce((value, onfulfilled) => onfulfilled(value), contract)
+        : contract
+    }
+
+    let onrejected = reason => {
+      let predicates = Extensions
         .get(request)
         .onrejected
-        .forEach(onrejected => onrejected(reason))
+
+      if (predicates.size)
+        return Array
+          .from(predicates)
+          .reduce((value, onrejected) => onrejected(value), reason)
+
+      throw reason
+    }
 
     return Promise
       .resolve(onbefore)
