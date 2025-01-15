@@ -127,7 +127,7 @@ export let useRequest = (feature, method, network) => {
    * @param {RequestInit} init
    */
   let request = (options, init) => {
-    let onbefore = () => {
+    let onbefore = parameters => {
       let predicates = Extensions
         .get(request)
         .get('onbefore')
@@ -137,9 +137,9 @@ export let useRequest = (feature, method, network) => {
           .from(predicates)
           .reduce(
             (value, onbefore) => onbefore(value),
-            [options, init],
+            parameters,
           )
-        : [options, init]
+        : parameters
     }
 
     let onfulfilled = contract => {
@@ -169,17 +169,18 @@ export let useRequest = (feature, method, network) => {
 
     return new Promise((resolve, reject) => {
       try {
-        resolve(onbefore(options, init))
+        resolve(onbefore([options, init]))
       } catch (reason) {
         reject(reason)
       }
     })
-      .then(parameters =>
+      .then(([options, init]) =>
         makeRequest(
           feature,
           method,
           network,
-          ...parameters,
+          options,
+          init,
         )
       )
       .then(onfulfilled)
