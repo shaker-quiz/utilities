@@ -3,6 +3,7 @@
 /// <reference path="rows.d.ts" />
 
 export * from './enumerations/constants.js'
+export * from './enumerations/cookies.js'
 export * from './enumerations/features.js'
 export * from './enumerations/game-statuses.js'
 export * from './enumerations/kinds.js'
