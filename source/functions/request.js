@@ -164,13 +164,16 @@ export let useRequest = (feature, method, network) => {
       throw reason
     }
 
-    return new Promise((resolve, reject) => {
+    let before = new Promise((resolve, reject) => {
       try {
         resolve(onbefore())
       } catch (reason) {
         reject(reason)
       }
     })
+
+    return Promise
+      .resolve(before)
       .then(makeRequest.bind(
         undefined,
         feature,
