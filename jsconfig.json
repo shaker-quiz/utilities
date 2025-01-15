@@ -5,6 +5,7 @@
     "module": "NodeNext",
     "moduleResolution": "nodenext",
 
-    "strictBindCallApply": true
+    "strictBindCallApply": true,
+    "allowArbitraryExtensions": true
   }
 }

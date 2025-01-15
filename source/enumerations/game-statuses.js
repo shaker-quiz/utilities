@@ -1,4 +1,6 @@
-export let GameStatuses = {
+import { Roles } from './roles.js'
+
+export let GameStatuses = /** @type {const} */ ({
   Approved: 'APPROVED',
   Archive: 'ARCHIVE',
   Closed: 'CLOSED',
@@ -8,4 +10,33 @@ export let GameStatuses = {
   Published: 'PUBLISHED',
   Rejected: 'REJECTED',
   Reserved: 'IS_RESERVE',
+})
+
+/**
+ * @satisfies {Record<typeof Roles[keyof typeof Roles], (keyof typeof GameStatuses)[]>}
+ */
+export let RoleGameStatuses = {
+  [Roles.Admin]: [
+    GameStatuses.Approved,
+    GameStatuses.Moderation,
+    GameStatuses.Published,
+    GameStatuses.Rejected,
+    GameStatuses.Finished,
+    GameStatuses.Archive,
+    GameStatuses.Invitation,
+    GameStatuses.Reserved,
+    GameStatuses.Closed,
+  ],
+
+  [Roles.Organizer]: [
+    GameStatuses.Approved,
+    GameStatuses.Published,
+    GameStatuses.Finished,
+    GameStatuses.Archive,
+    GameStatuses.Invitation,
+    GameStatuses.Reserved,
+    GameStatuses.Closed,
+  ],
+
+  [Roles.Default]: [],
 }
