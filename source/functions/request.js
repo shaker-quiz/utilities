@@ -135,8 +135,11 @@ export let useRequest = (feature, method, network) => {
       return predicates.size
         ? Array
           .from(predicates)
-          .forEach(onbefore => onbefore(options, init))
-        : undefined
+          .reduce(
+            (onbefore, parameters) => onbefore(parameters),
+            [options, init],
+          )
+        : [options, init]
     }
 
     let onfulfilled = contract => {
@@ -164,24 +167,21 @@ export let useRequest = (feature, method, network) => {
       throw reason
     }
 
-    let before = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       try {
-        resolve(onbefore())
+        resolve(onbefore(options, init))
       } catch (reason) {
         reject(reason)
       }
     })
-
-    return Promise
-      .resolve(before)
-      .then(makeRequest.bind(
-        undefined,
-        feature,
-        method,
-        network,
-        options,
-        init,
-      ))
+      .then(parameters =>
+        makeRequest(
+          feature,
+          method,
+          network,
+          ...parameters,
+        )
+      )
       .then(onfulfilled)
       .catch(onrejected)
   }
