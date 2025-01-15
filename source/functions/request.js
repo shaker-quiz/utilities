@@ -50,7 +50,7 @@ let handleMessage = (feature, [response, body]) => {
  * @param {Feature} feature
  * @param {Method} method
  * @param {Network} network
- * @param {import('@yurkimus/url').URLOptions} options
+ * @param {import('@yurkimus/url').URLOptions | undefined} options
  * @param {RequestInit} init
  */
 let makeRequest = (feature, method, network, options, init) => {
