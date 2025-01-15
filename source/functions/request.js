@@ -72,7 +72,7 @@ let makeRequest = (feature, method, network, options, init) => {
   if ('cookie' in init)
     request.headers.set(
       'Authorization',
-      cookies.read('Authorization', init.cookie),
+      cookies.read('shaker-quiz-token', init.cookie),
     )
 
   return fetch(request)
