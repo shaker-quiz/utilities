@@ -181,13 +181,12 @@ export let useRequest = (feature, method, network) => {
       .get(request)
       .get('onrejected')
 
-    if (predicates.size > 1)
-      return Array
-        .from(predicates)
-        .reduce(
-          (reason, onrejected) => onrejected(reason),
-          reason,
-        )
+    Array
+      .from(predicates)
+      .forEach(
+        (reason, onrejected) => onrejected(reason),
+        reason,
+      )
 
     throw reason
   }
