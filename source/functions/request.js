@@ -164,8 +164,13 @@ export let useRequest = (feature, method, network) => {
       throw reason
     }
 
-    return Promise
-      .try(onbefore)
+    return new Promise((resolve, reject) => {
+      try {
+        resolve(onbefore())
+      } catch (reason) {
+        reject(reason)
+      }
+    })
       .then(makeRequest.bind(
         undefined,
         feature,
