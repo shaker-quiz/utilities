@@ -47,6 +47,12 @@ type CityPublicResult = {
 }
 
 /**
+ * Theme
+ */
+
+type ThemeResult = ThemeRow
+
+/**
  * Game
  */
 

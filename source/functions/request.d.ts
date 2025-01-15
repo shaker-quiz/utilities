@@ -60,6 +60,22 @@ export let useRequest: <
       [Methods.POST]: unknown
     }
 
+    [Features.Theme]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: ThemeResult
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
+
+    [Features.Themes]: {
+      [Methods.DELETE]: unknown
+      [Methods.GET]: ThemeResult[]
+      [Methods.OPTIONS]: unknown
+      [Methods.PATCH]: unknown
+      [Methods.POST]: unknown
+    }
+
     [Features.Game]: {
       [Methods.DELETE]: unknown
       [Methods.GET]: unknown
@@ -87,22 +103,6 @@ export let useRequest: <
     [Features.GamesPublic]: {
       [Methods.DELETE]: unknown
       [Methods.GET]: GamePublicResult[]
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.Theme]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: unknown
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.Themes]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: unknown
       [Methods.OPTIONS]: unknown
       [Methods.PATCH]: unknown
       [Methods.POST]: unknown
