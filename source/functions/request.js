@@ -82,7 +82,7 @@ let makeRequest = (feature, method, network, options, init) => {
 }
 
 /**
- * @type {WeakMap<Function, Record<'onbefore' | 'onfulfilled' | 'onrejected', Set<Function>>>}
+ * @type {WeakMap<Function, Map<'onbefore' | 'onfulfilled' | 'onrejected', Set<Function>>>}
  */
 export let Extensions = new WeakMap()
 
@@ -130,7 +130,7 @@ export let useRequest = (feature, method, network) => {
     let onbefore = () => {
       let predicates = Extensions
         .get(request)
-        .onbefore
+        .get('onbefore')
 
       return predicates.size
         ? Array
@@ -142,7 +142,7 @@ export let useRequest = (feature, method, network) => {
     let onfulfilled = contract => {
       let predicates = Extensions
         .get(request)
-        .onfulfilled
+        .get('onfulfilled')
 
       return predicates.size
         ? Array
@@ -154,7 +154,7 @@ export let useRequest = (feature, method, network) => {
     let onrejected = reason => {
       let predicates = Extensions
         .get(request)
-        .onrejected
+        .get('onrejected')
 
       if (predicates.size)
         return Array
@@ -178,11 +178,14 @@ export let useRequest = (feature, method, network) => {
       .catch(onrejected)
   }
 
-  Extensions.set(request, {
-    onbefore: new Set(),
-    onfulfilled: new Set(),
-    onrejected: new Set(),
-  })
+  Extensions.set(
+    request,
+    new Map([
+      ['onbefore', new Set()],
+      ['onfulfilled', new Set()],
+      ['onrejected', new Set()],
+    ]),
+  )
 
   return request
 }
