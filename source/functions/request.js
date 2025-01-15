@@ -126,48 +126,8 @@ export let useRequest = (feature, method, network) => {
    * @param {import('@yurkimus/url').URLOptions} options
    * @param {RequestInit} init
    */
-  let request = (options, init) => {
-    let onbefore = parameters => {
-      let predicates = Extensions
-        .get(request)
-        .get('onbefore')
-
-      return predicates.size
-        ? Array
-          .from(predicates)
-          .reduce(
-            (value, onbefore) => onbefore(value),
-            parameters,
-          )
-        : parameters
-    }
-
-    let onfulfilled = contract => {
-      let predicates = Extensions
-        .get(request)
-        .get('onfulfilled')
-
-      return predicates.size
-        ? Array
-          .from(predicates)
-          .reduce((value, onfulfilled) => onfulfilled(value), contract)
-        : contract
-    }
-
-    let onrejected = reason => {
-      let predicates = Extensions
-        .get(request)
-        .get('onrejected')
-
-      if (predicates.size)
-        return Array
-          .from(predicates)
-          .reduce((value, onrejected) => onrejected(value), reason)
-
-      throw reason
-    }
-
-    return new Promise((resolve, reject) => {
+  let request = (options, init) =>
+    new Promise((resolve, reject) => {
       try {
         resolve(onbefore([options, init]))
       } catch (reason) {
@@ -185,14 +145,59 @@ export let useRequest = (feature, method, network) => {
       )
       .then(onfulfilled)
       .catch(onrejected)
+
+  let onbefore = parameters => {
+    let predicates = Extensions
+      .get(request)
+      .get('onbefore')
+
+    return (predicates.size > 0)
+      ? Array
+        .from(predicates)
+        .reduce(
+          (parameters, onbefore) => onbefore(parameters),
+          parameters,
+        )
+      : parameters
+  }
+
+  let onfulfilled = contract => {
+    let predicates = Extensions
+      .get(request)
+      .get('onfulfilled')
+
+    return (predicates.size > 0)
+      ? Array
+        .from(predicates)
+        .reduce(
+          (contract, onfulfilled) => onfulfilled(contract),
+          contract,
+        )
+      : contract
+  }
+
+  let onrejected = reason => {
+    let predicates = Extensions
+      .get(request)
+      .get('onrejected')
+
+    if (predicates.size > 1)
+      return Array
+        .from(predicates)
+        .reduce(
+          (reason, onrejected) => onrejected(reason),
+          reason,
+        )
+
+    throw reason
   }
 
   Extensions.set(
     request,
     new Map([
-      ['onbefore', new Set()],
-      ['onfulfilled', new Set()],
-      ['onrejected', new Set()],
+      ['onbefore', new Set([])],
+      ['onfulfilled', new Set([])],
+      ['onrejected', new Set([])],
     ]),
   )
 
