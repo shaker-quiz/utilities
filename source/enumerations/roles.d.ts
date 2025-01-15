@@ -3,4 +3,5 @@ export let UserRoles: {
   Manager: 'manager'
   Organizer: 'organizer'
   User: 'user'
+  Default: 'default'
 }
