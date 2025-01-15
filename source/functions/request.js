@@ -136,7 +136,7 @@ export let useRequest = (feature, method, network) => {
         ? Array
           .from(predicates)
           .reduce(
-            (onbefore, parameters) => onbefore(parameters),
+            (value, onbefore) => onbefore(value),
             [options, init],
           )
         : [options, init]
