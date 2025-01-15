@@ -135,7 +135,7 @@ export let useRequest = (feature, method, network) => {
       return predicates.size
         ? Array
           .from(predicates)
-          .forEach(onbefore => onbefore)
+          .forEach(onbefore => onbefore(options, init))
         : undefined
     }
 
