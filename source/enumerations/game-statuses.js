@@ -1,6 +1,6 @@
 import { Roles } from './roles.js'
 
-export let GameStatuses = /** @type {const} */ ({
+export let GameStatuses = {
   Approved: 'APPROVED',
   Archive: 'ARCHIVE',
   Closed: 'CLOSED',
@@ -10,11 +10,8 @@ export let GameStatuses = /** @type {const} */ ({
   Published: 'PUBLISHED',
   Rejected: 'REJECTED',
   Reserved: 'IS_RESERVE',
-})
+}
 
-/**
- * @satisfies {Record<typeof Roles[keyof typeof Roles], (keyof typeof GameStatuses)[]>}
- */
 export let RoleGameStatuses = {
   [Roles.Admin]: [
     GameStatuses.Approved,
