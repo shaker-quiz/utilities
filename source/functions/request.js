@@ -6,8 +6,8 @@ import {
   FeatureKinds,
   FeatureRequests,
   FeatureUrls,
-} from 'source/enumerations/features.js'
-import { Kinds } from 'source/enumerations/kinds.js'
+} from '../enumerations/features.js'
+import { Kinds } from '../enumerations/kinds.js'
 
 let handleMessage = (feature, [response, body]) => {
   switch (response.status) {
