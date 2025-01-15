@@ -165,7 +165,7 @@ export let useRequest = (feature, method, network) => {
     }
 
     return Promise
-      .resolve(onbefore)
+      .try(onbefore)
       .then(makeRequest.bind(
         undefined,
         feature,
