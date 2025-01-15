@@ -1,4 +1,4 @@
-export let UserRoles = {
+export let Roles = {
   Admin: 'admin',
   Manager: 'manager',
   Organizer: 'organizer',
