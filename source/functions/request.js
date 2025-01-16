@@ -164,10 +164,7 @@ export let useRequest = (feature, method, network) => {
 
       Array
         .from(predicates)
-        .forEach(
-          (reason, onrejected) => onrejected(reason),
-          reason,
-        )
+        .forEach(onrejected => onrejected(reason))
 
       throw reason
     }
