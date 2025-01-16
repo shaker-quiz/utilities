@@ -50,7 +50,14 @@ type CityPublicResult = {
  * Theme
  */
 
-type ThemeResult = ThemeRow
+type ThemeResult = {
+  id: ThemeRow['id']
+  time_created: ThemeRow['time_created']
+  name: ThemeRow['name']
+  description: ThemeRow['description']
+  short_description: ThemeRow['short_description']
+  media_path: MediaRow['path']
+}
 
 /**
  * Game
