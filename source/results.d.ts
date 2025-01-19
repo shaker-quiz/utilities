@@ -56,6 +56,8 @@ type ThemeResult = {
   name: ThemeRow['name']
   description: ThemeRow['description']
   short_description: ThemeRow['short_description']
+  image_id: ImageMediaRow['id']
+  media_title: MediaRow['title']
   media_path: MediaRow['path']
 }
 
