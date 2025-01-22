@@ -1,8 +1,427 @@
 import { URLOptions } from '@yurkimus/url'
 
+import { Roles } from 'source/enumerations/roles'
 import { Features } from '../enumerations/features'
 import { Methods } from '../enumerations/methods'
 import { Networks } from '../enumerations/networks'
+
+type RequestResults = {
+  [Features.Checkin]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: CheckinAdminResult
+      [Roles.Default]: CheckinDefaultResult
+      [Roles.Organizer]: CheckinOrganizerResult
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.User]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: UserAdminResult
+      [Roles.Default]: UserDefaultResult
+      [Roles.Organizer]: UserOrganizerResult
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Users]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: UserAdminResult
+      [Roles.Default]: UserDefaultResult
+      [Roles.Organizer]: UserOrganizerResult
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Theme]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: ThemeAdminResult
+      [Roles.Default]: unknown
+      [Roles.Organizer]: ThemeOrganizerResult
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Themes]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: ThemeAdminResult[]
+      [Roles.Default]: unknown
+      [Roles.Organizer]: ThemeOrganizerResult[]
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Game]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: GameAdminResult
+      [Roles.Default]: GameDefaultResult
+      [Roles.Organizer]: GameOrginizerResult
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Games]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: GameAdminResult[]
+      [Roles.Default]: GameDefaultResult[]
+      [Roles.Organizer]: GameOrginizerResult[]
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Registration]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Registrations]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.City]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: CityAdminResult
+      [Roles.Default]: CityDefaultResult
+      [Roles.Organizer]: CityOrganizerResult
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Cities]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: CityAdminResult[]
+      [Roles.Default]: CityDefaultResult[]
+      [Roles.Organizer]: CityOrganizerResult[]
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Location]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: LocationAdminResult
+      [Roles.Default]: LocationDefaultResult
+      [Roles.Organizer]: LocationOrganizerResult
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+
+  [Features.Locations]: {
+    [Methods.DELETE]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.GET]: {
+      [Roles.Admin]: LocationAdminResult
+      [Roles.Default]: LocationDefaultResult
+      [Roles.Organizer]: LocationOrganizerResult
+    }
+
+    [Methods.OPTIONS]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.PATCH]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+
+    [Methods.POST]: {
+      [Roles.Admin]: unknown
+      [Roles.Default]: unknown
+      [Roles.Organizer]: unknown
+    }
+  }
+}
 
 export let Extensions: WeakMap<
   Function,
@@ -22,110 +441,7 @@ export let useRequest: <
   feature: Feature,
   method: Method,
   network: Network,
-) => (options: URLOptions, init: RequestInit) => Promise<
-  {
-    [Features.Checkin]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: CheckinResult
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.City]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: CityResult
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.Cities]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: CityResult[]
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.CityPublic]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: CityPublicResult
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.CitiesPublic]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: CityPublicResult[]
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.Theme]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: ThemeResult
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.Themes]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: ThemeResult[]
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.Game]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: unknown
-      [Methods.OPTIONS]: GameResult
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.Games]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: GameResult[]
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.GamePublic]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: GamePublicResult
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.GamesPublic]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: GamePublicResult[]
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.User]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: unknown
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-
-    [Features.Users]: {
-      [Methods.DELETE]: unknown
-      [Methods.GET]: unknown
-      [Methods.OPTIONS]: unknown
-      [Methods.PATCH]: unknown
-      [Methods.POST]: unknown
-    }
-  }[Feature][Method]
->
+) => <Role extends typeof Roles[keyof typeof Roles] = typeof Roles.Default>(
+  options: URLOptions,
+  init: RequestInit,
+) => Promise<RequestResults[Feature][Method][Role]>

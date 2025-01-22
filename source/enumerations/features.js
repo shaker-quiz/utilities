@@ -3,45 +3,45 @@ import { Kinds } from './kinds.js'
 export let Features = {
   Checkin: 'Checkin',
 
-  City: 'City',
-  Cities: 'Cities',
-
-  CityPublic: 'CityPublic',
-  CitiesPublic: 'CitiesPublic',
-
-  Game: 'Game',
-  Games: 'Games',
-
-  GamePublic: 'GamePublic',
-  GamesPublic: 'GamesPublic',
+  User: 'User',
+  Users: 'Users',
 
   Theme: 'Theme',
   Themes: 'Themes',
 
-  User: 'User',
-  Users: 'Users',
+  Game: 'Game',
+  Games: 'Games',
+
+  Registration: 'Registration',
+  Registrations: 'Registrations',
+
+  City: 'City',
+  Cities: 'Cities',
+
+  Location: 'Location',
+  Locations: 'Locations',
 }
 
 export let FeatureKinds = {
   [Features.Checkin]: Kinds.Item,
 
-  [Features.City]: Kinds.Item,
-  [Features.Cities]: Kinds.List,
-
-  [Features.CityPublic]: Kinds.Item,
-  [Features.CitiesPublic]: Kinds.List,
-
-  [Features.Game]: Kinds.Item,
-  [Features.Games]: Kinds.List,
-
-  [Features.GamePublic]: Kinds.Item,
-  [Features.GamesPublic]: Kinds.List,
+  [Features.User]: Kinds.Item,
+  [Features.Users]: Kinds.List,
 
   [Features.Theme]: Kinds.Item,
   [Features.Themes]: Kinds.List,
 
-  [Features.User]: Kinds.Item,
-  [Features.Users]: Kinds.List,
+  [Features.Game]: Kinds.Item,
+  [Features.Games]: Kinds.List,
+
+  [Features.Registration]: Kinds.Item,
+  [Features.Registrations]: Kinds.List,
+
+  [Features.City]: Kinds.Item,
+  [Features.Cities]: Kinds.List,
+
+  [Features.Location]: Kinds.Item,
+  [Features.Locations]: Kinds.List,
 }
 
 export let FeatureRequests = new Map()

@@ -1,6 +1,11 @@
 /// <reference path="globals.d.ts" />
-/// <reference path="results.d.ts" />
-/// <reference path="rows.d.ts" />
+/// <reference path="user.d.ts" />
+/// <reference path="role.d.ts" />
+/// <reference path="theme.d.ts" />
+/// <reference path="game.d.ts" />
+/// <reference path="registration.d.ts" />
+/// <reference path="city.d.ts" />
+/// <reference path="location.d.ts" />
 
 export * from './enumerations/constants.js'
 export * from './enumerations/cookies.js'
