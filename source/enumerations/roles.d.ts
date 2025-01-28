@@ -4,6 +4,6 @@ export let Roles: {
   Default: 'default'
 }
 
-export type Roles = typeof Roles
+type Roles = typeof Roles
 
-export type RolesUnion = Roles[keyof Roles]
+type RolesUnion = Roles[keyof Roles]

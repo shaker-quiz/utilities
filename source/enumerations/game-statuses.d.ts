@@ -38,6 +38,6 @@ export let RoleGameStatuses: {
   [Roles.Default]: []
 }
 
-export type GameStatuses = typeof GameStatuses
+type GameStatuses = typeof GameStatuses
 
-export type GameStatusesUnion = GameStatuses[keyof GameStatuses]
+type GameStatusesUnion = GameStatuses[keyof GameStatuses]
