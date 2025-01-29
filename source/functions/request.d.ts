@@ -1,6 +1,6 @@
 import { URLOptions } from '@yurkimus/url'
 
-import { Roles } from 'source/enumerations/roles'
+import type { Roles, RolesUnion } from 'source/enumerations/roles'
 import { Features } from '../enumerations/features'
 import { Methods } from '../enumerations/methods'
 import { Networks } from '../enumerations/networks'
@@ -441,7 +441,7 @@ export let useRequest: <
   feature: Feature,
   method: Method,
   network: Network,
-) => <Role extends typeof Roles[keyof typeof Roles] = typeof Roles.Default>(
+) => <Role extends Roles[RolesUnion] = Roles['Default']>(
   options: URLOptions,
   init: RequestInit,
 ) => Promise<RequestResults[Feature][Method][Role]>

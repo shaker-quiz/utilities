@@ -62,3 +62,7 @@ export let FeatureUrls: Map<
   keyof typeof Features,
   Map<keyof typeof Networks, (options: URLOptions) => URL>
 >
+
+type Features = typeof Features
+
+type FeaturesUnion = Features[keyof Features]

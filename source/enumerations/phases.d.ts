@@ -5,3 +5,7 @@ export let Phases: {
   Loaded: 'Loaded'
   Loading: 'Loading'
 }
+
+type Phases = typeof Phases
+
+type PhasesUnion = keyof Phases

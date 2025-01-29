@@ -3,3 +3,7 @@ export let Roles: {
   Organizer: 'organizer'
   Default: 'default'
 }
+
+type Roles = typeof Roles
+
+type RolesUnion = Roles[keyof Roles]

@@ -37,3 +37,7 @@ export let RoleGameStatuses: {
 
   [Roles.Default]: []
 }
+
+type GameStatuses = typeof GameStatuses
+
+type GameStatusesUnion = GameStatuses[keyof GameStatuses]
