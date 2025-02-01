@@ -1,6 +1,22 @@
 type RegistrationAdminResult = unknown
 
-type RegistrationDefaultResult = unknown
+type RegistrationDefaultResult = {
+  id: RegistrationRow['id']
+  event_id: RegistrationRow['event_id']
+  team_name: RegistrationRow['team_name']
+  is_canceled: RegistrationRow['is_canceled']
+  is_confirm: RegistrationRow['is_confirm']
+  is_reserve: RegistrationRow['is_reserve']
+  change_people_count: RegistrationRow['change_people_count']
+  people_count: RegistrationRow['people_count']
+  channel: RegistrationRow['channel']
+  event_time_utc: GameRow['event_time']
+  event_timezone: GameRow['timezone']
+  max_members_count: GameRow['max_members_count']
+  can_cancel: boolean
+  can_confirm: boolean
+  can_change_people_count: boolean
+}
 
 type RegistrationOrganizerResult = unknown
 

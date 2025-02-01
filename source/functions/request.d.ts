@@ -238,9 +238,9 @@ type RequestResults = {
     }
 
     [Methods.GET]: {
-      [Roles.Admin]: unknown
-      [Roles.Default]: unknown
-      [Roles.Organizer]: unknown
+      [Roles.Admin]: RegistrationAdminResult
+      [Roles.Default]: RegistrationDefaultResult
+      [Roles.Organizer]: RegistrationOrganizerResult
     }
 
     [Methods.OPTIONS]: {
