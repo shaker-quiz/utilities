@@ -100,7 +100,7 @@ type GameRow = {
   /**
    * @description "uuid"
    */
-  id: Nullable<string>
+  id: string
   /**
    * @description "timestamp with time zone"
    */

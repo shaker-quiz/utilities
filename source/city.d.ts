@@ -63,7 +63,7 @@ type CityRow = {
   /**
    * @description "uuid"
    */
-  id: Nullable<string>
+  id: string
   /**
    * @description "character varying"
    */
