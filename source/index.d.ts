@@ -1,11 +1,11 @@
-/// <reference path="globals.d.ts" />
-/// <reference path="user.d.ts" />
-/// <reference path="role.d.ts" />
-/// <reference path="theme.d.ts" />
-/// <reference path="game.d.ts" />
-/// <reference path="registration.d.ts" />
-/// <reference path="city.d.ts" />
-/// <reference path="location.d.ts" />
+/// <reference path="./globals.d.ts" />
+/// <reference path="./user.d.ts" />
+/// <reference path="./role.d.ts" />
+/// <reference path="./theme.d.ts" />
+/// <reference path="./game.d.ts" />
+/// <reference path="./registration.d.ts" />
+/// <reference path="./city.d.ts" />
+/// <reference path="./location.d.ts" />
 
 export * from './enumerations/constants.js'
 export * from './enumerations/cookies.js'
@@ -18,4 +18,5 @@ export * from './enumerations/patterns.js'
 export * from './enumerations/phases.js'
 export * from './enumerations/regexps.js'
 export * from './enumerations/roles.js'
+
 export * from './functions/request.js'
