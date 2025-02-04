@@ -4,35 +4,35 @@ export let Patterns = {
   /**
    * Users
    */
-  [Features.Checkin]: URLPattern,
+  [Features.Checkin]: InstanceType<typeof URLPattern>,
 
-  [Features.User]: URLPattern,
+  [Features.User]: InstanceType<typeof URLPattern>,
 
-  [Features.Users]: URLPattern,
+  [Features.Users]: InstanceType<typeof URLPattern>,
 
   /**
    * Games
    */
-  [Features.Theme]: URLPattern,
+  [Features.Theme]: InstanceType<typeof URLPattern>,
 
-  [Features.Themes]: URLPattern,
+  [Features.Themes]: InstanceType<typeof URLPattern>,
 
-  [Features.Game]: URLPattern,
+  [Features.Game]: InstanceType<typeof URLPattern>,
 
-  [Features.Games]: URLPattern,
+  [Features.Games]: InstanceType<typeof URLPattern>,
 
-  [Features.Registration]: URLPattern,
+  [Features.Registration]: InstanceType<typeof URLPattern>,
 
-  [Features.Registrations]: URLPattern,
+  [Features.Registrations]: InstanceType<typeof URLPattern>,
 
   /**
    * Locations
    */
-  [Features.City]: URLPattern,
+  [Features.City]: InstanceType<typeof URLPattern>,
 
-  [Features.Cities]: URLPattern,
+  [Features.Cities]: InstanceType<typeof URLPattern>,
 
-  [Features.Location]: URLPattern,
+  [Features.Location]: InstanceType<typeof URLPattern>,
 
-  [Features.Locations]: URLPattern,
+  [Features.Locations]: InstanceType<typeof URLPattern>,
 }
