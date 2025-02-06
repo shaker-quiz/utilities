@@ -1,5 +1,5 @@
-import { Services } from 'source/enumerations/services.js'
 import { Kinds } from './kinds.js'
+import { Services } from './services.js'
 
 export let Features = /** @type {const} */ ({
   Checkin: 'Checkin',
