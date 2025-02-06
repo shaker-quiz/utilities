@@ -1,6 +1,6 @@
 import { Kinds } from './kinds.js'
 
-export let Features = {
+export let Features = /** @type {const} */ ({
   Checkin: 'Checkin',
 
   User: 'User',
@@ -20,7 +20,7 @@ export let Features = {
 
   Location: 'Location',
   Locations: 'Locations',
-}
+})
 
 export let FeatureKinds = {
   [Features.Checkin]: Kinds.Item,
@@ -43,7 +43,5 @@ export let FeatureKinds = {
   [Features.Location]: Kinds.Item,
   [Features.Locations]: Kinds.List,
 }
-
-export let FeatureRequests = new Map()
 
 export let FeatureUrls = new Map()

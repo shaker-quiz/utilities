@@ -3,11 +3,7 @@ import { MessageError } from '@yurkimus/errors'
 import * as message from '@yurkimus/message'
 import { ResponseStatus } from '@yurkimus/response-status'
 
-import {
-  FeatureKinds,
-  FeatureRequests,
-  FeatureUrls,
-} from '../enumerations/features.js'
+import { FeatureKinds, FeatureUrls } from '../enumerations/features.js'
 import { Kinds } from '../enumerations/kinds.js'
 
 let handleMessage = (feature, [response, body]) => {
@@ -96,19 +92,6 @@ export let Extensions = new WeakMap()
  * @param {Network} network
  */
 export let useRequest = (feature, method, network) => {
-  if (
-    !FeatureRequests
-      .has(feature)
-  )
-    throw TypeError(`Feature '${feature}' must be listed in 'FeatureRequests'.`)
-
-  if (
-    !FeatureRequests
-      .get(feature)
-      .has(method)
-  )
-    throw TypeError(`Method '${method}' must be listed in 'FeatureRequests'.`)
-
   if (
     !FeatureUrls
       .has(feature)
