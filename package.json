@@ -1,6 +1,6 @@
 {
   "name": "@shakerquiz/utilities",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "exports": {
@@ -15,9 +15,7 @@
     "@yurkimus/errors": "0.1.3",
     "@yurkimus/message": "0.0.14",
     "@yurkimus/response-status": "0.1.1",
-    "@yurkimus/url": "0.2.8"
-  },
-  "devDependencies": {
+    "@yurkimus/url": "0.2.8",
     "urlpattern-polyfill": "10.0.0"
   }
 }

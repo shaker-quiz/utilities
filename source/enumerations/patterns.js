@@ -1,3 +1,5 @@
+import 'urlpattern-polyfill'
+
 import { Features } from './features.js'
 
 export let FeaturePatterns = {
