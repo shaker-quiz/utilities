@@ -3,8 +3,14 @@ import { MessageError } from '@yurkimus/errors'
 import * as message from '@yurkimus/message'
 import { ResponseStatus } from '@yurkimus/response-status'
 
-import { FeatureKinds, FeatureUrls } from '../enumerations/features.js'
+import { Cookies } from '../enumerations/cookies.js'
+import {
+  FeatureKinds,
+  FeatureOrigins,
+  FeatureServices,
+} from '../enumerations/features.js'
 import { Kinds } from '../enumerations/kinds.js'
+import { FeaturePatterns } from '../enumerations/patterns.js'
 
 let handleMessage = (feature, [response, body]) => {
   switch (response.status) {
@@ -54,11 +60,16 @@ let makeRequest = (feature, method, network, options, init) => {
   if (!('method' in init))
     init.method = method
 
-  let url = FeatureUrls
-    .get(feature)
+  let url = FeatureOrigins
+    .get(FeatureServices[feature])
     .get(network)
+    .call(
+      undefined,
+      FeaturePatterns[feature].pathname,
+      options,
+    )
 
-  let request = new Request(url(options), init)
+  let request = new Request(url, init)
 
   if (!request.headers.has('Content-Type'))
     request.headers.set(
@@ -69,7 +80,7 @@ let makeRequest = (feature, method, network, options, init) => {
   if ('cookie' in init)
     request.headers.set(
       'Authorization',
-      cookies.read('shaker-quiz-token', init.cookie),
+      cookies.read(Cookies.Token, init.cookie),
     )
 
   return fetch(request)
@@ -92,18 +103,27 @@ export let Extensions = new WeakMap()
  * @param {Network} network
  */
 export let useRequest = (feature, method, network) => {
-  if (
-    !FeatureUrls
-      .has(feature)
-  )
-    throw TypeError(`Feature '${feature}' must be listed in 'FeatureUrls'.`)
+  if (!(feature in FeatureServices))
+    throw TypeError(
+      `Feature '${feature}' must be listed in 'FeatureServices'.`,
+    )
 
-  if (
-    !FeatureUrls
-      .get(feature)
-      .has(network)
-  )
-    throw TypeError(`Network '${network}' must be listed in 'FeatureUrls'.`)
+  if (!(feature in FeaturePatterns))
+    throw TypeError(
+      `Feature '${feature}' must be listed in 'FeaturePatterns'.`,
+    )
+
+  if (!FeatureOrigins.has(FeatureServices[feature]))
+    throw TypeError(
+      `Service '${
+        FeatureServices[feature]
+      }' must be listed in 'FeatureOrigins'.`,
+    )
+
+  if (!FeatureOrigins.get(FeatureServices[feature]).has(network))
+    throw TypeError(
+      `Network '${network}' must be listed in '${FeatureServices[feature]}'.`,
+    )
 
   /**
    * @param {import('@yurkimus/url').URLOptions} options

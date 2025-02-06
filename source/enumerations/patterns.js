@@ -1,6 +1,6 @@
 import { Features } from './features.js'
 
-export let Patterns = {
+export let FeaturePatterns = {
   /**
    * Users
    */

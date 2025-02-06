@@ -1,6 +1,6 @@
 import { Features } from './features.d.ts'
 
-export let Patterns: {
+export let FeaturePatterns: {
   /**
    * Users
    */
