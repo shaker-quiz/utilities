@@ -10,7 +10,7 @@ import {
   FeatureNetworkOrigins,
   FeaturePathnames,
   Features,
-} from '../enumerations/features.js'
+} from '../enumerations/cookies.js'
 import { Kinds } from '../enumerations/kinds.js'
 import { Methods } from '../enumerations/methods.js'
 import { Networks } from '../enumerations/networks.js'
@@ -207,3 +207,12 @@ export let useFetch = (feature, method, network) => {
 
   return fetch
 }
+
+let instance = new Request(
+  url(
+    FeatureNetworkOrigins[feature][network],
+    FeaturePathnames[feature],
+    options,
+  ),
+  init,
+)

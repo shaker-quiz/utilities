@@ -6,6 +6,10 @@
     "moduleResolution": "nodenext",
 
     "strictBindCallApply": true,
-    "allowArbitraryExtensions": true
+    "allowArbitraryExtensions": true,
+
+    "paths": {
+      "source/": ["./source/*"]
+    }
   }
 }
