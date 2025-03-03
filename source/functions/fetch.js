@@ -207,12 +207,3 @@ export let useFetch = (feature, method, network) => {
 
   return fetch
 }
-
-let instance = new Request(
-  url(
-    FeatureNetworkOrigins[feature][network],
-    FeaturePathnames[feature],
-    options,
-  ),
-  init,
-)
