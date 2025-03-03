@@ -18,6 +18,5 @@ export * from './enumerations/patterns.js'
 export * from './enumerations/phases.js'
 export * from './enumerations/regexps.js'
 export * from './enumerations/roles.js'
-export * from './enumerations/services.js'
 
-export * from './functions/request.js'
+export * from './functions/fetch.js'

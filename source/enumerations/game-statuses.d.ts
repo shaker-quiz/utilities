@@ -1,6 +1,6 @@
 import { Roles } from './roles.js'
 
-export let GameStatuses: {
+export var GameStatuses: {
   Approved: 'APPROVED'
   Archive: 'ARCHIVE'
   Closed: 'CLOSED'
@@ -12,7 +12,7 @@ export let GameStatuses: {
   Reserved: 'IS_RESERVE'
 }
 
-export let RoleGameStatuses: {
+export var RoleGameStatuses: {
   [Roles.Admin]: [
     typeof GameStatuses.Approved,
     typeof GameStatuses.Moderation,
@@ -37,7 +37,3 @@ export let RoleGameStatuses: {
 
   [Roles.Default]: []
 }
-
-type GameStatuses = typeof GameStatuses
-
-type GameStatusesUnion = GameStatuses[keyof GameStatuses]

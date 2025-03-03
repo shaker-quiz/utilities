@@ -2,15 +2,18 @@ import * as cookies from '@yurkimus/cookies'
 import { MessageError } from '@yurkimus/errors'
 import * as message from '@yurkimus/message'
 import { ResponseStatus } from '@yurkimus/response-status'
+import { url } from '@yurkimus/url'
 
 import { Cookies } from '../enumerations/cookies.js'
 import {
   FeatureKinds,
-  FeatureOrigins,
-  FeatureServices,
+  FeatureNetworkOrigins,
+  FeaturePathnames,
+  Features,
 } from '../enumerations/features.js'
 import { Kinds } from '../enumerations/kinds.js'
-import { FeaturePatterns } from '../enumerations/patterns.js'
+import { Methods } from '../enumerations/methods.js'
+import { Networks } from '../enumerations/networks.js'
 
 let handleMessage = (feature, [response, body]) => {
   switch (response.status) {
@@ -27,28 +30,18 @@ let handleMessage = (feature, [response, body]) => {
           return []
       }
 
-    case 400:
-    case 401:
-    case 403:
-    case 404:
-    case 409:
-    case 415:
-    case 500:
-    case 502:
+    default:
       throw MessageError(
-        body.message,
+        body?.message ?? '',
         ResponseStatus(response.status),
       )
-
-    default:
-      throw body
   }
 }
 
 /**
- * @template {FeaturesUnion} Feature
- * @template {MethodsUnion} Method
- * @template {NetworksUnion} Network
+ * @template {keyof typeof Features} Feature
+ * @template {keyof typeof Methods} Method
+ * @template {keyof typeof Networks} Network
  *
  * @param {Feature} feature
  * @param {Method} method
@@ -56,36 +49,37 @@ let handleMessage = (feature, [response, body]) => {
  * @param {import('@yurkimus/url').URLOptions | undefined} options
  * @param {RequestInit} init
  */
-let makeRequest = (feature, method, network, options, init) => {
+let request = (feature, method, network, options, init) => {
   if (!('method' in init))
     init.method = method
 
-  let url = FeatureOrigins
-    .get(FeatureServices[feature])
-    .get(network)
-    .call(
-      undefined,
-      FeaturePatterns[feature].pathname,
+  let instance = new Request(
+    url(
+      FeatureNetworkOrigins[feature][network],
+      FeaturePathnames[feature],
       options,
-    )
+    ),
+    init,
+  )
 
-  let request = new Request(url, init)
-
-  if (!request.headers.has('Content-Type'))
-    request.headers.set(
+  if (!instance.headers.has('Content-Type'))
+    instance.headers.set(
       'Content-Type',
       'application/json',
     )
 
   if ('cookie' in init)
-    request.headers.set(
+    instance.headers.set(
       'Authorization',
       cookies.read(Cookies.Token, init.cookie),
     )
 
-  return fetch(request)
+  return fetch(instance)
     .then(message.read)
-    .then(handleMessage.bind(undefined, feature))
+    .then(handleMessage.bind(
+      undefined,
+      feature,
+    ))
 }
 
 /**
@@ -102,37 +96,42 @@ export let Extensions = new WeakMap()
  * @param {Method} method
  * @param {Network} network
  */
-export let useRequest = (feature, method, network) => {
-  if (!(feature in FeatureServices))
+export let useFetch = (feature, method, network) => {
+  if (!(feature in Features))
     throw TypeError(
-      `Feature '${feature}' must be listed in 'FeatureServices'.`,
+      `Feature '${feature}' must be listed in 'Features'.`,
     )
 
-  if (!(feature in FeaturePatterns))
+  if (!(method in Methods))
     throw TypeError(
-      `Feature '${feature}' must be listed in 'FeaturePatterns'.`,
+      `Method '${method}' must be listed in 'Methods'.`,
     )
 
-  if (!FeatureOrigins.has(FeatureServices[feature]))
+  if (!(feature in FeaturePathnames))
     throw TypeError(
-      `Service '${
-        FeatureServices[feature]
-      }' must be listed in 'FeatureOrigins'.`,
+      `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
     )
 
-  if (!FeatureOrigins.get(FeatureServices[feature]).has(network))
+  if (!(feature in FeatureNetworkOrigins))
     throw TypeError(
-      `Network '${network}' must be listed in '${FeatureServices[feature]}'.`,
+      `Feature '${feature}' must be listed in 'FeatureNetworkOrigins'.`,
+    )
+
+  if (!(network in FeatureNetworkOrigins[feature]))
+    throw TypeError(
+      `Network '${
+        FeatureNetworkOrigins[feature]
+      }' must be listed in 'FeatureNetworkOrigins[feature]'.`,
     )
 
   /**
    * @param {import('@yurkimus/url').URLOptions} options
    * @param {RequestInit} init
    */
-  let request = (options, init) => {
+  let fetch = (options, init) => {
     let onbefore = parameters => {
       let predicates = Extensions
-        .get(request)
+        .get(fetch)
         .get('onbefore')
 
       return (predicates.size > 0)
@@ -147,7 +146,7 @@ export let useRequest = (feature, method, network) => {
 
     let onfulfilled = contract => {
       let predicates = Extensions
-        .get(request)
+        .get(fetch)
         .get('onfulfilled')
 
       return (predicates.size > 0)
@@ -162,7 +161,7 @@ export let useRequest = (feature, method, network) => {
 
     let onrejected = reason => {
       let predicates = Extensions
-        .get(request)
+        .get(fetch)
         .get('onrejected')
 
       Array
@@ -180,7 +179,7 @@ export let useRequest = (feature, method, network) => {
       }
     })
       .then(([options, init]) =>
-        makeRequest(
+        request(
           feature,
           method,
           network,
@@ -193,7 +192,7 @@ export let useRequest = (feature, method, network) => {
   }
 
   Extensions.set(
-    request,
+    fetch,
     new Map([
       ['onbefore', new Set([])],
       ['onfulfilled', new Set([])],
@@ -201,5 +200,5 @@ export let useRequest = (feature, method, network) => {
     ]),
   )
 
-  return request
+  return fetch
 }

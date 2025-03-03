@@ -1,4 +1,4 @@
-export let Kinds = /** @type {const} */ ({
+export var Kinds = /** @type {const} */ ({
   Item: 'Item',
   List: 'List',
 })

@@ -5,7 +5,7 @@ import { Features } from '../enumerations/features'
 import { Methods } from '../enumerations/methods'
 import { Networks } from '../enumerations/networks'
 
-type RequestResults = {
+type FetchResults = {
   [Features.Checkin]: {
     [Methods.DELETE]: {
       [Roles.Admin]: unknown
@@ -433,7 +433,7 @@ export let Extensions: WeakMap<
   >
 >
 
-export let useRequest: <
+export let useFetch: <
   Feature extends keyof typeof Features,
   Method extends keyof typeof Methods,
   Network extends keyof typeof Networks,
@@ -444,4 +444,4 @@ export let useRequest: <
 ) => <Role extends Roles[RolesUnion] = Roles['Default']>(
   options: URLOptions,
   init: RequestInit,
-) => Promise<RequestResults[Feature][Method][Role]>
+) => Promise<FetchResults[Feature][Method][Role]>
