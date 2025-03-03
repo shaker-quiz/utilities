@@ -10,7 +10,7 @@ import {
   FeatureNetworkOrigins,
   FeaturePathnames,
   Features,
-} from '../enumerations/cookies.js'
+} from '../enumerations/features.js'
 import { Kinds } from '../enumerations/kinds.js'
 import { Methods } from '../enumerations/methods.js'
 import { Networks } from '../enumerations/networks.js'
