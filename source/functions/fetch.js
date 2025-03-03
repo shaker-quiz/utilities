@@ -14,6 +14,7 @@ import {
 import { Kinds } from '../enumerations/kinds.js'
 import { Methods } from '../enumerations/methods.js'
 import { Networks } from '../enumerations/networks.js'
+import { Roles } from '../enumerations/roles.js'
 
 let handleMessage = (feature, [response, body]) => {
   switch (response.status) {
@@ -88,9 +89,9 @@ let request = (feature, method, network, options, init) => {
 export let Extensions = new WeakMap()
 
 /**
- * @template {FeaturesUnion} Feature
- * @template {MethodsUnion} Method
- * @template {NetworksUnion} Network
+ * @template {keyof typeof Features} Feature
+ * @template {keyof typeof Methods} Method
+ * @template {keyof typeof Networks} Network
  *
  * @param {Feature} feature
  * @param {Method} method
@@ -125,8 +126,12 @@ export let useFetch = (feature, method, network) => {
     )
 
   /**
+   * @template {keyof typeof Roles} Role
+   *
    * @param {import('@yurkimus/url').URLOptions} options
    * @param {RequestInit} init
+   *
+   * @returns {Promise<FetchResults[Feature][Method][Role]>}
    */
   let fetch = (options, init) => {
     let onbefore = parameters => {

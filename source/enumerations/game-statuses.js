@@ -13,7 +13,7 @@ export var GameStatuses = /** @type {const} */ ({
 })
 
 export var RoleGameStatuses = {
-  [Roles.Admin]: [
+  [Roles.admin]: [
     GameStatuses.APPROVED,
     GameStatuses.MODERATION,
     GameStatuses.PUBLISHED,
@@ -25,7 +25,7 @@ export var RoleGameStatuses = {
     GameStatuses.CLOSED,
   ],
 
-  [Roles.Organizer]: [
+  [Roles.organizer]: [
     GameStatuses.APPROVED,
     GameStatuses.PUBLISHED,
     GameStatuses.FINISHED,
@@ -35,5 +35,5 @@ export var RoleGameStatuses = {
     GameStatuses.CLOSED,
   ],
 
-  [Roles.Default]: [],
+  [Roles.default]: [],
 }
