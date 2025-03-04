@@ -7,6 +7,7 @@ export * from './enumerations/methods.js'
 export * from './enumerations/networks.js'
 export * from './enumerations/phases.js'
 export * from './enumerations/regexps.js'
+export * from './enumerations/requirements.js'
 export * from './enumerations/roles.js'
 
 export * from './functions/fetch.js'
