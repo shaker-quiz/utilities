@@ -1,5 +1,7 @@
 import { Kinds } from './kinds.js'
+import { Methods } from './methods.js'
 import { Networks } from './networks.js'
+import { Requirements } from './requirements.js'
 
 export var Features = /** @type {const} */ ({
   Checkin: 'Checkin',
@@ -145,3 +147,110 @@ export var FeatureNetworkOrigins = /** @type {const} */ ({
     [Networks.Public]: 'https://users.backend.shakerquiz.ru/',
   },
 })
+
+export var FeatureRequirements = {
+  [Features.Checkin]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Cities]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.City]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Game]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Games]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Location]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Locations]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Registration]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Registrations]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Theme]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Themes]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.User]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+  [Features.Users]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+}
