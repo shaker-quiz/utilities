@@ -1,4 +1,4 @@
 export var Requirements = /** @type {const} */ ({
-  Authorization: 'Authorization',
+  Checkin: 'Checkin',
   Body: 'Body',
 })
