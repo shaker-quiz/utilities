@@ -151,7 +151,7 @@ export var FeatureNetworkOrigins = /** @type {const} */ ({
 export var FeatureRequirements = {
   [Features.Checkin]: {
     [Methods.DELETE]: new Set([Requirements.Checkin]),
-    [Methods.GET]: new Set([Requirements.Checkin]),
+    [Methods.GET]: new Set([]),
     [Methods.OPTIONS]: new Set([]),
     [Methods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
     [Methods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
