@@ -95,55 +95,55 @@ export var FeaturePatterns = {
 
 export var FeatureNetworkOrigins = /** @type {const} */ ({
   [Features.Checkin]: {
-    [Networks.Private]: 'http://users/',
+    [Networks.Private]: 'http://users:8000/',
     [Networks.Public]: 'https://users.backend.shakerquiz.ru/',
   },
   [Features.Cities]: {
-    [Networks.Private]: 'http://locations/',
+    [Networks.Private]: 'http://locations:8000/',
     [Networks.Public]: 'https://locations.backend.shakerquiz.ru/',
   },
   [Features.City]: {
-    [Networks.Private]: 'http://locations/',
+    [Networks.Private]: 'http://locations:8000/',
     [Networks.Public]: 'https://locations.backend.shakerquiz.ru/',
   },
   [Features.Game]: {
-    [Networks.Private]: 'http://games/',
+    [Networks.Private]: 'http://games:8000/',
     [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
   },
   [Features.Games]: {
-    [Networks.Private]: 'http://games/',
+    [Networks.Private]: 'http://games:8000/',
     [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
   },
   [Features.Location]: {
-    [Networks.Private]: 'http://locations/',
+    [Networks.Private]: 'http://locations:8000/',
     [Networks.Public]: 'https://locations.backend.shakerquiz.ru/',
   },
   [Features.Locations]: {
-    [Networks.Private]: 'http://locations/',
+    [Networks.Private]: 'http://locations:8000/',
     [Networks.Public]: 'https://locations.backend.shakerquiz.ru/',
   },
   [Features.Registration]: {
-    [Networks.Private]: 'http://games/',
+    [Networks.Private]: 'http://games:8000/',
     [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
   },
   [Features.Registrations]: {
-    [Networks.Private]: 'http://games/',
+    [Networks.Private]: 'http://games:8000/',
     [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
   },
   [Features.Theme]: {
-    [Networks.Private]: 'http://games/',
+    [Networks.Private]: 'http://games:8000/',
     [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
   },
   [Features.Themes]: {
-    [Networks.Private]: 'http://games/',
+    [Networks.Private]: 'http://games:8000/',
     [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
   },
   [Features.User]: {
-    [Networks.Private]: 'http://users/',
+    [Networks.Private]: 'http://users:8000/',
     [Networks.Public]: 'https://users.backend.shakerquiz.ru/',
   },
   [Features.Users]: {
-    [Networks.Private]: 'http://users/',
+    [Networks.Private]: 'http://users:8000/',
     [Networks.Public]: 'https://users.backend.shakerquiz.ru/',
   },
 })
