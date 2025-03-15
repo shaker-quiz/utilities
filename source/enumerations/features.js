@@ -2,6 +2,7 @@ import { Kinds } from './kinds.js'
 import { Methods } from './methods.js'
 import { Networks } from './networks.js'
 import { Requirements } from './requirements.js'
+import { Services } from './services.js'
 
 export var Features = /** @type {const} */ ({
   Checkin: 'Checkin',
@@ -18,6 +19,22 @@ export var Features = /** @type {const} */ ({
   User: 'User',
   Users: 'Users',
 })
+
+export var FeatureServices = {
+  [Features.Game]: Services.Games,
+  [Features.Games]: Services.Games,
+  [Features.Theme]: Services.Games,
+  [Features.Themes]: Services.Games,
+  [Features.Registration]: Services.Games,
+  [Features.Registrations]: Services.Games,
+  [Features.Cities]: Services.Locations,
+  [Features.City]: Services.Locations,
+  [Features.Location]: Services.Locations,
+  [Features.Locations]: Services.Locations,
+  [Features.Checkin]: Services.Users,
+  [Features.User]: Services.Users,
+  [Features.Users]: Services.Users,
+}
 
 export var FeatureKinds = {
   [Features.Checkin]: Kinds.Item,
@@ -93,62 +110,7 @@ export var FeaturePatterns = {
   }),
 }
 
-export var FeatureNetworkOrigins = /** @type {const} */ ({
-  [Features.Checkin]: {
-    [Networks.Private]: 'http://users:8000/',
-    [Networks.Public]: 'https://users.backend.shakerquiz.ru/',
-  },
-  [Features.Cities]: {
-    [Networks.Private]: 'http://locations:8000/',
-    [Networks.Public]: 'https://locations.backend.shakerquiz.ru/',
-  },
-  [Features.City]: {
-    [Networks.Private]: 'http://locations:8000/',
-    [Networks.Public]: 'https://locations.backend.shakerquiz.ru/',
-  },
-  [Features.Game]: {
-    [Networks.Private]: 'http://games:8000/',
-    [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
-  },
-  [Features.Games]: {
-    [Networks.Private]: 'http://games:8000/',
-    [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
-  },
-  [Features.Location]: {
-    [Networks.Private]: 'http://locations:8000/',
-    [Networks.Public]: 'https://locations.backend.shakerquiz.ru/',
-  },
-  [Features.Locations]: {
-    [Networks.Private]: 'http://locations:8000/',
-    [Networks.Public]: 'https://locations.backend.shakerquiz.ru/',
-  },
-  [Features.Registration]: {
-    [Networks.Private]: 'http://games:8000/',
-    [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
-  },
-  [Features.Registrations]: {
-    [Networks.Private]: 'http://games:8000/',
-    [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
-  },
-  [Features.Theme]: {
-    [Networks.Private]: 'http://games:8000/',
-    [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
-  },
-  [Features.Themes]: {
-    [Networks.Private]: 'http://games:8000/',
-    [Networks.Public]: 'https://games.backend.shakerquiz.ru/',
-  },
-  [Features.User]: {
-    [Networks.Private]: 'http://users:8000/',
-    [Networks.Public]: 'https://users.backend.shakerquiz.ru/',
-  },
-  [Features.Users]: {
-    [Networks.Private]: 'http://users:8000/',
-    [Networks.Public]: 'https://users.backend.shakerquiz.ru/',
-  },
-})
-
-export var FeatureRequirements = {
+export var FeatureMethodRequirements = {
   [Features.Checkin]: {
     [Methods.DELETE]: new Set([]),
     [Methods.GET]: new Set([]),
@@ -254,3 +216,110 @@ export var FeatureRequirements = {
     [Methods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
   },
 }
+
+export var FeatureNetworkOrigins = new Map([
+  [
+    Features.Checkin,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Cities,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.City,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Game,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Games,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Location,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Locations,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Registration,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Registrations,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Theme,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Themes,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.User,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
+    Features.Users,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Local, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+])

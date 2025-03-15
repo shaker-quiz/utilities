@@ -56,7 +56,7 @@ let request = (feature, method, network, options, init) => {
 
   let instance = new Request(
     url(
-      FeatureNetworkOrigins[feature][network],
+      FeatureNetworkOrigins.get(feature).get(network),
       FeaturePathnames[feature],
       options,
     ),
@@ -113,16 +113,19 @@ export let useFetch = (feature, method, network) => {
       `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
     )
 
-  if (!(feature in FeatureNetworkOrigins))
+  if (!FeatureNetworkOrigins.has(feature))
     throw TypeError(
       `Feature '${feature}' must be listed in 'FeatureNetworkOrigins'.`,
     )
 
-  if (!(network in FeatureNetworkOrigins[feature]))
+  if (!FeatureNetworkOrigins.get(feature).has(network))
     throw TypeError(
-      `Network '${
-        FeatureNetworkOrigins[feature]
-      }' must be listed in 'FeatureNetworkOrigins[feature]'.`,
+      `Feature Network '${feature}' '${network}' must be listed in 'FeatureNetworkOrigins'.`,
+    )
+
+  if (!URL.canParse(FeatureNetworkOrigins.get(feature).get(network)))
+    throw TypeError(
+      `Value of 'FeatureNetworkOrigins' '${feature}' '${network}' cannot be parsed as URL.`,
     )
 
   /**
