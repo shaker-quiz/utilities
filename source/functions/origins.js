@@ -33,7 +33,7 @@ export var setFeatureNetworkOrigins = origins => {
             `Network '${network}' must be listed in 'Networks'.`,
           )
 
-        return void FeatureNetworkOrigins
+        FeatureNetworkOrigins
           .get(feature)
           .set(network, origins[service][network])
       }
