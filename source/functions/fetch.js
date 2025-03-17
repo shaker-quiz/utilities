@@ -120,7 +120,7 @@ export let useFetch = (feature, method, network) => {
 
   if (!FeatureNetworkOrigins.get(feature).has(network))
     throw TypeError(
-      `Feature Network '${feature}' '${network}' must be listed in 'FeatureNetworkOrigins'.`,
+      `Feature's '${feature}' Network '${network}' must be listed in 'FeatureNetworkOrigins'.`,
     )
 
   if (!URL.canParse(FeatureNetworkOrigins.get(feature).get(network)))
