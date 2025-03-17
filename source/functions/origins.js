@@ -35,8 +35,7 @@ export var setFeatureNetworkOrigins = origins => {
 
         return void FeatureNetworkOrigins
           .get(feature)
-          .get(network)
-          .set(origins[service][network])
+          .set(network, origins[service][network])
       }
     }
   }
