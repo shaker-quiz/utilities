@@ -108,6 +108,11 @@ export let useFetch = (feature, method, network) => {
       `Method '${method}' must be listed in 'Methods'.`,
     )
 
+  if (!(network in Networks))
+    throw TypeError(
+      `Network '${network}' must be listed in 'Networks'.`,
+    )
+
   if (!(feature in FeaturePathnames))
     throw TypeError(
       `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
