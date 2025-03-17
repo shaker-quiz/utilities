@@ -1,5 +1,5 @@
 export var Networks = /** @type {const} */ ({
-  Docker: 'Private',
+  Docker: 'Docker',
   Local: 'Local',
   Public: 'Public',
 })
