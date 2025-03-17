@@ -1,6 +1,10 @@
-import { FeatureNetworkOrigins, Features } from '../enumerations/features.js'
+import {
+  FeatureNetworkOrigins,
+  Features,
+  ServiceFeatures,
+} from '../enumerations/features.js'
 import { Networks } from '../enumerations/networks.js'
-import { ServiceFeatures, Services } from '../enumerations/services.js'
+import { Services } from '../enumerations/services.js'
 
 /**
  * @param {Record<
