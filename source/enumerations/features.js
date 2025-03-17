@@ -36,6 +36,28 @@ export var FeatureServices = {
   [Features.Users]: Services.Users,
 }
 
+export var ServiceFeatures = {
+  [Services.Games]: [
+    Features.Game,
+    Features.Games,
+    Features.Theme,
+    Features.Themes,
+    Features.Registration,
+    Features.Registrations,
+  ],
+  [Services.Locations]: [
+    Features.Cities,
+    Features.City,
+    Features.Location,
+    Features.Locations,
+  ],
+  [Services.Users]: [
+    Features.Checkin,
+    Features.User,
+    Features.Users,
+  ],
+}
+
 export var FeatureKinds = {
   [Features.Checkin]: Kinds.Item,
   [Features.Cities]: Kinds.List,
