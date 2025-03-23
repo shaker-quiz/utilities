@@ -21,4 +21,4 @@ export * from './enumerations/roles.js'
 export * from './enumerations/services.js'
 
 export * from './functions/fetch.js'
-export * from './functions/origins.js'
+export * from './functions/origin.js'

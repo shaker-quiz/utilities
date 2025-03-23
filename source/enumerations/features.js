@@ -77,60 +77,18 @@ export var FeatureKinds = {
 export var FeaturePathnames = /** @type {const} */ ({
   [Features.Checkin]: '/checkin',
   [Features.Cities]: '/cities',
-  [Features.City]: '/city/:city?',
-  [Features.Game]: '/game/:game?',
+  [Features.City]: `/city/:city?`,
+  [Features.Game]: `/game/:game?`,
   [Features.Games]: '/games',
-  [Features.Location]: '/location/:location?',
+  [Features.Location]: `/location/:location?`,
   [Features.Locations]: '/locations',
-  [Features.Registration]: '/registration/:registration?',
+  [Features.Registration]: `/registration/:registration?`,
   [Features.Registrations]: '/registrations',
-  [Features.Theme]: '/theme/:theme?',
+  [Features.Theme]: `/theme/:theme?`,
   [Features.Themes]: '/themes',
-  [Features.User]: '/user/:user?',
+  [Features.User]: `/user/:user?`,
   [Features.Users]: '/users',
 })
-
-export var FeaturePatterns = {
-  [Features.Checkin]: new URLPattern({
-    pathname: FeaturePathnames[Features.Checkin],
-  }),
-  [Features.Cities]: new URLPattern({
-    pathname: FeaturePathnames[Features.Cities],
-  }),
-  [Features.City]: new URLPattern({
-    pathname: FeaturePathnames[Features.City],
-  }),
-  [Features.Game]: new URLPattern({
-    pathname: FeaturePathnames[Features.Game],
-  }),
-  [Features.Games]: new URLPattern({
-    pathname: FeaturePathnames[Features.Games],
-  }),
-  [Features.Location]: new URLPattern({
-    pathname: FeaturePathnames[Features.Location],
-  }),
-  [Features.Locations]: new URLPattern({
-    pathname: FeaturePathnames[Features.Locations],
-  }),
-  [Features.Registration]: new URLPattern({
-    pathname: FeaturePathnames[Features.Registration],
-  }),
-  [Features.Registrations]: new URLPattern({
-    pathname: FeaturePathnames[Features.Registrations],
-  }),
-  [Features.Theme]: new URLPattern({
-    pathname: FeaturePathnames[Features.Theme],
-  }),
-  [Features.Themes]: new URLPattern({
-    pathname: FeaturePathnames[Features.Themes],
-  }),
-  [Features.User]: new URLPattern({
-    pathname: FeaturePathnames[Features.User],
-  }),
-  [Features.Users]: new URLPattern({
-    pathname: FeaturePathnames[Features.Users],
-  }),
-}
 
 export var FeatureMethodRequirements = {
   [Features.Checkin]: {
@@ -342,6 +300,113 @@ export var FeatureNetworkOrigins = new Map([
       [Networks.Docker, ''],
       [Networks.Local, ''],
       [Networks.Public, ''],
+    ]),
+  ],
+])
+
+export var FeatureNetworkUrls = new Map([
+  [
+    Features.Checkin,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Cities,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.City,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Game,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Games,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Location,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Locations,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Registration,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Registrations,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Theme,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Themes,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.User,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
+    ]),
+  ],
+  [
+    Features.Users,
+    new Map([
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
     ]),
   ],
 ])

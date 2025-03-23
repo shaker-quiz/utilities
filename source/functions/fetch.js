@@ -2,12 +2,11 @@ import * as cookies from '@yurkimus/cookies'
 import { MessageError } from '@yurkimus/errors'
 import * as message from '@yurkimus/message'
 import { ResponseStatus } from '@yurkimus/response-status'
-import { url } from '@yurkimus/url'
 
 import { Cookies } from '../enumerations/cookies.js'
 import {
   FeatureKinds,
-  FeatureNetworkOrigins,
+  FeatureNetworkUrls,
   FeaturePathnames,
   Features,
 } from '../enumerations/features.js'
@@ -16,7 +15,20 @@ import { Methods } from '../enumerations/methods.js'
 import { Networks } from '../enumerations/networks.js'
 import { Roles } from '../enumerations/roles.js'
 
-let handleMessage = (feature, [response, body]) => {
+/**
+ * @typedef {'onbefore' | 'onfulfilled' | 'onrejected'} ExtensionHooks
+ */
+
+/**
+ * @typedef {WeakMap<Function, Map<ExtensionHooks, Set<Function>>>} Extensions
+ */
+
+/**
+ * @type {Extensions}
+ */
+export var extensions = new WeakMap()
+
+var handleMessage = (feature, [response, body]) => {
   switch (response.status) {
     case 200:
     case 201:
@@ -41,177 +53,103 @@ let handleMessage = (feature, [response, body]) => {
 
 /**
  * @template {keyof typeof Features} Feature
- * @template {keyof typeof Methods} Method
  * @template {keyof typeof Networks} Network
  *
  * @param {Feature} feature
- * @param {Method} method
- * @param {Network} network
- * @param {import('@yurkimus/url').URLOptions | undefined} options
- * @param {RequestInit} init
- */
-let request = (feature, method, network, options, init) => {
-  if (!('method' in init))
-    init.method = method
-
-  let instance = new Request(
-    url(
-      FeatureNetworkOrigins.get(feature).get(network),
-      FeaturePathnames[feature],
-      options,
-    ),
-    init,
-  )
-
-  if (!instance.headers.has('Content-Type'))
-    instance.headers.set(
-      'Content-Type',
-      'application/json',
-    )
-
-  if ('cookie' in init)
-    instance.headers.set(
-      'Authorization',
-      cookies.read(Cookies.Token, init.cookie),
-    )
-
-  return fetch(instance)
-    .then(message.read)
-    .then(handleMessage.bind(
-      undefined,
-      feature,
-    ))
-}
-
-/**
- * @type {WeakMap<Function, Map<'onbefore' | 'onfulfilled' | 'onrejected', Set<Function>>>}
- */
-export let Extensions = new WeakMap()
-
-/**
- * @template {keyof typeof Features} Feature
- * @template {keyof typeof Methods} Method
- * @template {keyof typeof Networks} Network
- *
- * @param {Feature} feature
- * @param {Method} method
  * @param {Network} network
  */
-export let useFetch = (feature, method, network) => {
-  if (!(feature in Features))
-    throw TypeError(
-      `Feature '${feature}' must be listed in 'Features'.`,
-    )
-
-  if (!(method in Methods))
-    throw TypeError(
-      `Method '${method}' must be listed in 'Methods'.`,
-    )
-
-  if (!(network in Networks))
-    throw TypeError(
-      `Network '${network}' must be listed in 'Networks'.`,
-    )
-
-  if (!(feature in FeaturePathnames))
-    throw TypeError(
-      `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
-    )
-
-  if (!FeatureNetworkOrigins.has(feature))
-    throw TypeError(
-      `Feature '${feature}' must be listed in 'FeatureNetworkOrigins'.`,
-    )
-
-  if (!FeatureNetworkOrigins.get(feature).has(network))
-    throw TypeError(
-      `Feature's '${feature}' Network '${network}' must be listed in 'FeatureNetworkOrigins'.`,
-    )
-
-  if (!URL.canParse(FeatureNetworkOrigins.get(feature).get(network)))
-    throw TypeError(
-      `Value of 'FeatureNetworkOrigins' '${feature}' '${network}' cannot be parsed as URL.`,
-    )
-
+export var useFetch = (feature, network) =>
   /**
    * @template {keyof typeof Roles} Role
    *
-   * @param {import('@yurkimus/url').URLOptions} options
+   * @param {import('@yurkimus/url').URLOptions | undefined} options
    * @param {RequestInit} init
    *
    * @returns {Promise<FetchResults[Feature][Method][Role]>}
    */
-  let fetch = (options, init) => {
-    let onbefore = parameters => {
-      let predicates = Extensions
-        .get(fetch)
-        .get('onbefore')
+  function fetcher(options, init) {
+    if (!(feature in Features))
+      throw TypeError(
+        `Feature '${feature}' must be listed in 'Features'.`,
+      )
 
-      return (predicates.size > 0)
-        ? Array
-          .from(predicates)
-          .reduce(
-            (parameters, onbefore) => onbefore(parameters),
-            parameters,
-          )
-        : parameters
-    }
+    if (!(init.method in Methods))
+      throw TypeError(
+        `Method '${init.method}' must be listed in 'Methods'.`,
+      )
 
-    let onfulfilled = contract => {
-      let predicates = Extensions
-        .get(fetch)
-        .get('onfulfilled')
+    if (!(network in Networks))
+      throw TypeError(
+        `Network '${network}' must be listed in 'Networks'.`,
+      )
 
-      return (predicates.size > 0)
-        ? Array
-          .from(predicates)
-          .reduce(
-            (contract, onfulfilled) => onfulfilled(contract),
-            contract,
-          )
-        : contract
-    }
+    if (!(feature in FeaturePathnames))
+      throw TypeError(
+        `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
+      )
 
-    let onrejected = reason => {
-      let predicates = Extensions
-        .get(fetch)
-        .get('onrejected')
+    if (!FeatureNetworkUrls.has(feature))
+      throw TypeError(
+        `Feature '${feature}' must be listed in 'FeatureNetworkUrls'.`,
+      )
 
+    if (!FeatureNetworkUrls.get(feature).has(network))
+      throw TypeError(
+        `Feature's '${feature}' Network '${network}' must be listed in 'FeatureNetworkUrls'.`,
+      )
+
+    if (!FeatureNetworkUrls.get(feature).get(network))
+      throw TypeError(
+        `Feature's '${feature}' Network '${network}' in 'FeatureNetworkUrls' must have a value.`,
+      )
+
+    extensions.set(
+      fetcher,
+      new Map([
+        ['onbefore', new Set([])],
+        ['onfulfilled', new Set([])],
+        ['onrejected', new Set([])],
+      ]),
+    )
+
+    var url = FeatureNetworkUrls
+      .get(feature)
+      .get(network)
+      .call(undefined, options)
+
+    var request = new Request(url, init)
+
+    if ('cookie' in init)
+      request.headers.set(
+        'Authorization',
+        cookies.read(Cookies.Token, init.cookie),
+      )
+
+    if (!request.headers.has('Content-Type'))
+      request.headers.set(
+        'Content-Type',
+        'application/json',
+      )
+
+    /**
+     * @param {ExtensionHooks} name
+     * @param {any} value
+     */
+    var hook = (name, value) =>
       Array
-        .from(predicates)
-        .forEach(onrejected => onrejected(reason))
-
-      throw reason
-    }
+        .from(extensions.get(fetcher).get(name))
+        .reduce((x, f) => f(x), value)
 
     return new Promise((resolve, reject) => {
       try {
-        resolve(onbefore([options, init]))
+        resolve(hook('onbefore', request))
       } catch (reason) {
         reject(reason)
       }
     })
-      .then(([options, init]) =>
-        request(
-          feature,
-          method,
-          network,
-          options,
-          init,
-        )
-      )
-      .then(onfulfilled)
-      .catch(onrejected)
+      .then(fetch)
+      .then(message.read)
+      .then(handleMessage.bind(undefined, feature))
+      .then(hook.bind(undefined, 'onfulfilled'))
+      .catch(hook.bind(undefined, 'onrejected'))
   }
-
-  Extensions.set(
-    fetch,
-    new Map([
-      ['onbefore', new Set([])],
-      ['onfulfilled', new Set([])],
-      ['onrejected', new Set([])],
-    ]),
-  )
-
-  return fetch
-}
