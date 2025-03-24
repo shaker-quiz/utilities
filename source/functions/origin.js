@@ -11,10 +11,7 @@ import { Networks } from '../enumerations/networks.js'
 import { Services } from '../enumerations/services.js'
 
 /**
- * @param {Record<
- *  keyof typeof Services,
- *  Record<keyof typeof Networks, URL['origin']>
- * >} origins
+ * @param {Record<Service, Record<Network, URL['origin']>>} origins
  *
  * @returns {void}
  */

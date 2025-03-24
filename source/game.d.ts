@@ -11,8 +11,8 @@ type GameAdminResult = {
   event_status: GameRow['status']
   event_time: GameRow['event_time']
   // Location
-  location_id: LocationRow['id']
-  location_name: LocationRow['name']
+  location_id: VenueRow['id']
+  location_name: VenueRow['name']
   // Media
   media_id: ImageMediaRow['id']
   media_path: ImageMediaRow['path']
@@ -44,11 +44,11 @@ type GameDefaultResult = {
   // Image
   image_id: ImageMediaRow['id']
   // Location
-  location_house_number: LocationRow['house_number']
-  location_id: LocationRow['id']
-  location_info: LocationRow['location_info']
-  location_name: LocationRow['name']
-  location_street: LocationRow['street']
+  location_house_number: VenueRow['house_number']
+  location_id: VenueRow['id']
+  location_info: VenueRow['location_info']
+  location_name: VenueRow['name']
+  location_street: VenueRow['street']
   // Media
   media_id: MediaRow['id']
   media_path: MediaRow['path']
@@ -72,8 +72,8 @@ type GameOrginizerResult = {
   event_status: GameRow['status']
   event_time: GameRow['event_time']
   // Location
-  location_id: LocationRow['id']
-  location_name: LocationRow['name']
+  location_id: VenueRow['id']
+  location_name: VenueRow['name']
   // Media
   media_id: ImageMediaRow['id']
   media_path: ImageMediaRow['path']

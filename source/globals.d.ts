@@ -4,14 +4,18 @@
 
 type Nullable<Type> = Type | null
 
-type Optional<Type> = Type | null | undefined
-
 /**
  * Mixins
  */
 
 interface RequestInit {
-  /** A string to declaratively set the Authorization header. */
+  /**
+   * @description A method string defined by RFC7231 @see {@link https://datatracker.ietf.org/doc/html/rfc7231#section-4.3}
+   */
+  method: RequestMethod
+  /**
+   * @description A string to declaratively set the Authorization header.
+   */
   cookie?: string
 }
 
@@ -25,8 +29,17 @@ type UseState<Type> = [
 ]
 
 /**
- * Types
+ * Domain
  */
+
+type Feature = keyof typeof import('./enumerations/features.js').Features
+
+type Network = keyof typeof import('./enumerations/networks.js').Networks
+
+type Service = keyof typeof import('./enumerations/services.js').Services
+
+type RequestMethod =
+  keyof typeof import('./enumerations/request-methods.js').RequestMethods
 
 type FetchResults = {
   'Checkin': {
@@ -61,7 +74,7 @@ type FetchResults = {
     }
   }
 
-  'User': {
+  'Cities': {
     'DELETE': {
       'admin': unknown
       'default': unknown
@@ -69,9 +82,9 @@ type FetchResults = {
     }
 
     'GET': {
-      'admin': UserAdminResult
-      'default': UserDefaultResult
-      'organizer': UserOrganizerResult
+      'admin': CityAdminResult[]
+      'default': CityDefaultResult[]
+      'organizer': CityOrganizerResult[]
     }
 
     'OPTIONS': {
@@ -93,7 +106,7 @@ type FetchResults = {
     }
   }
 
-  'Users': {
+  'City': {
     'DELETE': {
       'admin': unknown
       'default': unknown
@@ -101,9 +114,9 @@ type FetchResults = {
     }
 
     'GET': {
-      'admin': UserAdminResult
-      'default': UserDefaultResult
-      'organizer': UserOrganizerResult
+      'admin': CityAdminResult
+      'default': CityDefaultResult
+      'organizer': CityOrganizerResult
     }
 
     'OPTIONS': {
@@ -125,7 +138,7 @@ type FetchResults = {
     }
   }
 
-  'Theme': {
+  'Countries': {
     'DELETE': {
       'admin': unknown
       'default': unknown
@@ -133,9 +146,9 @@ type FetchResults = {
     }
 
     'GET': {
-      'admin': ThemeAdminResult
-      'default': unknown
-      'organizer': ThemeOrganizerResult
+      'admin': CountryAdminResult[]
+      'default': CountryDefaultResult[]
+      'organizer': CountryOrganizerResult[]
     }
 
     'OPTIONS': {
@@ -157,7 +170,7 @@ type FetchResults = {
     }
   }
 
-  'Themes': {
+  'Country': {
     'DELETE': {
       'admin': unknown
       'default': unknown
@@ -165,9 +178,9 @@ type FetchResults = {
     }
 
     'GET': {
-      'admin': ThemeAdminResult[]
-      'default': unknown
-      'organizer': ThemeOrganizerResult[]
+      'admin': CountryAdminResult
+      'default': CountryDefaultResult
+      'organizer': CountryOrganizerResult
     }
 
     'OPTIONS': {
@@ -253,6 +266,102 @@ type FetchResults = {
     }
   }
 
+  'Home': {
+    'DELETE': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'GET': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'OPTIONS': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'PATCH': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'POST': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+  }
+
+  'Region': {
+    'DELETE': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'GET': {
+      'admin': RegionAdminResult
+      'default': RegionDefaultResult
+      'organizer': RegionOrganizerResult
+    }
+
+    'OPTIONS': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'PATCH': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'POST': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+  }
+
+  'Regions': {
+    'DELETE': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'GET': {
+      'admin': RegionAdminResult[]
+      'default': RegionDefaultResult[]
+      'organizer': RegionOrganizerResult[]
+    }
+
+    'OPTIONS': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'PATCH': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'POST': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+  }
+
   'Registration': {
     'DELETE': {
       'admin': unknown
@@ -293,9 +402,9 @@ type FetchResults = {
     }
 
     'GET': {
-      'admin': unknown
-      'default': unknown
-      'organizer': unknown
+      'admin': RegistrationAdminResult[]
+      'default': RegistrationDefaultResult[]
+      'organizer': RegistrationOrganizerResult[]
     }
 
     'OPTIONS': {
@@ -317,7 +426,7 @@ type FetchResults = {
     }
   }
 
-  'City': {
+  'Theme': {
     'DELETE': {
       'admin': unknown
       'default': unknown
@@ -325,9 +434,9 @@ type FetchResults = {
     }
 
     'GET': {
-      'admin': CityAdminResult
-      'default': CityDefaultResult
-      'organizer': CityOrganizerResult
+      'admin': ThemeAdminResult
+      'default': ThemeDefaultResult
+      'organizer': ThemeOrganizerResult
     }
 
     'OPTIONS': {
@@ -349,7 +458,7 @@ type FetchResults = {
     }
   }
 
-  'Cities': {
+  'Themes': {
     'DELETE': {
       'admin': unknown
       'default': unknown
@@ -357,9 +466,9 @@ type FetchResults = {
     }
 
     'GET': {
-      'admin': CityAdminResult[]
-      'default': CityDefaultResult[]
-      'organizer': CityOrganizerResult[]
+      'admin': ThemeAdminResult[]
+      'default': ThemeDefaultResult[]
+      'organizer': ThemeOrganizerResult[]
     }
 
     'OPTIONS': {
@@ -381,7 +490,7 @@ type FetchResults = {
     }
   }
 
-  'Location': {
+  'User': {
     'DELETE': {
       'admin': unknown
       'default': unknown
@@ -389,9 +498,9 @@ type FetchResults = {
     }
 
     'GET': {
-      'admin': LocationAdminResult
-      'default': LocationDefaultResult
-      'organizer': LocationOrganizerResult
+      'admin': UserAdminResult
+      'default': UserDefaultResult
+      'organizer': UserOrganizerResult
     }
 
     'OPTIONS': {
@@ -413,7 +522,7 @@ type FetchResults = {
     }
   }
 
-  'Locations': {
+  'Users': {
     'DELETE': {
       'admin': unknown
       'default': unknown
@@ -421,9 +530,73 @@ type FetchResults = {
     }
 
     'GET': {
-      'admin': LocationAdminResult
-      'default': LocationDefaultResult
-      'organizer': LocationOrganizerResult
+      'admin': UserAdminResult[]
+      'default': UserDefaultResult[]
+      'organizer': UserOrganizerResult[]
+    }
+
+    'OPTIONS': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'PATCH': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'POST': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+  }
+
+  'Venue': {
+    'DELETE': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'GET': {
+      'admin': VenueAdminResult
+      'default': VenueDefaultResult
+      'organizer': VenueOrganizerResult
+    }
+
+    'OPTIONS': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'PATCH': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'POST': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+  }
+
+  'Venues': {
+    'DELETE': {
+      'admin': unknown
+      'default': unknown
+      'organizer': unknown
+    }
+
+    'GET': {
+      'admin': VenueAdminResult[]
+      'default': VenueDefaultResult[]
+      'organizer': VenueOrganizerResult[]
     }
 
     'OPTIONS': {

@@ -1,29 +1,29 @@
-type LocationAdminResult = LocationRow
+type VenueAdminResult = VenueRow
 
-type LocationDefaultResult = {
-  address: LocationRow['address']
-  alias: LocationRow['alias']
-  country: LocationRow['country']
-  custom_html: LocationRow['custom_html']
-  custom_script: LocationRow['custom_script']
-  email: LocationRow['email']
-  id: LocationRow['id']
-  inst_link: LocationRow['inst_link']
-  max_members_count: LocationRow['max_members_count']
-  meta_description: LocationRow['meta_description']
-  meta_title: LocationRow['meta_title']
-  min_members_count: LocationRow['min_members_count']
-  name: LocationRow['name']
-  phone: LocationRow['phone']
-  tg_link: LocationRow['tg_link']
-  vk_group_id: LocationRow['vk_group_id']
-  vk_link: LocationRow['vk_link']
-  yandex_metrica: LocationRow['yandex_metrica']
+type VenueDefaultResult = {
+  address: VenueRow['address']
+  alias: VenueRow['alias']
+  country: VenueRow['country']
+  custom_html: VenueRow['custom_html']
+  custom_script: VenueRow['custom_script']
+  email: VenueRow['email']
+  id: VenueRow['id']
+  inst_link: VenueRow['inst_link']
+  max_members_count: VenueRow['max_members_count']
+  meta_description: VenueRow['meta_description']
+  meta_title: VenueRow['meta_title']
+  min_members_count: VenueRow['min_members_count']
+  name: VenueRow['name']
+  phone: VenueRow['phone']
+  tg_link: VenueRow['tg_link']
+  vk_group_id: VenueRow['vk_group_id']
+  vk_link: VenueRow['vk_link']
+  yandex_metrica: VenueRow['yandex_metrica']
 }
 
-type LocationOrganizerResult = LocationRow
+type VenueOrganizerResult = VenueRow
 
-type LocationRow = {
+type VenueRow = {
   /**
    * @description "uuid"
    */

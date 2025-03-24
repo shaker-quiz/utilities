@@ -11,8 +11,8 @@ import {
   Features,
 } from '../enumerations/features.js'
 import { Kinds } from '../enumerations/kinds.js'
-import { Methods } from '../enumerations/methods.js'
 import { Networks } from '../enumerations/networks.js'
+import { RequestMethods } from '../enumerations/request-methods.js'
 import { Roles } from '../enumerations/roles.js'
 
 /**
@@ -65,7 +65,7 @@ export var useFetch = (feature, network) =>
    * @param {import('@yurkimus/url').URLOptions | undefined} options
    * @param {RequestInit} init
    *
-   * @returns {Promise<FetchResults[Feature][Method][Role]>}
+   * @returns {Promise<FetchResults[Feature][RequestMethod][Role]>}
    */
   function fetcher(options, init) {
     if (!(feature in Features))
@@ -73,9 +73,9 @@ export var useFetch = (feature, network) =>
         `Feature '${feature}' must be listed in 'Features'.`,
       )
 
-    if (!(init.method in Methods))
+    if (!(init.method in RequestMethods))
       throw TypeError(
-        `Method '${init.method}' must be listed in 'Methods'.`,
+        `Method '${init.method}' must be listed in 'RequestMethods'.`,
       )
 
     if (!(network in Networks))
