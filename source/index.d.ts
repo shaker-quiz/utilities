@@ -7,6 +7,19 @@
 /// <reference path="./user.d.ts" />
 /// <reference path="./venue.d.ts" />
 
+export * from './enumerations/constants.d.ts'
+export * from './enumerations/cookies.d.ts'
+export * from './enumerations/features.d.ts'
+export * from './enumerations/game-statuses.d.ts'
+export * from './enumerations/kinds.d.ts'
+export * from './enumerations/networks.d.ts'
+export * from './enumerations/phases.d.ts'
+export * from './enumerations/regexps.d.ts'
+export * from './enumerations/request-methods.d.ts'
+export * from './enumerations/requirements.d.ts'
+export * from './enumerations/roles.d.ts'
+export * from './enumerations/services.d.ts'
+
 export * from './enumerations/constants.js'
 export * from './enumerations/cookies.js'
 export * from './enumerations/features.js'

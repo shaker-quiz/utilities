@@ -32,17 +32,19 @@ type UseState<Type> = [
  * Domain
  */
 
-type Feature = keyof typeof import('./enumerations/features.js').Features
+// type Feature = keyof typeof import('./enumerations/features.js').Features
 
-type Network = keyof typeof import('./enumerations/networks.js').Networks
+type Feature = keyof typeof import('./enumerations/features.d.ts').Features
 
-type Service = keyof typeof import('./enumerations/services.js').Services
+type Network = keyof typeof import('./enumerations/networks.d.ts').Networks
+
+type Service = keyof typeof import('./enumerations/services.d.ts').Services
 
 type Requirement =
-  keyof typeof import('./enumerations/requirements.js').Requirements
+  keyof typeof import('./enumerations/requirements.d.ts').Requirements
 
 type RequestMethod =
-  keyof typeof import('./enumerations/request-methods.js').RequestMethods
+  keyof typeof import('./enumerations/request-methods.d.ts').RequestMethods
 
 type FetchResults = {
   'Checkin': {
