@@ -1,3 +1,5 @@
+import { URLOptions } from "@yurkimus/url";
+
 export namespace Features {
     let Checkin: "Checkin";
     let Cities: "Cities";
@@ -375,6 +377,6 @@ export namespace FeatureMethodRequirements {
  */
 export const FeatureNetworkOrigins: Map<Feature, Map<Network, string>>;
 /**
- * @type {Map<Feature, Map<Network, Nullable<(options?: import('@yurkimus/url').URLOptions) => URL>>>}
+ * @type {Map<Feature, Map<Network, Nullable<(options?: URLOptions) => URL>>>}
  */
-export const FeatureNetworkUrls: Map<Feature, Map<Network, Nullable<(options?: any) => URL>>>;
+export const FeatureNetworkUrls: Map<Feature, Map<Network, Nullable<(options?: URLOptions) => URL>>>;
