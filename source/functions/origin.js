@@ -11,7 +11,7 @@ import { Networks } from '../enumerations/networks.js'
 import { Services } from '../enumerations/services.js'
 
 /**
- * @param {Record<Service, Record<Network, URL['origin']>>} origins
+ * @param {Partial<Record<Service, Partial<Record<Network, URL['origin']>>>>} origins
  *
  * @returns {void}
  */
