@@ -12,7 +12,7 @@ interface RequestInit {
   /**
    * @description A method string defined by RFC7231 @see {@link https://datatracker.ietf.org/doc/html/rfc7231#section-4.3}
    */
-  method: RequestMethod
+  method?: RequestMethod
   /**
    * @description A string to declaratively set the Authorization header.
    */
