@@ -38,6 +38,9 @@ type Network = keyof typeof import('./enumerations/networks.js').Networks
 
 type Service = keyof typeof import('./enumerations/services.js').Services
 
+type Requirement =
+  keyof typeof import('./enumerations/requirements.js').Requirements
+
 type RequestMethod =
   keyof typeof import('./enumerations/request-methods.js').RequestMethods
 

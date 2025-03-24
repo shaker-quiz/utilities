@@ -128,7 +128,7 @@ export var FeaturePathnames = /** @type {const} */ ({
 })
 
 /**
- * @satisfies {Record<Feature, RequestMethod>}
+ * @satisfies {Record<Feature, Record<RequestMethod, Set<Requirement>>}
  */
 export var FeatureMethodRequirements = {
   [Features.Checkin]: {
@@ -277,6 +277,9 @@ export var FeatureMethodRequirements = {
   },
 }
 
+/**
+ * @satisfies {Map<Feature, Map<Network, string>>}
+ */
 export var FeatureNetworkOrigins = new Map([
   [
     Features.Checkin,
@@ -408,6 +411,9 @@ export var FeatureNetworkOrigins = new Map([
   ],
 ])
 
+/**
+ * @type {Map<Feature, Map<Network, Nullable<(options?: import('@yurkimus/url').URLOptions) => URL>>>}
+ */
 export var FeatureNetworkUrls = new Map([
   [
     Features.Checkin,
@@ -468,9 +474,9 @@ export var FeatureNetworkUrls = new Map([
   [
     Features.Home,
     new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
+      [Networks.Docker, null],
+      [Networks.Local, null],
+      [Networks.Public, null],
     ]),
   ],
   [
