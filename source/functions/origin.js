@@ -33,7 +33,7 @@ export var setServiceNetworkOrigins = origins => {
           .get(service)
           .set(network, origin)
 
-        for (var feature in ServiceFeatures[service]) {
+        for (var feature of ServiceFeatures[service]) {
           if (!(feature in Features))
             throw TypeError(
               `Feature '${feature}' must be listed in 'Features'.`,
