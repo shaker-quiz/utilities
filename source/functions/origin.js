@@ -28,40 +28,40 @@ export var setServiceNetworkOrigins = origins => {
           `Network '${network}' must be listed in 'Networks'.`,
         )
 
-      for (var origin in origins[service][network]) {
-        ServiceNetworkOrigins
+      var origin = origins[service][network]
+
+      ServiceNetworkOrigins
+        .get(service)
+        .set(network, origin)
+
+      for (var feature of ServiceFeatures[service]) {
+        if (!(feature in Features))
+          throw TypeError(
+            `Feature '${feature}' must be listed in 'Features'.`,
+          )
+
+        if (!(feature in FeaturePathnames))
+          throw TypeError(
+            `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
+          )
+
+        if (!ServiceFeatureNetworkURLs.has(service))
+          throw TypeError(
+            `Service '${service}' must be listed in 'ServiceFeatureNetworkURLs'.`,
+          )
+
+        if (!ServiceFeatureNetworkURLs.get(service).has(feature))
+          throw TypeError(
+            `Feature '${feature}' must be listed in 'ServiceFeatureNetworkURLs[${service}]'.`,
+          )
+
+        ServiceFeatureNetworkURLs
           .get(service)
-          .set(network, origin)
-
-        for (var feature of ServiceFeatures[service]) {
-          if (!(feature in Features))
-            throw TypeError(
-              `Feature '${feature}' must be listed in 'Features'.`,
-            )
-
-          if (!(feature in FeaturePathnames))
-            throw TypeError(
-              `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
-            )
-
-          if (!ServiceFeatureNetworkURLs.has(service))
-            throw TypeError(
-              `Service '${service}' must be listed in 'ServiceFeatureNetworkURLs'.`,
-            )
-
-          if (!ServiceFeatureNetworkURLs.get(service).has(feature))
-            throw TypeError(
-              `Feature '${feature}' must be listed in 'ServiceFeatureNetworkURLs[${service}]'.`,
-            )
-
-          ServiceFeatureNetworkURLs
-            .get(service)
-            .get(feature)
-            .set(
-              network,
-              url.bind(undefined, origin, FeaturePathnames[feature]),
-            )
-        }
+          .get(feature)
+          .set(
+            network,
+            url.bind(undefined, origin, FeaturePathnames[feature]),
+          )
       }
     }
   }
