@@ -47,7 +47,10 @@ export var setServiceNetworkOrigins = origins => {
           ServiceFeatureNetworkURLs
             .get(service)
             .get(feature)
-            .set(network, url.bind(undefined, origin, pathname))
+            .set(
+              network,
+              url.bind(undefined, origin, FeaturePathnames[feature]),
+            )
         }
       }
     }
