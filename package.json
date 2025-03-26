@@ -1,14 +1,14 @@
 {
   "name": "@shakerquiz/utilities",
-  "version": "0.2.47",
+  "version": "0.2.48",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "exports": {
     ".": {
-      "default": "./source/index.js",
-      "import": "./source/index.js",
       "node": "./source/index.js",
+      "import": "./source/index.js",
       "require": "./source/index.js",
+      "default": "./source/index.js",
       "types": "./source/index.d.ts"
     }
   },
