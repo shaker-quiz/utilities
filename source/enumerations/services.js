@@ -1,5 +1,9 @@
 export var Services = /** @type {const} */ ({
   /**
+   * @description Frontend-service representing tools for managing and creating content.
+   */
+  Admin: 'Admin',
+  /**
    * @description Backend-service manipulating Theme, Game and Registration.
    */
   Games: 'Games',
@@ -12,15 +16,11 @@ export var Services = /** @type {const} */ ({
    */
   Locations: 'Locations',
   /**
-   * @description Frontend-service representing tools for managing and creating content.
+   * @description Frontend-service representing integration with vk.com.
    */
-  Studio: 'Studio',
+  MiniApp: 'MiniApp',
   /**
    * @description Backend-service manipulating Checkin and User.
    */
   Users: 'Users',
-  /**
-   * @description Frontend-service representing integration with vk.com.
-   */
-  MiniApp: 'MiniApp',
 })

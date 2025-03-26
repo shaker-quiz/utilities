@@ -1,11 +1,11 @@
 import { url } from '@yurkimus/url'
 
 import {
-  FeatureNetworkOrigins,
-  FeatureNetworkUrls,
   FeaturePathnames,
   Features,
+  ServiceFeatureNetworkURLs,
   ServiceFeatures,
+  ServiceNetworkOrigins,
 } from '../enumerations/features.js'
 import { Networks } from '../enumerations/networks.js'
 import { Services } from '../enumerations/services.js'
@@ -15,40 +15,40 @@ import { Services } from '../enumerations/services.js'
  *
  * @returns {void}
  */
-export var setFeatureNetworkOrigins = origins => {
-  for (let service in origins) {
+export var setServiceNetworkOrigins = origins => {
+  for (var service in origins) {
     if (!(service in Services))
       throw TypeError(
         `Service '${service}' must be listed in 'Services'.`,
       )
 
-    for (let feature of ServiceFeatures[service]) {
-      if (!(feature in Features))
+    for (var network in origins[service]) {
+      if (!(network in Networks))
         throw TypeError(
-          `Feature '${feature}' must be listed in 'Features'.`,
+          `Network '${network}' must be listed in 'Networks'.`,
         )
 
-      if (!(feature in FeaturePathnames))
-        throw TypeError(
-          `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
-        )
-
-      for (let network in origins[service]) {
-        if (!(network in Networks))
-          throw TypeError(
-            `Network '${network}' must be listed in 'Networks'.`,
-          )
-
-        var origin = origins[service][network]
-        var pathname = FeaturePathnames[feature]
-
-        FeatureNetworkOrigins
-          .get(feature)
+      for (var origin in origins[service][network]) {
+        ServiceNetworkOrigins
+          .get(service)
           .set(network, origin)
 
-        FeatureNetworkUrls
-          .get(feature)
-          .set(network, url.bind(undefined, origin, pathname))
+        for (var feature in ServiceFeatures[service]) {
+          if (!(feature in Features))
+            throw TypeError(
+              `Feature '${feature}' must be listed in 'Features'.`,
+            )
+
+          if (!(feature in FeaturePathnames))
+            throw TypeError(
+              `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
+            )
+
+          ServiceFeatureNetworkURLs
+            .get(service)
+            .get(feature)
+            .set(network, url.bind(undefined, origin, pathname))
+        }
       }
     }
   }

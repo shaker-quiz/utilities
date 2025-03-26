@@ -10,6 +10,7 @@ export var Features = /** @type {const} */ ({
   City: 'City',
   Countries: 'Countries',
   Country: 'Country',
+  Exception: 'Exception',
   Game: 'Game',
   Games: 'Games',
   Home: 'Home',
@@ -26,6 +27,28 @@ export var Features = /** @type {const} */ ({
 })
 
 export var ServiceFeatures = {
+  [Services.Admin]: [
+    Features.Checkin,
+    Features.Cities,
+    Features.City,
+    Features.Countries,
+    Features.Country,
+    Features.Exception,
+    Features.Game,
+    Features.Games,
+    Features.Home,
+    Features.Region,
+    Features.Regions,
+    Features.Registration,
+    Features.Registrations,
+    Features.Theme,
+    Features.Themes,
+    Features.User,
+    Features.Users,
+    Features.Venue,
+    Features.Venues,
+  ],
+
   [Services.Games]: [
     Features.Game,
     Features.Games,
@@ -35,12 +58,15 @@ export var ServiceFeatures = {
     Features.Theme,
     Features.Themes,
   ],
+
   [Services.Landing]: [
+    Features.Exception,
     Features.Game,
     Features.Games,
     Features.Home,
     Features.Registration,
   ],
+
   [Services.Locations]: [
     Features.Cities,
     Features.City,
@@ -52,36 +78,20 @@ export var ServiceFeatures = {
     Features.Venue,
     Features.Venues,
   ],
-  [Services.Studio]: [
-    Features.Checkin,
-    Features.Cities,
-    Features.City,
-    Features.Countries,
-    Features.Country,
+
+  [Services.MiniApp]: [
+    Features.Exception,
     Features.Game,
     Features.Games,
     Features.Home,
-    Features.Region,
-    Features.Regions,
     Features.Registration,
-    Features.Registrations,
-    Features.Theme,
-    Features.Themes,
-    Features.User,
-    Features.Users,
-    Features.Venue,
-    Features.Venues,
   ],
+
   [Services.Users]: [
     Features.Checkin,
+    Features.Home,
     Features.User,
     Features.Users,
-  ],
-  [Services.MiniApp]: [
-    Features.Game,
-    Features.Games,
-    Features.Home,
-    Features.Registration,
   ],
 }
 
@@ -91,6 +101,7 @@ export var FeatureKinds = {
   [Features.City]: Kinds.Item,
   [Features.Countries]: Kinds.List,
   [Features.Country]: Kinds.Item,
+  [Features.Exception]: Kinds.Item,
   [Features.Game]: Kinds.Item,
   [Features.Games]: Kinds.List,
   [Features.Home]: Kinds.Item,
@@ -112,6 +123,7 @@ export var FeaturePathnames = /** @type {const} */ ({
   [Features.City]: `/city/:city?`,
   [Features.Countries]: '/countries',
   [Features.Country]: '/country/:country?',
+  [Features.Exception]: '/exception',
   [Features.Game]: `/game/:game?`,
   [Features.Games]: '/games',
   [Features.Home]: '/',
@@ -170,6 +182,14 @@ export var FeatureMethodRequirements = {
     [RequestMethods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
     [RequestMethods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
     [RequestMethods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
+  },
+  [Features.Exception]: {
+    [RequestMethods.DELETE]: new Set([]),
+    [RequestMethods.GET]: new Set([]),
+    [RequestMethods.OPTIONS]: new Set([]),
+    [RequestMethods.PATCH]: new Set([]),
+    [RequestMethods.POST]: new Set([]),
+    [RequestMethods.PUT]: new Set([]),
   },
   [Features.Game]: {
     [RequestMethods.DELETE]: new Set([Requirements.Checkin]),
@@ -278,269 +298,405 @@ export var FeatureMethodRequirements = {
 }
 
 /**
- * @satisfies {Map<Feature, Map<Network, string>>}
+ * @satisfies {Map<Service, Map<Network, string>>}
  */
-export var FeatureNetworkOrigins = new Map([
+export var ServiceNetworkOrigins = new Map([
   [
-    Features.Checkin,
+    Services.Admin,
     new Map([
       [Networks.Docker, ''],
-      [Networks.Local, ''],
       [Networks.Public, ''],
     ]),
   ],
   [
-    Features.Cities,
+    Services.Games,
     new Map([
       [Networks.Docker, ''],
-      [Networks.Local, ''],
       [Networks.Public, ''],
     ]),
   ],
   [
-    Features.City,
+    Services.Landing,
     new Map([
       [Networks.Docker, ''],
-      [Networks.Local, ''],
       [Networks.Public, ''],
     ]),
   ],
   [
-    Features.Countries,
+    Services.Locations,
     new Map([
       [Networks.Docker, ''],
-      [Networks.Local, ''],
       [Networks.Public, ''],
     ]),
   ],
   [
-    Features.Country,
+    Services.MiniApp,
     new Map([
       [Networks.Docker, ''],
-      [Networks.Local, ''],
       [Networks.Public, ''],
     ]),
   ],
   [
-    Features.Game,
+    Services.Users,
     new Map([
       [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.Games,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.Home,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.Registration,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.Registrations,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.Theme,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.Themes,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.User,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.Users,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.Venue,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
-      [Networks.Public, ''],
-    ]),
-  ],
-  [
-    Features.Venues,
-    new Map([
-      [Networks.Docker, ''],
-      [Networks.Local, ''],
       [Networks.Public, ''],
     ]),
   ],
 ])
 
 /**
- * @type {Map<Feature, Map<Network, Nullable<(options?: import('@yurkimus/url').URLOptions) => URL>>>}
+ * @type {Map<Service, Map<Feature, Map<Network, Nullable<(options?: import('@yurkimus/url').URLOptions) => URL>>>>}
  */
-export var FeatureNetworkUrls = new Map([
+export var ServiceFeatureNetworkURLs = new Map([
   [
-    Features.Checkin,
+    Services.Admin,
     new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
+      [
+        Features.Checkin,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Cities,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.City,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Countries,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Country,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Game,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Games,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Home,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Region,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Regions,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Registration,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Registrations,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Theme,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Themes,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.User,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Users,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Venue,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Venues,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
     ]),
   ],
+
   [
-    Features.Cities,
+    Services.Games,
     new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
+      [
+        Features.Game,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Games,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Home,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Registration,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Registrations,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Theme,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Themes,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
     ]),
   ],
+
   [
-    Features.City,
+    Services.Landing,
     new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
+      [
+        Features.Game,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Games,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Home,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Registration,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
     ]),
   ],
+
   [
-    Features.Countries,
+    Services.Locations,
     new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
+      [
+        Features.Cities,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.City,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Countries,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Country,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Home,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Region,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Regions,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Venue,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Venues,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
     ]),
   ],
+
   [
-    Features.Country,
+    Services.MiniApp,
     new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
+      [
+        Features.Game,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Games,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Home,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Registration,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
     ]),
   ],
+
   [
-    Features.Game,
+    Services.Users,
     new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.Games,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.Home,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.Registration,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.Registrations,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.Theme,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.Themes,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.User,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.Users,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.Venue,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
-    ]),
-  ],
-  [
-    Features.Venues,
-    new Map([
-      [Networks.Docker, null],
-      [Networks.Local, null],
-      [Networks.Public, null],
+      [
+        Features.Checkin,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.User,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Users,
+        new Map([
+          [Networks.Docker, ''],
+          [Networks.Public, ''],
+        ]),
+      ],
     ]),
   ],
 ])

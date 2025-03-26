@@ -6,14 +6,15 @@ import { ResponseStatus } from '@yurkimus/response-status'
 import { Cookies } from '../enumerations/cookies.js'
 import {
   FeatureKinds,
-  FeatureNetworkUrls,
   FeaturePathnames,
   Features,
+  ServiceFeatureNetworkURLs,
+  ServiceFeatures,
 } from '../enumerations/features.js'
 import { Kinds } from '../enumerations/kinds.js'
 import { Networks } from '../enumerations/networks.js'
 import { RequestMethods } from '../enumerations/request-methods.js'
-import { Roles } from '../enumerations/roles.js'
+import { Services } from '../enumerations/services.js'
 
 /**
  * @typedef {'onbefore' | 'onfulfilled' | 'onrejected'} ExtensionHooks
@@ -52,25 +53,43 @@ var handleMessage = (feature, [response, body]) => {
 }
 
 /**
- * @template {keyof typeof Features} Feature
- * @template {keyof typeof Networks} Network
+ * @template {Service} S
+ * @template {typeof import('../enumerations/features.js').ServiceFeatures[S][number]} F
+ * @template {Network} N
  *
- * @param {Feature} feature
- * @param {Network} network
+ * @param {S} service
+ * @param {F} feature
+ * @param {N} network
  */
-export var useFetch = (feature, network) =>
+export var useFetch = (service, feature, network) =>
   /**
-   * @template {keyof typeof Roles} Role
+   * @template {RequestMethod} [M='GET']
+   * @template {Role} [R='default']
    *
    * @param {import('@yurkimus/url').URLOptions | undefined} options
    * @param {RequestInit} init
    *
-   * @returns {Promise<FetchResults[Feature][RequestMethod][Role]>}
+   * @returns {Promise<FetchResults[S][F][M][R]>}
    */
   function fetcher(options, init) {
+    if (!(service in Services))
+      throw TypeError(
+        `Feature '${service}' must be listed in 'Features'.`,
+      )
+
     if (!(feature in Features))
       throw TypeError(
         `Feature '${feature}' must be listed in 'Features'.`,
+      )
+
+    if (!(feature in FeaturePathnames))
+      throw TypeError(
+        `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
+      )
+
+    if (!(feature in ServiceFeatures[service]))
+      throw TypeError(
+        `Feature '${feature}' must be listed in 'ServiceFeatures'.`,
       )
 
     if (!(init.method in RequestMethods))
@@ -83,24 +102,24 @@ export var useFetch = (feature, network) =>
         `Network '${network}' must be listed in 'Networks'.`,
       )
 
-    if (!(feature in FeaturePathnames))
+    if (!ServiceFeatureNetworkURLs.has(service))
       throw TypeError(
-        `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
+        `Service '${service}' must be listed in 'ServiceFeatureNetworkURLs'.`,
       )
 
-    if (!FeatureNetworkUrls.has(feature))
+    if (!ServiceFeatureNetworkURLs.get(service).has(feature))
       throw TypeError(
-        `Feature '${feature}' must be listed in 'FeatureNetworkUrls'.`,
+        `Feature '${feature}' must be listed in 'ServiceFeatureNetworkURLs[service]'.`,
       )
 
-    if (!FeatureNetworkUrls.get(feature).has(network))
+    if (!ServiceFeatureNetworkURLs.get(service).get(feature).has(network))
       throw TypeError(
-        `Feature's '${feature}' Network '${network}' must be listed in 'FeatureNetworkUrls'.`,
+        `Network '${network}' must be listed in 'ServiceFeatureNetworkURLs[service][feature]'.`,
       )
 
-    if (!FeatureNetworkUrls.get(feature).get(network))
+    if (!ServiceFeatureNetworkURLs.get(service).get(feature).get(network))
       throw TypeError(
-        `Feature's '${feature}' Network '${network}' in 'FeatureNetworkUrls' must have a value.`,
+        `Network '${network}' of 'ServiceFeatureNetworkURLs[service][feature]' must have a value.`,
       )
 
     extensions.set(
@@ -112,7 +131,8 @@ export var useFetch = (feature, network) =>
       ]),
     )
 
-    var url = FeatureNetworkUrls
+    var url = ServiceFeatureNetworkURLs
+      .get(service)
       .get(feature)
       .get(network)
       .call(undefined, options)
