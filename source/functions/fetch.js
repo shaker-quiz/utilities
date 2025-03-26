@@ -109,17 +109,17 @@ export var useFetch = (service, feature, network) =>
 
     if (!ServiceFeatureNetworkURLs.get(service).has(feature))
       throw TypeError(
-        `Feature '${feature}' must be listed in 'ServiceFeatureNetworkURLs[service]'.`,
+        `Feature '${feature}' must be listed in 'ServiceFeatureNetworkURLs[${service}]'.`,
       )
 
     if (!ServiceFeatureNetworkURLs.get(service).get(feature).has(network))
       throw TypeError(
-        `Network '${network}' must be listed in 'ServiceFeatureNetworkURLs[service][feature]'.`,
+        `Network '${network}' must be listed in 'ServiceFeatureNetworkURLs[${service}][${feature}]'.`,
       )
 
     if (!ServiceFeatureNetworkURLs.get(service).get(feature).get(network))
       throw TypeError(
-        `Network '${network}' of 'ServiceFeatureNetworkURLs[service][feature]' must have a value.`,
+        `Network '${network}' of 'ServiceFeatureNetworkURLs[${service}][${feature}]' must have a value.`,
       )
 
     extensions.set(

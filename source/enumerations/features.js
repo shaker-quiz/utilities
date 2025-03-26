@@ -388,6 +388,13 @@ export var ServiceFeatureNetworkURLs = new Map([
         ]),
       ],
       [
+        Features.Exception,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
         Features.Game,
         new Map([
           [Networks.Docker, null],
@@ -540,6 +547,13 @@ export var ServiceFeatureNetworkURLs = new Map([
     Services.Landing,
     new Map([
       [
+        Features.Exception,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
         Features.Game,
         new Map([
           [Networks.Docker, ''],
@@ -643,6 +657,13 @@ export var ServiceFeatureNetworkURLs = new Map([
     Services.MiniApp,
     new Map([
       [
+        Features.Exception,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
         Features.Game,
         new Map([
           [Networks.Docker, ''],
@@ -681,6 +702,13 @@ export var ServiceFeatureNetworkURLs = new Map([
         new Map([
           [Networks.Docker, ''],
           [Networks.Public, ''],
+        ]),
+      ],
+      [
+        Features.Home,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [

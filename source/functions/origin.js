@@ -44,6 +44,16 @@ export var setServiceNetworkOrigins = origins => {
               `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
             )
 
+          if (!ServiceFeatureNetworkURLs.has(service))
+            throw TypeError(
+              `Service '${service}' must be listed in 'ServiceFeatureNetworkURLs'.`,
+            )
+
+          if (!ServiceFeatureNetworkURLs.get(service).has(feature))
+            throw TypeError(
+              `Feature '${feature}' must be listed in 'ServiceFeatureNetworkURLs[${service}]'.`,
+            )
+
           ServiceFeatureNetworkURLs
             .get(service)
             .get(feature)
