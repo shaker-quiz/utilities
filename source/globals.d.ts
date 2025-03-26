@@ -40,6 +40,11 @@ type Network = keyof typeof import('./enumerations/networks.d.ts').Networks
 
 type Service = keyof typeof import('./enumerations/services.d.ts').Services
 
+type Phase = keyof typeof import('./enumerations/phases.d.ts').Phases
+
+type GameStatus =
+  keyof typeof import('./enumerations/game-statuses.d.ts').GameStatuses
+
 type Requirement =
   keyof typeof import('./enumerations/requirements.d.ts').Requirements
 
