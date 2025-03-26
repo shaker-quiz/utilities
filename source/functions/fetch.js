@@ -74,52 +74,52 @@ export var useFetch = (service, feature, network) =>
   function fetcher(options, init) {
     if (!(service in Services))
       throw TypeError(
-        `Feature '${service}' must be listed in 'Features'.`,
+        `Service '${service}' is not listed in 'Services'.`,
       )
 
     if (!(feature in Features))
       throw TypeError(
-        `Feature '${feature}' must be listed in 'Features'.`,
+        `Feature '${feature}' is not listed in 'Features'.`,
       )
 
     if (!(feature in FeaturePathnames))
       throw TypeError(
-        `Feature '${feature}' must be listed in 'FeaturePathnames'.`,
+        `Feature '${feature}' is not listed in 'FeaturePathnames'.`,
       )
 
-    if (!(feature in ServiceFeatures[service]))
+    if (!ServiceFeatures[service].includes(feature))
       throw TypeError(
-        `Feature '${feature}' must be listed in 'ServiceFeatures'.`,
+        `Feature '${feature}' is not listed in 'ServiceFeatures[${service}]'.`,
       )
 
     if (!(init.method in RequestMethods))
       throw TypeError(
-        `Method '${init.method}' must be listed in 'RequestMethods'.`,
+        `Method '${init.method}' is not listed in 'RequestMethods'.`,
       )
 
     if (!(network in Networks))
       throw TypeError(
-        `Network '${network}' must be listed in 'Networks'.`,
+        `Network '${network}' is not listed in 'Networks'.`,
       )
 
     if (!ServiceFeatureNetworkURLs.has(service))
       throw TypeError(
-        `Service '${service}' must be listed in 'ServiceFeatureNetworkURLs'.`,
+        `Service '${service}' is not listed in 'ServiceFeatureNetworkURLs'.`,
       )
 
     if (!ServiceFeatureNetworkURLs.get(service).has(feature))
       throw TypeError(
-        `Feature '${feature}' must be listed in 'ServiceFeatureNetworkURLs[${service}]'.`,
+        `Feature '${feature}' is not listed in 'ServiceFeatureNetworkURLs[${service}]'.`,
       )
 
     if (!ServiceFeatureNetworkURLs.get(service).get(feature).has(network))
       throw TypeError(
-        `Network '${network}' must be listed in 'ServiceFeatureNetworkURLs[${service}][${feature}]'.`,
+        `Network '${network}' is not listed in 'ServiceFeatureNetworkURLs[${service}][${feature}]'.`,
       )
 
     if (!ServiceFeatureNetworkURLs.get(service).get(feature).get(network))
       throw TypeError(
-        `Network '${network}' of 'ServiceFeatureNetworkURLs[${service}][${feature}]' must have a value.`,
+        `Network '${network}' of 'ServiceFeatureNetworkURLs[${service}][${feature}]' has no value.`,
       )
 
     extensions.set(
