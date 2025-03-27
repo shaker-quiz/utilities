@@ -57,7 +57,7 @@ var handleMessage = (feature, [response, body]) => {
  * @param {ExtensionHooks} name
  * @param {any} value
  */
-var extensionHook = (fetcher, name, value) =>
+var extension = (fetcher, name, value) =>
   Array
     .from(extensions.get(fetcher).get(name))
     .reduce((x, f) => f(x), value)
@@ -154,11 +154,7 @@ export var useFetch = (service, feature, network) => {
 
     return new Promise((resolve, reject) => {
       try {
-        resolve(extensionHook(
-          fetcher,
-          'onbefore',
-          request,
-        ))
+        resolve(extension(fetcher, 'onbefore', request))
       } catch (reason) {
         reject(reason)
       }
@@ -166,16 +162,10 @@ export var useFetch = (service, feature, network) => {
       .then(fetch)
       .then(message.read)
       .then(handleMessage.bind(undefined, feature))
-      .then(extensionHook.bind(
-        undefined,
-        fetcher,
-        'onfulfilled',
-      ))
-      .catch(extensionHook.bind(
-        undefined,
-        fetcher,
-        'onrejected',
-      ))
+      .then(extension.bind(undefined, fetcher, 'onfulfilled'))
+      .catch(reason => {
+        throw extension(fetcher, 'onrejected', reason)
+      })
   }
 
   extensions.set(
