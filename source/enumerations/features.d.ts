@@ -1,5 +1,3 @@
-import { URLOptions } from "@yurkimus/url";
-
 export namespace Features {
     let Checkin: "Checkin";
     let Cities: "Cities";
@@ -23,6 +21,7 @@ export namespace Features {
 }
 export namespace ServiceFeatures {
     export let Admin: ("Checkin" | "Games" | "Users" | "Cities" | "City" | "Countries" | "Country" | "Exception" | "Game" | "Home" | "Region" | "Regions" | "Registration" | "Registrations" | "Theme" | "Themes" | "User" | "Venue" | "Venues")[];
+    export let Backend: ("Checkin" | "Games" | "Users" | "Cities" | "City" | "Game" | "Home" | "Registration" | "Registrations" | "Theme" | "Themes" | "User" | "Venue" | "Venues")[];
     let Games_1: ("Games" | "Game" | "Home" | "Registration" | "Registrations" | "Theme" | "Themes")[];
     export { Games_1 as Games };
     export let Landing: ("Games" | "Exception" | "Game" | "Home" | "Registration")[];
@@ -399,4 +398,4 @@ export const ServiceNetworkOrigins: Map<Service, Map<Network, string>>;
 /**
  * @type {Map<Service, Map<Feature, Map<Network, Nullable<(options?: import('@yurkimus/url').URLOptions) => URL>>>>}
  */
-export const ServiceFeatureNetworkURLs: Map<Service, Map<Feature, Map<Network, Nullable<(options?: URLOptions) => URL>>>>;
+export const ServiceFeatureNetworkURLs: Map<Service, Map<Feature, Map<Network, Nullable<(options?: any) => URL>>>>;

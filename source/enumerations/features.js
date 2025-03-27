@@ -49,6 +49,23 @@ export var ServiceFeatures = {
     Features.Venues,
   ],
 
+  [Services.Backend]: [
+    Features.Checkin,
+    Features.Cities,
+    Features.City,
+    Features.Game,
+    Features.Games,
+    Features.Home,
+    Features.Registration,
+    Features.Registrations,
+    Features.Theme,
+    Features.Themes,
+    Features.User,
+    Features.Users,
+    Features.Venue,
+    Features.Venues,
+  ],
+
   [Services.Games]: [
     Features.Game,
     Features.Games,
@@ -309,6 +326,13 @@ export var ServiceNetworkOrigins = new Map([
     ]),
   ],
   [
+    Services.Backend,
+    new Map([
+      [Networks.Docker, ''],
+      [Networks.Public, ''],
+    ]),
+  ],
+  [
     Services.Games,
     new Map([
       [Networks.Docker, ''],
@@ -489,6 +513,110 @@ export var ServiceFeatureNetworkURLs = new Map([
   ],
 
   [
+    Services.Admin,
+    new Map([
+      [
+        Features.Checkin,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Cities,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.City,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Game,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Games,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Home,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Registration,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Registrations,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Theme,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Themes,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.User,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Users,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Venue,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+      [
+        Features.Venues,
+        new Map([
+          [Networks.Docker, null],
+          [Networks.Public, null],
+        ]),
+      ],
+    ]),
+  ],
+
+  [
     Services.Games,
     new Map([
       [
@@ -556,29 +684,29 @@ export var ServiceFeatureNetworkURLs = new Map([
       [
         Features.Game,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Games,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Home,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Registration,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
     ]),
@@ -590,64 +718,64 @@ export var ServiceFeatureNetworkURLs = new Map([
       [
         Features.Cities,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.City,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Countries,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Country,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Home,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Region,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Regions,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Venue,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Venues,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
     ]),
@@ -666,29 +794,29 @@ export var ServiceFeatureNetworkURLs = new Map([
       [
         Features.Game,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Games,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Home,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Registration,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
     ]),
@@ -700,8 +828,8 @@ export var ServiceFeatureNetworkURLs = new Map([
       [
         Features.Checkin,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
@@ -714,15 +842,15 @@ export var ServiceFeatureNetworkURLs = new Map([
       [
         Features.User,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
       [
         Features.Users,
         new Map([
-          [Networks.Docker, ''],
-          [Networks.Public, ''],
+          [Networks.Docker, null],
+          [Networks.Public, null],
         ]),
       ],
     ]),

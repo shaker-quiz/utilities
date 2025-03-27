@@ -53,6 +53,16 @@ var handleMessage = (feature, [response, body]) => {
 }
 
 /**
+ * @param {Function} fetcher
+ * @param {ExtensionHooks} name
+ * @param {any} value
+ */
+var extensionHook = (fetcher, name, value) =>
+  Array
+    .from(extensions.get(fetcher).get(name))
+    .reduce((x, f) => f(x), value)
+
+/**
  * @template {Service} S
  * @template {typeof import('../enumerations/features.js').ServiceFeatures[S][number]} F
  * @template {Network} N
@@ -61,7 +71,7 @@ var handleMessage = (feature, [response, body]) => {
  * @param {F} feature
  * @param {N} network
  */
-export var useFetch = (service, feature, network) =>
+export var useFetch = (service, feature, network) => {
   /**
    * @template {RequestMethod} [M='GET']
    * @template {Role} [R='default']
@@ -71,7 +81,7 @@ export var useFetch = (service, feature, network) =>
    *
    * @returns {Promise<FetchResults[S][F][M][R]>}
    */
-  function fetcher(options, init) {
+  var fetcher = (options, init) => {
     if (!(service in Services))
       throw TypeError(
         `Service '${service}' is not listed in 'Services'.`,
@@ -122,15 +132,6 @@ export var useFetch = (service, feature, network) =>
         `Network '${network}' of 'ServiceFeatureNetworkURLs[${service}][${feature}]' has no value.`,
       )
 
-    extensions.set(
-      fetcher,
-      new Map([
-        ['onbefore', new Set([])],
-        ['onfulfilled', new Set([])],
-        ['onrejected', new Set([])],
-      ]),
-    )
-
     var url = ServiceFeatureNetworkURLs
       .get(service)
       .get(feature)
@@ -151,18 +152,13 @@ export var useFetch = (service, feature, network) =>
         'application/json',
       )
 
-    /**
-     * @param {ExtensionHooks} name
-     * @param {any} value
-     */
-    var hook = (name, value) =>
-      Array
-        .from(extensions.get(fetcher).get(name))
-        .reduce((x, f) => f(x), value)
-
     return new Promise((resolve, reject) => {
       try {
-        resolve(hook('onbefore', request))
+        resolve(extensionHook(
+          fetcher,
+          'onbefore',
+          request,
+        ))
       } catch (reason) {
         reject(reason)
       }
@@ -170,6 +166,26 @@ export var useFetch = (service, feature, network) =>
       .then(fetch)
       .then(message.read)
       .then(handleMessage.bind(undefined, feature))
-      .then(hook.bind(undefined, 'onfulfilled'))
-      .catch(hook.bind(undefined, 'onrejected'))
+      .then(extensionHook.bind(
+        undefined,
+        fetcher,
+        'onfulfilled',
+      ))
+      .catch(extensionHook.bind(
+        undefined,
+        fetcher,
+        'onrejected',
+      ))
   }
+
+  extensions.set(
+    fetcher,
+    new Map([
+      ['onbefore', new Set([])],
+      ['onfulfilled', new Set([])],
+      ['onrejected', new Set([])],
+    ]),
+  )
+
+  return fetcher
+}

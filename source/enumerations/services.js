@@ -4,6 +4,10 @@ export var Services = /** @type {const} */ ({
    */
   Admin: 'Admin',
   /**
+   * @description Legacy backend-service in Python.
+   */
+  Backend: 'Backend',
+  /**
    * @description Backend-service manipulating Theme, Game and Registration.
    */
   Games: 'Games',

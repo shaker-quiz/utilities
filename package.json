@@ -1,8 +1,11 @@
 {
   "name": "@shakerquiz/utilities",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
+  "scripts": {
+    "type": "rm -rf ./source/enumerations/*.d.ts && rm -rf ./source/functions/*.d.ts && tsc --allowjs --emitdeclarationonly --declaration ./source/*.js"
+  },
   "exports": {
     ".": {
       "node": "./source/index.js",
@@ -19,5 +22,8 @@
     "@yurkimus/response-status": "0.1.1",
     "@yurkimus/url": "0.2.8",
     "urlpattern-polyfill": "10.0.0"
+  },
+  "devDependencies": {
+    "typescript": "5.8.2"
   }
 }
