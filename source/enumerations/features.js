@@ -513,7 +513,7 @@ export var ServiceFeatureNetworkURLs = new Map([
   ],
 
   [
-    Services.Admin,
+    Services.Backend,
     new Map([
       [
         Features.Checkin,
