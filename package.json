@@ -1,12 +1,8 @@
 {
   "name": "@shakerquiz/utilities",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
-  "scripts": {
-    "clean": "rm -rf ./source/enumerations/*.d.ts && rm -rf ./source/functions/*.d.ts",
-    "type": "tsc --allowjs --emitdeclarationonly --declaration --module nodenext --project jsconfig.json ./source/*.js"
-  },
   "exports": {
     ".": {
       "node": "./source/index.js",
