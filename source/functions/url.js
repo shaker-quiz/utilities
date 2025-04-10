@@ -9,8 +9,8 @@ import { getFeatureOrigin } from './origin.js'
 import { getFeaturePathname } from './pathname.js'
 
 /**
- * @param {Domain | Procedure} feature
- * @param {Backend | Frontend} service
+ * @param {Feature} feature
+ * @param {Service} service
  * @param {Network} [network]
  * @param {Kind} [kind]
  */

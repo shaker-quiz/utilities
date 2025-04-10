@@ -79,9 +79,7 @@ export var useFeatureFetch = (
     )
 
   /**
-   * x
-   *
-   * @param {import('@yurkimus/url').URLOptions | undefined} input
+   * @param {import('@yurkimus/url').URLOptions} input
    * @param {RequestInit} init
    *
    * @returns {Promise<any>}
