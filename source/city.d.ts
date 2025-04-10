@@ -31,35 +31,35 @@ type CityRow = {
   /**
    * @description "integer"
    */
-  timezone: Nullable<number>
+  timezone: number | null
   /**
    * @description "boolean"
    */
-  is_default: Nullable<boolean>
+  is_default: boolean | null
   /**
    * @description "boolean"
    */
-  is_franchise: Nullable<boolean>
+  is_franchise: boolean | null
   /**
    * @description "integer"
    */
-  min_members_count: Nullable<number>
+  min_members_count: number | null
   /**
    * @description "integer"
    */
-  max_members_count: Nullable<number>
+  max_members_count: number | null
   /**
    * @description "boolean"
    */
-  chatapp_legacy: Nullable<boolean>
+  chatapp_legacy: boolean | null
   /**
    * @description "timestamp with time zone"
    */
-  time_updated: Nullable<string>
+  time_updated: string | null
   /**
    * @description "double precision"
    */
-  price: Nullable<number>
+  price: number | null
   /**
    * @description "uuid"
    */
@@ -67,129 +67,129 @@ type CityRow = {
   /**
    * @description "character varying"
    */
-  inst_login: Nullable<string>
+  inst_login: string | null
   /**
    * @description "character varying"
    */
-  inst_password: Nullable<string>
+  inst_password: string | null
   /**
    * @description "character varying"
    */
-  inst_comment: Nullable<string>
+  inst_comment: string | null
   /**
    * @description "character varying"
    */
-  custom_script: Nullable<string>
+  custom_script: string | null
   /**
    * @description "character varying"
    */
-  custom_html: Nullable<string>
+  custom_html: string | null
   /**
    * @description "character varying"
    */
-  alias: Nullable<string>
+  alias: string | null
   /**
    * @description "character varying"
    */
-  vk_group_id: Nullable<string>
+  vk_group_id: string | null
   /**
    * @description "character varying"
    */
-  chatapp_line: Nullable<string>
+  chatapp_line: string | null
   /**
    * @description "character varying"
    */
-  chatapp_user: Nullable<string>
+  chatapp_user: string | null
   /**
    * @description "character varying"
    */
-  chatapp_tag: Nullable<string>
+  chatapp_tag: string | null
   /**
    * @description "character varying"
    */
-  chatapp_category: Nullable<string>
+  chatapp_category: string | null
   /**
    * @description "character varying"
    */
-  telegram_chat_id: Nullable<string>
+  telegram_chat_id: string | null
   /**
    * @description "character varying"
    */
-  title: Nullable<string>
+  title: string | null
   /**
    * @description "character varying"
    */
-  description: Nullable<string>
+  description: string | null
   /**
    * @description "character varying"
    */
-  region: Nullable<string>
+  region: string | null
   /**
    * @description "character varying"
    */
-  country: Nullable<string>
+  country: string | null
   /**
    * @description "character varying"
    */
-  yandex_metrica: Nullable<string>
+  yandex_metrica: string | null
   /**
    * @description "character varying"
    */
-  meta_title: Nullable<string>
+  meta_title: string | null
   /**
    * @description "character varying"
    */
-  meta_description: Nullable<string>
+  meta_description: string | null
   /**
    * @description "character varying"
    */
-  phone: Nullable<string>
+  phone: string | null
   /**
    * @description "character varying"
    */
-  email: Nullable<string>
+  email: string | null
   /**
    * @description "character varying"
    */
-  name: Nullable<string>
+  name: string | null
   /**
    * @description "character varying"
    */
-  address: Nullable<string>
+  address: string | null
   /**
    * @description "character varying"
    */
-  currency: Nullable<string>
+  currency: string | null
   /**
    * @description "character varying"
    */
-  game_time: Nullable<string>
+  game_time: string | null
   /**
    * @description "character varying"
    */
-  vk_link: Nullable<string>
+  vk_link: string | null
   /**
    * @description "character varying"
    */
-  vk_comment: Nullable<string>
+  vk_comment: string | null
   /**
    * @description "character varying"
    */
-  tg_link: Nullable<string>
+  tg_link: string | null
   /**
    * @description "character varying"
    */
-  tg_login: Nullable<string>
+  tg_login: string | null
   /**
    * @description "character varying"
    */
-  tg_password: Nullable<string>
+  tg_password: string | null
   /**
    * @description "character varying"
    */
-  tg_comment: Nullable<string>
+  tg_comment: string | null
   /**
    * @description "character varying"
    */
-  inst_link: Nullable<string>
+  inst_link: string | null
 }

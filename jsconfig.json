@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-
     "module": "NodeNext",
     "moduleResolution": "nodenext",
-
-    "strictBindCallApply": true,
-    "allowArbitraryExtensions": true,
-
+    "allowJs": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
     "paths": {
-      "source/": ["./source/*"]
+      "source/": [
+        "./source/*"
+      ]
     }
-  }
+  },
+  "include": [
+    "source/**/*"
+  ]
 }

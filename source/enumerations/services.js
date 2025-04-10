@@ -1,30 +1,21 @@
-export var Services = /** @type {const} */ ({
-  /**
-   * @description Frontend-service representing tools for managing and creating content.
-   */
-  Admin: 'Admin',
-  /**
-   * @description Legacy backend-service in Python.
-   */
-  Backend: 'Backend',
-  /**
-   * @description Backend-service manipulating Theme, Game and Registration.
-   */
-  Games: 'Games',
-  /**
-   * @description Frontend-service representing public landing.
-   */
-  Landing: 'Landing',
-  /**
-   * @description Backend-service manipulating Country, Region, City and Venue.
-   */
-  Locations: 'Locations',
-  /**
-   * @description Frontend-service representing integration with vk.com.
-   */
-  MiniApp: 'MiniApp',
-  /**
-   * @description Backend-service manipulating Checkin and User.
-   */
-  Users: 'Users',
-})
+import { BackendFeatures, BackendNetworkOrigins, Backends } from './backends.js'
+import {
+  FrontendFeatures,
+  FrontendNetworkOrigins,
+  Frontends,
+} from './frontends.js'
+
+export var Services = {
+  ...Backends,
+  ...Frontends,
+}
+
+export var ServiceFeatures = {
+  ...BackendFeatures,
+  ...FrontendFeatures,
+}
+
+export var ServiceNetworkOrigins = {
+  ...BackendNetworkOrigins,
+  ...FrontendNetworkOrigins,
+}

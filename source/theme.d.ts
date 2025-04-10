@@ -42,13 +42,13 @@ type ThemeRow = {
   /**
    * @description "character varying"
    */
-  short_description: Nullable<string>
+  short_description: string | null
   /**
    * @description "character varying"
    */
-  description: Nullable<string>
+  description: string | null
   /**
    * @description "character varying"
    */
-  name: Nullable<string>
+  name: string | null
 }

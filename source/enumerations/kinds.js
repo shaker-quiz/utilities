@@ -1,4 +1,4 @@
 export var Kinds = /** @type {const} */ ({
-  Item: 'Item',
-  List: 'List',
+  Unit: 'Unit',
+  Set: 'Set',
 })

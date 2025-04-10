@@ -4,7 +4,8 @@
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "type": "rm -rf ./source/enumerations/*.d.ts && rm -rf ./source/functions/*.d.ts && tsc --allowjs --emitdeclarationonly --declaration ./source/*.js"
+    "clean": "rm -rf ./source/enumerations/*.d.ts && rm -rf ./source/functions/*.d.ts",
+    "type": "tsc --allowjs --emitdeclarationonly --declaration --module nodenext --project jsconfig.json ./source/*.js"
   },
   "exports": {
     ".": {

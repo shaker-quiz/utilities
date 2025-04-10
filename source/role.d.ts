@@ -10,13 +10,13 @@ type RoleRow = {
   /**
    * @description "timestamp with time zone"
    */
-  time_updated: Nullable<string>
+  time_updated: string | null
   /**
    * @description "character varying"
    */
-  name: 'admin' | 'manager' | 'default'
+  name: 'admin' | 'manager'
   /**
    * @description "character varying"
    */
-  description: Nullable<string>
+  description: string | null
 }

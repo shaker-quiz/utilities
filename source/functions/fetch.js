@@ -2,45 +2,29 @@ import * as cookies from '@yurkimus/cookies'
 import { MessageError } from '@yurkimus/errors'
 import * as message from '@yurkimus/message'
 import { ResponseStatus } from '@yurkimus/response-status'
+import { url } from '@yurkimus/url'
 
 import { Cookies } from '../enumerations/cookies.js'
-import {
-  FeatureKinds,
-  FeaturePathnames,
-  Features,
-  ServiceFeatureNetworkURLs,
-  ServiceFeatures,
-} from '../enumerations/features.js'
+import { Features, FeatureServiceDefaults } from '../enumerations/features.js'
 import { Kinds } from '../enumerations/kinds.js'
+import { Methods } from '../enumerations/methods.js'
 import { Networks } from '../enumerations/networks.js'
-import { RequestMethods } from '../enumerations/request-methods.js'
-import { Services } from '../enumerations/services.js'
+import { ServiceFeatures, Services } from '../enumerations/services.js'
+import { getFeatureOrigin } from './origin.js'
+import { getFeaturePathname } from './pathname.js'
 
-/**
- * @typedef {'onbefore' | 'onfulfilled' | 'onrejected'} ExtensionHooks
- */
-
-/**
- * @typedef {WeakMap<Function, Map<ExtensionHooks, Set<Function>>>} Extensions
- */
-
-/**
- * @type {Extensions}
- */
-export var extensions = new WeakMap()
-
-var handleMessage = (feature, [response, body]) => {
+var fulfillment = (kind, [response, body]) => {
   switch (response.status) {
     case 200:
     case 201:
       return body
 
     case 204:
-      switch (FeatureKinds[feature]) {
-        case Kinds.Item:
+      switch (kind) {
+        case Kinds.Unit:
           return null
 
-        case Kinds.List:
+        case Kinds.Set:
           return []
       }
 
@@ -53,92 +37,72 @@ var handleMessage = (feature, [response, body]) => {
 }
 
 /**
- * @param {Function} fetcher
- * @param {ExtensionHooks} name
- * @param {any} value
- */
-var extension = (fetcher, name, value) =>
-  Array
-    .from(extensions.get(fetcher).get(name))
-    .reduce((x, f) => f(x), value)
-
-/**
+ * @template {Feature} F
  * @template {Service} S
- * @template {typeof import('../enumerations/features.js').ServiceFeatures[S][number]} F
  * @template {Network} N
+ * @template {Kind} K
  *
- * @param {S} service
  * @param {F} feature
+ * @param {S} service
  * @param {N} network
+ * @param {K} kind
  */
-export var useFetch = (service, feature, network) => {
+export var useFeatureFetch = (
+  feature,
+  kind = Kinds.Unit,
+  service = FeatureServiceDefaults[feature],
+  network = Networks.Public,
+) => {
+  if (!(feature in Features))
+    throw TypeError(
+      `Feature '${feature}' must be a member of 'Features'.`,
+    )
+
+  if (!(kind in Kinds))
+    throw TypeError(
+      `Kind '${kind}' must be a member of 'Kinds'.`,
+    )
+
+  if (!(service in Services))
+    throw TypeError(
+      `Service '${service}' must be a member of 'Services'.`,
+    )
+
+  if (!(network in Networks))
+    throw TypeError(
+      `Network '${network}' must be a member of 'Networks'.`,
+    )
+
+  if (!ServiceFeatures[service].includes(feature))
+    throw TypeError(
+      `Feature '${feature}' must be a member of 'ServiceFeatures[${service}]'.`,
+    )
+
   /**
-   * @template {RequestMethod} [M='GET']
-   * @template {Role} [R='default']
+   * x
    *
-   * @param {import('@yurkimus/url').URLOptions | undefined} options
+   * @param {import('@yurkimus/url').URLOptions | undefined} input
    * @param {RequestInit} init
    *
-   * @returns {Promise<FetchResults[S][F][M][R]>}
+   * @returns {Promise<any>}
    */
-  var fetcher = (options, init) => {
-    if (!(service in Services))
+  // @template {Method} [M='GET']
+  // FeatureFetchResponses[F][S][M][R][K]
+  // FeatureFetchResponses[F][S][M][R][K]
+  return (input, init) => {
+    if (!(init.method in Methods))
       throw TypeError(
-        `Service '${service}' is not listed in 'Services'.`,
+        `Method '${init.method}' is not listed in 'Methods'.`,
       )
 
-    if (!(feature in Features))
-      throw TypeError(
-        `Feature '${feature}' is not listed in 'Features'.`,
-      )
-
-    if (!(feature in FeaturePathnames))
-      throw TypeError(
-        `Feature '${feature}' is not listed in 'FeaturePathnames'.`,
-      )
-
-    if (!ServiceFeatures[service].includes(feature))
-      throw TypeError(
-        `Feature '${feature}' is not listed in 'ServiceFeatures[${service}]'.`,
-      )
-
-    if (!(init.method in RequestMethods))
-      throw TypeError(
-        `Method '${init.method}' is not listed in 'RequestMethods'.`,
-      )
-
-    if (!(network in Networks))
-      throw TypeError(
-        `Network '${network}' is not listed in 'Networks'.`,
-      )
-
-    if (!ServiceFeatureNetworkURLs.has(service))
-      throw TypeError(
-        `Service '${service}' is not listed in 'ServiceFeatureNetworkURLs'.`,
-      )
-
-    if (!ServiceFeatureNetworkURLs.get(service).has(feature))
-      throw TypeError(
-        `Feature '${feature}' is not listed in 'ServiceFeatureNetworkURLs[${service}]'.`,
-      )
-
-    if (!ServiceFeatureNetworkURLs.get(service).get(feature).has(network))
-      throw TypeError(
-        `Network '${network}' is not listed in 'ServiceFeatureNetworkURLs[${service}][${feature}]'.`,
-      )
-
-    if (!ServiceFeatureNetworkURLs.get(service).get(feature).get(network))
-      throw TypeError(
-        `Network '${network}' of 'ServiceFeatureNetworkURLs[${service}][${feature}]' has no value.`,
-      )
-
-    var url = ServiceFeatureNetworkURLs
-      .get(service)
-      .get(feature)
-      .get(network)
-      .call(undefined, options)
-
-    var request = new Request(url, init)
+    var request = new Request(
+      url(
+        getFeatureOrigin(feature, service, network),
+        getFeaturePathname(feature, kind),
+        input,
+      ),
+      init,
+    )
 
     if ('cookie' in init)
       request.headers.set(
@@ -152,30 +116,9 @@ export var useFetch = (service, feature, network) => {
         'application/json',
       )
 
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(extension(fetcher, 'onbefore', request))
-      } catch (reason) {
-        reject(reason)
-      }
-    })
-      .then(fetch)
+    return globalThis
+      .fetch(request)
       .then(message.read)
-      .then(handleMessage.bind(undefined, feature))
-      .then(extension.bind(undefined, fetcher, 'onfulfilled'))
-      .catch(reason => {
-        throw extension(fetcher, 'onrejected', reason)
-      })
+      .then(fulfillment.bind(undefined, kind))
   }
-
-  extensions.set(
-    fetcher,
-    new Map([
-      ['onbefore', new Set([])],
-      ['onfulfilled', new Set([])],
-      ['onrejected', new Set([])],
-    ]),
-  )
-
-  return fetcher
 }

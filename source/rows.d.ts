@@ -6,15 +6,15 @@ type ImageMediaRow = {
   /**
    * @description "integer"
    */
-  width: Nullable<number>
+  width: number | null
   /**
    * @description "integer"
    */
-  height: Nullable<number>
+  height: number | null
   /**
    * @description "timestamp with time zone"
    */
-  time_updated: Nullable<string>
+  time_updated: string | null
   /**
    * @description "uuid"
    */
@@ -26,7 +26,7 @@ type ImageMediaRow = {
   /**
    * @description "character varying"
    */
-  file_format: Nullable<string>
+  file_format: string | null
 }
 
 type MediaRow = {
@@ -41,21 +41,21 @@ type MediaRow = {
   /**
    * @description "timestamp with time zone"
    */
-  time_updated: Nullable<string>
+  time_updated: string | null
   /**
    * @description "character varying"
    */
-  title: Nullable<string>
+  title: string | null
   /**
    * @description "character varying"
    */
-  cached_link: Nullable<string>
+  cached_link: string | null
   /**
    * @description "character varying"
    */
-  description: Nullable<string>
+  description: string | null
   /**
    * @description "character varying"
    */
-  path: Nullable<string>
+  path: string | null
 }

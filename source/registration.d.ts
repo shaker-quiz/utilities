@@ -24,39 +24,39 @@ type RegistrationRow = {
   /**
    * @description "boolean"
    */
-  is_extensible: Nullable<boolean>
+  is_extensible: boolean | null
   /**
    * @description "integer"
    */
-  people_count: Nullable<number>
+  people_count: number | null
   /**
    * @description "boolean"
    */
-  is_first: Nullable<boolean>
+  is_first: boolean | null
   /**
    * @description "boolean"
    */
-  is_canceled: Nullable<boolean>
+  is_canceled: boolean | null
   /**
    * @description "boolean"
    */
-  is_actual_presence: Nullable<boolean>
+  is_actual_presence: boolean | null
   /**
    * @description "boolean"
    */
-  is_confirm: Nullable<boolean>
+  is_confirm: boolean | null
   /**
    * @description "integer"
    */
-  change_people_count: Nullable<number>
+  change_people_count: number | null
   /**
    * @description "integer"
    */
-  fact_people_count: Nullable<number>
+  fact_people_count: number | null
   /**
    * @description "boolean"
    */
-  is_birthday: Nullable<boolean>
+  is_birthday: boolean | null
   /**
    * @description "uuid"
    */
@@ -72,81 +72,81 @@ type RegistrationRow = {
   /**
    * @description "timestamp with time zone"
    */
-  time_updated: Nullable<string>
+  time_updated: string | null
   /**
    * @description "boolean"
    */
-  is_reserve: Nullable<boolean>
+  is_reserve: boolean | null
   /**
    * @description "boolean"
    */
-  is_alone: Nullable<boolean>
+  is_alone: boolean | null
   /**
    * @description "character varying"
    */
-  utm_campaign: Nullable<string>
+  utm_campaign: string | null
   /**
    * @description "character varying"
    */
-  human_name: Nullable<string>
+  human_name: string | null
   /**
    * @description "character varying"
    */
-  last_broadcast: Nullable<string>
+  last_broadcast: string | null
   /**
    * @description "character varying"
    */
-  email: Nullable<string>
+  email: string | null
   /**
    * @description "character varying"
    */
-  phone: Nullable<string>
+  phone: string | null
   /**
    * @description "character varying"
    */
-  team_name: Nullable<string>
+  team_name: string | null
   /**
    * @description "character varying"
    */
-  ads_from: Nullable<string>
+  ads_from: string | null
   /**
    * @description "character varying"
    */
-  comment: Nullable<string>
+  comment: string | null
   /**
    * @description "character varying"
    */
-  promocode: Nullable<string>
+  promocode: string | null
   /**
    * @description "character varying"
    */
-  channel: Nullable<string>
+  channel: string | null
   /**
    * @description "character varying"
    */
-  vkontakte: Nullable<string>
+  vkontakte: string | null
   /**
    * @description "character varying"
    */
-  telegramBot: Nullable<string>
+  telegramBot: string | null
   /**
    * @description "character varying"
    */
-  chatapp_id: Nullable<string>
+  chatapp_id: string | null
   /**
    * @description "character varying"
    */
-  utm_term: Nullable<string>
+  utm_term: string | null
   /**
    * @description "character varying"
    */
-  utm_source: Nullable<string>
+  utm_source: string | null
   /**
    * @description "character varying"
    */
-  utm_medium: Nullable<string>
+  utm_medium: string | null
   /**
    * @description "character varying"
    */
-  utm_content: Nullable<string>
+  utm_content: string | null
 }

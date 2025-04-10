@@ -92,11 +92,11 @@ type GameRow = {
   /**
    * @description "uuid"
    */
-  city_id: Nullable<string>
+  city_id: string | null
   /**
    * @description "uuid"
    */
-  game_pack_id: Nullable<string>
+  game_pack_id: string | null
   /**
    * @description "uuid"
    */
@@ -108,7 +108,7 @@ type GameRow = {
   /**
    * @description "timestamp with time zone"
    */
-  time_updated: Nullable<string>
+  time_updated: string | null
   /**
    * @description "uuid"
    */
@@ -116,15 +116,15 @@ type GameRow = {
   /**
    * @description "integer"
    */
-  timezone: Nullable<number>
+  timezone: number | null
   /**
    * @description "integer"
    */
-  min_members_count: Nullable<number>
+  min_members_count: number | null
   /**
    * @description "integer"
    */
-  max_members_count: Nullable<number>
+  max_members_count: number | null
   /**
    * @description "USER-DEFINED"
    */
@@ -141,11 +141,11 @@ type GameRow = {
   /**
    * @description "timestamp without time zone"
    */
-  event_time: Nullable<string>
+  event_time: string | null
   /**
    * @description "double precision"
    */
-  price: Nullable<number>
+  price: number | null
   /**
    * @description "uuid"
    */
@@ -153,7 +153,7 @@ type GameRow = {
   /**
    * @description "uuid"
    */
-  image_id: Nullable<string>
+  image_id: string | null
   /**
    * @description "uuid"
    */
@@ -165,33 +165,33 @@ type GameRow = {
   /**
    * @description "character varying"
    */
-  description: Nullable<string>
+  description: string | null
   /**
    * @description "character varying"
    */
-  number: Nullable<string>
+  number: string | null
   /**
    * @description "character varying"
    */
-  short_description: Nullable<string>
+  short_description: string | null
   /**
    * @description "character varying"
    */
-  personal_comment: Nullable<string>
+  personal_comment: string | null
   /**
    * @description "character varying"
    */
-  weekday: Nullable<string>
+  weekday: string | null
   /**
    * @description "character varying"
    */
-  alias: Nullable<string>
+  alias: string | null
   /**
    * @description "character varying"
    */
-  name: Nullable<string>
+  name: string | null
   /**
    * @description "character varying"
    */
-  currency: Nullable<string>
+  currency: string | null
 }

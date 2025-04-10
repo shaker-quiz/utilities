@@ -53,75 +53,75 @@ type UserRow = {
   /**
    * @description "timestamp with time zone"
    */
-  time_updated: Nullable<string>
+  time_updated: string | null
 
   /**
    * @description "boolean"
    */
-  is_active: Nullable<boolean>
+  is_active: boolean | null
 
   /**
    * @description "boolean"
    */
-  is_superuser: Nullable<boolean>
+  is_superuser: boolean | null
 
   /**
    * @description "boolean"
    */
-  is_verified: Nullable<boolean>
+  is_verified: boolean | null
 
   /**
    * @description "uuid"
    */
-  image_id: Nullable<string>
+  image_id: string | null
 
   /**
    * @description "character varying"
    */
-  mailru_link: Nullable<string>
+  mailru_link: string | null
 
   /**
    * @description "character varying"
    */
-  telegram_id: Nullable<string>
+  telegram_id: string | null
 
   /**
    * @description "character varying"
    */
-  hashed_password: Nullable<string>
+  hashed_password: string | null
 
   /**
    * @description "character varying"
    */
-  telegram_data: Nullable<string>
+  telegram_data: string | null
 
   /**
    * @description "character varying"
    */
-  third_name: Nullable<string>
+  third_name: string | null
 
   /**
    * @description "character varying"
    */
-  phone: Nullable<string>
+  phone: string | null
 
   /**
    * @description "character varying"
    */
-  first_name: Nullable<string>
+  first_name: string | null
 
   /**
    * @description "character varying"
    */
-  last_name: Nullable<string>
+  last_name: string | null
 
   /**
    * @description "character varying"
    */
-  email: Nullable<string>
+  email: string | null
 
   /**
    * @description "character varying"
    */
-  gmail_link: Nullable<string>
+  gmail_link: string | null
 }

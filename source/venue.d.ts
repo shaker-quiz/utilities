@@ -35,69 +35,69 @@ type VenueRow = {
   /**
    * @description "timestamp with time zone"
    */
-  time_updated: Nullable<string>
+  time_updated: string | null
   /**
    * @description "double precision"
    */
-  longitude: Nullable<number>
+  longitude: number | null
   /**
    * @description "uuid"
    */
-  city_id: Nullable<string>
+  city_id: string | null
   /**
    * @description "double precision"
    */
-  latitude: Nullable<number>
+  latitude: number | null
   /**
    * @description "integer"
    */
-  people_capacity: Nullable<number>
+  people_capacity: number | null
   /**
    * @description "integer"
    */
-  team_capacity: Nullable<number>
+  team_capacity: number | null
   /**
    * @description "boolean"
    */
-  is_adult: Nullable<boolean>
+  is_adult: boolean | null
   /**
    * @description "character varying"
    */
-  name: Nullable<string>
+  name: string | null
   /**
    * @description "character varying"
    */
-  house_number: Nullable<string>
+  house_number: string | null
   /**
    * @description "character varying"
    */
-  comment: Nullable<string>
+  comment: string | null
   /**
    * @description "character varying"
    */
-  comment_responsible: Nullable<string>
+  comment_responsible: string | null
   /**
    * @description "character varying"
    */
-  comment_equipment: Nullable<string>
+  comment_equipment: string | null
   /**
    * @description "character varying"
    */
-  street: Nullable<string>
+  street: string | null
   /**
    * @description "character varying"
    */
-  game_time: Nullable<string>
+  game_time: string | null
   /**
    * @description "character varying"
    */
-  floor: Nullable<string>
+  floor: string | null
   /**
    * @description "character varying"
    */
-  metro: Nullable<string>
+  metro: string | null
   /**
    * @description "character varying"
    */
-  location_info: Nullable<string>
+  location_info: string | null
 }

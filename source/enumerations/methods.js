@@ -7,7 +7,7 @@
  *  - CONNECT: {@link https://datatracker.ietf.org/doc/html/rfc9110}
  *  - WebDAV Extensions {@link https://datatracker.ietf.org/doc/html/rfc4918}
  */
-export var RequestMethods = /** @type {const} */ ({
+export var Methods = /** @type {const} */ ({
   'CONNECT': 'CONNECT',
   'COPY': 'COPY',
   'DELETE': 'DELETE',
