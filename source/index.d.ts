@@ -27,7 +27,6 @@ export * from './enumerations/regexps.js'
 export * from './enumerations/requirements.js'
 export * from './enumerations/roles.js'
 export * from './enumerations/services.js'
-
 export * from './functions/fetch.js'
 export * from './functions/origin.js'
 export * from './functions/pathname.js'

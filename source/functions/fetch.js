@@ -42,17 +42,32 @@ var fulfillment = (kind, [response, body]) => {
  * @template {Network} N
  * @template {Kind} K
  *
- * @param {F} feature
- * @param {S} service
- * @param {N} network
- * @param {K} kind
+ * @param {F | { feature: F, kind?: K, service?: S, network?: N }} configuration
  */
-export var useFeatureFetch = (
-  feature,
-  kind = Kinds.Unit,
-  service = FeatureServiceDefaults[feature],
-  network = Networks.Public,
-) => {
+export var getFeatureFetch = configuration => {
+  var feature,
+    kind = Kinds.Unit,
+    service = FeatureServiceDefaults[feature],
+    network = Networks.Public
+
+  switch (type(configuration)) {
+    case 'String':
+      feature = configuration
+      break
+
+    case 'Object':
+      feature = configuration.feature
+      kind = configuration.kind ?? kind
+      service = configuration.service ?? service
+      network = configuration.network ?? network
+      break
+
+    default:
+      throw TypeError(
+        `Parameter configuration '${configuration}' must be either 'String' or 'Object'.`,
+      )
+  }
+
   if (!(feature in Features))
     throw TypeError(
       `Feature '${feature}' must be a member of 'Features'.`,
