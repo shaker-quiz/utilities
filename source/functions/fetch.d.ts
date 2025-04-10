@@ -6,5 +6,10 @@ export function getFeatureFetch<
   N extends Network,
   K extends Kind,
 >(
-  configuration: F | { feature: F; kind?: K; service?: S; network?: N },
+  configuration: F | {
+    feature: F
+    kind?: K
+    service?: S
+    network?: N
+  },
 ): (input: URLOptions, init: RequestInit) => Promise<any>
