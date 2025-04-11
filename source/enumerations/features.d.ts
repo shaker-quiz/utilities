@@ -3,6 +3,7 @@ export const Features: {
     '404': "404";
     Exception: "Exception";
     Home: "Home";
+    Profile: "Profile";
     City: "City";
     Game: "Game";
     Registration: "Registration";

@@ -20,6 +20,7 @@ export var FrontendFeatures = {
     Pages['404'],
     Pages.Exception,
     Pages.Home,
+    Pages.Profile,
     Procedures.Checkin,
   ],
 

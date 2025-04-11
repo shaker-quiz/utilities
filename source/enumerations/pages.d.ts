@@ -2,6 +2,7 @@ export const Pages: {
     readonly '404': "404";
     readonly Exception: "Exception";
     readonly Home: "Home";
+    readonly Profile: "Profile";
 };
 /**
  * @type {Record<Page, Icon>}

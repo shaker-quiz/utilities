@@ -6,6 +6,7 @@ export var Pages = /** @type {const} */ ({
   '404': '404',
   Exception: 'Exception',
   Home: 'Home',
+  Profile: 'Profile',
 })
 
 /**
@@ -15,6 +16,7 @@ export var PageIcons = {
   [Pages['404']]: Icons['exclamation-triangle'],
   [Pages.Exception]: Icons['exclamation-circle'],
   [Pages.Home]: Icons['home'],
+  [Pages.Profile]: Icons['user'],
 }
 
 /**
@@ -31,6 +33,10 @@ export var PageKindPathnames = {
 
   [Pages.Home]: {
     [Kinds.Unit]: '/',
+  },
+
+  [Pages.Profile]: {
+    [Kinds.Unit]: '/profile',
   },
 }
 
@@ -57,6 +63,15 @@ export var ProcedureMethodRequirements = {
   },
 
   [Pages.Home]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([]),
+    [Methods.PUT]: new Set([]),
+  },
+
+  [Pages.Profile]: {
     [Methods.DELETE]: new Set([]),
     [Methods.GET]: new Set([]),
     [Methods.OPTIONS]: new Set([]),

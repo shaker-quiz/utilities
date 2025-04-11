@@ -52,6 +52,7 @@ export var PageServiceDefaults = {
   [Pages['404']]: '',
   [Pages.Exception]: '',
   [Pages.Home]: '',
+  [Pages.Profile]: '',
 }
 
 /**

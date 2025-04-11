@@ -4,11 +4,11 @@ export namespace Frontends {
     let MiniApp: "MiniApp";
 }
 export namespace FrontendFeatures {
-    let Admin_1: ("Checkin" | "City" | "Game" | "Registration" | "Theme" | "User" | "Venue")[];
+    let Admin_1: any[];
     export { Admin_1 as Admin };
-    let Landing_1: ("Game" | "Registration")[];
+    let Landing_1: ("Game" | "Registration" | "404" | "Exception" | "Home")[];
     export { Landing_1 as Landing };
-    let MiniApp_1: ("Game" | "Registration")[];
+    let MiniApp_1: ("Game" | "Registration" | "404" | "Exception" | "Home")[];
     export { MiniApp_1 as MiniApp };
 }
 export namespace FrontendNetworkOrigins {
