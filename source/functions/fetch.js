@@ -2,6 +2,7 @@ import * as cookies from '@yurkimus/cookies'
 import { MessageError } from '@yurkimus/errors'
 import * as message from '@yurkimus/message'
 import { ResponseStatus } from '@yurkimus/response-status'
+import { type } from '@yurkimus/types'
 import { url } from '@yurkimus/url'
 
 import { Cookies } from '../enumerations/cookies.js'
