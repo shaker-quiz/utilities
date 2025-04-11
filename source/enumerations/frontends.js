@@ -1,5 +1,4 @@
 import { Domains } from './domains.js'
-import { Networks } from './networks.js'
 import { Pages } from './pages.js'
 import { Procedures } from './procedures.js'
 
@@ -39,21 +38,4 @@ export var FrontendFeatures = {
     Pages.Exception,
     Pages.Home,
   ],
-}
-
-export var FrontendNetworkOrigins = {
-  [Frontends.Admin]: {
-    [Networks.Docker]: '',
-    [Networks.Public]: '',
-  },
-
-  [Frontends.Landing]: {
-    [Networks.Docker]: '',
-    [Networks.Public]: '',
-  },
-
-  [Frontends.MiniApp]: {
-    [Networks.Docker]: '',
-    [Networks.Public]: '',
-  },
 }

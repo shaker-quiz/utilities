@@ -36,18 +36,6 @@ export const ProcedureServiceDefaults: Record<Procedure, Service>;
  */
 export const FeatureServiceDefaults: Record<Feature, Service>;
 /**
- * @type {Record<Domain, Record<Service, Record<Network, string>>>}
- */
-export const DomainServiceNetworkOrigins: Record<Domain, Record<Service, Record<Network, string>>>;
-/**
- * @type {Record<Page, Record<Service, Record<Network, string>>>}
- */
-export const PageServiceNetworkOrigins: Record<Page, Record<Service, Record<Network, string>>>;
-/**
- * @type {Record<Procedure, Record<Service, Record<Network, string>>>}
- */
-export const ProcedureServiceNetworkOrigins: Record<Procedure, Record<Service, Record<Network, string>>>;
-/**
  * @type {Record<Feature, Record<Service, Record<Network, string>>>}
  */
 export const FeatureServiceNetworkOrigins: Record<Feature, Record<Service, Record<Network, string>>>;

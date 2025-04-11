@@ -1,9 +1,6 @@
-import { BackendFeatures, BackendNetworkOrigins, Backends } from './backends.js'
-import {
-  FrontendFeatures,
-  FrontendNetworkOrigins,
-  Frontends,
-} from './frontends.js'
+import { BackendFeatures, Backends } from './backends.js'
+import { FrontendFeatures, Frontends } from './frontends.js'
+import { Networks } from './networks.js'
 
 export var Services = {
   ...Backends,
@@ -15,7 +12,12 @@ export var ServiceFeatures = {
   ...FrontendFeatures,
 }
 
-export var ServiceNetworkOrigins = {
-  ...BackendNetworkOrigins,
-  ...FrontendNetworkOrigins,
+/** @type {Record<Service, Record<Network, string>>} */
+export var ServiceNetworkOrigins = {}
+
+for (var service in Services) {
+  ServiceNetworkOrigins[service] = {}
+  for (var network in Networks) {
+    ServiceNetworkOrigins[service][network] = ''
+  }
 }

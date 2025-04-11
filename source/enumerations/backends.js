@@ -1,5 +1,4 @@
 import { Domains } from './domains.js'
-import { Networks } from './networks.js'
 import { Procedures } from './procedures.js'
 
 export var Backends = /** @type {const} */ ({
@@ -35,26 +34,4 @@ export var BackendFeatures = {
     Domains.User,
     Procedures.Checkin,
   ],
-}
-
-export var BackendNetworkOrigins = {
-  [Backends.Backend]: {
-    [Networks.Docker]: '',
-    [Networks.Public]: '',
-  },
-
-  [Backends.Games]: {
-    [Networks.Docker]: '',
-    [Networks.Public]: '',
-  },
-
-  [Backends.Locations]: {
-    [Networks.Docker]: '',
-    [Networks.Public]: '',
-  },
-
-  [Backends.Users]: {
-    [Networks.Docker]: '',
-    [Networks.Public]: '',
-  },
 }

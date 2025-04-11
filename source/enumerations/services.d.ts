@@ -8,41 +8,13 @@ export const Services: {
     Users: "Users";
 };
 export const ServiceFeatures: {
-    Admin: ("Checkin" | "City" | "Game" | "Registration" | "Theme" | "User" | "Venue")[];
-    Landing: ("Game" | "Registration")[];
-    MiniApp: ("Game" | "Registration")[];
-    Backend: ("Checkin" | "City" | "Game" | "Registration" | "Theme" | "User" | "Venue")[];
+    Admin: ("City" | "Game" | "Registration" | "Theme" | "User" | "Venue" | "Checkin" | "404" | "Exception" | "Home" | "Profile")[];
+    Landing: ("Game" | "Registration" | "404" | "Exception" | "Home")[];
+    MiniApp: ("Game" | "Registration" | "404" | "Exception" | "Home")[];
+    Backend: ("City" | "Game" | "Registration" | "Theme" | "User" | "Venue" | "Checkin")[];
     Games: ("Game" | "Registration" | "Theme")[];
     Locations: ("City" | "Venue")[];
-    Users: ("Checkin" | "User")[];
+    Users: ("User" | "Checkin")[];
 };
-export const ServiceNetworkOrigins: {
-    Admin: {
-        Docker: string;
-        Public: string;
-    };
-    Landing: {
-        Docker: string;
-        Public: string;
-    };
-    MiniApp: {
-        Docker: string;
-        Public: string;
-    };
-    Backend: {
-        Docker: string;
-        Public: string;
-    };
-    Games: {
-        Docker: string;
-        Public: string;
-    };
-    Locations: {
-        Docker: string;
-        Public: string;
-    };
-    Users: {
-        Docker: string;
-        Public: string;
-    };
-};
+/** @type {Record<Service, Record<Network, string>>} */
+export const ServiceNetworkOrigins: Record<Service, Record<Network, string>>;
