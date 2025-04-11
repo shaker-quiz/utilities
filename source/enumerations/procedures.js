@@ -1,5 +1,5 @@
+import { Default } from './default.js'
 import { Icons } from './icons.js'
-import { Kinds } from './kinds.js'
 import { Methods } from './methods.js'
 import { Requirements } from './requirements.js'
 
@@ -19,7 +19,7 @@ export var ProcedureIcons = {
  */
 export var ProcedureKindPathnames = {
   [Procedures.Checkin]: {
-    [Kinds.Unit]: '/checkin',
+    [Default]: '/checkin',
   },
 }
 

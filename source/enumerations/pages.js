@@ -1,5 +1,5 @@
+import { Default } from './default.js'
 import { Icons } from './icons.js'
-import { Kinds } from './kinds.js'
 import { Methods } from './methods.js'
 
 export var Pages = /** @type {const} */ ({
@@ -22,15 +22,15 @@ export var PageIcons = {
  */
 export var PageKindPathnames = {
   [Pages['404']]: {
-    [Kinds.Unit]: '/404',
+    [Default]: '/404',
   },
 
   [Pages.Exception]: {
-    [Kinds.Unit]: '/exception',
+    [Default]: '/exception',
   },
 
   [Pages.Home]: {
-    [Kinds.Unit]: '/',
+    [Default]: '/',
   },
 }
 
