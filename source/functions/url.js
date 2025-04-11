@@ -1,8 +1,6 @@
-import { DomainServiceDefaults } from '../enumerations/domains.js'
-import { Features } from '../enumerations/features.js'
+import { Features, FeatureServiceDefaults } from '../enumerations/features.js'
 import { Kinds } from '../enumerations/kinds.js'
 import { Networks } from '../enumerations/networks.js'
-import { ProcedureServiceDefaults } from '../enumerations/procedures.js'
 import { Services } from '../enumerations/services.js'
 
 import { getFeatureOrigin } from './origin.js'
@@ -16,8 +14,7 @@ import { getFeaturePathname } from './pathname.js'
  */
 export var getFeatureUrl = (
   feature,
-  service = DomainServiceDefaults[feature]
-    ?? ProcedureServiceDefaults[feature],
+  service = FeatureServiceDefaults[feature],
   network = Networks.Public,
   kind = Kinds.Unit,
 ) => {

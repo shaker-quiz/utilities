@@ -12,6 +12,9 @@ export var Domains = /** @type {const} */ ({
   Venue: 'Venue',
 })
 
+/**
+ * @type {Record<Domain, Icon>}
+ */
 export var DomainIcons = {
   [Domains.City]: Icons['building-office'],
   [Domains.Game]: Icons['newspaper'],
@@ -21,7 +24,10 @@ export var DomainIcons = {
   [Domains.Venue]: Icons['map-pin'],
 }
 
-export var DomainKindPathnames = /** @type {const} */ ({
+/**
+ * @type {Record<Domain, Record<Kind, string>>}
+ */
+export var DomainKindPathnames = {
   [Domains.City]: {
     [Kinds.Unit]: '/cities/:city?',
     [Kinds.Set]: '/cities',
@@ -51,8 +57,11 @@ export var DomainKindPathnames = /** @type {const} */ ({
     [Kinds.Unit]: '/venues/:venue?',
     [Kinds.Set]: '/venues',
   },
-})
+}
 
+/**
+ * @type {Record<Domain, Record<Method, Set<Requirement>>>}
+ */
 export var DomainMethodRequirements = {
   [Domains.City]: {
     [Methods.DELETE]: new Set([Requirements.Checkin]),

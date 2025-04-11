@@ -1,1 +1,1 @@
-export function getFeaturePathname(feature: Feature, kind?: Kind): any;
+export function getFeaturePathname(feature: Feature, kind?: Kind): string;

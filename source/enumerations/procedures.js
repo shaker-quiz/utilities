@@ -7,17 +7,26 @@ export var Procedures = /** @type {const} */ ({
   Checkin: 'Checkin',
 })
 
+/**
+ * @type {Record<Procedure, Icon>}
+ */
 export var ProcedureIcons = {
   [Procedures.Checkin]: Icons['arrow-right-end-on-rectangle'],
 }
 
-export var ProcedureKindPathnames = /** @type {const} */ ({
+/**
+ * @type {Record<Procedure, Record<Kind, string>>}
+ */
+export var ProcedureKindPathnames = {
   [Procedures.Checkin]: {
     [Kinds.Unit]: '/checkin',
     [Kinds.Set]: '/checkins',
   },
-})
+}
 
+/**
+ * @type {Record<Procedure, Record<Method, Set<Requirement>>>}
+ */
 export var ProcedureMethodRequirements = {
   [Procedures.Checkin]: {
     [Methods.DELETE]: new Set([]),

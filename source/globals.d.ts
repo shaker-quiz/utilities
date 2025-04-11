@@ -56,4 +56,10 @@ type Service = Backend | Frontend
 type Role = keyof typeof import('./enumerations/roles.js').Roles
 
 type GameStatus =
-  keyof typeof import('./enumerations/game-statuses.d.ts').GameStatuses
+  keyof typeof import('./enumerations/game-statuses.js').GameStatuses
+
+/**
+ * Misc
+ */
+
+type Icon = keyof typeof import('./enumerations/icons.js').Icons
