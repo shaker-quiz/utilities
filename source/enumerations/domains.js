@@ -45,7 +45,7 @@ export var DomainKindPathnames = {
 
   [Domains.Theme]: {
     [Kinds.Unit]: '/themes/:theme?',
-    [Kinds.Set]: '/theme',
+    [Kinds.Set]: '/themes',
   },
 
   [Domains.User]: {
