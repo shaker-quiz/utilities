@@ -46,21 +46,21 @@ var fulfillment = (kind, [response, body]) => {
  * @param {F | { feature: F, kind?: K, service?: S, network?: N }} configuration
  */
 export var getFeatureFetch = configuration => {
-  var feature,
-    kind = Kinds.Unit,
-    service = FeatureServiceDefaults[feature],
-    network = Networks.Public
+  var feature, kind, service, network
 
   switch (type(configuration)) {
     case 'String':
       feature = configuration
+      kind = Kinds.Unit
+      service = FeatureServiceDefaults[feature]
+      network = Networks.Public
       break
 
     case 'Object':
       feature = configuration.feature
-      kind = configuration.kind ?? kind
-      service = configuration.service ?? service
-      network = configuration.network ?? network
+      kind = configuration.kind ?? Kinds.Unit
+      service = configuration.service ?? FeatureServiceDefaults[feature]
+      network = configuration.network ?? Networks.Public
       break
 
     default:
