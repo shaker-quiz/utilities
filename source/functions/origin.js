@@ -4,6 +4,7 @@ import {
   FeatureServiceNetworkOrigins,
 } from '../enumerations/features.js'
 import { Networks } from '../enumerations/networks.js'
+import { ServiceFeatures } from '../enumerations/services.js'
 import { Services } from '../enumerations/services.js'
 
 /**
@@ -103,4 +104,37 @@ export var setFeatureOrigin = origins => {
   }
 
   return FeatureServiceNetworkOrigins
+}
+
+/**
+ * @param {Partial<Record<Service, Partial<Record<Network, URL['origin']>>>>} origins
+ */
+export var setServiceOrigin = origins => {
+  var instance = {}
+
+  for (var service in origins) {
+    if (!(service in Services))
+      throw TypeError(
+        `Service '${service}' must be a member of 'Services'.`,
+      )
+
+    for (var network in origins[service]) {
+      if (!(network in Networks))
+        throw TypeError(
+          `Network '${network}' must be a member of 'Networks'.`,
+        )
+
+      for (var feature of ServiceFeatures[service]) {
+        if (!(feature in instance))
+          instance[feature] = {}
+
+        if (!(service in instance[feature]))
+          instance[feature][service] = {}
+
+        instance[feature][service][network] = origins[service][network]
+      }
+    }
+  }
+
+  return setFeatureOrigin(instance)
 }

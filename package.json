@@ -1,8 +1,11 @@
 {
   "name": "@shakerquiz/utilities",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
+  "scripts": {
+    "type": "tsc ./source/dir/file.js --allowjs --emitdeclarationonly --declaration"
+  },
   "exports": {
     ".": {
       "node": "./source/index.js",
