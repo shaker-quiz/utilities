@@ -1,14 +1,27 @@
 import { Backends } from './backends.js'
-import { DomainKindPathnames, Domains } from './domains.js'
+import { DomainIcons, DomainKindPathnames, Domains } from './domains.js'
 import { Frontends } from './frontends.js'
 import { Networks } from './networks.js'
-import { PageKindPathnames, Pages } from './pages.js'
-import { ProcedureKindPathnames, Procedures } from './procedures.js'
+import { PageIcons, PageKindPathnames, Pages } from './pages.js'
+import {
+  ProcedureIcons,
+  ProcedureKindPathnames,
+  Procedures,
+} from './procedures.js'
 
 export var Features = {
   ...Domains,
   ...Pages,
   ...Procedures,
+}
+
+/**
+ * @type {Record<Feature, Icon>}
+ */
+export var FeatureIcons = {
+  ...DomainIcons,
+  ...PageIcons,
+  ...ProcedureIcons,
 }
 
 /**
