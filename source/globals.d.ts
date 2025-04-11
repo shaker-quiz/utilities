@@ -46,8 +46,9 @@ type Requirement =
  */
 
 type Domain = keyof typeof import('./enumerations/domains.js').Domains
+type Page = keyof typeof import('./enumerations/pages.js').Pages
 type Procedure = keyof typeof import('./enumerations/procedures.js').Procedures
-type Feature = Domain | Procedure
+type Feature = Domain | Page | Procedure
 
 type Backend = keyof typeof import('./enumerations/backends.js').Backends
 type Frontend = keyof typeof import('./enumerations/frontends.js').Frontends
