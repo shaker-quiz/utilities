@@ -1,10 +1,21 @@
 import { Backends } from './backends.js'
-import { DomainIcons, DomainKindPathnames, Domains } from './domains.js'
+import {
+  DomainIcons,
+  DomainKindPathnames,
+  DomainMethodRequirements,
+  Domains,
+} from './domains.js'
 import { Networks } from './networks.js'
-import { PageIcons, PageKindPathnames, Pages } from './pages.js'
+import {
+  PageIcons,
+  PageKindPathnames,
+  PageMethodRequirements,
+  Pages,
+} from './pages.js'
 import {
   ProcedureIcons,
   ProcedureKindPathnames,
+  ProcedureMethodRequirements,
   Procedures,
 } from './procedures.js'
 import { Services } from './services.js'
@@ -69,6 +80,15 @@ export var FeatureServiceDefaults = {
   ...DomainServiceDefaults,
   ...PageServiceDefaults,
   ...ProcedureServiceDefaults,
+}
+
+/**
+ * @type {Record<Feature, Record<Method, Set<Requirement>>>}
+ */
+export var FeatureMethodRequirements = {
+  ...DomainMethodRequirements,
+  ...PageMethodRequirements,
+  ...ProcedureMethodRequirements,
 }
 
 /**

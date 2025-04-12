@@ -15,4 +15,4 @@ export const PageKindPathnames: Record<Page, Record<Kind, string>>;
 /**
  * @type {Record<Page, Record<Method, Set<Requirement>>>}
  */
-export const ProcedureMethodRequirements: Record<Page, Record<Method, Set<Requirement>>>;
+export const PageMethodRequirements: Record<Page, Record<Method, Set<Requirement>>>;

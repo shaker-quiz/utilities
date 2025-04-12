@@ -43,7 +43,7 @@ export var PageKindPathnames = {
 /**
  * @type {Record<Page, Record<Method, Set<Requirement>>>}
  */
-export var ProcedureMethodRequirements = {
+export var PageMethodRequirements = {
   [Pages['404']]: {
     [Methods.DELETE]: new Set([]),
     [Methods.GET]: new Set([]),

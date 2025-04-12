@@ -36,6 +36,10 @@ export const ProcedureServiceDefaults: Record<Procedure, Service>;
  */
 export const FeatureServiceDefaults: Record<Feature, Service>;
 /**
+ * @type {Record<Feature, Record<Method, Set<Requirement>>>}
+ */
+export const FeatureMethodRequirements: Record<Feature, Record<Method, Set<Requirement>>>;
+/**
  * @type {Record<Feature, Record<Service, Record<Network, string>>>}
  */
 export const FeatureServiceNetworkOrigins: Record<Feature, Record<Service, Record<Network, string>>>;
