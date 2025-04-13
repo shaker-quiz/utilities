@@ -29,32 +29,32 @@ export var DomainIcons = {
  */
 export var DomainKindPathnames = {
   [Domains.City]: {
-    [Kinds.Unit]: '/cities/:city?',
+    [Kinds.Unit]: '/city/:city?',
     [Kinds.Set]: '/cities',
   },
 
   [Domains.Game]: {
-    [Kinds.Unit]: '/games/:game?',
+    [Kinds.Unit]: '/game/:game?',
     [Kinds.Set]: '/games',
   },
 
   [Domains.Registration]: {
-    [Kinds.Unit]: '/registrations/:registration?',
+    [Kinds.Unit]: '/registration/:registration?',
     [Kinds.Set]: '/registrations',
   },
 
   [Domains.Theme]: {
-    [Kinds.Unit]: '/themes/:theme?',
+    [Kinds.Unit]: '/theme/:theme?',
     [Kinds.Set]: '/themes',
   },
 
   [Domains.User]: {
-    [Kinds.Unit]: '/users/:user?',
+    [Kinds.Unit]: '/user/:user?',
     [Kinds.Set]: '/users',
   },
 
   [Domains.Venue]: {
-    [Kinds.Unit]: '/venues/:venue?',
+    [Kinds.Unit]: '/venue/:venue?',
     [Kinds.Set]: '/venues',
   },
 }
