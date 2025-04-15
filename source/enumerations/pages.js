@@ -25,18 +25,22 @@ export var PageIcons = {
 export var PageKindPathnames = {
   [Pages['404']]: {
     [Kinds.Unit]: '/404',
+    [Kinds.Set]: '/404',
   },
 
   [Pages.Exception]: {
     [Kinds.Unit]: '/exception',
+    [Kinds.Set]: '/exception',
   },
 
   [Pages.Home]: {
     [Kinds.Unit]: '/',
+    [Kinds.Set]: '/',
   },
 
   [Pages.Profile]: {
     [Kinds.Unit]: '/profile',
+    [Kinds.Set]: '/profile',
   },
 }
 

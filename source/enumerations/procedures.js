@@ -20,6 +20,7 @@ export var ProcedureIcons = {
 export var ProcedureKindPathnames = {
   [Procedures.Checkin]: {
     [Kinds.Unit]: '/checkin',
+    [Kinds.Set]: '/checkin',
   },
 }
 
