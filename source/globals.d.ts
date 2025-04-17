@@ -59,6 +59,11 @@ type Role = keyof typeof import('./enumerations/roles.js').Roles
 type GameStatus =
   keyof typeof import('./enumerations/game-statuses.js').GameStatuses
 
+type RegistrationStatus =
+  keyof typeof import('./enumerations/registration-statuses.js').RegistrationStatuses
+
+type Lineup = keyof typeof import('./enumerations/lineups.js').Lineups
+
 /**
  * Misc
  */
