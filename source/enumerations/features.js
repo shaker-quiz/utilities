@@ -71,6 +71,7 @@ export var PageServiceDefaults = {
  */
 export var ProcedureServiceDefaults = {
   [Procedures.Checkin]: Backends.Users,
+  [Procedures.Mailing]: Backends.Games,
 }
 
 /**

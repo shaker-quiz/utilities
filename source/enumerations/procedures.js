@@ -5,6 +5,7 @@ import { Requirements } from './requirements.js'
 
 export var Procedures = /** @type {const} */ ({
   Checkin: 'Checkin',
+  Mailing: 'Mailing',
 })
 
 /**
@@ -12,6 +13,7 @@ export var Procedures = /** @type {const} */ ({
  */
 export var ProcedureIcons = {
   [Procedures.Checkin]: Icons['arrow-right-end-on-rectangle'],
+  [Procedures.Mailing]: Icons['envelope'],
 }
 
 /**
@@ -20,7 +22,12 @@ export var ProcedureIcons = {
 export var ProcedureKindPathnames = {
   [Procedures.Checkin]: {
     [Kinds.Unit]: '/checkin',
-    [Kinds.Set]: '/checkin',
+    [Kinds.Set]: '/checkins',
+  },
+
+  [Procedures.Mailing]: {
+    [Kinds.Unit]: '/mailing',
+    [Kinds.Set]: '/mailings',
   },
 }
 
@@ -35,5 +42,14 @@ export var ProcedureMethodRequirements = {
     [Methods.PATCH]: new Set([]),
     [Methods.POST]: new Set([Requirements.Body]),
     [Methods.PUT]: new Set([]),
+  },
+
+  [Procedures.Mailing]: {
+    [Methods.DELETE]: new Set([]),
+    [Methods.GET]: new Set([]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([]),
+    [Methods.POST]: new Set([Requirements.Body]),
+    [Methods.PUT]: new Set([Requirements.Body]),
   },
 }

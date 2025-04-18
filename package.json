@@ -1,10 +1,10 @@
 {
   "name": "@shakerquiz/utilities",
-  "version": "0.3.28",
+  "version": "0.3.29",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "type": "tsc ./source/dir/file.js --allowjs --emitdeclarationonly --declaration"
+    "type": "tsc --emitdeclarationonly --declaration --allowjs"
   },
   "exports": {
     ".": {

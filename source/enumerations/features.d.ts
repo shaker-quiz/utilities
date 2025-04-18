@@ -1,5 +1,6 @@
 export const Features: {
     Checkin: "Checkin";
+    Mailing: "Mailing";
     '404': "404";
     Exception: "Exception";
     Home: "Home";

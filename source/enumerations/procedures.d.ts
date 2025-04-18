@@ -1,5 +1,6 @@
 export namespace Procedures {
     let Checkin: "Checkin";
+    let Mailing: "Mailing";
 }
 /**
  * @type {Record<Procedure, Icon>}
