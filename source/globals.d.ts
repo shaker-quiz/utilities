@@ -64,6 +64,9 @@ type RegistrationStatus =
 
 type Lineup = keyof typeof import('./enumerations/lineups.js').Lineups
 
+type Affilation =
+  keyof typeof import('./enumerations/affilations.js').Affilations
+
 /**
  * Misc
  */
