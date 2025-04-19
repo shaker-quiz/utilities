@@ -9,6 +9,7 @@
 /// <reference path='./user.d.ts' />
 /// <reference path='./venue.d.ts' />
 
+export * from './enumerations/affilations.js'
 export * from './enumerations/backends.js'
 export * from './enumerations/constants.js'
 export * from './enumerations/cookies.js'
