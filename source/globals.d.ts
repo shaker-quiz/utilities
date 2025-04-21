@@ -68,6 +68,18 @@ type Affilation =
   keyof typeof import('./enumerations/affilations.js').Affilations
 
 /**
+ * Schemas
+ */
+
+type CityColumn = keyof typeof import('./schemas/city.js').CityColumns
+type GameColumn = keyof typeof import('./schemas/game.js').GameColumns
+type RegistrationColumn =
+  keyof typeof import('./schemas/registration.js').RegistrationColumns
+type ThemeColumn = keyof typeof import('./schemas/theme.js').ThemeColumns
+type UserColumn = keyof typeof import('./schemas/user.js').UserColumns
+type VenueColumn = keyof typeof import('./schemas/venue.js').VenueColumns
+
+/**
  * Misc
  */
 
