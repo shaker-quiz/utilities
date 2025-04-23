@@ -1,6 +1,6 @@
 export const Features: {
     Checkin: "Checkin";
-    Mailing: "Mailing";
+    Redirect: "Redirect";
     '404': "404";
     Exception: "Exception";
     Home: "Home";
@@ -11,6 +11,7 @@ export const Features: {
     Theme: "Theme";
     User: "User";
     Venue: "Venue";
+    Mailing: "Mailing";
 };
 /**
  * @type {Record<Feature, Icon>}

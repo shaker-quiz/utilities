@@ -3,6 +3,7 @@ export namespace Backends {
     let Games: "Games";
     let Locations: "Locations";
     let Users: "Users";
+    let Integrations: "Integrations";
 }
 export namespace BackendFeatures {
     let Backend_1: ("City" | "Game" | "Registration" | "Theme" | "User" | "Venue" | "Checkin")[];
@@ -13,4 +14,6 @@ export namespace BackendFeatures {
     export { Locations_1 as Locations };
     let Users_1: ("User" | "Checkin")[];
     export { Users_1 as Users };
+    let Integrations_1: any[];
+    export { Integrations_1 as Integrations };
 }

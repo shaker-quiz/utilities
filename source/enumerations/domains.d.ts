@@ -5,6 +5,7 @@ export namespace Domains {
     let Theme: "Theme";
     let User: "User";
     let Venue: "Venue";
+    let Mailing: "Mailing";
 }
 /**
  * @type {Record<Domain, Icon>}

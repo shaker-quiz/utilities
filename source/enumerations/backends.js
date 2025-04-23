@@ -6,6 +6,7 @@ export var Backends = /** @type {const} */ ({
   Games: 'Games',
   Locations: 'Locations',
   Users: 'Users',
+  Integrations: 'Integrations',
 })
 
 export var BackendFeatures = {
@@ -33,5 +34,10 @@ export var BackendFeatures = {
   [Backends.Users]: [
     Domains.User,
     Procedures.Checkin,
+  ],
+
+  [Backends.Integrations]: [
+    Domains.Mailing,
+    Procedures.Redirect,
   ],
 }
