@@ -1,7 +1,7 @@
-import {Icons} from './icons.js'
-import {Kinds} from './kinds.js'
-import {Methods} from './methods.js'
-import {Requirements} from './requirements.js'
+import { Icons } from './icons.js'
+import { Kinds } from './kinds.js'
+import { Methods } from './methods.js'
+import { Requirements } from './requirements.js'
 
 export var Procedures = /** @type {const} */ ({
   Checkin: 'Checkin',
