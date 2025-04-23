@@ -10,6 +10,7 @@ export var Domains = /** @type {const} */ ({
   Theme: 'Theme',
   User: 'User',
   Venue: 'Venue',
+  Mailing: 'Mailing',
 })
 
 /**
@@ -22,6 +23,7 @@ export var DomainIcons = {
   [Domains.Theme]: Icons['document-text'],
   [Domains.User]: Icons['users'],
   [Domains.Venue]: Icons['map-pin'],
+  [Domains.Mailing]: Icons['envelope'],
 }
 
 /**
@@ -56,6 +58,11 @@ export var DomainKindPathnames = {
   [Domains.Venue]: {
     [Kinds.Unit]: '/venue/:venue?',
     [Kinds.Set]: '/venues',
+  },
+
+  [Domains.Mailing]: {
+    [Kinds.Unit]: '/mailing/:mailing?',
+    [Kinds.Set]: '/mailings',
   },
 }
 
@@ -109,6 +116,15 @@ export var DomainMethodRequirements = {
   },
 
   [Domains.Venue]: {
+    [Methods.DELETE]: new Set([Requirements.Checkin]),
+    [Methods.GET]: new Set([Requirements.Checkin]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
+  },
+
+  [Domains.Mailing]: {
     [Methods.DELETE]: new Set([Requirements.Checkin]),
     [Methods.GET]: new Set([Requirements.Checkin]),
     [Methods.OPTIONS]: new Set([]),

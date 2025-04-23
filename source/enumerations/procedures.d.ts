@@ -1,6 +1,6 @@
 export namespace Procedures {
     let Checkin: "Checkin";
-    let Mailing: "Mailing";
+    let Redirect: "Redirect";
 }
 /**
  * @type {Record<Procedure, Icon>}
