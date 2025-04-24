@@ -45,7 +45,6 @@ export namespace CityColumns {
 export namespace CityColumnDescriptors {
     export namespace address_1 {
         let type: "String";
-        let nullable: true;
         let minLength: 1;
         let maxLength: 255;
     }
@@ -62,22 +61,16 @@ export namespace CityColumnDescriptors {
     export namespace chatapp_category_1 {
         let type_2: "String";
         export { type_2 as type };
-        let nullable_1: true;
-        export { nullable_1 as nullable };
     }
     export { chatapp_category_1 as chatapp_category };
     export namespace chatapp_legacy_1 {
         let type_3: "Boolean";
         export { type_3 as type };
-        let nullable_2: true;
-        export { nullable_2 as nullable };
     }
     export { chatapp_legacy_1 as chatapp_legacy };
     export namespace chatapp_line_1 {
         let type_4: "String";
         export { type_4 as type };
-        let nullable_3: true;
-        export { nullable_3 as nullable };
         let minLength_2: 1;
         export { minLength_2 as minLength };
         let maxLength_2: 255;
@@ -87,8 +80,6 @@ export namespace CityColumnDescriptors {
     export namespace chatapp_tag_1 {
         let type_5: "String";
         export { type_5 as type };
-        let nullable_4: true;
-        export { nullable_4 as nullable };
         let minLength_3: 1;
         export { minLength_3 as minLength };
         let maxLength_3: 255;
@@ -98,8 +89,6 @@ export namespace CityColumnDescriptors {
     export namespace chatapp_user_1 {
         let type_6: "String";
         export { type_6 as type };
-        let nullable_5: true;
-        export { nullable_5 as nullable };
         let minLength_4: 1;
         export { minLength_4 as minLength };
         let maxLength_4: 255;
@@ -109,8 +98,6 @@ export namespace CityColumnDescriptors {
     export namespace country_1 {
         let type_7: "String";
         export { type_7 as type };
-        let nullable_6: true;
-        export { nullable_6 as nullable };
         let minLength_5: 2;
         export { minLength_5 as minLength };
         let maxLength_5: 2;
@@ -129,22 +116,16 @@ export namespace CityColumnDescriptors {
     export namespace custom_html_1 {
         let type_9: "String";
         export { type_9 as type };
-        let nullable_7: true;
-        export { nullable_7 as nullable };
     }
     export { custom_html_1 as custom_html };
     export namespace custom_script_1 {
         let type_10: "String";
         export { type_10 as type };
-        let nullable_8: true;
-        export { nullable_8 as nullable };
     }
     export { custom_script_1 as custom_script };
     export namespace description_1 {
         let type_11: "String";
         export { type_11 as type };
-        let nullable_9: true;
-        export { nullable_9 as nullable };
         let minLength_7: 1;
         export { minLength_7 as minLength };
         let maxLength_7: 255;
@@ -154,8 +135,6 @@ export namespace CityColumnDescriptors {
     export namespace email_1 {
         let type_12: "String";
         export { type_12 as type };
-        let nullable_10: true;
-        export { nullable_10 as nullable };
         let minLength_8: 1;
         export { minLength_8 as minLength };
         let maxLength_8: 255;
@@ -173,8 +152,6 @@ export namespace CityColumnDescriptors {
     export namespace id_1 {
         let type_14: "String";
         export { type_14 as type };
-        let nullable_11: true;
-        export { nullable_11 as nullable };
         let format_2: "uuid";
         export { format_2 as format };
     }
@@ -182,16 +159,12 @@ export namespace CityColumnDescriptors {
     export namespace inst_comment_1 {
         let type_15: "String";
         export { type_15 as type };
-        let nullable_12: true;
-        export { nullable_12 as nullable };
         export let deprecated: true;
     }
     export { inst_comment_1 as inst_comment };
     export namespace inst_link_1 {
         let type_16: "String";
         export { type_16 as type };
-        let nullable_13: true;
-        export { nullable_13 as nullable };
         let deprecated_1: true;
         export { deprecated_1 as deprecated };
     }
@@ -199,8 +172,6 @@ export namespace CityColumnDescriptors {
     export namespace inst_login_1 {
         let type_17: "String";
         export { type_17 as type };
-        let nullable_14: true;
-        export { nullable_14 as nullable };
         let deprecated_2: true;
         export { deprecated_2 as deprecated };
     }
@@ -208,8 +179,6 @@ export namespace CityColumnDescriptors {
     export namespace inst_password_1 {
         let type_18: "String";
         export { type_18 as type };
-        let nullable_15: true;
-        export { nullable_15 as nullable };
         let deprecated_3: true;
         export { deprecated_3 as deprecated };
     }
@@ -217,8 +186,6 @@ export namespace CityColumnDescriptors {
     export namespace is_default_1 {
         let type_19: "Boolean";
         export { type_19 as type };
-        let nullable_16: true;
-        export { nullable_16 as nullable };
     }
     export { is_default_1 as is_default };
     export namespace is_franchise_1 {
@@ -229,8 +196,6 @@ export namespace CityColumnDescriptors {
     export namespace max_members_count_1 {
         let type_21: "Number";
         export { type_21 as type };
-        let nullable_17: true;
-        export { nullable_17 as nullable };
         let format_3: "integer";
         export { format_3 as format };
     }
@@ -238,8 +203,6 @@ export namespace CityColumnDescriptors {
     export namespace meta_description_1 {
         let type_22: "String";
         export { type_22 as type };
-        let nullable_18: true;
-        export { nullable_18 as nullable };
         let minLength_9: 1;
         export { minLength_9 as minLength };
         let maxLength_9: 255;
@@ -249,8 +212,6 @@ export namespace CityColumnDescriptors {
     export namespace meta_title_1 {
         let type_23: "String";
         export { type_23 as type };
-        let nullable_19: true;
-        export { nullable_19 as nullable };
         let minLength_10: 1;
         export { minLength_10 as minLength };
         let maxLength_10: 255;
@@ -260,8 +221,6 @@ export namespace CityColumnDescriptors {
     export namespace min_members_count_1 {
         let type_24: "Number";
         export { type_24 as type };
-        let nullable_20: true;
-        export { nullable_20 as nullable };
         let format_4: "integer";
         export { format_4 as format };
     }
@@ -278,8 +237,6 @@ export namespace CityColumnDescriptors {
     export namespace phone_1 {
         let type_26: "String";
         export { type_26 as type };
-        let nullable_21: true;
-        export { nullable_21 as nullable };
         let minLength_12: 1;
         export { minLength_12 as minLength };
         let maxLength_12: 255;
@@ -287,10 +244,8 @@ export namespace CityColumnDescriptors {
     }
     export { phone_1 as phone };
     export namespace price_1 {
-        let type_27: "String";
+        let type_27: "Number";
         export { type_27 as type };
-        let nullable_22: true;
-        export { nullable_22 as nullable };
         let format_5: "float";
         export { format_5 as format };
     }
@@ -298,8 +253,6 @@ export namespace CityColumnDescriptors {
     export namespace region_1 {
         let type_28: "String";
         export { type_28 as type };
-        let nullable_23: true;
-        export { nullable_23 as nullable };
         let minLength_13: 1;
         export { minLength_13 as minLength };
         let maxLength_13: 255;
@@ -309,8 +262,6 @@ export namespace CityColumnDescriptors {
     export namespace telegram_chat_id_1 {
         let type_29: "String";
         export { type_29 as type };
-        let nullable_24: true;
-        export { nullable_24 as nullable };
         let minLength_14: 1;
         export { minLength_14 as minLength };
         let maxLength_14: 255;
@@ -320,8 +271,6 @@ export namespace CityColumnDescriptors {
     export namespace tg_comment_1 {
         let type_30: "String";
         export { type_30 as type };
-        let nullable_25: true;
-        export { nullable_25 as nullable };
         let minLength_15: 1;
         export { minLength_15 as minLength };
         let maxLength_15: 255;
@@ -331,8 +280,6 @@ export namespace CityColumnDescriptors {
     export namespace tg_link_1 {
         let type_31: "String";
         export { type_31 as type };
-        let nullable_26: true;
-        export { nullable_26 as nullable };
         let minLength_16: 1;
         export { minLength_16 as minLength };
         let maxLength_16: 255;
@@ -342,8 +289,6 @@ export namespace CityColumnDescriptors {
     export namespace tg_login_1 {
         let type_32: "String";
         export { type_32 as type };
-        let nullable_27: true;
-        export { nullable_27 as nullable };
         let deprecated_4: true;
         export { deprecated_4 as deprecated };
         let minLength_17: 1;
@@ -355,8 +300,6 @@ export namespace CityColumnDescriptors {
     export namespace tg_password_1 {
         let type_33: "String";
         export { type_33 as type };
-        let nullable_28: true;
-        export { nullable_28 as nullable };
         let deprecated_5: true;
         export { deprecated_5 as deprecated };
         let minLength_18: 1;
@@ -368,8 +311,6 @@ export namespace CityColumnDescriptors {
     export namespace time_created_1 {
         let type_34: "String";
         export { type_34 as type };
-        let nullable_29: true;
-        export { nullable_29 as nullable };
         let format_6: "Date";
         export { format_6 as format };
     }
@@ -377,8 +318,6 @@ export namespace CityColumnDescriptors {
     export namespace time_updated_1 {
         let type_35: "String";
         export { type_35 as type };
-        let nullable_30: true;
-        export { nullable_30 as nullable };
         let format_7: "Date";
         export { format_7 as format };
     }
@@ -386,8 +325,6 @@ export namespace CityColumnDescriptors {
     export namespace timezone_1 {
         let type_36: "String";
         export { type_36 as type };
-        let nullable_31: true;
-        export { nullable_31 as nullable };
         let format_8: "integer";
         export { format_8 as format };
     }
@@ -395,8 +332,6 @@ export namespace CityColumnDescriptors {
     export namespace title_1 {
         let type_37: "String";
         export { type_37 as type };
-        let nullable_32: true;
-        export { nullable_32 as nullable };
         let minLength_19: 1;
         export { minLength_19 as minLength };
         let maxLength_19: 255;
@@ -406,29 +341,21 @@ export namespace CityColumnDescriptors {
     export namespace vk_comment_1 {
         let type_38: "String";
         export { type_38 as type };
-        let nullable_33: true;
-        export { nullable_33 as nullable };
     }
     export { vk_comment_1 as vk_comment };
     export namespace vk_group_id_1 {
         let type_39: "String";
         export { type_39 as type };
-        let nullable_34: true;
-        export { nullable_34 as nullable };
     }
     export { vk_group_id_1 as vk_group_id };
     export namespace vk_link_1 {
         let type_40: "String";
         export { type_40 as type };
-        let nullable_35: true;
-        export { nullable_35 as nullable };
     }
     export { vk_link_1 as vk_link };
     export namespace yandex_metrica_1 {
         let type_41: "String";
         export { type_41 as type };
-        let nullable_36: true;
-        export { nullable_36 as nullable };
     }
     export { yandex_metrica_1 as yandex_metrica };
 }

@@ -46,7 +46,6 @@ export var CityColumns = /** @type {const} */ ({
 export var CityColumnDescriptors = /** @type {const} */ ({
   [CityColumns.address]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
@@ -59,38 +58,32 @@ export var CityColumnDescriptors = /** @type {const} */ ({
 
   [CityColumns.chatapp_category]: {
     type: 'String',
-    nullable: true,
   },
 
   [CityColumns.chatapp_legacy]: {
     type: 'Boolean',
-    nullable: true,
   },
 
   [CityColumns.chatapp_line]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.chatapp_tag]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.chatapp_user]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.country]: {
     type: 'String',
-    nullable: true,
     minLength: 2,
     maxLength: 2,
   },
@@ -103,24 +96,20 @@ export var CityColumnDescriptors = /** @type {const} */ ({
 
   [CityColumns.custom_html]: {
     type: 'String',
-    nullable: true,
   },
 
   [CityColumns.custom_script]: {
     type: 'String',
-    nullable: true,
   },
 
   [CityColumns.description]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.email]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
     format: 'email',
@@ -133,37 +122,31 @@ export var CityColumnDescriptors = /** @type {const} */ ({
 
   [CityColumns.id]: {
     type: 'String',
-    nullable: true,
     format: 'uuid',
   },
 
   [CityColumns.inst_comment]: {
     type: 'String',
-    nullable: true,
     deprecated: true,
   },
 
   [CityColumns.inst_link]: {
     type: 'String',
-    nullable: true,
     deprecated: true,
   },
 
   [CityColumns.inst_login]: {
     type: 'String',
-    nullable: true,
     deprecated: true,
   },
 
   [CityColumns.inst_password]: {
     type: 'String',
-    nullable: true,
     deprecated: true,
   },
 
   [CityColumns.is_default]: {
     type: 'Boolean',
-    nullable: true,
   },
 
   [CityColumns.is_franchise]: {
@@ -172,27 +155,23 @@ export var CityColumnDescriptors = /** @type {const} */ ({
 
   [CityColumns.max_members_count]: {
     type: 'Number',
-    nullable: true,
     format: 'integer',
   },
 
   [CityColumns.meta_description]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.meta_title]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.min_members_count]: {
     type: 'Number',
-    nullable: true,
     format: 'integer',
   },
 
@@ -204,48 +183,41 @@ export var CityColumnDescriptors = /** @type {const} */ ({
 
   [CityColumns.phone]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.price]: {
-    type: 'String',
-    nullable: true,
+    type: 'Number',
     format: 'float',
   },
 
   [CityColumns.region]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.telegram_chat_id]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.tg_comment]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.tg_link]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.tg_login]: {
     type: 'String',
-    nullable: true,
     deprecated: true,
     minLength: 1,
     maxLength: 255,
@@ -253,7 +225,6 @@ export var CityColumnDescriptors = /** @type {const} */ ({
 
   [CityColumns.tg_password]: {
     type: 'String',
-    nullable: true,
     deprecated: true,
     minLength: 1,
     maxLength: 255,
@@ -261,46 +232,38 @@ export var CityColumnDescriptors = /** @type {const} */ ({
 
   [CityColumns.time_created]: {
     type: 'String',
-    nullable: true,
     format: 'Date',
   },
 
   [CityColumns.time_updated]: {
     type: 'String',
-    nullable: true,
     format: 'Date',
   },
 
   [CityColumns.timezone]: {
     type: 'String',
-    nullable: true,
     format: 'integer',
   },
 
   [CityColumns.title]: {
     type: 'String',
-    nullable: true,
     minLength: 1,
     maxLength: 255,
   },
 
   [CityColumns.vk_comment]: {
     type: 'String',
-    nullable: true,
   },
 
   [CityColumns.vk_group_id]: {
     type: 'String',
-    nullable: true,
   },
 
   [CityColumns.vk_link]: {
     type: 'String',
-    nullable: true,
   },
 
   [CityColumns.yandex_metrica]: {
     type: 'String',
-    nullable: true,
   },
 })
