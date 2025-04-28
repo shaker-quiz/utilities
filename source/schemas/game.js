@@ -1,26 +1,97 @@
-export var GameColumns = /** @type {const} */ ({
-  alias: 'alias',
-  city_id: 'city_id',
-  created_by_id: 'created_by_id',
-  currency: 'currency',
-  description: 'description',
-  event_time: 'event_time',
-  game_pack_id: 'game_pack_id',
-  id: 'id',
-  image_id: 'image_id',
-  location_id: 'location_id',
-  max_members_count: 'max_members_count',
-  min_members_count: 'min_members_count',
-  name: 'name',
-  number: 'number',
-  owner_id: 'owner_id',
-  personal_comment: 'personal_comment',
-  price: 'price',
-  short_description: 'short_description',
-  status: 'status',
-  theme_id: 'theme_id',
-  time_created: 'time_created',
-  time_updated: 'time_updated',
-  timezone: 'timezone',
-  weekday: 'weekday',
+export var GameSchema = /** @type {const} */ ({
+  alias: {
+    type: 'Undefined',
+  },
+
+  city_id: {
+    type: 'Undefined',
+  },
+
+  created_by_id: {
+    type: 'Undefined',
+  },
+
+  currency: {
+    type: 'Undefined',
+  },
+
+  description: {
+    type: 'Undefined',
+  },
+
+  event_time: {
+    type: 'Undefined',
+  },
+
+  game_pack_id: {
+    type: 'Undefined',
+  },
+
+  id: {
+    type: 'Undefined',
+  },
+
+  image_id: {
+    type: 'Undefined',
+  },
+
+  location_id: {
+    type: 'Undefined',
+  },
+
+  max_members_count: {
+    type: 'Undefined',
+  },
+
+  min_members_count: {
+    type: 'Undefined',
+  },
+
+  name: {
+    type: 'Undefined',
+  },
+
+  number: {
+    type: 'Undefined',
+  },
+
+  owner_id: {
+    type: 'Undefined',
+  },
+
+  personal_comment: {
+    type: 'Undefined',
+  },
+
+  price: {
+    type: 'Undefined',
+  },
+
+  short_description: {
+    type: 'Undefined',
+  },
+
+  status: {
+    type: 'Undefined',
+  },
+
+  theme_id: {
+    type: 'Undefined',
+  },
+
+  time_created: {
+    type: 'Undefined',
+  },
+
+  time_updated: {
+    type: 'Undefined',
+  },
+
+  timezone: {
+    type: 'Undefined',
+  },
+
+  weekday: {
+    type: 'Undefined',
+  },
 })

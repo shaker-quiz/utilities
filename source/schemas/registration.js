@@ -1,34 +1,129 @@
-export var RegistrationColumns = /** @type {const} */ ({
-  ads_from: 'ads_from',
-  change_people_count: 'change_people_count',
-  channel: 'channel',
-  chatapp_id: 'chatapp_id',
-  comment: 'comment',
-  email: 'email',
-  event_id: 'event_id',
-  fact_people_count: 'fact_people_count',
-  human_name: 'human_name',
-  id: 'id',
-  is_actual_presence: 'is_actual_presence',
-  is_alone: 'is_alone',
-  is_birthday: 'is_birthday',
-  is_canceled: 'is_canceled',
-  is_confirm: 'is_confirm',
-  is_extensible: 'is_extensible',
-  is_first: 'is_first',
-  is_reserve: 'is_reserve',
-  last_broadcast: 'last_broadcast',
-  people_count: 'people_count',
-  phone: 'phone',
-  promocode: 'promocode',
-  team_name: 'team_name',
-  telegramBot: 'telegramBot',
-  time_created: 'time_created',
-  time_updated: 'time_updated',
-  utm_campaign: 'utm_campaign',
-  utm_content: 'utm_content',
-  utm_medium: 'utm_medium',
-  utm_source: 'utm_source',
-  utm_term: 'utm_term',
-  vkontakte: 'vkontakte',
+export var RegistrationSchema = /** @type {const} */ ({
+  ads_from: {
+    type: 'Undefined',
+  },
+
+  change_people_count: {
+    type: 'Undefined',
+  },
+
+  channel: {
+    type: 'Undefined',
+  },
+
+  chatapp_id: {
+    type: 'Undefined',
+  },
+
+  comment: {
+    type: 'Undefined',
+  },
+
+  email: {
+    type: 'Undefined',
+  },
+
+  event_id: {
+    type: 'Undefined',
+  },
+
+  fact_people_count: {
+    type: 'Undefined',
+  },
+
+  human_name: {
+    type: 'Undefined',
+  },
+
+  id: {
+    type: 'Undefined',
+  },
+
+  is_actual_presence: {
+    type: 'Undefined',
+  },
+
+  is_alone: {
+    type: 'Undefined',
+  },
+
+  is_birthday: {
+    type: 'Undefined',
+  },
+
+  is_canceled: {
+    type: 'Undefined',
+  },
+
+  is_confirm: {
+    type: 'Undefined',
+  },
+
+  is_extensible: {
+    type: 'Undefined',
+  },
+
+  is_first: {
+    type: 'Undefined',
+  },
+
+  is_reserve: {
+    type: 'Undefined',
+  },
+
+  last_broadcast: {
+    type: 'Undefined',
+  },
+
+  people_count: {
+    type: 'Undefined',
+  },
+
+  phone: {
+    type: 'Undefined',
+  },
+
+  promocode: {
+    type: 'Undefined',
+  },
+
+  team_name: {
+    type: 'Undefined',
+  },
+
+  telegramBot: {
+    type: 'Undefined',
+  },
+
+  time_created: {
+    type: 'Undefined',
+  },
+
+  time_updated: {
+    type: 'Undefined',
+  },
+
+  utm_campaign: {
+    type: 'Undefined',
+  },
+
+  utm_content: {
+    type: 'Undefined',
+  },
+
+  utm_medium: {
+    type: 'Undefined',
+  },
+
+  utm_source: {
+    type: 'Undefined',
+  },
+
+  utm_term: {
+    type: 'Undefined',
+  },
+
+  vkontakte: {
+    type: 'Undefined',
+  },
 })

@@ -1,21 +1,77 @@
-export var VenueColumns = /** @type {const} */ ({
-  city_id: 'city_id',
-  comment: 'comment',
-  comment_equipment: 'comment_equipment',
-  comment_responsible: 'comment_responsible',
-  floor: 'floor',
-  game_time: 'game_time',
-  house_number: 'house_number',
-  id: 'id',
-  is_adult: 'is_adult',
-  latitude: 'latitude',
-  location_info: 'location_info',
-  longitude: 'longitude',
-  metro: 'metro',
-  name: 'name',
-  people_capacity: 'people_capacity',
-  street: 'street',
-  team_capacity: 'team_capacity',
-  time_created: 'time_created',
-  time_updated: 'time_updated',
+export var VenueSchema = /** @type {const} */ ({
+  city_id: {
+    type: 'Undefined',
+  },
+
+  comment: {
+    type: 'Undefined',
+  },
+
+  comment_equipment: {
+    type: 'Undefined',
+  },
+
+  comment_responsible: {
+    type: 'Undefined',
+  },
+
+  floor: {
+    type: 'Undefined',
+  },
+
+  game_time: {
+    type: 'Undefined',
+  },
+
+  house_number: {
+    type: 'Undefined',
+  },
+
+  id: {
+    type: 'Undefined',
+  },
+
+  is_adult: {
+    type: 'Undefined',
+  },
+
+  latitude: {
+    type: 'Undefined',
+  },
+
+  location_info: {
+    type: 'Undefined',
+  },
+
+  longitude: {
+    type: 'Undefined',
+  },
+
+  metro: {
+    type: 'Undefined',
+  },
+
+  name: {
+    type: 'Undefined',
+  },
+
+  people_capacity: {
+    type: 'Undefined',
+  },
+
+  street: {
+    type: 'Undefined',
+  },
+
+  team_capacity: {
+    type: 'Undefined',
+  },
+
+  time_created: {
+    type: 'Undefined',
+  },
+
+  time_updated: {
+    type: 'Undefined',
+  },
 })

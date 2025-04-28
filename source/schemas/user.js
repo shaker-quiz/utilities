@@ -1,20 +1,73 @@
-export var UserColumns = /** @type {const} */ ({
-  email: 'email',
-  first_name: 'first_name',
-  gmail_link: 'gmail_link',
-  hashed_password: 'hashed_password',
-  id: 'id',
-  image_id: 'image_id',
-  is_active: 'is_active',
-  is_superuser: 'is_superuser',
-  is_verified: 'is_verified',
-  last_name: 'last_name',
-  mailru_link: 'mailru_link',
-  phone: 'phone',
-  role_id: 'role_id',
-  telegram_data: 'telegram_data',
-  telegram_id: 'telegram_id',
-  third_name: 'third_name',
-  time_created: 'time_created',
-  time_updated: 'time_updated',
+export var UserSchema = /** @type {const} */ ({
+  email: {
+    type: 'Undefined',
+  },
+
+  first_name: {
+    type: 'Undefined',
+  },
+
+  gmail_link: {
+    type: 'Undefined',
+  },
+
+  hashed_password: {
+    type: 'Undefined',
+  },
+
+  id: {
+    type: 'Undefined',
+  },
+
+  image_id: {
+    type: 'Undefined',
+  },
+
+  is_active: {
+    type: 'Undefined',
+  },
+
+  is_superuser: {
+    type: 'Undefined',
+  },
+
+  is_verified: {
+    type: 'Undefined',
+  },
+
+  last_name: {
+    type: 'Undefined',
+  },
+
+  mailru_link: {
+    type: 'Undefined',
+  },
+
+  phone: {
+    type: 'Undefined',
+  },
+
+  role_id: {
+    type: 'Undefined',
+  },
+
+  telegram_data: {
+    type: 'Undefined',
+  },
+
+  telegram_id: {
+    type: 'Undefined',
+  },
+
+  third_name: {
+    type: 'Undefined',
+  },
+
+  time_created: {
+    type: 'Undefined',
+  },
+
+  time_updated: {
+    type: 'Undefined',
+  },
 })

@@ -30,11 +30,13 @@ export * from './enumerations/regexps.js'
 export * from './enumerations/registration-statuses.js'
 export * from './enumerations/requirements.js'
 export * from './enumerations/roles.js'
+export * from './enumerations/schemas.js'
 export * from './enumerations/services.js'
 
 export * from './functions/fetch.js'
 export * from './functions/origin.js'
 export * from './functions/pathname.js'
+export * from './functions/schema.js'
 export * from './functions/url.js'
 
 export * from './schemas/city.js'
