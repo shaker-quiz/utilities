@@ -14,7 +14,7 @@ type RoleRow = {
   /**
    * @description "character varying"
    */
-  name: 'admin' | 'manager'
+  name: Role
   /**
    * @description "character varying"
    */

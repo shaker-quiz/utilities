@@ -128,16 +128,7 @@ type GameRow = {
   /**
    * @description "USER-DEFINED"
    */
-  status:
-    | 'MODERATION'
-    | 'PUBLISHED'
-    | 'REJECTED'
-    | 'APPROVED'
-    | 'FINISHED'
-    | 'ARCHIVE'
-    | 'FORINVITES'
-    | 'IS_RESERVE'
-    | 'CLOSED'
+  status: GameStatus
   /**
    * @description "timestamp without time zone"
    */
