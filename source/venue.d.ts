@@ -21,6 +21,11 @@ type VenueAdminResult = {
   // City
   city_id: CityRow['id']
   city_name: CityRow['name']
+  city_timezone: CityRow['timezone']
+  city_price: CityRow['price']
+  city_currency: CityRow['currency']
+  city_min_members_count: CityRow['min_members_count']
+  city_max_members_count: CityRow['max_members_count']
 }
 
 type VenueDefaultResult = unknown
@@ -48,6 +53,11 @@ type VenueOrganizerResult = {
   // City
   city_id: CityRow['id']
   city_name: CityRow['name']
+  city_timezone: CityRow['timezone']
+  city_price: CityRow['price']
+  city_currency: CityRow['currency']
+  city_min_members_count: CityRow['min_members_count']
+  city_max_members_count: CityRow['max_members_count']
 }
 
 type VenueRow = {
