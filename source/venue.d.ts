@@ -1,27 +1,54 @@
-type VenueAdminResult = VenueRow
-
-type VenueDefaultResult = {
-  address: VenueRow['address']
-  alias: VenueRow['alias']
-  country: VenueRow['country']
-  custom_html: VenueRow['custom_html']
-  custom_script: VenueRow['custom_script']
-  email: VenueRow['email']
+type VenueAdminResult = {
+  // Venue
   id: VenueRow['id']
-  inst_link: VenueRow['inst_link']
-  max_members_count: VenueRow['max_members_count']
-  meta_description: VenueRow['meta_description']
-  meta_title: VenueRow['meta_title']
-  min_members_count: VenueRow['min_members_count']
+  time_created: VenueRow['time_created']
+  time_updated: VenueRow['time_updated']
+  longitude: VenueRow['longitude']
+  latitude: VenueRow['latitude']
+  people_capacity: VenueRow['people_capacity']
+  team_capacity: VenueRow['team_capacity']
+  is_adult: VenueRow['is_adult']
   name: VenueRow['name']
-  phone: VenueRow['phone']
-  tg_link: VenueRow['tg_link']
-  vk_group_id: VenueRow['vk_group_id']
-  vk_link: VenueRow['vk_link']
-  yandex_metrica: VenueRow['yandex_metrica']
+  house_number: VenueRow['house_number']
+  comment: VenueRow['comment']
+  comment_responsible: VenueRow['comment_responsible']
+  comment_equipment: VenueRow['comment_equipment']
+  street: VenueRow['street']
+  game_time: VenueRow['game_time']
+  floor: VenueRow['floor']
+  metro: VenueRow['metro']
+  location_info: VenueRow['location_info']
+  // City
+  city_id: CityRow['id']
+  city_name: CityRow['name']
 }
 
-type VenueOrganizerResult = VenueRow
+type VenueDefaultResult = unknown
+
+type VenueOrganizerResult = {
+  // Venue
+  id: VenueRow['id']
+  time_created: VenueRow['time_created']
+  time_updated: VenueRow['time_updated']
+  longitude: VenueRow['longitude']
+  latitude: VenueRow['latitude']
+  people_capacity: VenueRow['people_capacity']
+  team_capacity: VenueRow['team_capacity']
+  is_adult: VenueRow['is_adult']
+  name: VenueRow['name']
+  house_number: VenueRow['house_number']
+  comment: VenueRow['comment']
+  comment_responsible: VenueRow['comment_responsible']
+  comment_equipment: VenueRow['comment_equipment']
+  street: VenueRow['street']
+  game_time: VenueRow['game_time']
+  floor: VenueRow['floor']
+  metro: VenueRow['metro']
+  location_info: VenueRow['location_info']
+  // City
+  city_id: CityRow['id']
+  city_name: CityRow['name']
+}
 
 type VenueRow = {
   /**
