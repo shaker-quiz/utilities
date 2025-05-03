@@ -28,7 +28,22 @@ type CheckinOrganizerResult = {
   role_name: RoleRow['name']
 }
 
-type UserAdminResult = unknown
+type UserAdminResult = {
+  id: UserRow['id']
+  email: UserRow['email']
+  phone: UserRow['phone']
+  first_name: UserRow['first_name']
+  last_name: UserRow['last_name']
+  is_active: UserRow['is_active']
+  gmail_link: UserRow['gmail_link']
+  mailru_link: UserRow['mailru_link']
+  role_id: RoleRow['id']
+  role_name: RoleRow['name']
+  cities: {
+    id: CityRow['id']
+    name: CityRow['name']
+  }[]
+}
 
 type UserDefaultResult = unknown
 
