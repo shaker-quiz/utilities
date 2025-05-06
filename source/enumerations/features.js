@@ -48,12 +48,13 @@ export var FeatureKindPathnames = {
  * @type {Record<Domain, Service>}
  */
 export var DomainServiceDefaults = {
+  [Domains.User]: Backends.Users,
+  [Domains.Role]: Backends.Users,
   [Domains.City]: Backends.Locations,
+  [Domains.Venue]: Backends.Locations,
   [Domains.Game]: Backends.Games,
   [Domains.Registration]: Backends.Games,
   [Domains.Theme]: Backends.Games,
-  [Domains.User]: Backends.Users,
-  [Domains.Venue]: Backends.Locations,
 }
 
 /**

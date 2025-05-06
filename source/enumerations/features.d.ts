@@ -5,12 +5,13 @@ export const Features: {
     Exception: "Exception";
     Home: "Home";
     Profile: "Profile";
+    User: "User";
+    Role: "Role";
     City: "City";
+    Venue: "Venue";
+    Theme: "Theme";
     Game: "Game";
     Registration: "Registration";
-    Theme: "Theme";
-    User: "User";
-    Venue: "Venue";
     Mailing: "Mailing";
 };
 /**

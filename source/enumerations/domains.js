@@ -4,12 +4,13 @@ import { Methods } from './methods.js'
 import { Requirements } from './requirements.js'
 
 export var Domains = /** @type {const} */ ({
+  User: 'User',
+  Role: 'Role',
   City: 'City',
+  Venue: 'Venue',
+  Theme: 'Theme',
   Game: 'Game',
   Registration: 'Registration',
-  Theme: 'Theme',
-  User: 'User',
-  Venue: 'Venue',
   Mailing: 'Mailing',
 })
 
@@ -17,12 +18,13 @@ export var Domains = /** @type {const} */ ({
  * @type {Record<Domain, Icon>}
  */
 export var DomainIcons = {
+  [Domains.User]: Icons['users'],
+  [Domains.Role]: Icons['identification'],
   [Domains.City]: Icons['building-office'],
+  [Domains.Venue]: Icons['map-pin'],
+  [Domains.Theme]: Icons['document-text'],
   [Domains.Game]: Icons['newspaper'],
   [Domains.Registration]: Icons['user-group'],
-  [Domains.Theme]: Icons['document-text'],
-  [Domains.User]: Icons['users'],
-  [Domains.Venue]: Icons['map-pin'],
   [Domains.Mailing]: Icons['envelope'],
 }
 
@@ -30,9 +32,29 @@ export var DomainIcons = {
  * @type {Record<Domain, Record<Kind, string>>}
  */
 export var DomainKindPathnames = {
+  [Domains.User]: {
+    [Kinds.Unit]: '/user/:user?',
+    [Kinds.Set]: '/users',
+  },
+
+  [Domains.User]: {
+    [Kinds.Unit]: '/role/:role?',
+    [Kinds.Set]: '/roles',
+  },
+
   [Domains.City]: {
     [Kinds.Unit]: '/city/:city?',
     [Kinds.Set]: '/cities',
+  },
+
+  [Domains.Venue]: {
+    [Kinds.Unit]: '/venue/:venue?',
+    [Kinds.Set]: '/venues',
+  },
+
+  [Domains.Theme]: {
+    [Kinds.Unit]: '/theme/:theme?',
+    [Kinds.Set]: '/themes',
   },
 
   [Domains.Game]: {
@@ -45,21 +67,6 @@ export var DomainKindPathnames = {
     [Kinds.Set]: '/registrations',
   },
 
-  [Domains.Theme]: {
-    [Kinds.Unit]: '/theme/:theme?',
-    [Kinds.Set]: '/themes',
-  },
-
-  [Domains.User]: {
-    [Kinds.Unit]: '/user/:user?',
-    [Kinds.Set]: '/users',
-  },
-
-  [Domains.Venue]: {
-    [Kinds.Unit]: '/venue/:venue?',
-    [Kinds.Set]: '/venues',
-  },
-
   [Domains.Mailing]: {
     [Kinds.Unit]: '/mailing/:mailing?',
     [Kinds.Set]: '/mailings',
@@ -70,7 +77,43 @@ export var DomainKindPathnames = {
  * @type {Record<Domain, Record<Method, Set<Requirement>>>}
  */
 export var DomainMethodRequirements = {
+  [Domains.User]: {
+    [Methods.DELETE]: new Set([Requirements.Checkin]),
+    [Methods.GET]: new Set([Requirements.Checkin]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
+  },
+
+  [Domains.Role]: {
+    [Methods.DELETE]: new Set([Requirements.Checkin]),
+    [Methods.GET]: new Set([Requirements.Checkin]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
+  },
+
   [Domains.City]: {
+    [Methods.DELETE]: new Set([Requirements.Checkin]),
+    [Methods.GET]: new Set([Requirements.Checkin]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
+  },
+
+  [Domains.Venue]: {
+    [Methods.DELETE]: new Set([Requirements.Checkin]),
+    [Methods.GET]: new Set([Requirements.Checkin]),
+    [Methods.OPTIONS]: new Set([]),
+    [Methods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
+    [Methods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
+  },
+
+  [Domains.Theme]: {
     [Methods.DELETE]: new Set([Requirements.Checkin]),
     [Methods.GET]: new Set([Requirements.Checkin]),
     [Methods.OPTIONS]: new Set([]),
@@ -89,33 +132,6 @@ export var DomainMethodRequirements = {
   },
 
   [Domains.Registration]: {
-    [Methods.DELETE]: new Set([Requirements.Checkin]),
-    [Methods.GET]: new Set([Requirements.Checkin]),
-    [Methods.OPTIONS]: new Set([]),
-    [Methods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
-    [Methods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
-    [Methods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
-  },
-
-  [Domains.Theme]: {
-    [Methods.DELETE]: new Set([Requirements.Checkin]),
-    [Methods.GET]: new Set([Requirements.Checkin]),
-    [Methods.OPTIONS]: new Set([]),
-    [Methods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
-    [Methods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
-    [Methods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
-  },
-
-  [Domains.User]: {
-    [Methods.DELETE]: new Set([Requirements.Checkin]),
-    [Methods.GET]: new Set([Requirements.Checkin]),
-    [Methods.OPTIONS]: new Set([]),
-    [Methods.PATCH]: new Set([Requirements.Checkin, Requirements.Body]),
-    [Methods.POST]: new Set([Requirements.Checkin, Requirements.Body]),
-    [Methods.PUT]: new Set([Requirements.Checkin, Requirements.Body]),
-  },
-
-  [Domains.Venue]: {
     [Methods.DELETE]: new Set([Requirements.Checkin]),
     [Methods.GET]: new Set([Requirements.Checkin]),
     [Methods.OPTIONS]: new Set([]),
