@@ -37,7 +37,7 @@ export var DomainKindPathnames = {
     [Kinds.Set]: '/users',
   },
 
-  [Domains.User]: {
+  [Domains.Role]: {
     [Kinds.Unit]: '/role/:role?',
     [Kinds.Set]: '/roles',
   },
