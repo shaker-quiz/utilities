@@ -4,12 +4,15 @@ import { Methods } from './methods.js'
 import { Requirements } from './requirements.js'
 
 export var Domains = /** @type {const} */ ({
+  Asset: 'Asset',
   User: 'User',
   Role: 'Role',
   City: 'City',
   Venue: 'Venue',
   Theme: 'Theme',
+  ThemeAsset: 'ThemeAsset',
   Game: 'Game',
+  GameAsset: 'GameAsset',
   Registration: 'Registration',
   Mailing: 'Mailing',
 })

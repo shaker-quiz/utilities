@@ -1,10 +1,13 @@
 export namespace Domains {
+    let Asset: "Asset";
     let User: "User";
     let Role: "Role";
     let City: "City";
     let Venue: "Venue";
     let Theme: "Theme";
+    let ThemeAsset: "ThemeAsset";
     let Game: "Game";
+    let GameAsset: "GameAsset";
     let Registration: "Registration";
     let Mailing: "Mailing";
 }
