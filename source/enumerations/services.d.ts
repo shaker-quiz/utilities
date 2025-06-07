@@ -6,15 +6,17 @@ export const Services: {
     Games: "Games";
     Locations: "Locations";
     Users: "Users";
+    Integrations: "Integrations";
 };
 export const ServiceFeatures: {
-    Admin: ("City" | "Game" | "Registration" | "Theme" | "User" | "Venue" | "Checkin" | "404" | "Exception" | "Home" | "Profile")[];
+    Admin: ("Checkin" | "User" | "City" | "Venue" | "Theme" | "Game" | "Registration" | "404" | "Exception" | "Home" | "Profile")[];
     Landing: ("Game" | "Registration" | "404" | "Exception" | "Home")[];
     MiniApp: ("Game" | "Registration" | "404" | "Exception" | "Home")[];
-    Backend: ("City" | "Game" | "Registration" | "Theme" | "User" | "Venue" | "Checkin")[];
-    Games: ("Game" | "Registration" | "Theme")[];
+    Backend: ("Checkin" | "User" | "Role" | "City" | "Venue" | "Theme" | "Game" | "Registration")[];
+    Games: ("Theme" | "Game" | "Registration")[];
     Locations: ("City" | "Venue")[];
-    Users: ("User" | "Checkin")[];
+    Users: ("Checkin" | "User" | "Role")[];
+    Integrations: ("Mailing" | "Redirect")[];
 };
 /** @type {Record<Service, Record<Network, string>>} */
 export const ServiceNetworkOrigins: Record<Service, Record<Network, string>>;
