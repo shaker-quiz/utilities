@@ -65,33 +65,33 @@ export var getFeatureFetch = configuration => {
 
     default:
       throw TypeError(
-        `Parameter configuration '${configuration}' must be either 'String' or 'Object'.`,
+        `[getFeatureFetch] Parameter configuration '${configuration}' must be either 'String' or 'Object'.`,
       )
   }
 
   if (!(feature in Features))
     throw TypeError(
-      `Feature '${feature}' must be a member of 'Features'.`,
+      `[getFeatureFetch] Feature '${feature}' must be a member of 'Features'.`,
     )
 
   if (!(kind in Kinds))
     throw TypeError(
-      `Kind '${kind}' must be a member of 'Kinds'.`,
+      `[getFeatureFetch] Kind '${kind}' must be a member of 'Kinds'.`,
     )
 
   if (!(service in Services))
     throw TypeError(
-      `Service '${service}' must be a member of 'Services'.`,
+      `[getFeatureFetch] Service '${service}' must be a member of 'Services'.`,
     )
 
   if (!(network in Networks))
     throw TypeError(
-      `Network '${network}' must be a member of 'Networks'.`,
+      `[getFeatureFetch] Network '${network}' must be a member of 'Networks'.`,
     )
 
   if (!ServiceFeatures[service].includes(feature))
     throw TypeError(
-      `Feature '${feature}' must be a member of 'ServiceFeatures[${service}]'.`,
+      `[getFeatureFetch] Feature '${feature}' must be a member of 'ServiceFeatures[${service}]'.`,
     )
 
   /**
@@ -106,7 +106,7 @@ export var getFeatureFetch = configuration => {
   return (input, init) => {
     if (!(init.method in Methods))
       throw TypeError(
-        `Method '${init.method}' is not listed in 'Methods'.`,
+        `[featureFetch] Method '${init.method}' is not listed in 'Methods'.`,
       )
 
     var request = new Request(

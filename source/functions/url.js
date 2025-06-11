@@ -20,22 +20,22 @@ export var getFeatureUrl = (
 ) => {
   if (!(feature in Features))
     throw TypeError(
-      `Parameter 'feature' must be a member of 'Features'.`,
+      `[getFeatureUrl] Parameter 'feature' must be a member of 'Features'.`,
     )
 
   if (!(service in Services))
     throw TypeError(
-      `Parameter 'service' must be a member of 'Services'.`,
+      `[getFeatureUrl] Parameter 'service' must be a member of 'Services'.`,
     )
 
   if (!(network in Networks))
     throw TypeError(
-      `Parameter 'network' must be a member of 'Networks'.`,
+      `[getFeatureUrl] Parameter 'network' must be a member of 'Networks'.`,
     )
 
   if (!(kind in Kinds))
     throw TypeError(
-      `Parameter 'kind' must be a member of 'Kinds'.`,
+      `[getFeatureUrl] Parameter 'kind' must be a member of 'Kinds'.`,
     )
 
   return new URL(

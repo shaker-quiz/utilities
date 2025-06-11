@@ -19,37 +19,37 @@ export var getFeatureOrigin = (
 ) => {
   if (!(feature in Features))
     throw TypeError(
-      `Parameter 'feature' must be a member of 'Features'.`,
+      `[getFeatureOrigin] Parameter 'feature' must be a member of 'Features'.`,
     )
 
   if (!(service in Services))
     throw TypeError(
-      `Parameter 'service' must be a member of 'Services'.`,
+      `[getFeatureOrigin] Parameter 'service' must be a member of 'Services'.`,
     )
 
   if (!(network in Networks))
     throw TypeError(
-      `Parameter 'network' must be a member of 'Networks'.`,
+      `[getFeatureOrigin] Parameter 'network' must be a member of 'Networks'.`,
     )
 
   if (!(feature in FeatureServiceNetworkOrigins))
     throw TypeError(
-      `Feature '${feature}' is not defined in 'FeatureServiceNetworkOrigins'.`,
+      `[getFeatureOrigin] Feature '${feature}' is not defined in 'FeatureServiceNetworkOrigins'.`,
     )
 
   if (!(service in FeatureServiceNetworkOrigins[feature]))
     throw TypeError(
-      `Feature's '${feature}' Service '${service}' is not defined in 'FeatureServiceNetworkOrigins[${feature}]'.`,
+      `[getFeatureOrigin] Feature's '${feature}' Service '${service}' is not defined in 'FeatureServiceNetworkOrigins[${feature}]'.`,
     )
 
   if (!(network in FeatureServiceNetworkOrigins[feature][service]))
     throw TypeError(
-      `Feature's '${feature}' Service '${service}' Network '${network}' is not defined in 'FeatureServiceNetworkOrigins[${feature}][${network}]'.`,
+      `[getFeatureOrigin] Feature's '${feature}' Service '${service}' Network '${network}' is not defined in 'FeatureServiceNetworkOrigins[${feature}][${network}]'.`,
     )
 
   if (!URL.canParse(FeatureServiceNetworkOrigins[feature][service][network]))
     throw TypeError(
-      `Feature's '${feature}' Service '${service}' Network '${network}' must be URL-like.`,
+      `[getFeatureOrigin] Feature's '${feature}' Service '${service}' Network '${network}' must be URL-like.`,
     )
 
   return FeatureServiceNetworkOrigins[feature][service][network]
@@ -62,39 +62,39 @@ export var setFeatureOrigin = origins => {
   for (var feature in origins) {
     if (!(feature in Features))
       throw TypeError(
-        `Parameter 'feature' must be a member of 'Features'.`,
+        `[setFeatureOrigin] Parameter 'feature' must be a member of 'Features'.`,
       )
 
     if (!(feature in FeatureServiceNetworkOrigins))
       throw TypeError(
-        `Feature '${feature}' is not defined 'FeatureServiceNetworkOrigins'.`,
+        `[setFeatureOrigin] Feature '${feature}' is not defined 'FeatureServiceNetworkOrigins'.`,
       )
 
     for (var service in origins[feature]) {
       if (!(service in Services))
         throw TypeError(
-          `Parameter 'service' must be a member of 'Services'.`,
+          `[setFeatureOrigin] Parameter 'service' must be a member of 'Services'.`,
         )
 
       if (!(service in FeatureServiceNetworkOrigins[feature]))
         throw TypeError(
-          `Feature's '${feature}' Service '${service}' is not defined 'FeatureServiceNetworkOrigins[${feature}]'.`,
+          `[setFeatureOrigin] Feature's '${feature}' Service '${service}' is not defined 'FeatureServiceNetworkOrigins[${feature}]'.`,
         )
 
       for (var network in origins[feature][service]) {
         if (!(network in Networks))
           throw TypeError(
-            `Parameter 'network' must be a member of 'Networks'.`,
+            `[setFeatureOrigin] Parameter 'network' must be a member of 'Networks'.`,
           )
 
         if (!(network in FeatureServiceNetworkOrigins[feature][service]))
           throw TypeError(
-            `Feature's '${feature}' Service '${service}' Network '${network}' is not defined 'FeatureServiceNetworkOrigins[${feature}][${service}]'.`,
+            `[setFeatureOrigin] Feature's '${feature}' Service '${service}' Network '${network}' is not defined 'FeatureServiceNetworkOrigins[${feature}][${service}]'.`,
           )
 
         if (!URL.canParse(origins[feature][service][network]))
           throw TypeError(
-            `Feature's '${feature}' Service '${service}' Network '${network}' must be URL-like.`,
+            `[setFeatureOrigin] Feature's '${feature}' Service '${service}' Network '${network}' must be URL-like.`,
           )
 
         FeatureServiceNetworkOrigins[feature][service][network] =
@@ -115,13 +115,13 @@ export var setServiceOrigin = origins => {
   for (var service in origins) {
     if (!(service in Services))
       throw TypeError(
-        `Service '${service}' must be a member of 'Services'.`,
+        `[setServiceOrigin] Service '${service}' must be a member of 'Services'.`,
       )
 
     for (var network in origins[service]) {
       if (!(network in Networks))
         throw TypeError(
-          `Network '${network}' must be a member of 'Networks'.`,
+          `[setServiceOrigin] Network '${network}' must be a member of 'Networks'.`,
         )
 
       for (var feature of ServiceFeatures[service]) {
