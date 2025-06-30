@@ -1,4 +1,4 @@
-export namespace Schemas {
+export namespace DomainSchema {
     export { UserSchema as User };
     export { RoleSchema as Role };
     export { CitySchema as City };

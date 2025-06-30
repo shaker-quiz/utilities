@@ -1,16 +1,16 @@
-import { Schemas } from '../enumerations/schemas.js'
+import { DomainSchema } from '../enumerations/schemas.js'
 
 /**
  * @param {Feature} feature
  * @param {*} object
  */
 export function validateSchema(feature, object) {
-  if (!(feature in Schemas))
+  if (!(feature in DomainSchema))
     throw TypeError(
       `[validateSchema] Parameter 'feature' '${feature}' must be a member of 'Schemas'.`,
     )
 
-  let schema = Schemas[feature]
+  let schema = DomainSchema[feature]
 
   for (let property in object)
     if (!(property in schema))

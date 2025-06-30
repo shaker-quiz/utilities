@@ -1,0 +1,1 @@
+export const GameStatuses: readonly ["APPROVED", "ARCHIVE", "CLOSED", "FINISHED", "FORINVITES", "MODERATION", "PUBLISHED", "REJECTED", "IS_RESERVE"];

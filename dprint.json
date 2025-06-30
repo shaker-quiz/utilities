@@ -6,7 +6,8 @@
     "useTabs": false,
     "useBraces": "maintain",
     "arrowFunction.useParentheses": "preferNone",
-    "lineWidth": 80
+    "lineWidth": 80,
+    "importDeclaration.forceSingleLine": true
   },
 
   "json": {},

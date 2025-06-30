@@ -1,40 +1,35 @@
 import { is } from '@yurkimus/types'
 
-import { FeatureKindPathnames, Features } from '../enumerations/features.js'
-import { Kinds } from '../enumerations/kinds.js'
+import { FeatureKindPathname } from '../enumerations/core/features.js'
+import { Scopes } from '../enumerations/core/scopes.js'
 
 /**
- * @param {Feature} feature
- * @param {Kind} [kind]
+ * @param {Scope} scope
  */
-export var getFeaturePathname = (
-  feature,
-  kind = Kinds.Unit,
-) => {
-  if (!(feature in Features))
+export var scopePathname = scope => {
+  if (!Scopes.includes(scope))
     throw TypeError(
-      `[getFeaturePathname] Parameter 'feature' must be a member of 'Features'.`,
+      `[scopePathname] Unknown scope '${scope}': not present in 'Scopes'.`,
     )
 
-  if (!(kind in Kinds))
+  var [method, feature, kind] = scope.split('/')
+
+  if (!(feature in FeatureKindPathname))
     throw TypeError(
-      `[getFeaturePathname] Parameter 'kind' must be a member of 'Kinds'.`,
+      `[scopePathname] Feature '${feature}' is not defined in 'FeatureKindPathname'.`,
     )
 
-  if (!(feature in FeatureKindPathnames))
+  if (!(kind in FeatureKindPathname[feature]))
     throw TypeError(
-      `[getFeaturePathname] Feature '${feature}' is not defined in 'FeatureKindPathnames'.`,
+      `[scopePathname] Kind '${kind}' is not defined under Feature '${feature}' in 'FeatureKindPathname'.`,
     )
 
-  if (!(kind in FeatureKindPathnames[feature]))
+  if (!is('String', FeatureKindPathname[feature][kind]))
     throw TypeError(
-      `[getFeaturePathname] Feature's '${feature}' Kind '${kind}' is not defined in 'FeatureKindPathnames[${feature}]'.`,
+      `[scopePathname] Invalid value at FeatureKindPathname['${feature}']['${kind}']: expected a string, got '${typeof FeatureKindPathname[
+        feature
+      ][kind]}'.`,
     )
 
-  if (!is('String', FeatureKindPathnames[feature][kind]))
-    throw TypeError(
-      `[getFeaturePathname] Feature's '${feature}' Kind '${kind}' must be a 'String'.`,
-    )
-
-  return FeatureKindPathnames[feature][kind]
+  return FeatureKindPathname[feature][kind]
 }

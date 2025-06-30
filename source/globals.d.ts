@@ -7,14 +7,6 @@ interface RequestInit {
    * @description A method string defined by RFC7231 @see {@link https://datatracker.ietf.org/doc/html/rfc7231#section-4.3}
    */
   method?: Method
-  /**
-   * @description Target network to where send the request
-   */
-  network?: Network
-  /**
-   * @description A string to declaratively set the Authorization header.
-   */
-  cookie?: string
 }
 
 /**
@@ -27,60 +19,69 @@ type UseState<Type> = [
 ]
 
 /**
- * General
+ * Core
  */
 
-type Method = keyof typeof import('./enumerations/methods.js').Methods
+type Method = typeof import('./enumerations/core/methods.js').Methods[number]
 
-type Kind = keyof typeof import('./enumerations/kinds.js').Kinds
+type Domain = typeof import('./enumerations/core/domains.js').Domains[number]
 
-type Network = keyof typeof import('./enumerations/networks.js').Networks
+type Procedure =
+  typeof import('./enumerations/core/procedures.js').Procedures[number]
 
-type Phase = keyof typeof import('./enumerations/phases.js').Phases
+type Feature = Domain | Procedure
+
+type Kind = typeof import('./enumerations/core/kinds.js').Kinds[number]
+
+type Scope = `${Method}/${Feature}/${Kind}`
 
 type Requirement =
-  keyof typeof import('./enumerations/requirements.d.ts').Requirements
+  typeof import('./enumerations/misc/requirements.js').Requirements[number]
 
-/**
- * Domain
- */
-
-type Domain = keyof typeof import('./enumerations/domains.js').Domains
-type Page = keyof typeof import('./enumerations/pages.js').Pages
-type Procedure = keyof typeof import('./enumerations/procedures.js').Procedures
-type Feature = Domain | Page | Procedure
-
-type Backend = keyof typeof import('./enumerations/backends.js').Backends
-type Frontend = keyof typeof import('./enumerations/frontends.js').Frontends
-type Service = Backend | Frontend
-
-type Role = keyof typeof import('./enumerations/roles.js').Roles
+type Role = keyof typeof import('./enumerations/entities/roles.js').Roles
 
 type GameStatus =
-  keyof typeof import('./enumerations/game-statuses.js').GameStatuses
+  keyof typeof import('./enumerations/entities/game-statuses.js').GameStatuses
 
 type RegistrationStatus =
-  keyof typeof import('./enumerations/registration-statuses.js').RegistrationStatuses
+  keyof typeof import('./enumerations/entities/registration-statuses.js').RegistrationStatuses
 
-type Lineup = keyof typeof import('./enumerations/lineups.js').Lineups
+type Lineup = keyof typeof import('./enumerations/entities/lineups.js').Lineups
 
 type Affilation =
-  keyof typeof import('./enumerations/affilations.js').Affilations
+  keyof typeof import('./enumerations/entities/affilations.js').Affilations
+
+/**
+ * Misc
+ */
+
+type Icon = typeof import('./enumerations/misc/icons.js').Icons[number]
+
+type Phase = typeof import('./enumerations/misc/phases.js').Phases[number]
+
+/**
+ * Products
+ */
+
+type ScopePhase = Record<Scope, Phase>
+
+type ScopeState = Record<Scope, any>
+
+type ScopeController = Record<Scope, AbortController | null>
 
 /**
  * Schemas
  */
 
 type CityColumn = keyof typeof import('./schemas/city.js').CityColumns
+
 type GameColumn = keyof typeof import('./schemas/game.js').GameColumns
+
 type RegistrationColumn =
   keyof typeof import('./schemas/registration.js').RegistrationColumns
+
 type ThemeColumn = keyof typeof import('./schemas/theme.js').ThemeColumns
+
 type UserColumn = keyof typeof import('./schemas/user.js').UserColumns
+
 type VenueColumn = keyof typeof import('./schemas/venue.js').VenueColumns
-
-/**
- * Misc
- */
-
-type Icon = keyof typeof import('./enumerations/icons.js').Icons

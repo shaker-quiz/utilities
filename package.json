@@ -1,6 +1,6 @@
 {
   "name": "@shakerquiz/utilities",
-  "version": "0.3.45",
+  "version": "0.4.0",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "scripts": {
@@ -16,14 +16,9 @@
     }
   },
   "dependencies": {
-    "@yurkimus/cookies": "0.0.8",
-    "@yurkimus/errors": "0.1.4",
-    "@yurkimus/message": "0.0.14",
-    "@yurkimus/response-status": "0.1.1",
-    "@yurkimus/url": "0.2.8",
-    "urlpattern-polyfill": "10.0.0"
+    "urlpattern-polyfill": "10.1.0"
   },
   "devDependencies": {
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   }
 }
