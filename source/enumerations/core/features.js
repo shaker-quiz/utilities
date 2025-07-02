@@ -27,9 +27,9 @@ export var DomainIcon = {
 }
 
 /**
- * @type {Record<Domains[number], Record<Kind, string>>}
+ * @satisfies {Record<Domains[number], Record<Kind, string>>}
  */
-export var DomainKindPathname = {
+export var DomainKindPathname = /** @type {const} */ ({
   'User': {
     'Unit': '/user/:user?',
     'Set': '/users',
@@ -69,7 +69,7 @@ export var DomainKindPathname = {
     'Unit': '/mailing/:mailing?',
     'Set': '/mailings',
   },
-}
+})
 
 export var Procedures = /** @type {const} */ ([
   'Checkin',
@@ -85,9 +85,9 @@ export var ProcedureIcon = {
 }
 
 /**
- * @type {Record<Procedures[number], Record<Kind, string>>}
+ * @satisfies {Record<Procedures[number], Record<Kind, string>>}
  */
-export var ProcedureKindPathname = {
+export var ProcedureKindPathname = /** @type {const} */ ({
   'Checkin': {
     'Unit': '/checkin',
     'Set': '/checkins',
@@ -97,7 +97,7 @@ export var ProcedureKindPathname = {
     'Unit': '/redirect',
     'Set': '/redirects',
   },
-}
+})
 
 export var Features = Domains.concat(Procedures)
 
@@ -110,9 +110,20 @@ export var FeatureIcon = {
 }
 
 /**
- * @type {Record<Features[number], Record<Kind, string>>}
+ * @satisfies {Record<Features[number], Record<Kind, string>>}
  */
 export var FeatureKindPathname = {
   ...DomainKindPathname,
   ...ProcedureKindPathname,
 }
+
+/**
+ * @type {Array<[feature: Features[number], kind: Kind, pathname: string]>}
+ */
+export var FeatureKindPathnames = Object
+  .keys(FeatureKindPathname)
+  .flatMap(feature =>
+    Object
+      .keys(FeatureKindPathname[feature])
+      .map(kind => [feature, kind, FeatureKindPathname[feature][kind]])
+  )
