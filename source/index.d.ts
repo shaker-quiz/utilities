@@ -30,7 +30,6 @@ export * from './enumerations/entities/roles.js'
 export * from './enumerations/schemas.js'
 
 export * from './functions/pathname.js'
-export * from './functions/request.js'
 export * from './functions/schema.js'
 
 export * from './schemas/city.js'

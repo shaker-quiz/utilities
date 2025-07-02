@@ -24,10 +24,10 @@ type UseState<Type> = [
 
 type Method = typeof import('./enumerations/core/methods.js').Methods[number]
 
-type Domain = typeof import('./enumerations/core/domains.js').Domains[number]
+type Domain = typeof import('./enumerations/core/features.js').Domains[number]
 
 type Procedure =
-  typeof import('./enumerations/core/procedures.js').Procedures[number]
+  typeof import('./enumerations/core/features.js').Procedures[number]
 
 type Feature = Domain | Procedure
 
