@@ -1,27 +1,27 @@
 export const Domains: readonly ["Asset", "User", "Role", "City", "Venue", "Theme", "ThemeAsset", "Game", "GameAsset", "Registration", "Mailing"];
 /**
- * @type {Record<Domain, Icon>}
+ * @type {Record<Domains[number], Icon>}
  */
-export const DomainIcon: Record<Domain, Icon>;
+export const DomainIcon: Record<"Asset" | "User" | "Role" | "City" | "Venue" | "Theme" | "ThemeAsset" | "Game" | "GameAsset" | "Registration" | "Mailing", Icon>;
 /**
- * @type {Record<Domain, Record<Kind, string>>}
+ * @type {Record<Domains[number], Record<Kind, string>>}
  */
-export const DomainKindPathname: Record<Domain, Record<Kind, string>>;
+export const DomainKindPathname: Record<"Asset" | "User" | "Role" | "City" | "Venue" | "Theme" | "ThemeAsset" | "Game" | "GameAsset" | "Registration" | "Mailing", Record<Kind, string>>;
 export const Procedures: readonly ["Checkin", "Redirect"];
 /**
- * @type {Record<Procedure, Icon>}
+ * @type {Record<Procedures[number], Icon>}
  */
-export const ProcedureIcon: Record<Procedure, Icon>;
+export const ProcedureIcon: Record<"Checkin" | "Redirect", Icon>;
 /**
- * @type {Record<Procedure, Record<Kind, string>>}
+ * @type {Record<Procedures[number], Record<Kind, string>>}
  */
-export const ProcedureKindPathname: Record<Procedure, Record<Kind, string>>;
+export const ProcedureKindPathname: Record<"Checkin" | "Redirect", Record<Kind, string>>;
 export const Features: ("Asset" | "User" | "Role" | "City" | "Venue" | "Theme" | "ThemeAsset" | "Game" | "GameAsset" | "Registration" | "Mailing")[];
 /**
- * @type {Record<Feature, Icon>}
+ * @type {Record<Features[number], Icon>}
  */
-export const FeatureIcon: Record<Feature, Icon>;
+export const FeatureIcon: Record<"Asset" | "User" | "Role" | "City" | "Venue" | "Theme" | "ThemeAsset" | "Game" | "GameAsset" | "Registration" | "Mailing", Icon>;
 /**
- * @type {Record<Feature, Record<Kind, string>>}
+ * @type {Record<Features[number], Record<Kind, string>>}
  */
-export const FeatureKindPathname: Record<Feature, Record<Kind, string>>;
+export const FeatureKindPathname: Record<"Asset" | "User" | "Role" | "City" | "Venue" | "Theme" | "ThemeAsset" | "Game" | "GameAsset" | "Registration" | "Mailing", Record<Kind, string>>;

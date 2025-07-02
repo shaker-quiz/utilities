@@ -13,7 +13,7 @@ export var Domains = /** @type {const} */ ([
 ])
 
 /**
- * @type {Record<Domain, Icon>}
+ * @type {Record<Domains[number], Icon>}
  */
 export var DomainIcon = {
   'User': 'users',
@@ -27,7 +27,7 @@ export var DomainIcon = {
 }
 
 /**
- * @type {Record<Domain, Record<Kind, string>>}
+ * @type {Record<Domains[number], Record<Kind, string>>}
  */
 export var DomainKindPathname = {
   'User': {
@@ -77,7 +77,7 @@ export var Procedures = /** @type {const} */ ([
 ])
 
 /**
- * @type {Record<Procedure, Icon>}
+ * @type {Record<Procedures[number], Icon>}
  */
 export var ProcedureIcon = {
   'Checkin': 'arrow-right-end-on-rectangle',
@@ -85,7 +85,7 @@ export var ProcedureIcon = {
 }
 
 /**
- * @type {Record<Procedure, Record<Kind, string>>}
+ * @type {Record<Procedures[number], Record<Kind, string>>}
  */
 export var ProcedureKindPathname = {
   'Checkin': {
@@ -102,7 +102,7 @@ export var ProcedureKindPathname = {
 export var Features = Domains.concat(Procedures)
 
 /**
- * @type {Record<Feature, Icon>}
+ * @type {Record<Features[number], Icon>}
  */
 export var FeatureIcon = {
   ...DomainIcon,
@@ -110,7 +110,7 @@ export var FeatureIcon = {
 }
 
 /**
- * @type {Record<Feature, Record<Kind, string>>}
+ * @type {Record<Features[number], Record<Kind, string>>}
  */
 export var FeatureKindPathname = {
   ...DomainKindPathname,
