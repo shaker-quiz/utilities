@@ -4,7 +4,7 @@
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "type": "tsc --emitdeclarationonly --declaration --allowjs"
+    "type": "tsc --emitdeclarationonly --declaration --allowjs ./source/**/*"
   },
   "exports": {
     ".": {

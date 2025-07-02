@@ -9,11 +9,9 @@
 /// <reference path='./user.d.ts' />
 /// <reference path='./venue.d.ts' />
 
-export * from './enumerations/core/domains.js'
 export * from './enumerations/core/features.js'
 export * from './enumerations/core/kinds.js'
 export * from './enumerations/core/methods.js'
-export * from './enumerations/core/procedures.js'
 export * from './enumerations/core/scopes.js'
 
 export * from './enumerations/misc/constants.js'
