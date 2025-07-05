@@ -19,7 +19,6 @@ export * from './enumerations/misc/cookies.js'
 export * from './enumerations/misc/icons.js'
 export * from './enumerations/misc/phases.js'
 export * from './enumerations/misc/regexps.js'
-export * from './enumerations/misc/requirements.js'
 
 export * from './enumerations/entities/affilations.js'
 export * from './enumerations/entities/game-statuses.js'
