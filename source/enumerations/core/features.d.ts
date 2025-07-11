@@ -1,8 +1,8 @@
 export const Domains: readonly ["Asset", "User", "Role", "City", "Venue", "Theme", "ThemeAsset", "Game", "GameAsset", "Registration", "Mailing"];
 /**
- * @type {Record<Domains[number], Icon>}
+ * @type {Record<Domain, Icon>}
  */
-export const DomainIcon: Record<"Asset" | "User" | "Role" | "City" | "Venue" | "Theme" | "ThemeAsset" | "Game" | "GameAsset" | "Registration" | "Mailing", Icon>;
+export const DomainIcon: Record<Domain, Icon>;
 export namespace DomainKindPathname {
     namespace User {
         let Unit: "/user/:user?";
@@ -53,9 +53,9 @@ export namespace DomainKindPathname {
 }
 export const Procedures: readonly ["Checkin", "Redirect"];
 /**
- * @type {Record<Procedures[number], Icon>}
+ * @type {Record<Procedure, Icon>}
  */
-export const ProcedureIcon: Record<"Checkin" | "Redirect", Icon>;
+export const ProcedureIcon: Record<Procedure, Icon>;
 export namespace ProcedureKindPathname {
     namespace Checkin {
         let Unit_8: "/checkin";
@@ -70,11 +70,14 @@ export namespace ProcedureKindPathname {
         export { Set_9 as Set };
     }
 }
-export const Features: ("Asset" | "User" | "Role" | "City" | "Venue" | "Theme" | "ThemeAsset" | "Game" | "GameAsset" | "Registration" | "Mailing")[];
 /**
- * @type {Record<Features[number], Icon>}
+ * @type {Array<Domain | Procedure>}
  */
-export const FeatureIcon: Record<"Asset" | "User" | "Role" | "City" | "Venue" | "Theme" | "ThemeAsset" | "Game" | "GameAsset" | "Registration" | "Mailing", Icon>;
+export const Features: Array<Domain | Procedure>;
+/**
+ * @type {Record<Feature, Icon>}
+ */
+export const FeatureIcon: Record<Feature, Icon>;
 export namespace FeatureKindPathname {
     export namespace Checkin_1 { }
     export { Checkin_1 as Checkin };
@@ -98,6 +101,10 @@ export namespace FeatureKindPathname {
     export { Mailing_1 as Mailing };
 }
 /**
- * @type {Array<[feature: Features[number], kind: Kind, pathname: string]>}
+ * @type {Array<[feature: Feature, kind: Kind, pathname: string]>}
  */
-export const FeatureKindPathnames: Array<[feature: "Asset" | "User" | "Role" | "City" | "Venue" | "Theme" | "ThemeAsset" | "Game" | "GameAsset" | "Registration" | "Mailing", kind: Kind, pathname: string]>;
+export const FeatureKindPathnames: Array<[feature: Feature, kind: Kind, pathname: string]>;
+/**
+ * @type {Array<[feature: Feature, kind: Kind, pattern: URLPattern]>}
+ */
+export const FeatureKindPatterns: Array<[feature: Feature, kind: Kind, pattern: URLPattern]>;

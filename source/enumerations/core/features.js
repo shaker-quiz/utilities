@@ -13,7 +13,7 @@ export var Domains = /** @type {const} */ ([
 ])
 
 /**
- * @type {Record<Domains[number], Icon>}
+ * @type {Record<Domain, Icon>}
  */
 export var DomainIcon = {
   'User': 'users',
@@ -27,7 +27,7 @@ export var DomainIcon = {
 }
 
 /**
- * @satisfies {Record<Domains[number], Record<Kind, string>>}
+ * @satisfies {Record<Domain, Record<Kind, string>>}
  */
 export var DomainKindPathname = /** @type {const} */ ({
   'User': {
@@ -77,7 +77,7 @@ export var Procedures = /** @type {const} */ ([
 ])
 
 /**
- * @type {Record<Procedures[number], Icon>}
+ * @type {Record<Procedure, Icon>}
  */
 export var ProcedureIcon = {
   'Checkin': 'arrow-right-end-on-rectangle',
@@ -85,7 +85,7 @@ export var ProcedureIcon = {
 }
 
 /**
- * @satisfies {Record<Procedures[number], Record<Kind, string>>}
+ * @satisfies {Record<Procedure, Record<Kind, string>>}
  */
 export var ProcedureKindPathname = /** @type {const} */ ({
   'Checkin': {
@@ -99,10 +99,13 @@ export var ProcedureKindPathname = /** @type {const} */ ({
   },
 })
 
+/**
+ * @type {Array<Domain | Procedure>}
+ */
 export var Features = Domains.concat(Procedures)
 
 /**
- * @type {Record<Features[number], Icon>}
+ * @type {Record<Feature, Icon>}
  */
 export var FeatureIcon = {
   ...DomainIcon,
@@ -110,7 +113,7 @@ export var FeatureIcon = {
 }
 
 /**
- * @satisfies {Record<Features[number], Record<Kind, string>>}
+ * @satisfies {Record<Feature, Record<Kind, string>>}
  */
 export var FeatureKindPathname = {
   ...DomainKindPathname,
@@ -118,7 +121,7 @@ export var FeatureKindPathname = {
 }
 
 /**
- * @type {Array<[feature: Features[number], kind: Kind, pathname: string]>}
+ * @type {Array<[feature: Feature, kind: Kind, pathname: string]>}
  */
 export var FeatureKindPathnames = Object
   .keys(FeatureKindPathname)
@@ -127,3 +130,13 @@ export var FeatureKindPathnames = Object
       .keys(FeatureKindPathname[feature])
       .map(kind => [feature, kind, FeatureKindPathname[feature][kind]])
   )
+
+/**
+ * @type {Array<[feature: Feature, kind: Kind, pattern: URLPattern]>}
+ */
+export var FeatureKindPatterns = FeatureKindPathnames
+  .map(([feature, kind, pathname]) => [
+    feature,
+    kind,
+    new URLPattern({ pathname }),
+  ])

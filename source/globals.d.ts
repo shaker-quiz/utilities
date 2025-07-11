@@ -13,9 +13,9 @@ interface RequestInit {
  * React
  */
 
-type UseState<Type> = [
-  Type,
-  import('react').Dispatch<import('react').SetStateAction<Type>>,
+type UseState<T> = [
+  T,
+  import('react').Dispatch<import('react').SetStateAction<T>>,
 ]
 
 /**
