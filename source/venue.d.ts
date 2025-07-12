@@ -1,66 +1,4 @@
-type VenueAdminResult = {
-  // Venue
-  id: VenueRow['id']
-  time_created: VenueRow['time_created']
-  time_updated: VenueRow['time_updated']
-  longitude: VenueRow['longitude']
-  latitude: VenueRow['latitude']
-  people_capacity: VenueRow['people_capacity']
-  team_capacity: VenueRow['team_capacity']
-  is_adult: VenueRow['is_adult']
-  name: VenueRow['name']
-  house_number: VenueRow['house_number']
-  comment: VenueRow['comment']
-  comment_responsible: VenueRow['comment_responsible']
-  comment_equipment: VenueRow['comment_equipment']
-  street: VenueRow['street']
-  game_time: VenueRow['game_time']
-  floor: VenueRow['floor']
-  metro: VenueRow['metro']
-  location_info: VenueRow['location_info']
-  // City
-  city_id: CityRow['id']
-  city_name: CityRow['name']
-  city_timezone: CityRow['timezone']
-  city_price: CityRow['price']
-  city_currency: CityRow['currency']
-  city_min_members_count: CityRow['min_members_count']
-  city_max_members_count: CityRow['max_members_count']
-}
-
-type VenueDefaultResult = unknown
-
-type VenueOrganizerResult = {
-  // Venue
-  id: VenueRow['id']
-  time_created: VenueRow['time_created']
-  time_updated: VenueRow['time_updated']
-  longitude: VenueRow['longitude']
-  latitude: VenueRow['latitude']
-  people_capacity: VenueRow['people_capacity']
-  team_capacity: VenueRow['team_capacity']
-  is_adult: VenueRow['is_adult']
-  name: VenueRow['name']
-  house_number: VenueRow['house_number']
-  comment: VenueRow['comment']
-  comment_responsible: VenueRow['comment_responsible']
-  comment_equipment: VenueRow['comment_equipment']
-  street: VenueRow['street']
-  game_time: VenueRow['game_time']
-  floor: VenueRow['floor']
-  metro: VenueRow['metro']
-  location_info: VenueRow['location_info']
-  // City
-  city_id: CityRow['id']
-  city_name: CityRow['name']
-  city_timezone: CityRow['timezone']
-  city_price: CityRow['price']
-  city_currency: CityRow['currency']
-  city_min_members_count: CityRow['min_members_count']
-  city_max_members_count: CityRow['max_members_count']
-}
-
-type VenueRow = {
+type VenueTable = {
   /**
    * @description "uuid"
    */
@@ -137,4 +75,26 @@ type VenueRow = {
    * @description "character varying"
    */
   location_info: string | null
+}
+
+type VenueResponse = {
+  id: VenueTable['id']
+  time_created: VenueTable['time_created']
+  time_updated: VenueTable['time_updated']
+  longitude: VenueTable['longitude']
+  latitude: VenueTable['latitude']
+  people_capacity: VenueTable['people_capacity']
+  team_capacity: VenueTable['team_capacity']
+  is_adult: VenueTable['is_adult']
+  name: VenueTable['name']
+  house_number: VenueTable['house_number']
+  comment: VenueTable['comment']
+  comment_responsible: VenueTable['comment_responsible']
+  comment_equipment: VenueTable['comment_equipment']
+  street: VenueTable['street']
+  game_time: VenueTable['game_time']
+  floor: VenueTable['floor']
+  metro: VenueTable['metro']
+  location_info: VenueTable['location_info']
+  city: CityResponse
 }

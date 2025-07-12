@@ -1,9 +1,9 @@
 type GameAdminResult = {
   // City
-  city_alias: CityRow['alias']
-  city_id: CityRow['id']
-  city_is_franchise: CityRow['is_franchise']
-  city_name: CityRow['name']
+  city_alias: CityTable['alias']
+  city_id: CityTable['id']
+  city_is_franchise: CityTable['is_franchise']
+  city_name: CityTable['name']
   // Event
   event_alias: GameRow['alias']
   event_id: GameRow['id']
@@ -11,26 +11,26 @@ type GameAdminResult = {
   event_status: GameRow['status']
   event_time: GameRow['event_time']
   // Location
-  location_id: VenueRow['id']
-  location_name: VenueRow['name']
+  location_id: VenueTable['id']
+  location_name: VenueTable['name']
   // Media
-  media_id: ImageMediaRow['id']
-  media_path: ImageMediaRow['path']
-  media_title: ImageMediaRow['title']
+  media_id: ImageMediaTable['id']
+  media_path: ImageMediaTable['path']
+  media_title: ImageMediaTable['title']
   // Custom
   people_amount: number
   people_reserve_amount: number
   teams_amount: number
   teams_reserve_amount: number
   // Theme
-  theme_id: ThemeRow['id']
-  theme_name: ThemeRow['name']
+  theme_id: ThemeTable['id']
+  theme_name: ThemeTable['name']
 }
 
 type GameDefaultResult = {
   // City
-  city_alias: CityRow['alias']
-  city_id: CityRow['id']
+  city_alias: CityTable['alias']
+  city_id: CityTable['id']
   // Event
   event_alias: GameRow['alias']
   event_currency: GameRow['currency']
@@ -42,29 +42,29 @@ type GameDefaultResult = {
   event_status: GameRow['status']
   event_time: GameRow['event_time']
   // Image
-  image_id: ImageMediaRow['id']
+  image_id: ImageMediaTable['id']
   // Location
-  location_house_number: VenueRow['house_number']
-  location_id: VenueRow['id']
-  location_info: VenueRow['location_info']
-  location_name: VenueRow['name']
-  location_street: VenueRow['street']
+  location_house_number: VenueTable['house_number']
+  location_id: VenueTable['id']
+  location_info: VenueTable['location_info']
+  location_name: VenueTable['name']
+  location_street: VenueTable['street']
   // Media
-  media_id: MediaRow['id']
-  media_path: MediaRow['path']
+  media_id: MediaTable['id']
+  media_path: MediaTable['path']
   // Theme
-  theme_description: ThemeRow['description']
-  theme_id: ThemeRow['id']
-  theme_name: ThemeRow['name']
-  theme_short_description: ThemeRow['short_description']
+  theme_description: ThemeTable['description']
+  theme_id: ThemeTable['id']
+  theme_name: ThemeTable['name']
+  theme_short_description: ThemeTable['short_description']
 }
 
 type GameOrginizerResult = {
   // City
-  city_alias: CityRow['alias']
-  city_id: CityRow['id']
-  city_is_franchise: CityRow['is_franchise']
-  city_name: CityRow['name']
+  city_alias: CityTable['alias']
+  city_id: CityTable['id']
+  city_is_franchise: CityTable['is_franchise']
+  city_name: CityTable['name']
   // Event
   event_alias: GameRow['alias']
   event_id: GameRow['id']
@@ -72,20 +72,20 @@ type GameOrginizerResult = {
   event_status: GameRow['status']
   event_time: GameRow['event_time']
   // Location
-  location_id: VenueRow['id']
-  location_name: VenueRow['name']
+  location_id: VenueTable['id']
+  location_name: VenueTable['name']
   // Media
-  media_id: ImageMediaRow['id']
-  media_path: ImageMediaRow['path']
-  media_title: ImageMediaRow['title']
+  media_id: ImageMediaTable['id']
+  media_path: ImageMediaTable['path']
+  media_title: ImageMediaTable['title']
   // Custom
   people_amount: number
   people_reserve_amount: number
   teams_amount: number
   teams_reserve_amount: number
   // Theme
-  theme_id: ThemeRow['id']
-  theme_name: ThemeRow['name']
+  theme_id: ThemeTable['id']
+  theme_name: ThemeTable['name']
 }
 
 type GameRow = {

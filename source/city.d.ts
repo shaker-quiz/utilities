@@ -1,29 +1,4 @@
-type CityAdminResult = CityRow
-
-type CityOrganizerResult = CityRow
-
-type CityDefaultResult = {
-  address: CityRow['address']
-  alias: CityRow['alias']
-  country: CityRow['country']
-  custom_html: CityRow['custom_html']
-  custom_script: CityRow['custom_script']
-  email: CityRow['email']
-  id: CityRow['id']
-  inst_link: CityRow['inst_link']
-  max_members_count: CityRow['max_members_count']
-  meta_description: CityRow['meta_description']
-  meta_title: CityRow['meta_title']
-  min_members_count: CityRow['min_members_count']
-  name: CityRow['name']
-  phone: CityRow['phone']
-  tg_link: CityRow['tg_link']
-  vk_group_id: CityRow['vk_group_id']
-  vk_link: CityRow['vk_link']
-  yandex_metrica: CityRow['yandex_metrica']
-}
-
-type CityRow = {
+type CityTable = {
   /**
    * @description "timestamp with time zone"
    */
@@ -192,4 +167,25 @@ type CityRow = {
    * @description "character varying"
    */
   inst_link: string | null
+}
+
+type CityResponse = {
+  address: CityTable['address']
+  alias: CityTable['alias']
+  country: CityTable['country']
+  custom_html: CityTable['custom_html']
+  custom_script: CityTable['custom_script']
+  email: CityTable['email']
+  id: CityTable['id']
+  inst_link: CityTable['inst_link']
+  max_members_count: CityTable['max_members_count']
+  meta_description: CityTable['meta_description']
+  meta_title: CityTable['meta_title']
+  min_members_count: CityTable['min_members_count']
+  name: CityTable['name']
+  phone: CityTable['phone']
+  tg_link: CityTable['tg_link']
+  vk_group_id: CityTable['vk_group_id']
+  vk_link: CityTable['vk_link']
+  yandex_metrica: CityTable['yandex_metrica']
 }

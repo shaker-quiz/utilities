@@ -1,28 +1,4 @@
-type ThemeAdminResult = {
-  id: ThemeRow['id']
-  time_created: ThemeRow['time_created']
-  name: ThemeRow['name']
-  description: ThemeRow['description']
-  short_description: ThemeRow['short_description']
-  image_id: ImageMediaRow['id']
-  media_title: MediaRow['title']
-  media_path: MediaRow['path']
-}
-
-type ThemeDefaultResult = unknown
-
-type ThemeOrganizerResult = {
-  id: ThemeRow['id']
-  time_created: ThemeRow['time_created']
-  name: ThemeRow['name']
-  description: ThemeRow['description']
-  short_description: ThemeRow['short_description']
-  image_id: ImageMediaRow['id']
-  media_title: MediaRow['title']
-  media_path: MediaRow['path']
-}
-
-type ThemeRow = {
+type ThemeTable = {
   /**
    * @description "timestamp with time zone"
    */
@@ -51,4 +27,15 @@ type ThemeRow = {
    * @description "character varying"
    */
   name: string | null
+}
+
+type ThemeResponse = {
+  description: ThemeTable['description']
+  id: ThemeTable['id']
+  image_id: ImageMediaTable['id']
+  media_path: MediaTable['path']
+  media_title: MediaTable['title']
+  name: ThemeTable['name']
+  short_description: ThemeTable['short_description']
+  time_created: ThemeTable['time_created']
 }

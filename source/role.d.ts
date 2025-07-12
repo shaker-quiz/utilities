@@ -1,4 +1,4 @@
-type RoleRow = {
+type RoleTable = {
   /**
    * @description "uuid"
    */
@@ -19,4 +19,12 @@ type RoleRow = {
    * @description "character varying"
    */
   description: string | null
+}
+
+type RoleResponse = {
+  id: RoleTable['id']
+  time_created: RoleTable['time_created']
+  time_updated: RoleTable['time_updated']
+  name: RoleTable['name']
+  description: RoleTable['description']
 }

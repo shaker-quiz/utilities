@@ -1,55 +1,4 @@
-type CheckinAdminResult = {
-  id: UserRow['id']
-  first_name: UserRow['first_name']
-  last_name: UserRow['last_name']
-  third_name: UserRow['third_name']
-  phone: UserRow['phone']
-  email: UserRow['email']
-  image_id: ImageMediaRow['id']
-  role_id: RoleRow['id']
-  role_name: RoleRow['name']
-}
-
-type CheckinDefaultResult = {
-  id: '00000000-0000-0000-0000-000000000000'
-  role_id: '00000000-0000-0000-0000-000000000000'
-  role_name: 'default'
-}
-
-type CheckinOrganizerResult = {
-  id: UserRow['id']
-  first_name: UserRow['first_name']
-  last_name: UserRow['last_name']
-  third_name: UserRow['third_name']
-  phone: UserRow['phone']
-  email: UserRow['email']
-  image_id: ImageMediaRow['id']
-  role_id: RoleRow['id']
-  role_name: RoleRow['name']
-}
-
-type UserAdminResult = {
-  id: UserRow['id']
-  email: UserRow['email']
-  phone: UserRow['phone']
-  first_name: UserRow['first_name']
-  last_name: UserRow['last_name']
-  is_active: UserRow['is_active']
-  gmail_link: UserRow['gmail_link']
-  mailru_link: UserRow['mailru_link']
-  role_id: RoleRow['id']
-  role_name: RoleRow['name']
-  cities: {
-    id: CityRow['id']
-    name: CityRow['name']
-  }[]
-}
-
-type UserDefaultResult = unknown
-
-type UserOrganizerResult = unknown
-
-type UserRow = {
+type UserTable = {
   /**
    * @description "uuid"
    */
@@ -139,4 +88,17 @@ type UserRow = {
    * @description "character varying"
    */
   gmail_link: string | null
+}
+
+type UserResponse = {
+  email: UserTable['email']
+  first_name: UserTable['first_name']
+  gmail_link: UserTable['gmail_link']
+  id: UserTable['id']
+  is_active: UserTable['is_active']
+  last_name: UserTable['last_name']
+  mailru_link: UserTable['mailru_link']
+  phone: UserTable['phone']
+  role: RoleResponse
+  cities: CityResponse[]
 }

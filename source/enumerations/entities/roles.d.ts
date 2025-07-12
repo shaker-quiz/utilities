@@ -1,1 +1,1 @@
-export const Roles: readonly ["admin", "organizer"];
+export const Roles: readonly ["admin", "default", "organizer"];

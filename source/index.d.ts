@@ -1,10 +1,12 @@
 /// <reference path='./globals.d.ts' />
 
+/// <reference path='./checkin.d.ts' />
 /// <reference path='./city.d.ts' />
 /// <reference path='./game.d.ts' />
+/// <reference path='./image-media.d.ts' />
+/// <reference path='./media.d.ts' />
 /// <reference path='./registration.d.ts' />
 /// <reference path='./role.d.ts' />
-/// <reference path='./rows.d.ts' />
 /// <reference path='./theme.d.ts' />
 /// <reference path='./user.d.ts' />
 /// <reference path='./venue.d.ts' />
@@ -28,7 +30,6 @@ export * from './enumerations/entities/roles.js'
 
 export * from './enumerations/schemas.js'
 
-export * from './functions/pathname.js'
 export * from './functions/schema.js'
 
 export * from './schemas/city.js'
