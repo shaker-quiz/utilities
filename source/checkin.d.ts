@@ -1,4 +1,4 @@
-type Checkin = {
+type CheckinResponse = {
   email: UserTable['email']
   first_name: UserTable['first_name']
   id: UserTable['id']
