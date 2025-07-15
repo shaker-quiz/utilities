@@ -1,3 +1,5 @@
+import { Kinds } from './kinds.js'
+
 export var Domains = /** @type {const} */ ([
   'Asset',
   'User',
@@ -140,3 +142,25 @@ export var FeatureKindPatterns = FeatureKindPathnames
     kind,
     new URLPattern({ pathname }),
   ])
+
+/**
+ * @param {Feature} feature
+ * @param {Kind} kind
+ *
+ * @returns {URLPattern}
+ */
+export let resolvePattern = (feature, kind) => {
+  if (!Features.includes(feature))
+    throw TypeError(
+      `Feature '${feature}' must be listed in 'Features'.`,
+    )
+
+  if (!Kinds.includes(kind))
+    throw TypeError(
+      `Kind '${kind}' must be listed in 'Kinds'.`,
+    )
+
+  return FeatureKindPatterns
+    .find(([f, k]) => f == feature && k == kind)
+    ?.at(2)
+}

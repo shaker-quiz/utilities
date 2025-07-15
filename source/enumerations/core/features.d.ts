@@ -108,3 +108,4 @@ export const FeatureKindPathnames: Array<[feature: Feature, kind: Kind, pathname
  * @type {Array<[feature: Feature, kind: Kind, pattern: URLPattern]>}
  */
 export const FeatureKindPatterns: Array<[feature: Feature, kind: Kind, pattern: URLPattern]>;
+export function resolvePattern(feature: Feature, kind: Kind): URLPattern;
