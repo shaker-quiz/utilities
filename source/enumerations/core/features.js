@@ -4,6 +4,7 @@ export var Domains = /** @type {const} */ ([
   'Asset',
   'User',
   'Role',
+  'Country',
   'City',
   'Venue',
   'Theme',
@@ -20,6 +21,7 @@ export var Domains = /** @type {const} */ ([
 export var DomainIcon = {
   'User': 'users',
   'Role': 'identification',
+  'Country': 'no-symbol',
   'City': 'building-office',
   'Venue': 'map-pin',
   'Theme': 'document-text',
@@ -40,6 +42,11 @@ export var DomainKindPathname = /** @type {const} */ ({
   'Role': {
     'Unit': '/role/:role?',
     'Set': '/roles',
+  },
+
+  'Country': {
+    'Unit': '/country/:country?',
+    'Set': '/countries',
   },
 
   'City': {
