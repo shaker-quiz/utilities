@@ -1,15 +1,6 @@
+/// <reference path='./api.d.ts' />
+/// <reference path='./database.d.ts' />
 /// <reference path='./globals.d.ts' />
-
-/// <reference path='./checkin.d.ts' />
-/// <reference path='./city.d.ts' />
-/// <reference path='./game.d.ts' />
-/// <reference path='./image-media.d.ts' />
-/// <reference path='./media.d.ts' />
-/// <reference path='./registration.d.ts' />
-/// <reference path='./role.d.ts' />
-/// <reference path='./theme.d.ts' />
-/// <reference path='./user.d.ts' />
-/// <reference path='./venue.d.ts' />
 
 export * from './enumerations/core/features.js'
 export * from './enumerations/core/kinds.js'

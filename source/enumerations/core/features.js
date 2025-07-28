@@ -65,11 +65,22 @@ export var DomainKindPathname = /** @type {const} */ ({
   },
 
   'Game': {
+    /**
+     * Parameter "game" can be one of:
+     * - UUID of a Game,
+     * - Game alias combined with City (UUID, alias or VK group ID),
+     * - UUID of a Registration
+     */
     'Unit': '/game/:game?',
     'Set': '/games',
   },
 
   'Registration': {
+    /**
+     * Parameter "registration" can be one of:
+     * - UUID of a Registration,
+     * - VK identifier of a Registration
+     */
     'Unit': '/registration/:registration?',
     'Set': '/registrations',
   },
