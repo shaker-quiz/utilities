@@ -6,15 +6,8 @@
   "scripts": {
     "type": "tsc --emitdeclarationonly --declaration --allowjs ./source/**/*"
   },
-  "exports": {
-    ".": {
-      "node": "./source/index.js",
-      "import": "./source/index.js",
-      "require": "./source/index.js",
-      "default": "./source/index.js",
-      "types": "./source/index.d.ts"
-    }
-  },
+  "types": "./source/index.d.ts",
+  "exports": "./source/index.js",
   "dependencies": {
     "urlpattern-polyfill": "10.1.0"
   },
