@@ -1,7 +1,3 @@
-/// <reference path='./api.d.ts' />
-/// <reference path='./database.d.ts' />
-/// <reference path='./globals.d.ts' />
-
 export * from './enumerations/core/features.js'
 export * from './enumerations/core/kinds.js'
 export * from './enumerations/core/methods.js'
@@ -18,15 +14,3 @@ export * from './enumerations/entities/game-statuses.js'
 export * from './enumerations/entities/lineups.js'
 export * from './enumerations/entities/registration-statuses.js'
 export * from './enumerations/entities/roles.js'
-
-export * from './enumerations/schemas.js'
-
-export * from './functions/schema.js'
-
-export * from './schemas/city.js'
-export * from './schemas/game.js'
-export * from './schemas/registration.js'
-export * from './schemas/role.js'
-export * from './schemas/theme.js'
-export * from './schemas/user.js'
-export * from './schemas/venue.js'
