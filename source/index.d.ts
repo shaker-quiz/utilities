@@ -1,21 +1,21 @@
-/// <reference path="./misc.d.ts" preserve="true" />
-/// <reference path="./model.d.ts" preserve="true" />
-/// <reference path="./scope.d.ts" preserve="true" />
-/// <reference path="./server.d.ts" preserve="true" />
+/// <reference path="./misc.d.ts" />
+/// <reference path="./model.d.ts" />
+/// <reference path="./scope.d.ts" />
+/// <reference path="./server.d.ts" />
 
-export * from './enumerations/core/features.js'
-export * from './enumerations/core/kinds.js'
-export * from './enumerations/core/methods.js'
-export * from './enumerations/core/scopes.js'
+/// <reference path="./enumerations/core/features.d.ts" />
+/// <reference path="./enumerations/core/kinds.d.ts" />
+/// <reference path="./enumerations/core/methods.d.ts" />
+/// <reference path="./enumerations/core/scopes.d.ts" />
 
-export * from './enumerations/misc/constants.js'
-export * from './enumerations/misc/cookies.js'
-export * from './enumerations/misc/icons.js'
-export * from './enumerations/misc/phases.js'
-export * from './enumerations/misc/regexps.js'
+/// <reference path="./enumerations/misc/constants.d.ts" />
+/// <reference path="./enumerations/misc/cookies.d.ts" />
+/// <reference path="./enumerations/misc/icons.d.ts" />
+/// <reference path="./enumerations/misc/phases.d.ts" />
+/// <reference path="./enumerations/misc/regexps.d.ts" />
 
-export * from './enumerations/entities/affilations.js'
-export * from './enumerations/entities/game-statuses.js'
-export * from './enumerations/entities/lineups.js'
-export * from './enumerations/entities/registration-statuses.js'
-export * from './enumerations/entities/roles.js'
+/// <reference path="./enumerations/entities/affilations.d.ts" />
+/// <reference path="./enumerations/entities/game-statuses.d.ts" />
+/// <reference path="./enumerations/entities/lineups.d.ts" />
+/// <reference path="./enumerations/entities/registration-statuses.d.ts" />
+/// <reference path="./enumerations/entities/roles.d.ts" />
