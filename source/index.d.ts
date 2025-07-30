@@ -1,7 +1,7 @@
-/// <reference path="misc.d.ts" />
-/// <reference path="model.d.ts" />
-/// <reference path="scope.d.ts" />
-/// <reference path="server.d.ts" />
+/// <reference path="./misc.d.ts" preserve="true" />
+/// <reference path="./model.d.ts" preserve="true" />
+/// <reference path="./scope.d.ts" preserve="true" />
+/// <reference path="./server.d.ts" preserve="true" />
 
 export * from './enumerations/core/features.js'
 export * from './enumerations/core/kinds.js'
