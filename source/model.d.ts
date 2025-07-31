@@ -1,4 +1,4 @@
-type User = {
+type UserTable = {
   email: string | null
   first_name: string | null
   gmail_link: string | null
@@ -19,7 +19,7 @@ type User = {
   time_updated: string | null
 }
 
-type Role = {
+type RoleTable = {
   description: string | null
   id: string
   name: Role
@@ -27,7 +27,7 @@ type Role = {
   time_updated: string | null
 }
 
-type City = {
+type CityTable = {
   address: string | null
   alias: string | null
   chatapp_category: string | null
@@ -72,7 +72,7 @@ type City = {
   yandex_metrica: string | null
 }
 
-type Venue = {
+type VenueTable = {
   city_id: string | null
   comment_equipment: string | null
   comment_responsible: string | null
@@ -94,7 +94,7 @@ type Venue = {
   time_updated: string
 }
 
-type Theme = {
+type ThemeTable = {
   description: string | null
   id: string
   image_id: string
@@ -104,7 +104,7 @@ type Theme = {
   time_updated: string
 }
 
-type Game = {
+type GameTable = {
   alias: string | null
   city_id: string | null
   created_by_id: string
@@ -131,7 +131,7 @@ type Game = {
   weekday: string | null
 }
 
-type Registration = {
+type RegistrationTable = {
   ads_from: string | null
   change_people_count: number | null
   channel: string | null
@@ -166,7 +166,7 @@ type Registration = {
   vkontakte: string | null
 }
 
-type Media = {
+type MediaTable = {
   id: string
   time_created: string
   time_updated: string | null
@@ -176,7 +176,7 @@ type Media = {
   path: string | null
 }
 
-type ImageMedia = {
+type ImageTable = {
   file_format: string | null
   height: number | null
   id: string

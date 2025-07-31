@@ -9,82 +9,82 @@ type ScopeRoleResponse = {
 
   'GET/Checkin/Unit': {
     admin: {
-      email: User['email']
-      first_name: User['first_name']
-      id: User['id']
-      last_name: User['last_name']
-      phone: User['phone']
-      third_name: User['third_name']
+      email: UserTable['email']
+      first_name: UserTable['first_name']
+      id: UserTable['id']
+      last_name: UserTable['last_name']
+      phone: UserTable['phone']
+      third_name: UserTable['third_name']
       role: {
-        id: Role['id']
-        name: Role['name']
+        id: RoleTable['id']
+        name: RoleTable['name']
       }
       cities: Array<{
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }>
     }
 
     default: {
-      email: User['email']
-      first_name: User['first_name']
-      id: User['id']
-      last_name: User['last_name']
-      phone: User['phone']
-      third_name: User['third_name']
+      email: UserTable['email']
+      first_name: UserTable['first_name']
+      id: UserTable['id']
+      last_name: UserTable['last_name']
+      phone: UserTable['phone']
+      third_name: UserTable['third_name']
       role: {
-        id: Role['id']
-        name: Role['name']
+        id: RoleTable['id']
+        name: RoleTable['name']
       }
       cities: Array<{
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }>
     }
 
     organizer: {
-      email: User['email']
-      first_name: User['first_name']
-      id: User['id']
-      last_name: User['last_name']
-      phone: User['phone']
-      third_name: User['third_name']
+      email: UserTable['email']
+      first_name: UserTable['first_name']
+      id: UserTable['id']
+      last_name: UserTable['last_name']
+      phone: UserTable['phone']
+      third_name: UserTable['third_name']
       role: {
-        id: Role['id']
-        name: Role['name']
+        id: RoleTable['id']
+        name: RoleTable['name']
       }
       cities: Array<{
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }>
     }
   }
 
   'GET/User/Set': {
     admin: Array<{
-      email: User['email']
-      first_name: User['first_name']
-      gmail_link: User['gmail_link']
-      id: User['id']
-      is_active: User['is_active']
-      last_name: User['last_name']
-      mailru_link: User['mailru_link']
-      phone: User['phone']
+      email: UserTable['email']
+      first_name: UserTable['first_name']
+      gmail_link: UserTable['gmail_link']
+      id: UserTable['id']
+      is_active: UserTable['is_active']
+      last_name: UserTable['last_name']
+      mailru_link: UserTable['mailru_link']
+      phone: UserTable['phone']
       role: {
-        id: Role['id']
-        name: Role['name']
+        id: RoleTable['id']
+        name: RoleTable['name']
       }
       cities: Array<{
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }>
     }>
 
@@ -95,23 +95,23 @@ type ScopeRoleResponse = {
 
   'GET/User/Unit': {
     admin: {
-      email: User['email']
-      first_name: User['first_name']
-      gmail_link: User['gmail_link']
-      id: User['id']
-      is_active: User['is_active']
-      last_name: User['last_name']
-      mailru_link: User['mailru_link']
-      phone: User['phone']
+      email: UserTable['email']
+      first_name: UserTable['first_name']
+      gmail_link: UserTable['gmail_link']
+      id: UserTable['id']
+      is_active: UserTable['is_active']
+      last_name: UserTable['last_name']
+      mailru_link: UserTable['mailru_link']
+      phone: UserTable['phone']
       role: {
-        id: Role['id']
-        name: Role['name']
+        id: RoleTable['id']
+        name: RoleTable['name']
       }
       cities: Array<{
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }>
     }
 
@@ -122,21 +122,21 @@ type ScopeRoleResponse = {
 
   'GET/Role/Set': {
     admin: Array<{
-      description: Role['description']
-      id: Role['id']
-      name: Role['name']
-      time_created: Role['time_created']
-      time_updated: Role['time_updated']
+      description: RoleTable['description']
+      id: RoleTable['id']
+      name: RoleTable['name']
+      time_created: RoleTable['time_created']
+      time_updated: RoleTable['time_updated']
     }>
 
     default: unknown
 
     organizer: Array<{
-      description: Role['description']
-      id: Role['id']
-      name: Role['name']
-      time_created: Role['time_created']
-      time_updated: Role['time_updated']
+      description: RoleTable['description']
+      id: RoleTable['id']
+      name: RoleTable['name']
+      time_created: RoleTable['time_created']
+      time_updated: RoleTable['time_updated']
     }>
   }
 
@@ -152,7 +152,7 @@ type ScopeRoleResponse = {
     admin: unknown
 
     default: Array<{
-      code: City['country']
+      code: CityTable['country']
       name: string
     }>
 
@@ -168,283 +168,283 @@ type ScopeRoleResponse = {
   }
 
   'GET/City/Set': {
-    admin: Array<City>
+    admin: Array<CityTable>
 
     default: Array<{
-      address: City['address']
-      alias: City['alias']
-      country: City['country']
-      custom_html: City['custom_html']
-      custom_script: City['custom_script']
-      email: City['email']
-      id: City['id']
-      inst_link: City['inst_link']
-      max_members_count: City['max_members_count']
-      meta_description: City['meta_description']
-      meta_title: City['meta_title']
-      min_members_count: City['min_members_count']
-      name: City['name']
-      phone: City['phone']
-      tg_link: City['tg_link']
-      vk_group_id: City['vk_group_id']
-      vk_link: City['vk_link']
-      yandex_metrica: City['yandex_metrica']
+      address: CityTable['address']
+      alias: CityTable['alias']
+      country: CityTable['country']
+      custom_html: CityTable['custom_html']
+      custom_script: CityTable['custom_script']
+      email: CityTable['email']
+      id: CityTable['id']
+      inst_link: CityTable['inst_link']
+      max_members_count: CityTable['max_members_count']
+      meta_description: CityTable['meta_description']
+      meta_title: CityTable['meta_title']
+      min_members_count: CityTable['min_members_count']
+      name: CityTable['name']
+      phone: CityTable['phone']
+      tg_link: CityTable['tg_link']
+      vk_group_id: CityTable['vk_group_id']
+      vk_link: CityTable['vk_link']
+      yandex_metrica: CityTable['yandex_metrica']
     }>
 
-    organizer: Array<City>
+    organizer: Array<CityTable>
   }
 
   'GET/City/Unit': {
-    admin: City
+    admin: CityTable
 
     default: {
-      address: City['address']
-      alias: City['alias']
-      country: City['country']
-      custom_html: City['custom_html']
-      custom_script: City['custom_script']
-      email: City['email']
-      id: City['id']
-      inst_link: City['inst_link']
-      max_members_count: City['max_members_count']
-      meta_description: City['meta_description']
-      meta_title: City['meta_title']
-      min_members_count: City['min_members_count']
-      name: City['name']
-      phone: City['phone']
-      tg_link: City['tg_link']
-      vk_group_id: City['vk_group_id']
-      vk_link: City['vk_link']
-      yandex_metrica: City['yandex_metrica']
+      address: CityTable['address']
+      alias: CityTable['alias']
+      country: CityTable['country']
+      custom_html: CityTable['custom_html']
+      custom_script: CityTable['custom_script']
+      email: CityTable['email']
+      id: CityTable['id']
+      inst_link: CityTable['inst_link']
+      max_members_count: CityTable['max_members_count']
+      meta_description: CityTable['meta_description']
+      meta_title: CityTable['meta_title']
+      min_members_count: CityTable['min_members_count']
+      name: CityTable['name']
+      phone: CityTable['phone']
+      tg_link: CityTable['tg_link']
+      vk_group_id: CityTable['vk_group_id']
+      vk_link: CityTable['vk_link']
+      yandex_metrica: CityTable['yandex_metrica']
     }
 
-    organizer: City
+    organizer: CityTable
   }
 
   'GET/Venue/Set': {
     admin: Array<{
-      city_id: Venue['city_id']
-      comment_equipment: Venue['comment_equipment']
-      comment_responsible: Venue['comment_responsible']
-      comment: Venue['comment']
-      floor: Venue['floor']
-      game_time: Venue['game_time']
-      house_number: Venue['house_number']
-      id: Venue['id']
-      is_adult: Venue['is_adult']
-      latitude: Venue['latitude']
-      location_info: Venue['location_info']
-      longitude: Venue['longitude']
-      metro: Venue['metro']
-      name: Venue['name']
-      people_capacity: Venue['people_capacity']
-      street: Venue['street']
-      team_capacity: Venue['team_capacity']
-      time_created: Venue['time_created']
-      time_updated: Venue['time_updated']
+      city_id: VenueTable['city_id']
+      comment_equipment: VenueTable['comment_equipment']
+      comment_responsible: VenueTable['comment_responsible']
+      comment: VenueTable['comment']
+      floor: VenueTable['floor']
+      game_time: VenueTable['game_time']
+      house_number: VenueTable['house_number']
+      id: VenueTable['id']
+      is_adult: VenueTable['is_adult']
+      latitude: VenueTable['latitude']
+      location_info: VenueTable['location_info']
+      longitude: VenueTable['longitude']
+      metro: VenueTable['metro']
+      name: VenueTable['name']
+      people_capacity: VenueTable['people_capacity']
+      street: VenueTable['street']
+      team_capacity: VenueTable['team_capacity']
+      time_created: VenueTable['time_created']
+      time_updated: VenueTable['time_updated']
       city: {
-        alias: City['alias']
-        country: City['country']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        country: CityTable['country']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }
     }>
 
     default: unknown
 
     organizer: Array<{
-      city_id: Venue['city_id']
-      comment_equipment: Venue['comment_equipment']
-      comment_responsible: Venue['comment_responsible']
-      comment: Venue['comment']
-      floor: Venue['floor']
-      game_time: Venue['game_time']
-      house_number: Venue['house_number']
-      id: Venue['id']
-      is_adult: Venue['is_adult']
-      latitude: Venue['latitude']
-      location_info: Venue['location_info']
-      longitude: Venue['longitude']
-      metro: Venue['metro']
-      name: Venue['name']
-      people_capacity: Venue['people_capacity']
-      street: Venue['street']
-      team_capacity: Venue['team_capacity']
-      time_created: Venue['time_created']
-      time_updated: Venue['time_updated']
+      city_id: VenueTable['city_id']
+      comment_equipment: VenueTable['comment_equipment']
+      comment_responsible: VenueTable['comment_responsible']
+      comment: VenueTable['comment']
+      floor: VenueTable['floor']
+      game_time: VenueTable['game_time']
+      house_number: VenueTable['house_number']
+      id: VenueTable['id']
+      is_adult: VenueTable['is_adult']
+      latitude: VenueTable['latitude']
+      location_info: VenueTable['location_info']
+      longitude: VenueTable['longitude']
+      metro: VenueTable['metro']
+      name: VenueTable['name']
+      people_capacity: VenueTable['people_capacity']
+      street: VenueTable['street']
+      team_capacity: VenueTable['team_capacity']
+      time_created: VenueTable['time_created']
+      time_updated: VenueTable['time_updated']
       city: {
-        alias: City['alias']
-        country: City['country']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        country: CityTable['country']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }
     }>
   }
 
   'GET/Venue/Unit': {
     admin: {
-      city_id: Venue['city_id']
-      comment_equipment: Venue['comment_equipment']
-      comment_responsible: Venue['comment_responsible']
-      comment: Venue['comment']
-      floor: Venue['floor']
-      game_time: Venue['game_time']
-      house_number: Venue['house_number']
-      id: Venue['id']
-      is_adult: Venue['is_adult']
-      latitude: Venue['latitude']
-      location_info: Venue['location_info']
-      longitude: Venue['longitude']
-      metro: Venue['metro']
-      name: Venue['name']
-      people_capacity: Venue['people_capacity']
-      street: Venue['street']
-      team_capacity: Venue['team_capacity']
-      time_created: Venue['time_created']
-      time_updated: Venue['time_updated']
+      city_id: VenueTable['city_id']
+      comment_equipment: VenueTable['comment_equipment']
+      comment_responsible: VenueTable['comment_responsible']
+      comment: VenueTable['comment']
+      floor: VenueTable['floor']
+      game_time: VenueTable['game_time']
+      house_number: VenueTable['house_number']
+      id: VenueTable['id']
+      is_adult: VenueTable['is_adult']
+      latitude: VenueTable['latitude']
+      location_info: VenueTable['location_info']
+      longitude: VenueTable['longitude']
+      metro: VenueTable['metro']
+      name: VenueTable['name']
+      people_capacity: VenueTable['people_capacity']
+      street: VenueTable['street']
+      team_capacity: VenueTable['team_capacity']
+      time_created: VenueTable['time_created']
+      time_updated: VenueTable['time_updated']
       city: {
-        alias: City['alias']
-        country: City['country']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        country: CityTable['country']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }
     }
 
     default: unknown
 
     organizer: {
-      city_id: Venue['city_id']
-      comment_equipment: Venue['comment_equipment']
-      comment_responsible: Venue['comment_responsible']
-      comment: Venue['comment']
-      floor: Venue['floor']
-      game_time: Venue['game_time']
-      house_number: Venue['house_number']
-      id: Venue['id']
-      is_adult: Venue['is_adult']
-      latitude: Venue['latitude']
-      location_info: Venue['location_info']
-      longitude: Venue['longitude']
-      metro: Venue['metro']
-      name: Venue['name']
-      people_capacity: Venue['people_capacity']
-      street: Venue['street']
-      team_capacity: Venue['team_capacity']
-      time_created: Venue['time_created']
-      time_updated: Venue['time_updated']
+      city_id: VenueTable['city_id']
+      comment_equipment: VenueTable['comment_equipment']
+      comment_responsible: VenueTable['comment_responsible']
+      comment: VenueTable['comment']
+      floor: VenueTable['floor']
+      game_time: VenueTable['game_time']
+      house_number: VenueTable['house_number']
+      id: VenueTable['id']
+      is_adult: VenueTable['is_adult']
+      latitude: VenueTable['latitude']
+      location_info: VenueTable['location_info']
+      longitude: VenueTable['longitude']
+      metro: VenueTable['metro']
+      name: VenueTable['name']
+      people_capacity: VenueTable['people_capacity']
+      street: VenueTable['street']
+      team_capacity: VenueTable['team_capacity']
+      time_created: VenueTable['time_created']
+      time_updated: VenueTable['time_updated']
       city: {
-        alias: City['alias']
-        country: City['country']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        country: CityTable['country']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }
     }
   }
 
   'GET/Theme/Set': {
     admin: Array<{
-      description: Theme['description']
-      id: Theme['id']
-      name: Theme['name']
-      short_description: Theme['short_description']
-      time_created: Theme['time_created']
+      description: ThemeTable['description']
+      id: ThemeTable['id']
+      name: ThemeTable['name']
+      short_description: ThemeTable['short_description']
+      time_created: ThemeTable['time_created']
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
     }>
 
     default: unknown
 
     organizer: Array<{
-      description: Theme['description']
-      id: Theme['id']
-      name: Theme['name']
-      short_description: Theme['short_description']
-      time_created: Theme['time_created']
+      description: ThemeTable['description']
+      id: ThemeTable['id']
+      name: ThemeTable['name']
+      short_description: ThemeTable['short_description']
+      time_created: ThemeTable['time_created']
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
     }>
   }
 
   'GET/Theme/Unit': {
     admin: {
-      description: Theme['description']
-      id: Theme['id']
-      name: Theme['name']
-      short_description: Theme['short_description']
-      time_created: Theme['time_created']
+      description: ThemeTable['description']
+      id: ThemeTable['id']
+      name: ThemeTable['name']
+      short_description: ThemeTable['short_description']
+      time_created: ThemeTable['time_created']
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
     }
 
     default: unknown
 
     organizer: {
-      description: Theme['description']
-      id: Theme['id']
-      name: Theme['name']
-      short_description: Theme['short_description']
-      time_created: Theme['time_created']
+      description: ThemeTable['description']
+      id: ThemeTable['id']
+      name: ThemeTable['name']
+      short_description: ThemeTable['short_description']
+      time_created: ThemeTable['time_created']
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
     }
   }
 
   'GET/Game/Set': {
     admin: Array<{
-      id: Game['id']
-      alias: Game['alias']
-      number: Game['number']
-      event_time: Game['event_time']
-      status: Game['status']
+      id: GameTable['id']
+      alias: GameTable['alias']
+      number: GameTable['number']
+      event_time: GameTable['event_time']
+      status: GameTable['status']
       city: {
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }
       location: {
-        id: Venue['id']
-        name: Venue['name']
+        id: VenueTable['id']
+        name: VenueTable['name']
       }
       theme: {
-        id: Theme['id']
-        name: Theme['name']
+        id: ThemeTable['id']
+        name: ThemeTable['name']
       }
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
       people: number
       people_reserve: number
@@ -453,74 +453,74 @@ type ScopeRoleResponse = {
     }>
 
     default: Array<{
-      id: Game['id']
-      alias: Game['alias']
-      number: Game['number']
-      event_time: Game['event_time']
-      status: Game['status']
-      price: Game['price']
-      currency: Game['currency']
-      min_members_count: Game['min_members_count']
-      max_members_count: Game['max_members_count']
+      id: GameTable['id']
+      alias: GameTable['alias']
+      number: GameTable['number']
+      event_time: GameTable['event_time']
+      status: GameTable['status']
+      price: GameTable['price']
+      currency: GameTable['currency']
+      min_members_count: GameTable['min_members_count']
+      max_members_count: GameTable['max_members_count']
       city: {
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }
       location: {
-        house_number: Venue['house_number']
-        id: Venue['id']
-        location_info: Venue['location_info']
-        name: Venue['name']
-        street: Venue['street']
+        house_number: VenueTable['house_number']
+        id: VenueTable['id']
+        location_info: VenueTable['location_info']
+        name: VenueTable['name']
+        street: VenueTable['street']
       }
       theme: {
-        description: Theme['description']
-        id: Theme['id']
-        name: Theme['name']
-        short_description: Theme['short_description']
+        description: ThemeTable['description']
+        id: ThemeTable['id']
+        name: ThemeTable['name']
+        short_description: ThemeTable['short_description']
       }
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
+        id: MediaTable['id']
+        path: MediaTable['path']
       }
     }>
 
     organizer: Array<{
-      alias: Game['alias']
-      event_time: Game['event_time']
-      id: Game['id']
-      number: Game['number']
-      status: Game['status']
+      alias: GameTable['alias']
+      event_time: GameTable['event_time']
+      id: GameTable['id']
+      number: GameTable['number']
+      status: GameTable['status']
       city: {
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }
       location: {
-        house_number: Venue['house_number']
-        id: Venue['id']
-        location_info: Venue['location_info']
-        name: Venue['name']
-        street: Venue['street']
+        house_number: VenueTable['house_number']
+        id: VenueTable['id']
+        location_info: VenueTable['location_info']
+        name: VenueTable['name']
+        street: VenueTable['street']
       }
       theme: {
-        description: Theme['description']
-        id: Theme['id']
-        name: Theme['name']
-        short_description: Theme['short_description']
+        description: ThemeTable['description']
+        id: ThemeTable['id']
+        name: ThemeTable['name']
+        short_description: ThemeTable['short_description']
       }
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
+        id: MediaTable['id']
+        path: MediaTable['path']
       }
       people: number
       people_reserve: number
@@ -531,124 +531,124 @@ type ScopeRoleResponse = {
 
   'GET/Game/Unit': {
     admin: {
-      alias: Game['alias']
-      currency: Game['currency']
-      event_time: Game['event_time']
-      id: Game['id']
-      max_members_count: Game['max_members_count']
-      min_members_count: Game['min_members_count']
-      number: Game['number']
-      personal_comment: Game['personal_comment']
-      price: Game['price']
-      status: Game['status']
+      alias: GameTable['alias']
+      currency: GameTable['currency']
+      event_time: GameTable['event_time']
+      id: GameTable['id']
+      max_members_count: GameTable['max_members_count']
+      min_members_count: GameTable['min_members_count']
+      number: GameTable['number']
+      personal_comment: GameTable['personal_comment']
+      price: GameTable['price']
+      status: GameTable['status']
       city: {
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        timezone: City['timezone']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        timezone: CityTable['timezone']
+        vk_group_id: CityTable['vk_group_id']
       }
       venue: {
-        house_number: Venue['house_number']
-        id: Venue['id']
-        name: Venue['name']
-        street: Venue['street']
+        house_number: VenueTable['house_number']
+        id: VenueTable['id']
+        name: VenueTable['name']
+        street: VenueTable['street']
       }
       theme: {
-        description: Theme['description']
-        id: Theme['id']
-        name: Theme['name']
-        short_description: Theme['short_description']
+        description: ThemeTable['description']
+        id: ThemeTable['id']
+        name: ThemeTable['name']
+        short_description: ThemeTable['short_description']
       }
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
     }
 
     default: {
-      alias: Game['alias']
-      currency: Game['currency']
-      event_time: Game['event_time']
-      id: Game['id']
-      max_members_count: Game['max_members_count']
-      min_members_count: Game['min_members_count']
-      number: Game['number']
-      price: Game['price']
-      status: Game['status']
-      weekday: Game['weekday']
+      alias: GameTable['alias']
+      currency: GameTable['currency']
+      event_time: GameTable['event_time']
+      id: GameTable['id']
+      max_members_count: GameTable['max_members_count']
+      min_members_count: GameTable['min_members_count']
+      number: GameTable['number']
+      price: GameTable['price']
+      status: GameTable['status']
+      weekday: GameTable['weekday']
       city: {
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        timezone: City['timezone']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        timezone: CityTable['timezone']
+        vk_group_id: CityTable['vk_group_id']
       }
       venue: {
-        house_number: Venue['house_number']
-        id: Venue['id']
-        location_info: Venue['location_info']
-        name: Venue['name']
-        street: Venue['street']
+        house_number: VenueTable['house_number']
+        id: VenueTable['id']
+        location_info: VenueTable['location_info']
+        name: VenueTable['name']
+        street: VenueTable['street']
       }
       theme: {
-        description: Theme['description']
-        id: Theme['id']
-        name: Theme['name']
-        short_description: Theme['short_description']
+        description: ThemeTable['description']
+        id: ThemeTable['id']
+        name: ThemeTable['name']
+        short_description: ThemeTable['short_description']
       }
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
     }
 
     organizer: {
-      alias: Game['alias']
-      currency: Game['currency']
-      event_time: Game['event_time']
-      id: Game['id']
-      max_members_count: Game['max_members_count']
-      min_members_count: Game['min_members_count']
-      number: Game['number']
-      price: Game['price']
-      status: Game['status']
-      weekday: Game['weekday']
+      alias: GameTable['alias']
+      currency: GameTable['currency']
+      event_time: GameTable['event_time']
+      id: GameTable['id']
+      max_members_count: GameTable['max_members_count']
+      min_members_count: GameTable['min_members_count']
+      number: GameTable['number']
+      price: GameTable['price']
+      status: GameTable['status']
+      weekday: GameTable['weekday']
       city: {
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        timezone: City['timezone']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        timezone: CityTable['timezone']
+        vk_group_id: CityTable['vk_group_id']
       }
       venue: {
-        house_number: Venue['house_number']
-        id: Venue['id']
-        location_info: Venue['location_info']
-        name: Venue['name']
-        street: Venue['street']
+        house_number: VenueTable['house_number']
+        id: VenueTable['id']
+        location_info: VenueTable['location_info']
+        name: VenueTable['name']
+        street: VenueTable['street']
       }
       theme: {
-        description: Theme['description']
-        id: Theme['id']
-        name: Theme['name']
-        short_description: Theme['short_description']
+        description: ThemeTable['description']
+        id: ThemeTable['id']
+        name: ThemeTable['name']
+        short_description: ThemeTable['short_description']
       }
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
     }
   }
@@ -658,54 +658,54 @@ type ScopeRoleResponse = {
       can_cancel: boolean
       can_change_people_count: boolean
       can_confirm: boolean
-      change_people_count: Registration['change_people_count']
-      channel: Registration['channel']
-      event_id: Registration['event_id']
+      change_people_count: RegistrationTable['change_people_count']
+      channel: RegistrationTable['channel']
+      event_id: RegistrationTable['event_id']
       event_time_utc: GameRow['event_time']
       event_timezone: GameRow['timezone']
-      id: Registration['id']
-      is_canceled: Registration['is_canceled']
-      is_confirm: Registration['is_confirm']
-      is_reserve: Registration['is_reserve']
+      id: RegistrationTable['id']
+      is_canceled: RegistrationTable['is_canceled']
+      is_confirm: RegistrationTable['is_confirm']
+      is_reserve: RegistrationTable['is_reserve']
       max_members_count: GameRow['max_members_count']
-      people_count: Registration['people_count']
-      team_name: Registration['team_name']
+      people_count: RegistrationTable['people_count']
+      team_name: RegistrationTable['team_name']
     }>
 
     default: Array<{
       can_cancel: boolean
       can_change_people_count: boolean
       can_confirm: boolean
-      change_people_count: Registration['change_people_count']
-      channel: Registration['channel']
-      event_id: Registration['event_id']
+      change_people_count: RegistrationTable['change_people_count']
+      channel: RegistrationTable['channel']
+      event_id: RegistrationTable['event_id']
       event_time_utc: GameRow['event_time']
       event_timezone: GameRow['timezone']
-      id: Registration['id']
-      is_canceled: Registration['is_canceled']
-      is_confirm: Registration['is_confirm']
-      is_reserve: Registration['is_reserve']
+      id: RegistrationTable['id']
+      is_canceled: RegistrationTable['is_canceled']
+      is_confirm: RegistrationTable['is_confirm']
+      is_reserve: RegistrationTable['is_reserve']
       max_members_count: GameRow['max_members_count']
-      people_count: Registration['people_count']
-      team_name: Registration['team_name']
+      people_count: RegistrationTable['people_count']
+      team_name: RegistrationTable['team_name']
     }>
 
     organizer: Array<{
       can_cancel: boolean
       can_change_people_count: boolean
       can_confirm: boolean
-      change_people_count: Registration['change_people_count']
-      channel: Registration['channel']
-      event_id: Registration['event_id']
+      change_people_count: RegistrationTable['change_people_count']
+      channel: RegistrationTable['channel']
+      event_id: RegistrationTable['event_id']
       event_time_utc: GameRow['event_time']
       event_timezone: GameRow['timezone']
-      id: Registration['id']
-      is_canceled: Registration['is_canceled']
-      is_confirm: Registration['is_confirm']
-      is_reserve: Registration['is_reserve']
+      id: RegistrationTable['id']
+      is_canceled: RegistrationTable['is_canceled']
+      is_confirm: RegistrationTable['is_confirm']
+      is_reserve: RegistrationTable['is_reserve']
       max_members_count: GameRow['max_members_count']
-      people_count: Registration['people_count']
-      team_name: Registration['team_name']
+      people_count: RegistrationTable['people_count']
+      team_name: RegistrationTable['team_name']
     }>
   }
 
@@ -714,85 +714,85 @@ type ScopeRoleResponse = {
       can_cancel: boolean
       can_change_people_count: boolean
       can_confirm: boolean
-      change_people_count: Registration['change_people_count']
-      channel: Registration['channel']
-      event_id: Registration['event_id']
+      change_people_count: RegistrationTable['change_people_count']
+      channel: RegistrationTable['channel']
+      event_id: RegistrationTable['event_id']
       event_time_utc: GameRow['event_time']
       event_timezone: GameRow['timezone']
-      id: Registration['id']
-      is_canceled: Registration['is_canceled']
-      is_confirm: Registration['is_confirm']
-      is_reserve: Registration['is_reserve']
+      id: RegistrationTable['id']
+      is_canceled: RegistrationTable['is_canceled']
+      is_confirm: RegistrationTable['is_confirm']
+      is_reserve: RegistrationTable['is_reserve']
       max_members_count: GameRow['max_members_count']
-      people_count: Registration['people_count']
-      team_name: Registration['team_name']
+      people_count: RegistrationTable['people_count']
+      team_name: RegistrationTable['team_name']
     }
 
     default: {
       can_cancel: boolean
       can_change_people_count: boolean
       can_confirm: boolean
-      change_people_count: Registration['change_people_count']
-      channel: Registration['channel']
-      event_id: Registration['event_id']
+      change_people_count: RegistrationTable['change_people_count']
+      channel: RegistrationTable['channel']
+      event_id: RegistrationTable['event_id']
       event_time_utc: GameRow['event_time']
       event_timezone: GameRow['timezone']
-      id: Registration['id']
-      is_canceled: Registration['is_canceled']
-      is_confirm: Registration['is_confirm']
-      is_reserve: Registration['is_reserve']
+      id: RegistrationTable['id']
+      is_canceled: RegistrationTable['is_canceled']
+      is_confirm: RegistrationTable['is_confirm']
+      is_reserve: RegistrationTable['is_reserve']
       max_members_count: GameRow['max_members_count']
-      people_count: Registration['people_count']
-      team_name: Registration['team_name']
+      people_count: RegistrationTable['people_count']
+      team_name: RegistrationTable['team_name']
     }
 
     organizer: {
       can_cancel: boolean
       can_change_people_count: boolean
       can_confirm: boolean
-      change_people_count: Registration['change_people_count']
-      channel: Registration['channel']
-      event_id: Registration['event_id']
+      change_people_count: RegistrationTable['change_people_count']
+      channel: RegistrationTable['channel']
+      event_id: RegistrationTable['event_id']
       event_time_utc: GameRow['event_time']
       event_timezone: GameRow['timezone']
-      id: Registration['id']
-      is_canceled: Registration['is_canceled']
-      is_confirm: Registration['is_confirm']
-      is_reserve: Registration['is_reserve']
+      id: RegistrationTable['id']
+      is_canceled: RegistrationTable['is_canceled']
+      is_confirm: RegistrationTable['is_confirm']
+      is_reserve: RegistrationTable['is_reserve']
       max_members_count: GameRow['max_members_count']
-      people_count: Registration['people_count']
-      team_name: Registration['team_name']
+      people_count: RegistrationTable['people_count']
+      team_name: RegistrationTable['team_name']
     }
   }
 
   'GET/Game/Set': {
     admin: Array<{
-      id: Game['id']
-      alias: Game['alias']
-      number: Game['number']
-      event_time: Game['event_time']
-      status: Game['status']
+      id: GameTable['id']
+      alias: GameTable['alias']
+      number: GameTable['number']
+      event_time: GameTable['event_time']
+      status: GameTable['status']
       city: {
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }
       venue: {
-        id: Venue['id']
-        name: Venue['name']
+        id: VenueTable['id']
+        name: VenueTable['name']
       }
       theme: {
-        id: Theme['id']
-        name: Theme['name']
+        id: ThemeTable['id']
+        name: ThemeTable['name']
       }
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
       amounts: {
         people: number
@@ -813,55 +813,55 @@ type ScopeRoleResponse = {
       price: GameRow['price']
       status: GameRow['status']
       city: {
-        alias: City['alias']
-        id: City['id']
+        alias: CityTable['alias']
+        id: CityTable['id']
       }
       location: {
-        house_number: Venue['house_number']
-        id: Venue['id']
-        info: Venue['location_info']
-        name: Venue['name']
-        street: Venue['street']
+        house_number: VenueTable['house_number']
+        id: VenueTable['id']
+        info: VenueTable['location_info']
+        name: VenueTable['name']
+        street: VenueTable['street']
       }
       theme: {
-        description: Theme['description']
-        id: Theme['id']
-        name: Theme['name']
-        short_description: Theme['short_description']
+        description: ThemeTable['description']
+        id: ThemeTable['id']
+        name: ThemeTable['name']
+        short_description: ThemeTable['short_description']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
+        id: MediaTable['id']
+        path: MediaTable['path']
       }
     }>
 
     organizer: Array<{
-      id: Game['id']
-      alias: Game['alias']
-      number: Game['number']
-      event_time: Game['event_time']
-      status: Game['status']
+      id: GameTable['id']
+      alias: GameTable['alias']
+      number: GameTable['number']
+      event_time: GameTable['event_time']
+      status: GameTable['status']
       city: {
-        alias: City['alias']
-        id: City['id']
-        name: City['name']
-        vk_group_id: City['vk_group_id']
+        alias: CityTable['alias']
+        id: CityTable['id']
+        name: CityTable['name']
+        vk_group_id: CityTable['vk_group_id']
       }
       venue: {
-        id: Venue['id']
-        name: Venue['name']
+        id: VenueTable['id']
+        name: VenueTable['name']
       }
       theme: {
-        id: Theme['id']
-        name: Theme['name']
+        id: ThemeTable['id']
+        name: ThemeTable['name']
       }
       image: {
-        id: ImageMedia['id']
+        id: ImageTable['id']
       }
       media: {
-        id: Media['id']
-        path: Media['path']
-        title: Media['title']
+        id: MediaTable['id']
+        path: MediaTable['path']
+        title: MediaTable['title']
       }
       amounts: {
         people: number
