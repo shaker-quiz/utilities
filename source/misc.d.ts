@@ -35,6 +35,12 @@ type Kind = (typeof import('./enumerations/core/kinds.js').Kinds)[number]
 
 type Scope = `${Method}/${Feature}/${Kind}`
 
+type Runtime =
+  (typeof import('./enumerations/core/runtimes.js').Runtimes)[number]
+
+type Network =
+  (typeof import('./enumerations/core/networks.js').Networks)[number]
+
 type Role = (typeof import('./enumerations/entities/roles.js').Roles)[number]
 
 type GameStatus =

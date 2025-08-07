@@ -1,18 +1,18 @@
 import { Kinds } from './kinds.js'
 
 export var Domains = /** @type {const} */ ([
-  'Asset',
+  // 'Asset',
   'User',
   'Role',
   'Country',
   'City',
   'Venue',
   'Theme',
-  'ThemeAsset',
+  // 'ThemeAsset',
   'Game',
-  'GameAsset',
+  // 'GameAsset',
   'Registration',
-  'Mailing',
+  // 'Mailing',
 ])
 
 /**
@@ -31,7 +31,7 @@ export var DomainIcon = {
 }
 
 /**
- * @satisfies {Record<Domain, Record<Kind, string>>}
+ * @type {Record<Domain, Record<Kind, string>>}
  */
 export var DomainKindPathname = /** @type {const} */ ({
   'User': {
@@ -105,7 +105,7 @@ export var ProcedureIcon = {
 }
 
 /**
- * @satisfies {Record<Procedure, Record<Kind, string>>}
+ * @type {Record<Procedure, Record<Kind, string>>}
  */
 export var ProcedureKindPathname = /** @type {const} */ ({
   'Checkin': {
@@ -133,7 +133,7 @@ export var FeatureIcon = {
 }
 
 /**
- * @satisfies {Record<Feature, Record<Kind, string>>}
+ * @type {Record<Feature, Record<Kind, string>>}
  */
 export var FeatureKindPathname = {
   ...DomainKindPathname,
@@ -164,21 +164,35 @@ export var FeatureKindPatterns = FeatureKindPathnames
 /**
  * @param {Feature} feature
  * @param {Kind} kind
- *
- * @returns {URLPattern}
  */
-export let resolvePattern = (feature, kind) => {
+export var getPathname = (feature, kind) => {
   if (!Features.includes(feature))
     throw TypeError(
-      `Feature '${feature}' must be listed in 'Features'.`,
+      `[getPathname] Feature '${feature}' must be listed in 'Features'.`,
     )
 
   if (!Kinds.includes(kind))
     throw TypeError(
-      `Kind '${kind}' must be listed in 'Kinds'.`,
+      `[getPathname] Kind '${kind}' must be listed in 'Kinds'.`,
     )
 
-  return FeatureKindPatterns
-    .find(([f, k]) => f == feature && k == kind)
-    ?.at(2)
+  return FeatureKindPathname[feature][kind]
+}
+
+/**
+ * @param {Feature} feature
+ * @param {Kind} kind
+ */
+export var getPattern = (feature, kind) => {
+  if (!Features.includes(feature))
+    throw TypeError(
+      `[getPattern] Feature '${feature}' must be listed in 'Features'.`,
+    )
+
+  if (!Kinds.includes(kind))
+    throw TypeError(
+      `[getPattern] Kind '${kind}' must be listed in 'Kinds'.`,
+    )
+
+  return FeatureKindPatterns.find(([f, k]) => f == feature && k == kind)[2]
 }

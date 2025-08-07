@@ -1,6 +1,8 @@
 export * from './enumerations/core/features.js'
 export * from './enumerations/core/kinds.js'
 export * from './enumerations/core/methods.js'
+export * from './enumerations/core/networks.js'
+export * from './enumerations/core/runtimes.js'
 export * from './enumerations/core/scopes.js'
 
 export * from './enumerations/misc/constants.js'

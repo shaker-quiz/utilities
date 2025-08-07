@@ -16,7 +16,7 @@ export var Scopes = Object
  *
  * @returns {Scope | ''}
  */
-export var resolveScope = request => {
+export var getScope = request => {
   var found = FeatureKindPatterns
     .find(([, , pattern]) => pattern.test(request.url))
     ?.slice(0, -1)
