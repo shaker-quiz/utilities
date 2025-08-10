@@ -2,4 +2,4 @@
  * @type {Scope[]}
  */
 export const Scopes: Scope[];
-export function resolveScope(request: Request): Scope | "";
+export function getScope(request: Request): Scope | "";

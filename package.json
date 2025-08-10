@@ -4,6 +4,9 @@
   "version": "0.4.30",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
+  "scripts": {
+    "type": "tsc --declaration --emitdeclarationonly --allowjs"
+  },
   "exports": {
     ".": {
       "types": "./source/index.d.ts",
