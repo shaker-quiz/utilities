@@ -5,8 +5,13 @@
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "exports": {
-    "types": "./source/index.d.ts",
-    "default": "./source/index.js"
+    ".": {
+      "types": "./source/index.d.ts",
+      "default": "./source/index.js"
+    },
+    "./schemas/": {
+      "default": "./source/schemas/"
+    }
   },
   "dependencies": {
     "urlpattern-polyfill": "10.1.0"
