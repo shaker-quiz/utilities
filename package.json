@@ -9,7 +9,7 @@
       "types": "./source/index.d.ts",
       "default": "./source/index.js"
     },
-    "./schemas/": "./source/schemas/"
+    "./schemas/*.json": "./source/schemas/*.json"
   },
   "dependencies": {
     "urlpattern-polyfill": "10.1.0"
