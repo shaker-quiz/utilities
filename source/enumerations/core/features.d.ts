@@ -1,4 +1,4 @@
-export const Domains: readonly ["User", "Role", "Country", "City", "Venue", "Theme", "Game", "Registration"];
+export const Domains: readonly ["User", "Role", "Country", "Currency", "City", "Venue", "Theme", "Game", "Registration"];
 /**
  * @type {Record<Domain, Icon>}
  */

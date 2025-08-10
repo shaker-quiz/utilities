@@ -5,6 +5,7 @@ export var Domains = /** @type {const} */ ([
   'User',
   'Role',
   'Country',
+  'Currency',
   'City',
   'Venue',
   'Theme',
@@ -22,6 +23,7 @@ export var DomainIcon = {
   'User': 'users',
   'Role': 'identification',
   'Country': 'no-symbol',
+  'Currency': 'no-symbol',
   'City': 'building-office',
   'Venue': 'map-pin',
   'Theme': 'document-text',
@@ -47,6 +49,11 @@ export var DomainKindPathname = /** @type {const} */ ({
   'Country': {
     'Unit': '/country/:country?',
     'Set': '/countries',
+  },
+
+  'Currency': {
+    'Unit': '/currency/:currency?',
+    'Set': '/currencies',
   },
 
   'City': {
