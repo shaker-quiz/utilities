@@ -89,7 +89,6 @@
     "created_by_id",
     "currency",
     "event_time",
-    "id",
     "image_id",
     "location_id",
     "name",
