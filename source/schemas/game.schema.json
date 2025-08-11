@@ -20,7 +20,7 @@
     },
     "event_time": {
       "type": "string",
-      "format": "date-time"
+      "format": "iso-date-time"
     },
     "game_pack_id": {
       "type": "string",
@@ -72,11 +72,11 @@
     },
     "time_created": {
       "type": "string",
-      "format": "date-time"
+      "format": "iso-date-time"
     },
     "time_updated": {
       "type": "string",
-      "format": "date-time"
+      "format": "iso-date-time"
     },
     "timezone": {
       "type": "integer"
