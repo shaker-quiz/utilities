@@ -87,17 +87,11 @@
   },
   "required": [
     "created_by_id",
-    "currency",
     "event_time",
-    "image_id",
     "location_id",
-    "name",
     "number",
-    "owner_id",
     "price",
-    "status",
-    "theme_id",
-    "timezone"
+    "theme_id"
   ],
   "additionalProperties": false
 }
