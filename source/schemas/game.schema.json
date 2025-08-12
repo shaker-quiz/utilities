@@ -1,9 +1,6 @@
 {
   "type": "object",
   "properties": {
-    "alias": {
-      "type": "string"
-    },
     "city_id": {
       "type": "string",
       "format": "uuid"
