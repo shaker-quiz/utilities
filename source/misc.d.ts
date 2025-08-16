@@ -26,8 +26,7 @@ type Method = (typeof import('./enumerations/core/methods.js').Methods)[number]
 
 type Domain = (typeof import('./enumerations/core/features.js').Domains)[number]
 
-type Procedure =
-  (typeof import('./enumerations/core/features.js').Procedures)[number]
+type Procedure = (typeof import('./enumerations/core/features.js').Procedures)[number]
 
 type Feature = Domain | Procedure
 
@@ -35,29 +34,25 @@ type Kind = (typeof import('./enumerations/core/kinds.js').Kinds)[number]
 
 type Scope = `${Method}/${Feature}/${Kind}`
 
-type Runtime =
-  (typeof import('./enumerations/core/runtimes.js').Runtimes)[number]
+type Runtime = (typeof import('./enumerations/core/runtimes.js').Runtimes)[number]
 
-type Network =
-  (typeof import('./enumerations/core/networks.js').Networks)[number]
+type Network = (typeof import('./enumerations/core/networks.js').Networks)[number]
 
 type Role = (typeof import('./enumerations/entities/roles.js').Roles)[number]
 
-type GameStatus =
-  (typeof import('./enumerations/entities/game-statuses.js').GameStatuses)[
-    number
-  ]
+type CityAffilation = (typeof import('./enumerations/entities/city-affilations.js').CityAffilations)[number]
+
+type GameStatus = (typeof import('./enumerations/entities/game-statuses.js').GameStatuses)[
+  number
+]
+
+type RegistrationAttribute =
+  (typeof import('./enumerations/entities/registration-attributes.js').RegistrationAttributes)[number]
+
+type RegistrationLineup = (typeof import('./enumerations/entities/registration-lineups.js').RegistrationLineups)[number]
 
 type RegistrationStatus =
-  (typeof import('./enumerations/entities/registration-statuses.js').RegistrationStatuses)[
-    number
-  ]
-
-type Lineup =
-  (typeof import('./enumerations/entities/lineups.js').Lineups)[number]
-
-type Affilation =
-  (typeof import('./enumerations/entities/affilations.js').Affilations)[number]
+  (typeof import('./enumerations/entities/registration-statuses.js').RegistrationStatuses)[number]
 
 /**
  * Misc

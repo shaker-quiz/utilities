@@ -16,7 +16,7 @@ export * from './enumerations/misc/icons.d.ts'
 export * from './enumerations/misc/phases.d.ts'
 export * from './enumerations/misc/regexps.d.ts'
 
-export * from './enumerations/entities/affilations.d.ts'
+export * from './enumerations/entities/city-affilations.js'
 export * from './enumerations/entities/game-statuses.d.ts'
 export * from './enumerations/entities/lineups.d.ts'
 export * from './enumerations/entities/registration-statuses.d.ts'
