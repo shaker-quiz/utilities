@@ -11,8 +11,11 @@ export * from './enumerations/misc/icons.js'
 export * from './enumerations/misc/phases.js'
 export * from './enumerations/misc/regexps.js'
 
-export * from './enumerations/entities/affilations.js'
+export * from './enumerations/entities/city-affilations.js'
 export * from './enumerations/entities/game-statuses.js'
-export * from './enumerations/entities/lineups.js'
+export * from './enumerations/entities/registration-attributes.js'
+export * from './enumerations/entities/registration-lineups.js'
 export * from './enumerations/entities/registration-statuses.js'
 export * from './enumerations/entities/roles.js'
+
+export * from './functions/tag.js'
