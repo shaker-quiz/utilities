@@ -33,5 +33,10 @@
       "type": "string"
     }
   },
+  "required": [
+    "city_id",
+    "location_id",
+    "theme_id"
+  ],
   "additionalProperties": false
 }
