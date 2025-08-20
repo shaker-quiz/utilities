@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "created_by_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "city_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "location_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "theme_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "number": {
+      "type": "string"
+    },
+    "event_time": {
+      "type": "string",
+      "format": "iso-date-time"
+    }
+  },
+  "required": [
+    "created_by_id",
+    "city_id",
+    "location_id",
+    "theme_id",
+    "number",
+    "event_time"
+  ],
+  "additionalProperties": false
+}
