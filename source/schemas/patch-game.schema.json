@@ -1,10 +1,6 @@
 {
   "type": "object",
   "properties": {
-    "city_id": {
-      "type": "string",
-      "format": "uuid"
-    },
     "location_id": {
       "type": "string",
       "format": "uuid"
@@ -34,7 +30,6 @@
     }
   },
   "required": [
-    "city_id",
     "location_id",
     "theme_id"
   ],
