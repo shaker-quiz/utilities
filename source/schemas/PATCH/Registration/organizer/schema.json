@@ -1,6 +1,28 @@
 {
   "type": "object",
-  "properties": {},
+  "properties": {
+    "change_people_count": {
+      "type": "integer"
+    },
+    "human_name": {
+      "type": "string"
+    },
+    "is_alone": {
+      "type": "boolean"
+    },
+    "is_canceled": {
+      "type": "boolean"
+    },
+    "is_confirm": {
+      "type": "boolean"
+    },
+    "is_reserve": {
+      "type": "boolean"
+    },
+    "team_name": {
+      "type": "string"
+    }
+  },
   "required": [],
   "additionalProperties": false
 }
