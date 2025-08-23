@@ -1,7 +1,7 @@
 {
   "type": "object",
   "properties": {
-    "change_people_count": {
+    "people_count": {
       "type": "integer"
     },
     "channel": {
