@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "people_count": {
+      "type": "integer"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "is_canceled": {
+      "type": "boolean"
+    },
+    "is_confirm": {
+      "type": "boolean"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

@@ -83,12 +83,11 @@
     }
   },
   "required": [
-    "created_by_id",
-    "event_time",
+    "theme_id",
     "location_id",
+    "event_time",
     "number",
-    "price",
-    "theme_id"
+    "price"
   ],
   "additionalProperties": false
 }
