@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@shakerquiz/utilities",
-  "version": "0.4.49",
+  "version": "0.4.50",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
   "scripts": {
