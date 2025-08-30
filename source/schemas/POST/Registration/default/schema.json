@@ -74,7 +74,11 @@
     "is_extensible",
     "is_first",
     "people_count",
-    "team_name"
+    "team_name",
+    "channel",
+    "email",
+    "vkontakte",
+    "telegramBot"
   ],
   "additionalProperties": false
 }
