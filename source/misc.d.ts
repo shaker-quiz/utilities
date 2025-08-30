@@ -49,6 +49,9 @@ type GameStatus = (typeof import('./enumerations/entities/game-statuses.js').Gam
 type RegistrationAttribute =
   (typeof import('./enumerations/entities/registration-attributes.js').RegistrationAttributes)[number]
 
+type RegistrationChannel =
+  (typeof import('./enumerations/entities/registration-channels.js').RegistrationChannels)[number]
+
 type RegistrationLineup = (typeof import('./enumerations/entities/registration-lineups.js').RegistrationLineups)[number]
 
 type RegistrationStatus =
