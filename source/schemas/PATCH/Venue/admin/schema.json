@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "house_number": {
+      "type": "string"
+    },
+    "people_capacity": {
+      "type": "integer"
+    },
+    "team_capacity": {
+      "type": "integer"
+    },
+    "is_adult": {
+      "type": "boolean"
+    },
+    "game_time": {
+      "type": "string"
+    },
+    "location_info": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

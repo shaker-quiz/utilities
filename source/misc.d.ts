@@ -49,10 +49,15 @@ type GameStatus = (typeof import('./enumerations/entities/game-statuses.js').Gam
 type RegistrationAttribute =
   (typeof import('./enumerations/entities/registration-attributes.js').RegistrationAttributes)[number]
 
+type RegistrationChannel =
+  (typeof import('./enumerations/entities/registration-channels.js').RegistrationChannels)[number]
+
 type RegistrationLineup = (typeof import('./enumerations/entities/registration-lineups.js').RegistrationLineups)[number]
 
 type RegistrationStatus =
   (typeof import('./enumerations/entities/registration-statuses.js').RegistrationStatuses)[number]
+
+type VenueStatus = (typeof import('./enumerations/entities/venue-statuses.js').VenueStatuses)[number]
 
 /**
  * Misc

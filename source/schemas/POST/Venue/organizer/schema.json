@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "house_number": {
+      "type": "string"
+    },
+    "people_capacity": {
+      "type": "integer"
+    },
+    "team_capacity": {
+      "type": "integer"
+    },
+    "is_adult": {
+      "type": "boolean"
+    },
+    "game_time": {
+      "type": "string"
+    },
+    "city_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "location_info": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "street",
+    "house_number",
+    "people_capacity",
+    "team_capacity",
+    "game_time",
+    "city_id"
+  ],
+  "additionalProperties": false
+}

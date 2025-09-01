@@ -9,20 +9,14 @@
     "lineWidth": 120,
     "importDeclaration.forceSingleLine": true
   },
-
   "json": {},
-
   "markdown": {},
-
   "dockerfile": {},
-
   "yaml": {},
-
   "excludes": [
     "**/node_modules",
     "**/*-lock.json"
   ],
-
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.93.0.wasm",
     "https://plugins.dprint.dev/json-0.19.3.wasm",
