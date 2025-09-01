@@ -89,24 +89,6 @@
       "if": {
         "properties": {
           "channel": {
-            "const": "email"
-          }
-        },
-        "required": [
-          "channel"
-        ]
-      },
-      "then": {
-        "required": [
-          "channel",
-          "confirmed_channel"
-        ]
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "channel": {
             "const": "telegramBot"
           }
         },
