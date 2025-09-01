@@ -43,8 +43,7 @@
       "then": {
         "required": [
           "channel",
-          "confirmed_channel",
-          "email"
+          "confirmed_channel"
         ]
       }
     },
