@@ -1,1 +1,1 @@
-export const GameStatuses: readonly ["ACTIVE", "ARCHIVE"];
+export const VenueStatuses: readonly ['ACTIVE', 'ARCHIVE']

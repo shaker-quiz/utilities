@@ -57,6 +57,8 @@ type RegistrationLineup = (typeof import('./enumerations/entities/registration-l
 type RegistrationStatus =
   (typeof import('./enumerations/entities/registration-statuses.js').RegistrationStatuses)[number]
 
+type VenueStatus = (typeof import('./enumerations/entities/venue-statuses.js').VenueStatuses)[number]
+
 /**
  * Misc
  */

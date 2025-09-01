@@ -18,5 +18,6 @@ export * from './enumerations/entities/registration-channels.js'
 export * from './enumerations/entities/registration-lineups.js'
 export * from './enumerations/entities/registration-statuses.js'
 export * from './enumerations/entities/roles.js'
+export * from './enumerations/entities/venue-statuses.js'
 
 export * from './functions/tag.js'
