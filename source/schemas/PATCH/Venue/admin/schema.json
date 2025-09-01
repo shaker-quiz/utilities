@@ -23,7 +23,10 @@
       "type": "string"
     },
     "location_info": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "status": {
       "type": "string"
