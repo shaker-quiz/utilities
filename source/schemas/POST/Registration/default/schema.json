@@ -79,9 +79,7 @@
     "people_count",
     "team_name",
     "channel",
-    "email",
-    "vkontakte",
-    "telegramBot"
+    "email"
   ],
   "additionalProperties": false,
   "allOf": [
