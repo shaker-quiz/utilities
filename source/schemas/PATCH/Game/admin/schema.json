@@ -29,9 +29,6 @@
       "type": "string"
     }
   },
-  "required": [
-    "location_id",
-    "theme_id"
-  ],
+  "required": [],
   "additionalProperties": false
 }
