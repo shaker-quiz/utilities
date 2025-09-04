@@ -13,7 +13,7 @@ export var Domains = /** @type {const} */ ([
   'Game',
   // 'GameAsset',
   'Registration',
-  // 'Mailing',
+  'Mailing',
 ])
 
 /**
