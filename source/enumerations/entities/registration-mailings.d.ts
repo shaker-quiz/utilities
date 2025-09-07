@@ -1,1 +1,1 @@
-export const RegistrationMailings: readonly ["Idle", "Pending", "Delivered", "Rejected"];
+export const RegistrationMailings: readonly ["Idle", "Pending", "Delivered", "Failed"];
