@@ -42,9 +42,7 @@ type Role = (typeof import('./enumerations/entities/roles.js').Roles)[number]
 
 type CityAffilation = (typeof import('./enumerations/entities/city-affilations.js').CityAffilations)[number]
 
-type GameStatus = (typeof import('./enumerations/entities/game-statuses.js').GameStatuses)[
-  number
-]
+type GameStatus = (typeof import('./enumerations/entities/game-statuses.js').GameStatuses)[number]
 
 type RegistrationAttribute =
   (typeof import('./enumerations/entities/registration-attributes.js').RegistrationAttributes)[number]
@@ -53,6 +51,9 @@ type RegistrationChannel =
   (typeof import('./enumerations/entities/registration-channels.js').RegistrationChannels)[number]
 
 type RegistrationLineup = (typeof import('./enumerations/entities/registration-lineups.js').RegistrationLineups)[number]
+
+type RegistrationMailing =
+  (typeof import('./enumerations/entities/registration-mailings.js').RegistrationMailings)[number]
 
 type RegistrationStatus =
   (typeof import('./enumerations/entities/registration-statuses.js').RegistrationStatuses)[number]
