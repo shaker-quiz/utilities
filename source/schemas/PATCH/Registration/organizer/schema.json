@@ -21,6 +21,21 @@
     },
     "team_name": {
       "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Created",
+        "Confirmed",
+        "Cancelled"
+      ]
+    },
+    "lineup": {
+      "type": "string",
+      "enum": [
+        "Main",
+        "Reserve"
+      ]
     }
   },
   "required": [],

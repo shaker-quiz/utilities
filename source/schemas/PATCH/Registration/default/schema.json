@@ -24,6 +24,21 @@
     },
     "is_confirm": {
       "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Created",
+        "Confirmed",
+        "Cancelled"
+      ]
+    },
+    "lineup": {
+      "type": "string",
+      "enum": [
+        "Main",
+        "Reserve"
+      ]
     }
   },
   "required": [],
