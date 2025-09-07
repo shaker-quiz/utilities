@@ -1,13 +1,13 @@
 export var RegistrationStatuses = /** @type {const} */ ([
-  'Cancelled',
+  'Created',
   'Confirmed',
-  'Registered',
+  'Cancelled',
 ])
 
 /** @type {Record<RegistrationStatus, Pick<RegistrationTable, 'is_canceled' | 'is_confirm'>>} */
 let RegistrationStatusShape = {
-  'Cancelled': {
-    is_canceled: true,
+  'Created': {
+    is_canceled: false,
     is_confirm: false,
   },
 
@@ -16,8 +16,8 @@ let RegistrationStatusShape = {
     is_confirm: true,
   },
 
-  'Registered': {
-    is_canceled: false,
+  'Cancelled': {
+    is_canceled: true,
     is_confirm: false,
   },
 }
