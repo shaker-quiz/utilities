@@ -649,6 +649,6 @@ export var Icons = /** @type {const} */ ([
   'hero/outline/x-circle',
   'hero/outline/x-mark',
 
-  'brand/solid/vk',
-  'brand/solid/telegram',
+  'vk/solid/logo',
+  'telegram/solid/logo',
 ])
