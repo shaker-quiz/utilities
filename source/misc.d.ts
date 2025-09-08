@@ -77,3 +77,11 @@ type ScopePhase = Record<Scope, Phase>
 type ScopeState = Record<Scope, any>
 
 type ScopeController = Record<Scope, AbortController | null>
+
+/**
+ * Server
+ */
+
+type Routes = keyof typeof import('./enumerations/core/features.js').RoutePathname
+
+type Pathnames = typeof import('./enumerations/core/features.js').RoutePathname[Routes]

@@ -203,3 +203,108 @@ export var getPattern = (feature, kind) => {
 
   return FeatureKindPatterns.find(([f, k]) => f == feature && k == kind)[2]
 }
+
+export var RoutePathname = /** @type {const} */ ({
+  users: '/users',
+  user: '/users/:user?',
+
+  roles: '/roles',
+  role: '/roles/:role?',
+
+  checkins: '/checkins',
+  checkin: '/checkins/:checkin?',
+
+  countries: '/countries',
+  country: '/countries/:country?',
+
+  currencies: '/currencies',
+  currency: '/currencies/:currency?',
+
+  cities: '/cities',
+  city: '/cities/:city?',
+
+  venues: '/venues',
+  venue: '/venues/:venue?',
+
+  games: '/games',
+  game: '/games/:game?',
+
+  themes: '/themes',
+  theme: '/themes/:theme?',
+
+  registrations: '/registrations',
+  registration: '/registrations/:registration?',
+
+  mailings: '/mailings',
+  mailing: '/mailings/:mailing?',
+})
+
+export var RoutePathParams = /** @type {const} */ ({
+  users: [],
+  user: [':user?'],
+
+  roles: [],
+  role: [':role?'],
+
+  checkins: [],
+  checkin: [':checkin?'],
+
+  countries: [],
+  country: [':country?'],
+
+  currencies: [],
+  currency: [':currency?'],
+
+  cities: [],
+  city: [':city?'],
+
+  venues: [],
+  venue: [':venue?'],
+
+  games: [],
+  game: [':game?'],
+
+  themes: [],
+  theme: [':theme?'],
+
+  registrations: [],
+  registration: [':registration?'],
+
+  mailings: [],
+  mailing: [':mailing?'],
+})
+
+export var RouteSearchParams = /** @type {const} */ ({
+  users: [],
+  user: [],
+
+  roles: [],
+  role: [],
+
+  checkins: [],
+  checkin: [],
+
+  countries: [],
+  country: [],
+
+  currencies: [],
+  currency: [],
+
+  cities: [],
+  city: [],
+
+  venues: [],
+  venue: [],
+
+  games: ['city', 'status'],
+  game: ['city'],
+
+  themes: [],
+  theme: [],
+
+  registrations: ['game', 'city'],
+  registration: [],
+
+  mailings: [],
+  mailing: [],
+})
