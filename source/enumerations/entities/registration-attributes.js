@@ -1,32 +1,58 @@
 import { getTag } from '../../functions/tag.js'
 
-export var RegistrationAttributes = /** @type {const} */ ([
-  'Alone',
-  'Birthday',
-  'Newcomer',
-  'Public',
-])
-
-var RegistrationAttributeRegistrationProperties = /** @type {const} */ ([
-  'is_alone',
-  'is_birthday',
-  'is_first',
-  'is_extensible',
-])
-
-var RegistrationAttributeRegistrationProperty = /** @type {const} */ ({
-  'Alone': 'is_alone',
-  'Birthday': 'is_birthday',
-  'Newcomer': 'is_first',
-  'Public': 'is_extensible',
+export var RegistrationAttribute = /** @type {const} */ ({
+  'Alone': 'Alone',
+  'Newcomer': 'Newcomer',
+  'Birthday': 'Birthday',
+  'Public': 'Public',
 })
 
-var RegistrationPropertyRegistrationAttribute = /** @type {const} */ ({
-  'is_alone': 'Alone',
-  'is_birthday': 'Birthday',
-  'is_first': 'Newcomer',
-  'is_extensible': 'Public',
+export var RegistrationAttributes = Object.values(RegistrationAttribute)
+
+export var RegistrationAttributeWeight = {
+  [RegistrationAttribute.Alone]: 0,
+  [RegistrationAttribute.Newcomer]: 1,
+  [RegistrationAttribute.Birthday]: 2,
+  [RegistrationAttribute.Public]: 3,
+}
+
+export var RegistrationAttributeTitle = {
+  [RegistrationAttribute.Alone]: 'Без команды',
+  [RegistrationAttribute.Newcomer]: 'Новичок',
+  [RegistrationAttribute.Birthday]: 'День рождения',
+  [RegistrationAttribute.Public]: 'Принимаем людей',
+}
+
+/** @type {Record<RegistrationAttribute, Icon>} */
+export var RegistrationAttributeIcon = {
+  [RegistrationAttribute.Alone]: 'hero/outline/user',
+  [RegistrationAttribute.Newcomer]: 'hero/outline/sparkles',
+  [RegistrationAttribute.Birthday]: 'hero/outline/cake',
+  [RegistrationAttribute.Public]: 'hero/outline/user-plus',
+}
+
+export var RegistrationAttributeEmoji = {
+  [RegistrationAttribute.Alone]: '👤',
+  [RegistrationAttribute.Newcomer]: '✨',
+  [RegistrationAttribute.Birthday]: '🎂',
+  [RegistrationAttribute.Public]: '🫂',
+}
+
+export var RegistrationAttributeRegistrationProperty = /** @type {const} */ ({
+  [RegistrationAttribute.Alone]: 'is_alone',
+  [RegistrationAttribute.Newcomer]: 'is_first',
+  [RegistrationAttribute.Birthday]: 'is_birthday',
+  [RegistrationAttribute.Public]: 'is_extensible',
 })
+
+export var RegistrationAttributeRegistrationProperties = Object.values(RegistrationAttributeRegistrationProperty)
+
+export var RegistrationPropertyRegistrationAttribute = {
+  [RegistrationAttributeRegistrationProperty[RegistrationAttribute.Alone]]: RegistrationAttribute.Alone,
+  [RegistrationAttributeRegistrationProperty[RegistrationAttribute.Newcomer]]: RegistrationAttribute.Newcomer,
+  [RegistrationAttributeRegistrationProperty[RegistrationAttribute.Birthday]]: RegistrationAttribute.Birthday,
+  [RegistrationAttributeRegistrationProperty[RegistrationAttribute.Public]]: RegistrationAttribute.Public,
+}
 
 /**
  * @param {RegistrationAttribute[] | Partial<Pick<RegistrationTable, 'is_alone' | 'is_birthday' | 'is_extensible' | 'is_first'>>} value

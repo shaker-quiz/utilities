@@ -1,5 +1,5 @@
 /**
- * Mixins
+ * mixins
  */
 
 interface RequestInit {
@@ -10,7 +10,7 @@ interface RequestInit {
 }
 
 /**
- * React
+ * react
  */
 
 type UseState<T> = [
@@ -19,7 +19,7 @@ type UseState<T> = [
 ]
 
 /**
- * Core
+ * core
  */
 
 type Method = (typeof import('./enumerations/core/methods.js').Methods)[number]
@@ -30,52 +30,68 @@ type Procedure = (typeof import('./enumerations/core/features.js').Procedures)[n
 
 type Feature = Domain | Procedure
 
+/**
+ * @deprecated
+ */
 type Kind = (typeof import('./enumerations/core/kinds.js').Kinds)[number]
 
+/**
+ * @deprecated
+ */
 type Scope = `${Method}/${Feature}/${Kind}`
 
 type Runtime = (typeof import('./enumerations/core/runtimes.js').Runtimes)[number]
 
 type Network = (typeof import('./enumerations/core/networks.js').Networks)[number]
 
-type Role = (typeof import('./enumerations/entities/roles.js').Roles)[number]
+/**
+ * entities
+ */
 
-type CityAffilation = (typeof import('./enumerations/entities/city-affilations.js').CityAffilations)[number]
+type CityAffilation = keyof typeof import('./enumerations/entities/city-affilations.js').CityAffilation
 
-type GameStatus = (typeof import('./enumerations/entities/game-statuses.js').GameStatuses)[number]
+type GameStatus = keyof typeof import('./enumerations/entities/game-statuses.js').GameStatus
 
 type RegistrationAttribute =
-  (typeof import('./enumerations/entities/registration-attributes.js').RegistrationAttributes)[number]
+  keyof typeof import('./enumerations/entities/registration-attributes.js').RegistrationAttribute
 
-type RegistrationChannel =
-  (typeof import('./enumerations/entities/registration-channels.js').RegistrationChannels)[number]
+type RegistrationChannel = keyof typeof import('./enumerations/entities/registration-channels.js').RegistrationChannel
 
-type RegistrationLineup = (typeof import('./enumerations/entities/registration-lineups.js').RegistrationLineups)[number]
+type RegistrationLineup = keyof typeof import('./enumerations/entities/registration-lineups.js').RegistrationLineup
 
-type RegistrationMailing =
-  (typeof import('./enumerations/entities/registration-mailings.js').RegistrationMailings)[number]
+type RegistrationMailing = keyof typeof import('./enumerations/entities/registration-mailings.js').RegistrationMailing
 
-type RegistrationStatus =
-  (typeof import('./enumerations/entities/registration-statuses.js').RegistrationStatuses)[number]
+type RegistrationStatus = keyof typeof import('./enumerations/entities/registration-statuses.js').RegistrationStatus
 
-type VenueStatus = (typeof import('./enumerations/entities/venue-statuses.js').VenueStatuses)[number]
+type Role = (typeof import('./enumerations/entities/roles.js').Roles)[number]
+
+type VenueStatus = keyof typeof import('./enumerations/entities/venue-statuses.js').VenueStatus
 
 /**
- * Misc
+ * misc
  */
 
 type Icon = (typeof import('./enumerations/misc/icons.js').Icons)[number]
 
-type Phase = (typeof import('./enumerations/misc/phases.js').Phases)[number]
+type Phase = keyof typeof import('./enumerations/misc/phases.js').Phase
 
 /**
- * Products
+ * products
  */
 
+/**
+ * @deprecated
+ */
 type ScopePhase = Record<Scope, Phase>
 
+/**
+ * @deprecated
+ */
 type ScopeState = Record<Scope, any>
 
+/**
+ * @deprecated
+ */
 type ScopeController = Record<Scope, AbortController | null>
 
 /**

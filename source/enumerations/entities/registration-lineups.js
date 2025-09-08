@@ -1,15 +1,47 @@
-export var RegistrationLineups = /** @type {const} */ ([
-  'Main',
-  'Reserve',
-])
+export var RegistrationLineup = /** @type {const} */ ({
+  'Main': 'Main',
+  'Reserve': 'Reserve',
+})
+
+export var RegistrationLineups = Object.values(RegistrationLineup)
+
+/** @type {Record<RegistrationLineup, number>} */
+export var RegistrationLineupWeight = {
+  [RegistrationLineup.Main]: 0,
+  [RegistrationLineup.Reserve]: 1,
+}
+
+/** @type {Record<RegistrationLineup, string>} */
+export var RegistrationLineupTitle = {
+  [RegistrationLineup.Main]: 'Основа',
+  [RegistrationLineup.Reserve]: 'Резерв',
+}
+
+/** @type {Record<RegistrationLineup, Icon>} */
+export var RegistrationLineupIcon = {
+  [RegistrationLineup.Main]: 'hero/outline/user-circle',
+  [RegistrationLineup.Reserve]: 'hero/outline/pause-circle',
+}
+
+/** @type {Record<RegistrationLineup, string>} */
+export var RegistrationLineupEmoji = {
+  [RegistrationLineup.Main]: '🟢',
+  [RegistrationLineup.Reserve]: '🟡',
+}
+
+/** @type {Record<RegistrationLineup, string>} */
+export var RegistrationLineupColor = {
+  [RegistrationLineup.Main]: 'text-primary',
+  [RegistrationLineup.Reserve]: 'text-secondary',
+}
 
 /** @type {Record<RegistrationLineup, Pick<RegistrationTable, 'is_reserve'>>} */
-let RegistrationLineupShape = {
-  'Main': {
+export var RegistrationLineupShape = {
+  [RegistrationLineup.Main]: {
     is_reserve: false,
   },
 
-  'Reserve': {
+  [RegistrationLineup.Reserve]: {
     is_reserve: true,
   },
 }

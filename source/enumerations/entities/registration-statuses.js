@@ -1,22 +1,59 @@
-export var RegistrationStatuses = /** @type {const} */ ([
-  'Created',
-  'Confirmed',
-  'Cancelled',
-])
+export var RegistrationStatus = /** @type {const} */ ({
+  'Confirmed': 'Confirmed',
+  'Created': 'Created',
+  'Cancelled': 'Cancelled',
+})
+
+export var RegistrationStatuses = Object.values(RegistrationStatus)
+
+/** @type {Record<RegistrationStatus, number>} */
+export var RegistrationStatusWeight = {
+  [RegistrationStatus.Confirmed]: 0,
+  [RegistrationStatus.Created]: 1,
+  [RegistrationStatus.Cancelled]: 2,
+}
+
+/** @type {Record<RegistrationStatus, string>} */
+export var RegistrationStatusTitle = {
+  [RegistrationStatus.Confirmed]: 'Подтверждена',
+  [RegistrationStatus.Created]: 'Пройдена',
+  [RegistrationStatus.Cancelled]: 'Отменена',
+}
+
+/** @type {Record<RegistrationStatus, Icon>} */
+export var RegistrationStatusIcon = {
+  [RegistrationStatus.Confirmed]: 'hero/outline/check-circle',
+  [RegistrationStatus.Created]: 'hero/outline/check',
+  [RegistrationStatus.Cancelled]: 'hero/outline/x-mark',
+}
+
+/** @type {Record<RegistrationStatus, Icon>} */
+export var RegistrationStatusEmoji = {
+  [RegistrationStatus.Confirmed]: '✅',
+  [RegistrationStatus.Created]: '📝',
+  [RegistrationStatus.Cancelled]: '❌',
+}
+
+/** @type {Record<RegistrationStatus, string>} */
+export var RegistrationStatusColor = {
+  [RegistrationStatus.Confirmed]: 'text-success',
+  [RegistrationStatus.Created]: 'text-default-700',
+  [RegistrationStatus.Cancelled]: 'text-danger',
+}
 
 /** @type {Record<RegistrationStatus, Pick<RegistrationTable, 'is_canceled' | 'is_confirm'>>} */
-let RegistrationStatusShape = {
-  'Created': {
-    is_canceled: false,
-    is_confirm: false,
-  },
-
-  'Confirmed': {
+export var RegistrationStatusShape = {
+  [RegistrationStatus.Confirmed]: {
     is_canceled: false,
     is_confirm: true,
   },
 
-  'Cancelled': {
+  [RegistrationStatus.Created]: {
+    is_canceled: false,
+    is_confirm: false,
+  },
+
+  [RegistrationStatus.Cancelled]: {
     is_canceled: true,
     is_confirm: false,
   },
@@ -25,7 +62,7 @@ let RegistrationStatusShape = {
 /**
  * @param {RegistrationStatus | typeof RegistrationStatusShape[RegistrationStatus]} value
  */
-export let getRegistrationStatus = value => {
+export var getRegistrationStatus = value => {
   switch (typeof value) {
     case 'object':
       let found = Object
