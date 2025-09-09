@@ -1,5 +1,8 @@
 import { Kinds } from './kinds.js'
 
+/**
+ * @deprecated
+ */
 export var Domains = /** @type {const} */ ([
   // 'Asset',
   'User',
@@ -18,6 +21,8 @@ export var Domains = /** @type {const} */ ([
 
 /**
  * @type {Record<Domain, Icon>}
+ *
+ * @deprecated
  */
 export var DomainIcon = {
   'User': 'users',
@@ -34,6 +39,8 @@ export var DomainIcon = {
 
 /**
  * @type {Record<Domain, Record<Kind, string>>}
+ *
+ * @deprecated
  */
 export var DomainKindPathname = /** @type {const} */ ({
   'User': {
@@ -98,6 +105,9 @@ export var DomainKindPathname = /** @type {const} */ ({
   },
 })
 
+/**
+ * @deprecated
+ */
 export var Procedures = /** @type {const} */ ([
   'Checkin',
   'Redirect',
@@ -105,6 +115,8 @@ export var Procedures = /** @type {const} */ ([
 
 /**
  * @type {Record<Procedure, Icon>}
+ *
+ * @deprecated
  */
 export var ProcedureIcon = {
   'Checkin': 'arrow-right-end-on-rectangle',
@@ -113,6 +125,8 @@ export var ProcedureIcon = {
 
 /**
  * @type {Record<Procedure, Record<Kind, string>>}
+ *
+ * @deprecated
  */
 export var ProcedureKindPathname = /** @type {const} */ ({
   'Checkin': {
@@ -128,11 +142,15 @@ export var ProcedureKindPathname = /** @type {const} */ ({
 
 /**
  * @type {Array<Domain | Procedure>}
+ *
+ * @deprecated
  */
 export var Features = Domains.concat(Procedures)
 
 /**
  * @type {Record<Feature, Icon>}
+ *
+ * @deprecated
  */
 export var FeatureIcon = {
   ...DomainIcon,
@@ -141,6 +159,8 @@ export var FeatureIcon = {
 
 /**
  * @type {Record<Feature, Record<Kind, string>>}
+ *
+ * @deprecated
  */
 export var FeatureKindPathname = {
   ...DomainKindPathname,
@@ -149,6 +169,8 @@ export var FeatureKindPathname = {
 
 /**
  * @type {Array<[feature: Feature, kind: Kind, pathname: string]>}
+ *
+ * @deprecated
  */
 export var FeatureKindPathnames = Object
   .keys(FeatureKindPathname)
@@ -160,6 +182,8 @@ export var FeatureKindPathnames = Object
 
 /**
  * @type {Array<[feature: Feature, kind: Kind, pattern: URLPattern]>}
+ *
+ * @deprecated
  */
 export var FeatureKindPatterns = FeatureKindPathnames
   .map(([feature, kind, pathname]) => [
@@ -171,6 +195,8 @@ export var FeatureKindPatterns = FeatureKindPathnames
 /**
  * @param {Feature} feature
  * @param {Kind} kind
+ *
+ * @deprecated
  */
 export var getPathname = (feature, kind) => {
   if (!Features.includes(feature))
@@ -189,6 +215,8 @@ export var getPathname = (feature, kind) => {
 /**
  * @param {Feature} feature
  * @param {Kind} kind
+ *
+ * @deprecated
  */
 export var getPattern = (feature, kind) => {
   if (!Features.includes(feature))
@@ -202,6 +230,57 @@ export var getPattern = (feature, kind) => {
     )
 
   return FeatureKindPatterns.find(([f, k]) => f == feature && k == kind)[2]
+}
+
+export var Feature = /** @type {const} */ ({
+  'Users': 'Users',
+  'User': 'User',
+  'Roles': 'Roles',
+  'Role': 'Role',
+  'Checkins': 'Checkins',
+  'Checkin': 'Checkin',
+  'Countries': 'Countries',
+  'Country': 'Country',
+  'Currencies': 'Currencies',
+  'Currency': 'Currency',
+  'Cities': 'Cities',
+  'City': 'City',
+  'Venues': 'Venues',
+  'Venue': 'Venue',
+  'Games': 'Games',
+  'Game': 'Game',
+  'Themes': 'Themes',
+  'Theme': 'Theme',
+  'Registrations': 'Registrations',
+  'Registration': 'Registration',
+  'Mailings': 'Mailings',
+  'Mailing': 'Mailing',
+})
+
+/** @type {Record<Feature, Icon>} */
+export var FeatureIcon = {
+  [Feature.Users]: 'hero/solid/users',
+  [Feature.User]: 'hero/solid/users',
+  [Feature.Roles]: 'hero/solid/identification',
+  [Feature.Role]: 'hero/solid/identification',
+  [Feature.Checkins]: 'arrow-right-end-on-rectangle',
+  [Feature.Checkin]: 'arrow-right-end-on-rectangle',
+  [Feature.Countries]: 'hero/outline/no-symbol',
+  [Feature.Country]: 'hero/outline/no-symbol',
+  [Feature.Currencies]: 'hero/outline/banknotes',
+  [Feature.Currency]: 'hero/outline/banknotes',
+  [Feature.Cities]: 'hero/outline/building-office',
+  [Feature.City]: 'hero/outline/building-office',
+  [Feature.Venues]: 'hero/outline/map-pin',
+  [Feature.Venue]: 'hero/outline/map-pin',
+  [Feature.Games]: 'hero/outline/newspaper',
+  [Feature.Game]: 'hero/outline/newspaper',
+  [Feature.Themes]: 'hero/outline/document-text',
+  [Feature.Theme]: 'hero/outline/document-text',
+  [Feature.Registrations]: 'hero/outline/user-group',
+  [Feature.Registration]: 'hero/outline/user-group',
+  [Feature.Mailings]: 'hero/outline/envelope',
+  [Feature.Mailing]: 'hero/outline/envelope',
 }
 
 export var RoutePathname = /** @type {const} */ ({

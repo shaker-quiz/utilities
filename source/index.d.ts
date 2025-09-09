@@ -3,7 +3,6 @@
 /// <reference path="./server.d.ts" />
 /// <reference path="./tables.d.ts" />
 
-export * from './enumerations/core/features.d.ts'
 export * from './enumerations/core/kinds.d.ts'
 export * from './enumerations/core/methods.d.ts'
 export * from './enumerations/core/networks.d.ts'
@@ -15,13 +14,3 @@ export * from './enumerations/misc/cookies.d.ts'
 export * from './enumerations/misc/icons.d.ts'
 export * from './enumerations/misc/phases.d.ts'
 export * from './enumerations/misc/regexps.d.ts'
-
-export * from './enumerations/entities/city-affilations.d.ts'
-export * from './enumerations/entities/game-statuses.d.ts'
-export * from './enumerations/entities/registration-attributes.d.ts'
-export * from './enumerations/entities/registration-channels.d.ts'
-export * from './enumerations/entities/registration-lineups.d.ts'
-export * from './enumerations/entities/registration-mailings.d.ts'
-export * from './enumerations/entities/registration-statuses.d.ts'
-export * from './enumerations/entities/roles.d.ts'
-export * from './enumerations/entities/venue-statuses.d.ts'

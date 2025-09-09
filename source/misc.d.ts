@@ -24,11 +24,7 @@ type UseState<T> = [
 
 type Method = (typeof import('./enumerations/core/methods.js').Methods)[number]
 
-type Domain = (typeof import('./enumerations/core/features.js').Domains)[number]
-
-type Procedure = (typeof import('./enumerations/core/features.js').Procedures)[number]
-
-type Feature = Domain | Procedure
+type Feature = keyof typeof import('./enumerations/core/features.js').Feature
 
 /**
  * @deprecated
@@ -71,7 +67,7 @@ type VenueStatus = keyof typeof import('./enumerations/entities/venue-statuses.j
  * misc
  */
 
-type Icon = (typeof import('./enumerations/misc/icons.js').Icons)[number]
+type Icon = keyof typeof import('./enumerations/misc/icons.js').Icon
 
 type Phase = keyof typeof import('./enumerations/misc/phases.js').Phase
 
