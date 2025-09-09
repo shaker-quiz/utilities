@@ -396,19 +396,3 @@ export var RouteSearchParams = /** @type {const} */ ({
   Mailings: [],
   Mailing: [],
 })
-
-/**
- * @template {Routes} R
- *
- * @param {R} route
- * @param  {typeof RoutePathParams[R]} parameters
- *
- * @returns {string}
- */
-export var hydrateRoutePathname = (route, ...parameters) =>
-  parameters
-    .map((param, index) => [RoutePathParams[route][index], param])
-    .reduce(
-      (pathname, [param, value]) => pathname.replace(param, value),
-      RoutePathname[route],
-    )
