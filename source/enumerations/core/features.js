@@ -284,109 +284,115 @@ export var FeatureIcon = {
 }
 
 export var RoutePathname = /** @type {const} */ ({
-  'users': '/users',
-  'user': '/users/:user?',
+  Users: '/users',
+  User: '/users/:user?',
 
-  'roles': '/roles',
-  'role': '/roles/:role?',
+  Roles: '/roles',
+  Role: '/roles/:role?',
 
-  'checkins': '/checkins',
-  'checkin': '/checkins/:checkin?',
+  Checkins: '/checkins',
+  Checkin: '/checkins/:checkin?',
 
-  'countries': '/countries',
-  'country': '/countries/:country?',
+  Countries: '/countries',
+  Country: '/countries/:country?',
 
-  'currencies': '/currencies',
-  'currency': '/currencies/:currency?',
+  Currencies: '/currencies',
+  Currency: '/currencies/:currency?',
 
-  'cities': '/cities',
-  'city': '/cities/:city?',
+  Cities: '/cities',
+  City: '/cities/:city?',
 
-  'venues': '/venues',
-  'venue': '/venues/:venue?',
+  Venues: '/venues',
+  Venue: '/venues/:venue?',
 
-  'games': '/games',
-  'games/attendance': '/games/attendance',
-  'games/amounts': '/games/amounts',
-  'game': '/games/:game?',
-  'game/attendance': '/games/:game/attendance',
+  Games: '/games',
+  GamesAttendance: '/games/attendance',
+  GamesAmounts: '/games/amounts',
+  Game: '/games/:game?',
+  GameAttendance: '/games/:game/attendance',
 
-  'themes': '/themes',
-  'theme': '/themes/:theme?',
+  Themes: '/themes',
+  Theme: '/themes/:theme?',
 
-  'registrations': '/registrations',
-  'registration': '/registrations/:registration?',
+  Registrations: '/registrations',
+  Registration: '/registrations/:registration?',
 
-  'mailings': '/mailings',
-  'mailing': '/mailings/:mailing?',
+  Mailings: '/mailings',
+  Mailing: '/mailings/:mailing?',
 })
 
 export var RoutePathParams = /** @type {const} */ ({
-  'users': [],
-  'user': [':user?'],
+  Users: [],
+  User: [':user?'],
 
-  'roles': [],
-  'role': [':role?'],
+  Roles: [],
+  Role: [':role?'],
 
-  'checkins': [],
-  'checkin': [':checkin?'],
+  Checkins: [],
+  Checkin: [':checkin?'],
 
-  'countries': [],
-  'country': [':country?'],
+  Countries: [],
+  Country: [':country?'],
 
-  'currencies': [],
-  'currency': [':currency?'],
+  Currencies: [],
+  Currency: [':currency?'],
 
-  'cities': [],
-  'city': [':city?'],
+  Cities: [],
+  City: [':city?'],
 
-  'venues': [],
-  'venue': [':venue?'],
+  Venues: [],
+  Venue: [':venue?'],
 
-  'games': [],
-  'game': [':game?'],
+  Games: [],
+  GamesAttendance: [],
+  GamesAmounts: [],
+  Game: [':game?'],
+  GameAttendance: [],
 
-  'themes': [],
-  'theme': [':theme?'],
+  Themes: [],
+  Theme: [':theme?'],
 
-  'registrations': [],
-  'registration': [':registration?'],
+  Registrations: [],
+  Registration: [':registration?'],
 
-  'mailings': [],
-  'mailing': [':mailing?'],
+  Mailings: [],
+  Mailing: [':mailing?'],
 })
 
 export var RouteSearchParams = /** @type {const} */ ({
-  'users': [],
-  'user': [],
+  Users: [],
+  User: [],
 
-  'roles': [],
-  'role': [],
+  Roles: [],
+  Role: [],
 
-  'checkins': [],
-  'checkin': [],
+  Checkins: [],
+  Checkin: [],
 
-  'countries': [],
-  'country': [],
+  Countries: [],
+  Country: [],
 
-  'currencies': [],
-  'currency': [],
+  Currencies: [],
+  Currency: [],
 
-  'cities': [],
-  'city': [],
+  Cities: [],
+  City: [],
 
-  'venues': [],
-  'venue': [],
+  Venues: [],
+  Venue: [],
 
-  'games': ['city', 'status'],
-  'game': ['city'],
+  Games: ['city', 'status'],
+  GamesAttendance: [],
+  GamesAmounts: [],
+  Game: ['city'],
+  GameAttendance: [],
 
-  'themes': [],
-  'theme': [],
+  Themes: [],
+  Theme: [],
 
-  'registrations': ['game', 'city'],
-  'registration': [],
+  Registrations: ['game', 'city'],
+  Registration: [],
 
-  'mailings': [],
-  'mailing': [],
+  Mailings: [],
+  Mailing: [],
 })
