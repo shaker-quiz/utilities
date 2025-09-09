@@ -9,7 +9,6 @@
   },
   "exports": {
     ".": {
-      "types": "./source/index.d.ts",
       "default": "./source/index.js"
     },
     "./schemas/*.json": "./source/schemas/*.json"

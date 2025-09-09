@@ -1,3 +1,8 @@
+/// <reference path="./misc.d.ts" />
+/// <reference path="./scope.d.ts" />
+/// <reference path="./server.d.ts" />
+/// <reference path="./tables.d.ts" />
+
 export * from './enumerations/core/features.js'
 export * from './enumerations/core/kinds.js'
 export * from './enumerations/core/methods.js'
