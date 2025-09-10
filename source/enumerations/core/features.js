@@ -321,7 +321,7 @@ export var RoutePathname = /** @type {const} */ ({
   Mailing: '/mailings/:mailing?',
 })
 
-export var RoutePathParams = /** @type {const} */ ({
+export var RoutePathnameParams = /** @type {const} */ ({
   Users: [],
   User: [':user?'],
 
