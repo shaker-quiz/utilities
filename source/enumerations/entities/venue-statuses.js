@@ -1,30 +1,36 @@
 export var VenueStatus = /** @type {const} */ ({
-  'ACTIVE': 'ACTIVE',
-  'ARCHIVE': 'ARCHIVE',
+  'Active': 'Active',
+  'Archive': 'Archive',
 })
 
 export var VenueStatuses = Object.values(VenueStatus)
 
 /** @type {Record<VenueStatus, number>} */
 export var VenueStatusWeight = {
-  [VenueStatus.ACTIVE]: 0,
-  [VenueStatus.ARCHIVE]: 1,
+  [VenueStatus.Active]: 0,
+  [VenueStatus.Archive]: 1,
 }
 
 /** @type {Record<VenueStatus, string>} */
 export var VenueStatusTitle = {
-  [VenueStatus.ACTIVE]: 'В пользовании',
-  [VenueStatus.ARCHIVE]: 'В архиве',
-}
-
-/** @type {Record<VenueStatus, Icon>} */
-export var VenueStatusIcon = {
-  [VenueStatus.ACTIVE]: 'hero/outline/check',
-  [VenueStatus.ARCHIVE]: 'hero/outline/archive-box',
+  [VenueStatus.Active]: 'В пользовании',
+  [VenueStatus.Archive]: 'В архиве',
 }
 
 /** @type {Record<VenueStatus, string>} */
 export var VenueStatusColor = {
-  [VenueStatus.ACTIVE]: 'text-success',
-  [VenueStatus.ARCHIVE]: 'text-current',
+  [VenueStatus.Active]: 'success',
+  [VenueStatus.Archive]: 'current',
+}
+
+/** @type {Record<VenueStatus, string>} */
+export var VenueStatusTextColor = {
+  [VenueStatus.Active]: 'text-success',
+  [VenueStatus.Archive]: 'text-current',
+}
+
+/** @type {Record<VenueStatus, Icon>} */
+export var VenueStatusIcon = {
+  [VenueStatus.Active]: 'hero/outline/check',
+  [VenueStatus.Archive]: 'hero/outline/archive-box',
 }
