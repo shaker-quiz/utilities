@@ -26,16 +26,6 @@ type Method = (typeof import('./enumerations/core/methods.js').Methods)[number]
 
 type Feature = keyof typeof import('./enumerations/core/features.js').Feature
 
-/**
- * @deprecated
- */
-type Kind = (typeof import('./enumerations/core/kinds.js').Kinds)[number]
-
-/**
- * @deprecated
- */
-type Scope = `${Method}/${Feature}/${Kind}`
-
 type Runtime = (typeof import('./enumerations/core/runtimes.js').Runtimes)[number]
 
 type Network = (typeof import('./enumerations/core/networks.js').Networks)[number]

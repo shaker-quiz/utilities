@@ -5,21 +5,12 @@
  *  - CONNECT: {@link https://datatracker.ietf.org/doc/html/rfc9110}
  *  - WebDAV Extensions {@link https://datatracker.ietf.org/doc/html/rfc4918}
  */
-export var Methods = /** @type {const} */ ([
-  // 'CONNECT',
-  // 'COPY',
-  'DELETE',
-  'GET',
-  // 'HEAD',
-  // 'LOCK',
-  // 'MKCOL',
-  // 'MOVE',
-  'OPTIONS',
-  'PATCH',
-  'POST',
-  // 'PROPFIND',
-  // 'PROPPATCH',
-  'PUT',
-  // 'TRACE',
-  // 'UNLOCK',
-])
+export var Method = /** @type {const} */ ({
+  'DELETE': 'DELETE',
+  'GET': 'GET',
+  'OPTIONS': 'OPTIONS',
+  'PATCH': 'PATCH',
+  'POST': 'POST',
+})
+
+export var Methods = Object.values(Method)
