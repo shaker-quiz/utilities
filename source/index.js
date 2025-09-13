@@ -1,5 +1,4 @@
 /// <reference path="./misc.d.ts" />
-/// <reference path="./server.d.ts" />
 /// <reference path="./tables.d.ts" />
 
 export * from './enumerations/core/features.js'
@@ -8,7 +7,6 @@ export * from './enumerations/core/networks.js'
 export * from './enumerations/core/runtimes.js'
 
 export * from './enumerations/misc/constants.js'
-export * from './enumerations/misc/cookies.js'
 export * from './enumerations/misc/icons.js'
 export * from './enumerations/misc/phases.js'
 export * from './enumerations/misc/regexps.js'
