@@ -22,13 +22,13 @@ type UseState<T> = [
  * core
  */
 
-type Method = (typeof import('./enumerations/core/methods.js').Methods)[number]
-
 type Feature = keyof typeof import('./enumerations/core/features.js').Feature
 
-type Runtime = (typeof import('./enumerations/core/runtimes.js').Runtimes)[number]
+type Method = keyof typeof import('./enumerations/core/methods.js').Method
 
-type Network = (typeof import('./enumerations/core/networks.js').Networks)[number]
+type Network = keyof typeof import('./enumerations/core/networks.js').Network
+
+type Runtime = keyof typeof import('./enumerations/core/runtimes.js').Runtime
 
 /**
  * entities
@@ -49,7 +49,7 @@ type RegistrationMailing = keyof typeof import('./enumerations/entities/registra
 
 type RegistrationStatus = keyof typeof import('./enumerations/entities/registration-status.js').RegistrationStatus
 
-type Role = (typeof import('./enumerations/entities/role.js').Roles)[number]
+type Role = keyof typeof import('./enumerations/entities/role.js').Role
 
 type VenueStatus = keyof typeof import('./enumerations/entities/venue-status.js').VenueStatus
 
@@ -60,30 +60,3 @@ type VenueStatus = keyof typeof import('./enumerations/entities/venue-status.js'
 type Icon = typeof import('./enumerations/misc/icons.js').Icons[number]
 
 type Phase = keyof typeof import('./enumerations/misc/phases.js').Phase
-
-/**
- * products
- */
-
-/**
- * @deprecated
- */
-type ScopePhase = Record<Scope, Phase>
-
-/**
- * @deprecated
- */
-type ScopeState = Record<Scope, any>
-
-/**
- * @deprecated
- */
-type ScopeController = Record<Scope, AbortController | null>
-
-/**
- * Server
- */
-
-type Routes = keyof typeof import('./enumerations/core/features.js').RoutePathname
-
-type Pathnames = typeof import('./enumerations/core/features.js').RoutePathname[Routes]
