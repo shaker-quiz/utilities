@@ -6,17 +6,15 @@ export var RegistrationStatus = /** @type {const} */ ({
 
 export var RegistrationStatuses = Object.values(RegistrationStatus)
 
-/** @type {Record<RegistrationStatus, number>} */
 export var RegistrationStatusWeight = {
   [RegistrationStatus.Confirmed]: 0,
   [RegistrationStatus.Created]: 1,
   [RegistrationStatus.Cancelled]: 2,
 }
 
-/** @type {Record<RegistrationStatus, string>} */
 export var RegistrationStatusTitle = {
   [RegistrationStatus.Confirmed]: 'Подтверждена',
-  [RegistrationStatus.Created]: 'Пройдена',
+  [RegistrationStatus.Created]: 'Создана',
   [RegistrationStatus.Cancelled]: 'Отменена',
 }
 
