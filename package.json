@@ -13,9 +13,6 @@
     },
     "./schemas/*.json": "./source/schemas/*.json"
   },
-  "dependencies": {
-    "urlpattern-polyfill": "10.1.0"
-  },
   "devDependencies": {
     "typescript": "5.8.3"
   }
