@@ -44,24 +44,24 @@ type Network = (typeof import('./enumerations/core/networks.js').Networks)[numbe
  * entities
  */
 
-type CityAffilation = keyof typeof import('./enumerations/entities/city-affilations.js').CityAffilation
+type CityAffilation = keyof typeof import('./enumerations/entities/city-affilation.js').CityAffilation
 
-type GameStatus = keyof typeof import('./enumerations/entities/game-statuses.js').GameStatus
+type GameStatus = keyof typeof import('./enumerations/entities/game-status.js').GameStatus
 
 type RegistrationAttribute =
-  keyof typeof import('./enumerations/entities/registration-attributes.js').RegistrationAttribute
+  keyof typeof import('./enumerations/entities/registration-attribute.js').RegistrationAttribute
 
-type RegistrationChannel = keyof typeof import('./enumerations/entities/registration-channels.js').RegistrationChannel
+type RegistrationChannel = keyof typeof import('./enumerations/entities/registration-channel.js').RegistrationChannel
 
-type RegistrationLineup = keyof typeof import('./enumerations/entities/registration-lineups.js').RegistrationLineup
+type RegistrationLineup = keyof typeof import('./enumerations/entities/registration-lineup.js').RegistrationLineup
 
-type RegistrationMailing = keyof typeof import('./enumerations/entities/registration-mailings.js').RegistrationMailing
+type RegistrationMailing = keyof typeof import('./enumerations/entities/registration-mailing.js').RegistrationMailing
 
-type RegistrationStatus = keyof typeof import('./enumerations/entities/registration-statuses.js').RegistrationStatus
+type RegistrationStatus = keyof typeof import('./enumerations/entities/registration-status.js').RegistrationStatus
 
-type Role = (typeof import('./enumerations/entities/roles.js').Roles)[number]
+type Role = (typeof import('./enumerations/entities/role.js').Roles)[number]
 
-type VenueStatus = keyof typeof import('./enumerations/entities/venue-statuses.js').VenueStatus
+type VenueStatus = keyof typeof import('./enumerations/entities/venue-status.js').VenueStatus
 
 /**
  * misc

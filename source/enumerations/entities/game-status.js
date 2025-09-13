@@ -1,3 +1,5 @@
+import { Role } from './role.js'
+
 export var GameStatus = /** @type {const} */ ({
   'REJECTED': 'REJECTED',
   'MODERATION': 'MODERATION',
@@ -36,6 +38,30 @@ export var GameStatusTitle = {
   [GameStatus.ARCHIVE]: 'В архиве',
 }
 
+export var GameStatusColor = {
+  [GameStatus.REJECTED]: 'danger',
+  [GameStatus.MODERATION]: 'primary',
+  [GameStatus.APPROVED]: 'success',
+  [GameStatus.CLOSED]: 'warning',
+  [GameStatus.FORINVITES]: 'current',
+  [GameStatus.PUBLISHED]: 'secondary',
+  [GameStatus.IS_RESERVE]: 'blue-900',
+  [GameStatus.FINISHED]: 'success',
+  [GameStatus.ARCHIVE]: 'current',
+}
+
+export var GameStatusTextColor = {
+  [GameStatus.REJECTED]: 'text-danger',
+  [GameStatus.MODERATION]: 'text-primary',
+  [GameStatus.APPROVED]: 'text-success',
+  [GameStatus.CLOSED]: 'text-warning',
+  [GameStatus.FORINVITES]: 'text-current',
+  [GameStatus.PUBLISHED]: 'text-secondary',
+  [GameStatus.IS_RESERVE]: 'text-blue-900',
+  [GameStatus.FINISHED]: 'text-success',
+  [GameStatus.ARCHIVE]: 'text-current',
+}
+
 /** @type {Record<GameStatus, Icon>} */
 export var GameStatusIcon = {
   [GameStatus.REJECTED]: 'hero/outline/x-mark',
@@ -49,35 +75,11 @@ export var GameStatusIcon = {
   [GameStatus.ARCHIVE]: 'hero/outline/archive-box',
 }
 
-export var GameStatusColor = {
-  [GameStatus.REJECTED]: 'text-danger',
-  [GameStatus.MODERATION]: 'text-primary',
-  [GameStatus.APPROVED]: 'text-success',
-  [GameStatus.CLOSED]: 'text-warning',
-  [GameStatus.FORINVITES]: 'text-current',
-  [GameStatus.PUBLISHED]: 'text-secondary',
-  [GameStatus.IS_RESERVE]: 'text-blue-900',
-  [GameStatus.FINISHED]: 'text-success',
-  [GameStatus.ARCHIVE]: 'text-current',
-}
-
-/** @type {Record<Role, Record<GameStatus | 'DEFAULT', GameStatus[]>>} */
+/** @type {{ [Key in Role]: Partial<Record<GameStatus, GameStatus[]>> }} */
 export var RoleGameStatusGameStatuses = {
-  'admin': {
-    'DEFAULT': [
-      GameStatus.REJECTED,
-      GameStatus.MODERATION,
-      GameStatus.APPROVED,
-      GameStatus.CLOSED,
-      GameStatus.FORINVITES,
-      GameStatus.PUBLISHED,
-      GameStatus.IS_RESERVE,
-      GameStatus.FINISHED,
-      GameStatus.ARCHIVE,
-    ],
-  },
+  [Role.admin]: {},
 
-  'organizer': {
+  [Role.organizer]: {
     [GameStatus.APPROVED]: [
       GameStatus.APPROVED,
       GameStatus.CLOSED,
@@ -96,18 +98,33 @@ export var RoleGameStatusGameStatuses = {
       GameStatus.REJECTED,
       GameStatus.MODERATION,
     ],
-
-    'DEFAULT': [
-      GameStatus.CLOSED,
-      GameStatus.FORINVITES,
-      GameStatus.PUBLISHED,
-      GameStatus.IS_RESERVE,
-      GameStatus.FINISHED,
-      GameStatus.ARCHIVE,
-    ],
   },
 
-  'default': {
-    'DEFAULT': [],
-  },
+  [Role.default]: {},
+}
+
+/** @type {{ [Key in Role]: GameStatus[] }} */
+export var RoleDefaultGameStatuses = {
+  [Role.admin]: [
+    'APPROVED',
+    'ARCHIVE',
+    'CLOSED',
+    'FINISHED',
+    'FORINVITES',
+    'IS_RESERVE',
+    'MODERATION',
+    'PUBLISHED',
+    'REJECTED',
+  ],
+
+  [Role.organizer]: [
+    'ARCHIVE',
+    'CLOSED',
+    'FINISHED',
+    'FORINVITES',
+    'IS_RESERVE',
+    'PUBLISHED',
+  ],
+
+  [Role.default]: [],
 }
