@@ -3,6 +3,7 @@ export var Role = /** @type {const} */ ({
   'organizer': 'organizer',
   'captain': 'captain',
   'player': 'player',
+  'user': 'user',
   'default': 'default',
 })
 
@@ -13,7 +14,8 @@ export var RoleWeight = {
   [Role.organizer]: 1,
   [Role.captain]: 2,
   [Role.player]: 3,
-  [Role.default]: 2,
+  [Role.user]: 4,
+  [Role.default]: 5,
 }
 
 export var RoleTitle = {
@@ -21,7 +23,8 @@ export var RoleTitle = {
   [Role.organizer]: 'Организатор',
   [Role.captain]: 'Капитан',
   [Role.player]: 'Игрок',
-  [Role.default]: 'Пользователь',
+  [Role.user]: 'Пользователь',
+  [Role.default]: 'Неавторизован',
 }
 
 export var RoleColor = {
@@ -29,6 +32,7 @@ export var RoleColor = {
   [Role.organizer]: 'warning',
   [Role.captain]: 'primary',
   [Role.player]: 'secondary',
+  [Role.user]: 'default',
   [Role.default]: 'default',
 }
 
@@ -37,6 +41,7 @@ export var RoleTextColor = {
   [Role.organizer]: 'text-warning',
   [Role.captain]: 'text-primary',
   [Role.player]: 'text-secondary',
+  [Role.user]: 'text-default',
   [Role.default]: 'text-default',
 }
 
@@ -46,5 +51,6 @@ export var RoleIcon = {
   [Role.organizer]: 'hero/outline/user',
   [Role.captain]: 'hero/outline/user',
   [Role.player]: 'hero/outline/user',
+  [Role.user]: 'hero/outline/user',
   [Role.default]: 'hero/outline/user',
 }
