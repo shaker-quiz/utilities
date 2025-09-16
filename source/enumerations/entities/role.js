@@ -30,7 +30,7 @@ export var RoleTitle = {
   [Role.default]: 'Неавторизован',
 }
 
-export var RoleActionDescription = {
+export var RoleActionTitle = {
   [Role.admin]: 'Сделать админом',
   [Role.organizer]: 'Сделать организатором',
   [Role.captain]: 'Сделать капитаном',
@@ -38,6 +38,16 @@ export var RoleActionDescription = {
   [Role.user]: 'Сделать пользователем',
   [Role.manager]: 'Сделать менеджером',
   [Role.default]: 'Сделать неавторизованым',
+}
+
+export var RoleActionDescription = {
+  [Role.admin]: 'Назначить роль: Админ',
+  [Role.organizer]: 'Назначить роль: Организатор',
+  [Role.captain]: 'Назначить роль: Капитан',
+  [Role.player]: 'Назначить роль: Игрок',
+  [Role.user]: 'Назначить роль: Пользователь',
+  [Role.manager]: 'Назначить роль: Менеджер',
+  [Role.default]: 'Назначить роль: Неавторизован',
 }
 
 export var RoleColor = {
