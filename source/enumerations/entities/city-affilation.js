@@ -61,12 +61,12 @@ export var getCityAffilation = value => {
   switch (typeof value) {
     case 'object':
       let found = CityAffilationShapes
-        .find(([, object]) => object.is_franchise === value.is_reserve)
+        .find(([, object]) => object.is_franchise === value.is_franchise)
         ?.at(0)
 
       if (!CityAffilations.includes(found))
         throw TypeError(
-          `[Function: getCityAffilation] Parameter 'found': '${found}' must be a member of 'Lineups'.`,
+          `[Function: getCityAffilation] Parameter 'found': '${found}' must be a member of 'CityAffilations'.`,
         )
 
       return found
@@ -74,7 +74,7 @@ export var getCityAffilation = value => {
     case 'string':
       if (!CityAffilations.includes(value))
         throw TypeError(
-          `[Function: getCityAffilation] Parameter 'value': '${value}' must be a member of 'Lineups'.`,
+          `[Function: getCityAffilation] Parameter 'value': '${value}' must be a member of 'CityAffilations'.`,
         )
 
       return CityAffilationShape[value]
