@@ -36,7 +36,7 @@ export var CityAffilationTextColor = {
 }
 
 /** @type {Record<CityAffilation, Icon>} */
-export var CityAffilation = {
+export var CityAffilationIcon = {
   [CityAffilation.Branch]: 'hero/outline/building-office-2',
   [CityAffilation.Franchise]: 'hero/outline/building-storefront',
 }
