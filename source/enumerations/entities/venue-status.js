@@ -11,8 +11,8 @@ export var VenueStatusWeight = {
 }
 
 export var VenueStatusTitle = {
-  [VenueStatus.ACTIVE]: 'В пользовании',
-  [VenueStatus.ARCHIVE]: 'В архиве',
+  [VenueStatus.ACTIVE]: 'Активно',
+  [VenueStatus.ARCHIVE]: 'Архив',
 }
 
 export var VenueStatusColor = {
