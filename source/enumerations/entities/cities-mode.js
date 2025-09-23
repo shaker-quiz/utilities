@@ -5,6 +5,8 @@ export var CitiesMode = /** @type {const} */ ({
   'none': 'none',
 })
 
+export var CitiesModes = Object.values(CitiesMode)
+
 export var CitiesModeTitle = {
   [CitiesMode.all]: 'Все города',
   [CitiesMode.many]: 'Несколько городов',
