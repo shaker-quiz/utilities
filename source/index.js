@@ -11,6 +11,7 @@ export * from './enumerations/misc/icons.js'
 export * from './enumerations/misc/phases.js'
 export * from './enumerations/misc/regexps.js'
 
+export * from './enumerations/entities/cities-mode.js'
 export * from './enumerations/entities/city-affilation.js'
 export * from './enumerations/entities/game-status.js'
 export * from './enumerations/entities/registration-attribute.js'
