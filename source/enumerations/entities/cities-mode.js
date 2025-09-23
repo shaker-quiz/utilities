@@ -5,7 +5,7 @@ export var CitiesMode = /** @type {const} */ ({
   'none': 'none',
 })
 
-export var ModeTitle = {
+export var CitiesModeTitle = {
   [CitiesMode.all]: 'Все города',
   [CitiesMode.many]: 'Несколько городов',
   [CitiesMode.single]: 'Один город',
