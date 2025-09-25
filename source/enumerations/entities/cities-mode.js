@@ -20,9 +20,9 @@ export var CitiesModeTitle = {
 export var getCitiesMode = value => {
   if (value === 'all')
     return CitiesMode.all
-  else if (value.length > 1)
+  else if (value?.length > 1)
     return CitiesMode.many
-  else if (value.length === 1)
+  else if (value?.length === 1)
     return CitiesMode.single
   else
     return CitiesMode.none
