@@ -3,6 +3,7 @@ export var CitiesMode = /** @type {const} */ ({
   'many': 'many',
   'single': 'single',
   'none': 'none',
+  'unknown': 'unknown',
 })
 
 export var CitiesModes = Object.values(CitiesMode)
@@ -12,6 +13,7 @@ export var CitiesModeTitle = {
   [CitiesMode.many]: 'Несколько городов',
   [CitiesMode.single]: 'Один город',
   [CitiesMode.none]: 'Нет городов',
+  [CitiesMode.unknown]: 'Неизвестное состояние',
 }
 
 /**
@@ -20,10 +22,12 @@ export var CitiesModeTitle = {
 export var getCitiesMode = value => {
   if (value === 'all')
     return CitiesMode.all
-  else if (value?.length > 1)
-    return CitiesMode.many
+  else if (value === 'none')
+    return CitiesMode.none
   else if (value?.length === 1)
     return CitiesMode.single
+  else if (value?.length > 1)
+    return CitiesMode.many
   else
-    return CitiesMode.none
+    return CitiesMode.unknown
 }
