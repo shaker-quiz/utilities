@@ -20,14 +20,19 @@ export var CitiesModeTitle = {
  * @param {*} value
  */
 export var getCitiesMode = value => {
-  if (value === 'all')
-    return CitiesMode.all
-  else if (value === 'none')
-    return CitiesMode.none
-  else if (value?.length === 1)
-    return CitiesMode.single
-  else if (value?.length > 1)
-    return CitiesMode.many
-  else
-    return CitiesMode.unknown
+  switch (typeof value) {
+    case 'string':
+      return value
+
+    case 'object':
+      if (value?.length === 1)
+        return CitiesMode.single
+      else if (value?.length > 1)
+        return CitiesMode.many
+      else
+        return CitiesMode.unknown
+
+    default:
+      return CitiesMode.unknown
+  }
 }
