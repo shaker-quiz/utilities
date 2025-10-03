@@ -58,8 +58,6 @@ export var CityAffilationShapes = Object.entries(CityAffilationShape)
  * @param {CityAffilation | typeof CityAffilationShape[CityAffilation]} value
  */
 export var getCityAffilation = value => {
-  console.log('[getCityAffilation]', value)
-
   switch (typeof value) {
     case 'object':
       let found = CityAffilationShapes
