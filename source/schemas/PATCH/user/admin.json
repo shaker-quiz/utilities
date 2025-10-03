@@ -1,6 +1,22 @@
 {
   "type": "object",
-  "properties": {},
+  "properties": {
+    "role_id": {
+      "type": "uuid"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  },
   "required": [],
   "additionalProperties": false
 }

@@ -32,7 +32,10 @@
       "type": "string"
     },
     "href": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     }
   },
   "required": [],
