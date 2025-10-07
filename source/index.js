@@ -10,6 +10,7 @@ export * from './enumerations/misc/constants.js'
 export * from './enumerations/misc/icons.js'
 export * from './enumerations/misc/phases.js'
 export * from './enumerations/misc/regexps.js'
+export * from './enumerations/misc/routes.js'
 
 export * from './enumerations/entities/cities-mode.js'
 export * from './enumerations/entities/city-affilation.js'
