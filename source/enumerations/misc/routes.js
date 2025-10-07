@@ -27,7 +27,7 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['users']]: 'users',
   [Route['user/cities']]: 'user/:user/cities',
   [Route['users/cities']]: 'users/cities',
-  [Route['city']]: 'city',
+  [Route['city']]: 'city/:city',
   [Route['city/venues']]: 'city/:city/venues',
   [Route['venue']]: 'venue/:venue',
   [Route['theme']]: 'theme/:theme',
