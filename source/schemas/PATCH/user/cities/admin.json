@@ -1,8 +1,17 @@
 {
   "type": "array",
   "items": {
-    "type": "string",
-    "format": "uuid"
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    }
   },
   "uniqueItems": true
 }
