@@ -6,8 +6,8 @@ export var RoleMode = /** @type {const} */ ({
 export var RoleModes = Object.values(RoleMode)
 
 export var RoleModeTitle = {
-  [RoleMode.known]: 'Известно',
-  [RoleMode.unknown]: 'Неизвестно',
+  [RoleMode.known]: 'Любая',
+  [RoleMode.unknown]: 'Не назначено',
 }
 
 export var RoleModeWeight = {
