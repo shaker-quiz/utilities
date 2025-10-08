@@ -27,9 +27,9 @@ export var getRoleMode = value => {
       if (typeof value?.mode === 'string')
         return value.mode
       else
-        return Role.unknown
+        return RoleMode.unknown
 
     default:
-      return Role.unknown
+      return RoleMode.unknown
   }
 }
