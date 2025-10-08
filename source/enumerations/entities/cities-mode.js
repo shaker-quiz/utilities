@@ -13,7 +13,7 @@ export var CitiesModeTitle = {
   [CitiesMode.many]: 'Несколько городов',
   [CitiesMode.single]: 'Один город',
   [CitiesMode.none]: 'Нет городов',
-  [CitiesMode.unknown]: 'Неизвестное состояние',
+  [CitiesMode.unknown]: 'Неизвестно',
 }
 
 /**
@@ -25,10 +25,8 @@ export var getCitiesMode = value => {
       return value
 
     case 'object':
-      if (value?.length === 1)
-        return CitiesMode.single
-      else if (value?.length > 1)
-        return CitiesMode.many
+      if (typeof value?.mode === 'string')
+        return value.mode
       else
         return CitiesMode.unknown
 
