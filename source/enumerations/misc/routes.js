@@ -13,6 +13,7 @@ export var Route = /** @type {const} */ ({
   'cities': 'cities',
   'city/venues': 'city/venues',
   'venue': 'venue',
+  'venues': 'venues',
   'theme': 'theme',
   'themes': 'themes',
   'theme/cover': 'theme/cover',
@@ -42,6 +43,7 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['cities']]: 'cities',
   [Route['city/venues']]: 'city/:city/venues',
   [Route['venue']]: 'venue/:venue',
+  [Route['venues']]: 'venues',
   [Route['theme']]: 'theme/:theme',
   [Route['themes']]: 'themes',
   [Route['theme/cover']]: 'theme/:theme/cover',
@@ -72,6 +74,34 @@ export var RouteParams = /** @type {const} */ ({
   [Route['registration/mailing']]: [':registration'],
   [Route['mailing']]: [':mailing'],
 })
+
+export var RouteService = {
+  [Route['role']]: 'Users',
+  [Route['roles']]: 'Users',
+  [Route['user']]: 'Users',
+  [Route['users']]: 'Users',
+  [Route['checkin']]: 'Checkin',
+  [Route['user/password']]: 'Users',
+  [Route['user/role']]: 'Users',
+  [Route['user/cities']]: 'Users',
+  [Route['users/role']]: 'Users',
+  [Route['users/cities']]: 'Users',
+  [Route['city']]: 'Cities',
+  [Route['cities']]: 'Cities',
+  [Route['city/venues']]: 'Cities',
+  [Route['venue']]: 'Venues',
+  [Route['venues']]: 'Venues',
+  [Route['theme']]: 'Themes',
+  [Route['themes']]: 'Themes',
+  [Route['theme/cover']]: 'Themes',
+  [Route['themes/covers']]: 'Themes',
+  [Route['game']]: 'Games',
+  [Route['games']]: 'Games',
+  [Route['registration']]: 'Games',
+  [Route['registration/mailing']]: 'Games',
+  [Route['registrations']]: 'Games',
+  [Route['mailing']]: 'Games',
+}
 
 /**
  * @template {Route} R
