@@ -20,6 +20,7 @@ export var Route = /** @type {const} */ ({
   'game': 'game',
   'games': 'games',
   'registration': 'registration',
+  'registration/mailing': 'registration/mailing',
   'registrations': 'registrations',
   'mailing': 'mailing',
 })
@@ -48,8 +49,39 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['game']]: 'game/:game',
   [Route['games']]: 'games',
   [Route['registration']]: 'registration/:registration',
+  [Route['registration/mailing']]: 'registration/:registration/mailing',
   [Route['registrations']]: 'registrations',
   [Route['mailing']]: 'mailing/:mailing',
 })
 
 export var RoutePathnames = Object.values(RoutePathname)
+
+export var RouteParams = /** @type {const} */ ({
+  [Route['role']]: [':role'],
+  [Route['user']]: [':user'],
+  [Route['user/password']]: [':user'],
+  [Route['user/role']]: [':user'],
+  [Route['user/cities']]: [':user'],
+  [Route['city']]: [':city'],
+  [Route['city/venues']]: [':city'],
+  [Route['venue']]: [':venue'],
+  [Route['theme']]: [':theme'],
+  [Route['theme/cover']]: [':theme'],
+  [Route['game']]: [':game'],
+  [Route['registration']]: [':registration'],
+  [Route['registration/mailing']]: [':registration'],
+  [Route['mailing']]: [':mailing'],
+})
+
+/**
+ * @template {Route} R
+ * @template {typeof RouteParams[R]} P
+ *
+ * @param {R} route
+ * @param {Record<P[number] extends `:${infer Name}` ? Name : P[number], string>} params
+ */
+export var hydrateRoutePathname = (route, params) =>
+  RouteParams[route].reduce(
+    (pathname, param) => pathname.replace(param, params[param.replace(':', '')]),
+    RoutePathname[route],
+  )

@@ -60,3 +60,5 @@ type VenueStatus = keyof typeof import('./enumerations/entities/venue-status.js'
 type Icon = typeof import('./enumerations/misc/icons.js').Icons[number]
 
 type Phase = keyof typeof import('./enumerations/misc/phases.js').Phase
+
+type Route = keyof typeof import('./enumerations/misc/routes.js').Route
