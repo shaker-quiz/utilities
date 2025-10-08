@@ -11,11 +11,20 @@ export var CitiesModes = Object.values(CitiesMode)
 
 export var CitiesModeTitle = {
   [CitiesMode.known]: 'Известно',
-  [CitiesMode.unknown]: 'Неизвестно',
   [CitiesMode.all]: 'Все города',
   [CitiesMode.many]: 'Несколько городов',
   [CitiesMode.single]: 'Один город',
   [CitiesMode.none]: 'Нет городов',
+  [CitiesMode.unknown]: 'Неизвестно',
+}
+
+export var CitiesModeWeigth = {
+  [CitiesMode.known]: 0,
+  [CitiesMode.all]: 1,
+  [CitiesMode.many]: 2,
+  [CitiesMode.single]: 3,
+  [CitiesMode.none]: 4,
+  [CitiesMode.unknown]: 5,
 }
 
 /**
