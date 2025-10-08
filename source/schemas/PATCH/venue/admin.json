@@ -20,7 +20,8 @@
       "type": "boolean"
     },
     "game_time": {
-      "type": "string"
+      "type": "string",
+      "format": "iso-time"
     },
     "location_info": {
       "type": [

@@ -16,24 +16,13 @@
     "team_capacity": {
       "type": "integer"
     },
-    "is_adult": {
-      "type": "boolean"
-    },
     "game_time": {
-      "type": "string"
+      "type": "string",
+      "format": "iso-time"
     },
     "city_id": {
       "type": "string",
       "format": "uuid"
-    },
-    "location_info": {
-      "type": "string"
-    },
-    "status": {
-      "type": "string"
-    },
-    "href": {
-      "type": "string"
     }
   },
   "required": [
