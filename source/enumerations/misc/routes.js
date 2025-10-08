@@ -3,6 +3,7 @@ export var Route = /** @type {const} */ ({
   'roles': 'roles',
   'user': 'user',
   'users': 'users',
+  'checkin': 'checkin',
   'user/password': 'user/password',
   'user/role': 'user/role',
   'user/cities': 'user/cities',
@@ -20,6 +21,7 @@ export var Route = /** @type {const} */ ({
   'games': 'games',
   'registration': 'registration',
   'registrations': 'registrations',
+  'mailing': 'mailing',
 })
 
 export var Routes = Object.values(Route)
@@ -29,6 +31,7 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['roles']]: 'roles',
   [Route['user']]: 'user/:user',
   [Route['users']]: 'users',
+  [Route['checkin']]: 'checkin',
   [Route['user/password']]: 'user/:user/password',
   [Route['user/role']]: 'user/:user/role',
   [Route['user/cities']]: 'user/:user/cities',
@@ -46,6 +49,7 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['games']]: 'games',
   [Route['registration']]: 'registration/:registration',
   [Route['registrations']]: 'registrations',
+  [Route['mailing']]: 'mailing/:mailing',
 })
 
 export var RoutePathnames = Object.values(RoutePathname)
