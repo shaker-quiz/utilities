@@ -6,7 +6,6 @@ export var Role = /** @type {const} */ ({
   'user': 'user',
   'manager': 'manager',
   'default': 'default',
-  'unknown': 'unknown',
 })
 
 export var Roles = Object.values(Role)
@@ -19,7 +18,6 @@ export var RoleWeight = {
   [Role.user]: 4,
   [Role.manager]: 5,
   [Role.default]: 6,
-  [Role.unknown]: 7,
 }
 
 export var RoleTitle = {
@@ -30,7 +28,6 @@ export var RoleTitle = {
   [Role.user]: 'Пользователь',
   [Role.manager]: 'Менеджер',
   [Role.default]: 'Неавторизован',
-  [Role.unknown]: 'Неизвестно',
 }
 
 export var RoleActionTitle = {
@@ -41,7 +38,6 @@ export var RoleActionTitle = {
   [Role.user]: 'Сделать пользователем',
   [Role.manager]: 'Сделать менеджером',
   [Role.default]: 'Сделать неавторизованым',
-  [Role.unknown]: 'Неизвестно',
 }
 
 export var RoleActionDescription = {
@@ -52,7 +48,6 @@ export var RoleActionDescription = {
   [Role.user]: 'Назначить роль: Пользователь',
   [Role.manager]: 'Назначить роль: Менеджер',
   [Role.default]: 'Назначить роль: Неавторизован',
-  [Role.unknown]: 'Неизвестно',
 }
 
 export var RoleColor = {
@@ -63,7 +58,6 @@ export var RoleColor = {
   [Role.user]: 'default',
   [Role.manager]: 'default',
   [Role.default]: 'default',
-  [Role.unknown]: 'danger',
 }
 
 export var RoleTextColor = {
@@ -74,7 +68,6 @@ export var RoleTextColor = {
   [Role.user]: 'text-default',
   [Role.manager]: 'text-default',
   [Role.default]: 'text-default',
-  [Role.unknown]: 'text-danger',
 }
 
 /** @type {Record<Role, Icon>} */
@@ -86,24 +79,4 @@ export var RoleIcon = {
   [Role.user]: 'hero/outline/user',
   [Role.manager]: 'hero/outline/user',
   [Role.default]: 'hero/outline/user',
-  [Role.unknown]: 'hero/outline/no-symbol',
-}
-
-/**
- * @param {*} value
- */
-export var getRoleMode = value => {
-  switch (typeof value) {
-    case 'string':
-      return value
-
-    case 'object':
-      if (typeof value?.mode === 'string')
-        return value.mode
-      else
-        return Role.unknown
-
-    default:
-      return Role.unknown
-  }
 }
