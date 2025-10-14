@@ -5,10 +5,6 @@
       "type": "string",
       "format": "uuid"
     },
-    "theme_id": {
-      "type": "string",
-      "format": "uuid"
-    },
     "number": {
       "type": "string"
     },
