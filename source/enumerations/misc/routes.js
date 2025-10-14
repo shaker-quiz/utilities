@@ -1,29 +1,29 @@
 export var Service = /** @type {const} */ ({
-  'Checkin': 'Checkin',
-  'Cities': 'Cities',
-  'Games': 'Games',
-  'Integrations': 'Integrations',
-  'Locations': 'Locations',
-  'Procedures': 'Procedures',
-  'Registrations': 'Registrations',
-  'Roles': 'Roles',
-  'Themes': 'Themes',
-  'Updates': 'Updates',
   'Users': 'Users',
+  'Roles': 'Roles',
+  'Checkin': 'Checkin',
+  'Locations': 'Locations',
+  'Cities': 'Cities',
   'Venues': 'Venues',
+  'Themes': 'Themes',
+  'Games': 'Games',
+  'Registrations': 'Registrations',
+  'Procedures': 'Procedures',
+  'Integrations': 'Integrations',
+  'Updates': 'Updates',
 })
 
 export var Services = Object.values(Service)
 
 export var Route = /** @type {const} */ ({
-  'role': 'role',
-
-  'roles': 'roles',
-
   'user': 'user',
   'user/password': 'user/password',
   'user/role': 'user/role',
   'user/cities': 'user/cities',
+
+  'role': 'role',
+
+  'roles': 'roles',
 
   'users': 'users',
   'users/role': 'users/role',
@@ -82,10 +82,6 @@ export var Route = /** @type {const} */ ({
 export var Routes = Object.values(Route)
 
 export var RoutePathname = /** @type {const} */ ({
-  [Route['role']]: 'role/:role',
-
-  [Route['roles']]: 'roles',
-
   [Route['user']]: 'user/:user',
   [Route['user/password']]: 'user/:user/password',
   [Route['user/role']]: 'user/:user/role',
@@ -94,6 +90,10 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['users']]: 'users',
   [Route['users/role']]: 'users/role',
   [Route['users/cities']]: 'users/cities',
+
+  [Route['role']]: 'role/:role',
+
+  [Route['roles']]: 'roles',
 
   [Route['checkin']]: 'checkin',
 
@@ -118,7 +118,7 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['theme/cover']]: 'theme/:theme/cover',
 
   [Route['themes']]: 'themes',
-  [Route['themes/covers']]: 'themes/covers',
+  [Route['themes/cover']]: 'themes/cover',
 
   [Route['game']]: 'game/:game',
   [Route['game/city']]: 'game/:game/city',
@@ -148,10 +148,6 @@ export var RoutePathname = /** @type {const} */ ({
 export var RoutePathnames = Object.values(RoutePathname)
 
 export var RouteParams = /** @type {const} */ ({
-  [Route['role']]: [':role'],
-
-  [Route['roles']]: [],
-
   [Route['user']]: [':user'],
   [Route['user/password']]: [':user'],
   [Route['user/role']]: [':user'],
@@ -160,6 +156,10 @@ export var RouteParams = /** @type {const} */ ({
   [Route['users']]: [],
   [Route['users/role']]: [],
   [Route['users/cities']]: [],
+
+  [Route['role']]: [':role'],
+
+  [Route['roles']]: [],
 
   [Route['checkin']]: [],
 
@@ -212,10 +212,6 @@ export var RouteParams = /** @type {const} */ ({
 })
 
 export var RouteService = {
-  [Route['role']]: Service.Roles,
-
-  [Route['roles']]: Service.Roles,
-
   [Route['user']]: Service.Users,
   [Route['user/password']]: Service.Users,
   [Route['user/role']]: Service.Users,
@@ -224,6 +220,10 @@ export var RouteService = {
   [Route['users']]: Service.Users,
   [Route['users/role']]: Service.Users,
   [Route['users/cities']]: Service.Users,
+
+  [Route['role']]: Service.Roles,
+
+  [Route['roles']]: Service.Roles,
 
   [Route['checkin']]: Service.Checkin,
 
@@ -239,7 +239,7 @@ export var RouteService = {
   [Route['cities']]: Service.Cities,
 
   [Route['venue']]: Service.Venues,
-  [Route['venues/city']]: Service.Venues,
+  [Route['venue/city']]: Service.Venues,
 
   [Route['venues']]: Service.Venues,
   [Route['venues/city']]: Service.Venues,
@@ -248,7 +248,7 @@ export var RouteService = {
   [Route['theme/cover']]: Service.Themes,
 
   [Route['themes']]: Service.Themes,
-  [Route['themes/covers']]: Service.Themes,
+  [Route['themes/cover']]: Service.Themes,
 
   [Route['game']]: Service.Games,
   [Route['game/city']]: Service.Games,
@@ -273,6 +273,85 @@ export var RouteService = {
 
   [Route['registrations']]: Service.Registrations,
   [Route['registrations/export']]: Service.Registrations,
+}
+
+export var ServiceRoutes = {
+  [Service.Users]: [
+    Route['user'],
+    Route['user/password'],
+    Route['user/role'],
+    Route['user/cities'],
+    Route['users'],
+    Route['users/role'],
+    Route['users/cities'],
+  ],
+
+  [Service.Roles]: [
+    Route['role'],
+    Route['roles'],
+  ],
+
+  [Service.Checkin]: [
+    Route['checkin'],
+  ],
+
+  [Service.Locations]: [
+    Route['countries'],
+    Route['currencies'],
+    Route['timezones'],
+  ],
+
+  [Service.Cities]: [
+    Route['city'],
+    Route['city/venues'],
+    Route['cities'],
+  ],
+
+  [Service.Venues]: [
+    Route['venue'],
+    Route['venue/city'],
+    Route['venues'],
+    Route['venues/city'],
+  ],
+
+  [Service.Themes]: [
+    Route['theme'],
+    Route['theme/cover'],
+    Route['themes'],
+    Route['themes/cover'],
+  ],
+
+  [Service.Games]: [
+    Route['game'],
+    Route['game/city'],
+    Route['game/venue'],
+    Route['game/theme'],
+    Route['game/registrations'],
+    Route['game/registrations/exports'],
+    Route['game/summary'],
+    Route['games'],
+    Route['games/city'],
+    Route['games/venue'],
+    Route['games/theme'],
+    Route['games/summary'],
+  ],
+
+  [Service.Registrations]: [
+    Route['registration'],
+    Route['registration/game'],
+    Route['registration/mailing'],
+    Route['registration/channel'],
+    Route['registration/confirmation'],
+    Route['registration/cancellation'],
+    Route['registrations'],
+    Route['registrations/export'],
+  ],
+
+  [Service.Procedures]: [],
+
+  [Service.Integrations]: [],
+
+  [Service.Updates]: [],
 }
 
 /**
