@@ -4,16 +4,10 @@
   "version": "0.5.52",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
-  "scripts": {
-    "type": "tsc --declaration --emitdeclarationonly --allowjs"
-  },
   "exports": {
     ".": {
       "default": "./source/index.js"
     },
     "./schemas/*.json": "./source/schemas/*.json"
-  },
-  "devDependencies": {
-    "typescript": "5.9.2"
   }
 }
