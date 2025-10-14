@@ -4,6 +4,10 @@
   "version": "0.5.53",
   "author": "yurkimus <yurkimus@gmail.com>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaker-quiz/utilities.git"
+  },
   "exports": {
     ".": {
       "default": "./source/index.js"
