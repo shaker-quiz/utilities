@@ -21,19 +21,25 @@ export var Route = /** @type {const} */ ({
   'user/role': 'user/role',
   'user/cities': 'user/cities',
 
-  'role': 'role',
-
-  'roles': 'roles',
-
   'users': 'users',
   'users/role': 'users/role',
   'users/cities': 'users/cities',
 
+  'role': 'role',
+
+  'roles': 'roles',
+
   'checkin': 'checkin',
+
+  'country': 'country',
 
   'countries': 'countries',
 
+  'currency': 'currency',
+
   'currencies': 'currencies',
+
+  'timezone': 'timezone',
 
   'timezones': 'timezones',
 
@@ -97,9 +103,15 @@ export var RoutePathname = /** @type {const} */ ({
 
   [Route['checkin']]: 'checkin',
 
+  [Route['country']]: 'country/:country',
+
   [Route['countries']]: 'countries',
 
+  [Route['currency']]: 'currency/:currency',
+
   [Route['currencies']]: 'currencies',
+
+  [Route['timezone']]: 'timezone/:timezone',
 
   [Route['timezones']]: 'timezones',
 
@@ -163,9 +175,15 @@ export var RouteParams = /** @type {const} */ ({
 
   [Route['checkin']]: [],
 
+  [Route['country']]: [':country'],
+
   [Route['countries']]: [],
 
+  [Route['currency']]: [':currency'],
+
   [Route['currencies']]: [],
+
+  [Route['timezone']]: [':timezone'],
 
   [Route['timezones']]: [],
 
@@ -227,9 +245,15 @@ export var RouteService = {
 
   [Route['checkin']]: Service.Checkin,
 
+  [Route['country']]: Service.Locations,
+
   [Route['countries']]: Service.Locations,
 
+  [Route['currency']]: Service.Locations,
+
   [Route['currencies']]: Service.Locations,
+
+  [Route['timezone']]: Service.Locations,
 
   [Route['timezones']]: Service.Locations,
 
@@ -296,8 +320,11 @@ export var ServiceRoutes = {
   ],
 
   [Service.Locations]: [
+    Route['country'],
     Route['countries'],
+    Route['currency'],
     Route['currencies'],
+    Route['timezone'],
     Route['timezones'],
   ],
 
