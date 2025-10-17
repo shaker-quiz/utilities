@@ -188,7 +188,7 @@
         "ZWL"
       ]
     },
-    "is_franshise": {
+    "is_franchise": {
       "type": "boolean"
     },
     "timezone_name": {
