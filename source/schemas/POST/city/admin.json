@@ -4,6 +4,9 @@
     "name": {
       "type": "string"
     },
+    "alias": {
+      "type": "string"
+    },
     "country": {
       "type": "string",
       "enum": [
@@ -184,9 +187,6 @@
         "ZMW",
         "ZWL"
       ]
-    },
-    "alias": {
-      "type": "string"
     },
     "is_franshise": {
       "type": "boolean"
