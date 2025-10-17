@@ -44,6 +44,9 @@ export var Route = /** @type {const} */ ({
   'timezones': 'timezones',
 
   'city': 'city',
+  'city/country': 'city/country',
+  'city/currency': 'city/currency',
+  'city/timezone': 'city/timezone',
   'city/venues': 'city/venues',
 
   'cities': 'cities',
@@ -116,6 +119,9 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['timezones']]: 'timezones',
 
   [Route['city']]: 'city/:city',
+  [Route['city/country']]: 'city/:city/country',
+  [Route['city/currency']]: 'city/:city/currency',
+  [Route['city/timezone']]: 'city/:city/timezone',
   [Route['city/venues']]: 'city/:city/venues',
 
   [Route['cities']]: 'cities',
@@ -188,6 +194,9 @@ export var RouteParams = /** @type {const} */ ({
   [Route['timezones']]: [],
 
   [Route['city']]: [':city'],
+  [Route['city/country']]: [':city'],
+  [Route['city/currency']]: [':city'],
+  [Route['city/timezone']]: [':city'],
   [Route['city/venues']]: [':city'],
 
   [Route['cities']]: [],
@@ -258,6 +267,9 @@ export var RouteService = {
   [Route['timezones']]: Service.Locations,
 
   [Route['city']]: Service.Cities,
+  [Route['city/country']]: Service.Cities,
+  [Route['city/currency']]: Service.Cities,
+  [Route['city/timezone']]: Service.Cities,
   [Route['city/venues']]: Service.Cities,
 
   [Route['cities']]: Service.Cities,
@@ -330,6 +342,9 @@ export var ServiceRoutes = {
 
   [Service.Cities]: [
     Route['city'],
+    Route['city/country'],
+    Route['city/currency'],
+    Route['city/timezone'],
     Route['city/venues'],
     Route['cities'],
   ],
