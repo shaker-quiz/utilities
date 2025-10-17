@@ -689,7 +689,7 @@
     "country",
     "currency",
     "alias",
-    "is_franshise",
+    "is_franchise",
     "timezone_name"
   ],
   "additionalProperties": false
