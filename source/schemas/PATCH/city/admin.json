@@ -100,8 +100,7 @@
     },
     "chatapp_legacy": {
       "type": [
-        "string",
-        "null"
+        "boolean"
       ]
     },
     "phone": {
