@@ -2,16 +2,10 @@
   "type": "object",
   "properties": {
     "price": {
-      "type": [
-        "number",
-        "null"
-      ]
+      "type": "number"
     },
     "game_time": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "format": "iso-time"
     },
     "vk_link": {
