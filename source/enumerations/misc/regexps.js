@@ -5,6 +5,7 @@ export var RegExps = {
 }
 
 export var StateKey = {
+  'checkin': /^GET\/checkin$/,
   'user': /^GET\/user\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/,
   'role': /^GET\/role\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/,
   'country': /^GET\/country\/[A-Z]{2}$/,
