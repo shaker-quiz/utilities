@@ -15,81 +15,138 @@ export var Service = /** @type {const} */ ({
 
 export var Services = Object.values(Service)
 
-export var Route = /** @type {const} */ ({
+export var SingularRoute = /** @type {const} */ ({
+  'role': 'role',
   'user': 'user',
   'user/password': 'user/password',
   'user/role': 'user/role',
   'user/cities': 'user/cities',
-
-  'users': 'users',
-  'users/role': 'users/role',
-  'users/cities': 'users/cities',
-
-  'role': 'role',
-
-  'roles': 'roles',
-
   'checkin': 'checkin',
-
   'country': 'country',
-
-  'countries': 'countries',
-
   'currency': 'currency',
-
-  'currencies': 'currencies',
-
   'timezone': 'timezone',
-
-  'timezones': 'timezones',
-
   'city': 'city',
   'city/country': 'city/country',
   'city/currency': 'city/currency',
   'city/timezone': 'city/timezone',
   'city/venues': 'city/venues',
-
-  'cities': 'cities',
-  'cities/country': 'cities/country',
-  'cities/currency': 'cities/currency',
-  'cities/timezone': 'cities/timezone',
-
   'venue': 'venue',
   'venue/city': 'venue/city',
-
-  'venues': 'venues',
-  'venues/city': 'venues/city',
-
   'theme': 'theme',
   'theme/cover': 'theme/cover',
-
-  'themes': 'themes',
-  'themes/cover': 'themes/cover',
-
   'game': 'game',
   'game/city': 'game/city',
   'game/venue': 'game/venue',
   'game/theme': 'game/theme',
   'game/registrations': 'game/registrations',
-  'game/registrations/exports': 'game/registrations/exports',
+  'game/registrations/export': 'game/registrations/export',
   'game/summary': 'game/summary',
-
-  'games': 'games',
-  'games/city': 'games/city',
-  'games/venue': 'games/venue',
-  'games/theme': 'games/theme',
-  'games/summary': 'games/summary',
-
   'registration': 'registration',
   'registration/game': 'registration/game',
   'registration/mailing': 'registration/mailing',
   'registration/channel': 'registration/channel',
   'registration/confirmation': 'registration/confirmation',
   'registration/cancellation': 'registration/cancellation',
+  'registration/export': 'registration/export',
+})
 
+export var SingularRoutes = Object.values(SingularRoute)
+
+export var PluralRoute = /** @type {const} */ ({
+  'roles': 'roles',
+  'users': 'users',
+  'users/password': 'users/password',
+  'users/role': 'users/role',
+  'users/cities': 'users/cities',
+  'checkins': 'checkins',
+  'countries': 'countries',
+  'currencies': 'currencies',
+  'timezones': 'timezones',
+  'cities': 'cities',
+  'cities/country': 'cities/country',
+  'cities/currency': 'cities/currency',
+  'cities/timezone': 'cities/timezone',
+  'cities/venues': 'cities/venues',
+  'venues': 'venues',
+  'venues/city': 'venues/city',
+  'themes': 'themes',
+  'themes/cover': 'themes/cover',
+  'games': 'games',
+  'games/city': 'games/city',
+  'games/venue': 'games/venue',
+  'games/theme': 'games/theme',
+  'games/registrations': 'games/registrations',
+  'games/registrations/export': 'games/registrations/export',
+  'games/summary': 'games/summary',
   'registrations': 'registrations',
   'registrations/export': 'registrations/export',
 })
+
+export var PluralRoutes = Object.values(PluralRoute)
+
+export var Route = {
+  ...SingularRoute,
+  ...PluralRoute,
+}
+
+export var SingularPluralRouteRelation = {
+  [Route['role']]: Route['roles'],
+  [Route['user']]: Route['users'],
+  [Route['user/password']]: Route['users/password'],
+  [Route['user/role']]: Route['users/role'],
+  [Route['user/cities']]: Route['users/cities'],
+  [Route['checkin']]: Route['checkins'],
+  [Route['country']]: Route['countries'],
+  [Route['currency']]: Route['currencies'],
+  [Route['timezone']]: Route['timezones'],
+  [Route['city']]: Route['cities'],
+  [Route['city/country']]: Route['cities/country'],
+  [Route['city/currency']]: Route['cities/currency'],
+  [Route['city/timezone']]: Route['cities/timezone'],
+  [Route['city/venues']]: Route['cities/venues'],
+  [Route['venue']]: Route['venues'],
+  [Route['venue/city']]: Route['venues/city'],
+  [Route['theme']]: Route['themes'],
+  [Route['theme/cover']]: Route['themes/cover'],
+  [Route['game']]: Route['games'],
+  [Route['game/city']]: Route['games/city'],
+  [Route['game/venue']]: Route['games/venue'],
+  [Route['game/theme']]: Route['games/theme'],
+  [Route['game/registrations']]: Route['games/registrations'],
+  [Route['game/registrations/export']]: Route['games/registrations/export'],
+  [Route['game/summary']]: Route['games/summary'],
+  [Route['registration']]: Route['registrations'],
+  [Route['registration/export']]: Route['registrations/export'],
+}
+
+export var PluralSingularRouteRelation = {
+  [Route['roles']]: Route['role'],
+  [Route['users']]: Route['user'],
+  [Route['users/role']]: Route['user/role'],
+  [Route['users/cities']]: Route['user/cities'],
+  [Route['checkins']]: Route['checkin'],
+  [Route['countries']]: Route['country'],
+  [Route['currencies']]: Route['currency'],
+  [Route['timezones']]: Route['timezone'],
+  [Route['cities']]: Route['city'],
+  [Route['cities/country']]: Route['city/country'],
+  [Route['cities/currency']]: Route['city/currency'],
+  [Route['cities/timezone']]: Route['city/timezone'],
+  [Route['cities/venues']]: Route['city/venues'],
+  [Route['venues']]: Route['venue'],
+  [Route['venues/city']]: Route['venue/city'],
+  [Route['themes']]: Route['theme'],
+  [Route['themes/cover']]: Route['theme/cover'],
+  [Route['games']]: Route['game'],
+  [Route['games/city']]: Route['game/city'],
+  [Route['games/venue']]: Route['game/venue'],
+  [Route['games/theme']]: Route['game/theme'],
+  [Route['games/registrations']]: Route['game/registrations'],
+  [Route['games/registrations/export']]: Route['game/registrations/export'],
+  [Route['games/summary']]: Route['game/summary'],
+  [Route['registrations']]: Route['registration'],
+  [Route['registrations/export']]: Route['registration/export'],
+}
 
 export var Routes = Object.values(Route)
 
@@ -108,6 +165,8 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['roles']]: 'roles',
 
   [Route['checkin']]: 'checkin',
+
+  [Route['checkins']]: 'checkins',
 
   [Route['country']]: 'country/:country',
 
@@ -131,9 +190,10 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['cities/country']]: 'cities/country',
   [Route['cities/currency']]: 'cities/currency',
   [Route['cities/timezone']]: 'cities/timezone',
+  [Route['cities/venues']]: 'cities/venues',
 
   [Route['venue']]: 'venue/:venue',
-  [Route['venues/city']]: 'venues/city',
+  [Route['venue/city']]: 'venues/city',
 
   [Route['venues']]: 'venues',
   [Route['venues/city']]: 'venues/city',
@@ -149,13 +209,15 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['game/venue']]: 'game/:game/venue',
   [Route['game/theme']]: 'game/:game/theme',
   [Route['game/registrations']]: 'game/:game/registrations',
-  [Route['game/registrations/exports']]: 'game/:game/registrations/exports',
+  [Route['game/registrations/export']]: 'game/:game/registrations/export',
   [Route['game/summary']]: 'game/:game/summary',
 
   [Route['games']]: 'games',
   [Route['games/city']]: 'games/city',
   [Route['games/venue']]: 'games/venue',
   [Route['games/theme']]: 'games/theme',
+  [Route['games/registrations']]: 'games/registrations',
+  [Route['games/registrations/export']]: 'games/registrations/export',
   [Route['games/summary']]: 'games/summary',
 
   [Route['registration']]: 'registration/:registration',
@@ -164,6 +226,7 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['registration/channel']]: 'registration/:registration/channel',
   [Route['registration/confirmation']]: 'registration/:registration/confirmation',
   [Route['registration/cancellation']]: 'registration/:registration/cancellation',
+  [Route['registration/export']]: 'registration/:registration/export',
 
   [Route['registrations']]: 'registrations',
   [Route['registrations/export']]: 'registrations/export',
@@ -187,6 +250,8 @@ export var RouteParams = /** @type {const} */ ({
 
   [Route['checkin']]: [],
 
+  [Route['checkins']]: [],
+
   [Route['country']]: [':country'],
 
   [Route['countries']]: [],
@@ -209,6 +274,7 @@ export var RouteParams = /** @type {const} */ ({
   [Route['cities/country']]: [],
   [Route['cities/currency']]: [],
   [Route['cities/timezone']]: [],
+  [Route['cities/venues']]: [],
 
   [Route['venue']]: [':venue'],
   [Route['venue/city']]: [':venue'],
@@ -227,13 +293,15 @@ export var RouteParams = /** @type {const} */ ({
   [Route['game/venue']]: [':game'],
   [Route['game/theme']]: [':game'],
   [Route['game/registrations']]: [':game'],
-  [Route['game/registrations/exports']]: [':game'],
+  [Route['game/registrations/export']]: [':game'],
   [Route['game/summary']]: [':game'],
 
   [Route['games']]: [],
   [Route['games/city']]: [],
   [Route['games/venue']]: [],
   [Route['games/theme']]: [],
+  [Route['games/registrations']]: [],
+  [Route['games/registrations/export']]: [],
   [Route['games/summary']]: [],
 
   [Route['registration']]: [':registration'],
@@ -242,6 +310,7 @@ export var RouteParams = /** @type {const} */ ({
   [Route['registration/channel']]: [':registration'],
   [Route['registration/confirmation']]: [':registration'],
   [Route['registration/cancellation']]: [':registration'],
+  [Route['registration/export']]: [':registration'],
 
   [Route['registrations']]: [],
   [Route['registrations/export']]: [],
@@ -303,13 +372,15 @@ export var RouteService = {
   [Route['game/venue']]: Service.Games,
   [Route['game/theme']]: Service.Games,
   [Route['game/registrations']]: Service.Games,
-  [Route['game/registrations/exports']]: Service.Games,
+  [Route['game/registrations/export']]: Service.Games,
   [Route['game/summary']]: Service.Games,
 
   [Route['games']]: Service.Games,
   [Route['games/city']]: Service.Games,
   [Route['games/venue']]: Service.Games,
   [Route['games/theme']]: Service.Games,
+  [Route['games/registrations']]: Service.Games,
+  [Route['games/registrations/export']]: Service.Games,
   [Route['games/summary']]: Service.Games,
 
   [Route['registration']]: Service.Registrations,
@@ -384,12 +455,14 @@ export var ServiceRoutes = {
     Route['game/venue'],
     Route['game/theme'],
     Route['game/registrations'],
-    Route['game/registrations/exports'],
+    Route['game/registrations/export'],
     Route['game/summary'],
     Route['games'],
     Route['games/city'],
     Route['games/venue'],
     Route['games/theme'],
+    Route['games/registrations'],
+    Route['games/registrations/export'],
     Route['games/summary'],
   ],
 
@@ -412,14 +485,72 @@ export var ServiceRoutes = {
 }
 
 /**
- * @template {Route} R
- * @template {typeof RouteParams[R]} P
- *
- * @param {R} route
- * @param {Record<P[number] extends `:${infer Name}` ? Name : P[number], string>} params
+ * @param {keyof Route} value
  */
-export var hydrateRoutePathname = (route, params) =>
-  RouteParams[route].reduce(
-    (pathname, param) => pathname.replace(param, params[param.replace(':', '')]),
-    RoutePathname[route],
+export var getRoute = value => {
+  if (!(value in Route))
+    throw TypeError(`[getRoute] Route '${value}' must be a member of Route.`)
+
+  return Route[value]
+}
+
+/**
+ * @param {keyof Route} value
+ */
+export var getSingularPluralRouteRelation = value => {
+  var route = getRoute(value)
+
+  if (!(route in SingularPluralRouteRelation))
+    throw TypeError(
+      `[getSingularPluralRouteRelation] Route '${route}' must be a member of SingularPluralRouteRelation.`,
+    )
+
+  return SingularPluralRouteRelation[route]
+}
+
+export var getPluralSingularRouteRelation = value => {
+  var route = getRoute(value)
+
+  if (!(route in PluralSingularRouteRelation))
+    throw TypeError(
+      `[getPluralSingularRouteRelation] Route '${route}' must be a member of PluralSingularRouteRelation.`,
+    )
+
+  return PluralSingularRouteRelation[route]
+}
+
+/**
+ * @param {keyof Route} value
+ */
+export var getRoutePathname = value => {
+  var route = getRoute(value)
+
+  if (!(route in RoutePathname))
+    throw TypeError(`[getRoutePathname] Route '${route}' must be a member of RoutePathname.`)
+
+  return RoutePathname[route]
+}
+
+export var routePathname = (value, parameters) => {
+  var route = getRoute(value)
+  var pathname = getRoutePathname(route)
+  var params = getRouteParams(route)
+
+  return params.reduce(
+    (pathname, param, index) => pathname.replace(param, parameters[index]),
+    pathname,
   )
+}
+
+/**
+ * @param {keyof Route} value
+ * @returns
+ */
+export var getRouteParams = value => {
+  var route = getRoute(value)
+
+  if (!(route in RouteParams))
+    throw TypeError(`[getRouteParams] Route '${route}' must be a member of RouteParams.`)
+
+  return RouteParams[route]
+}
