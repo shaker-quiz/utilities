@@ -497,6 +497,20 @@ export var getRoute = value => {
 /**
  * @param {keyof Route} value
  */
+export var getRouteKind = value => {
+  var route = getRoute(value)
+
+  if (SingularRoutes.includes(route))
+    return 'Singular'
+  else if (PluralRoutes.includes(route))
+    return 'Plural'
+  else
+    return 'Unknown'
+}
+
+/**
+ * @param {keyof Route} value
+ */
 export var getSingularPluralRouteRelation = value => {
   var route = getRoute(value)
 
@@ -531,7 +545,7 @@ export var getRoutePathname = value => {
   return RoutePathname[route]
 }
 
-export var routePathname = (value, parameters) => {
+export var hydrateRoutePathname = (value, parameters) => {
   var route = getRoute(value)
   var pathname = getRoutePathname(route)
   var params = getRouteParams(route)
