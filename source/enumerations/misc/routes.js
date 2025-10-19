@@ -569,7 +569,7 @@ export var getRoutePathnamePattern = value => {
 
 export var hydrateRoutePathname = (value, parameters) => {
   var route = getRoute(value)
-  var pathname = getRoutePathnamePattern(route)
+  var pathname = getRoutePathname(route)
   var params = getRouteParams(route)
 
   return params.reduce(
