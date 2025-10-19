@@ -414,10 +414,6 @@ export var ServiceRoutes = {
     Route['roles'],
   ],
 
-  [Service.Checkin]: [
-    Route['checkin'],
-  ],
-
   [Service.Locations]: [
     Route['country'],
     Route['countries'],
@@ -481,11 +477,21 @@ export var ServiceRoutes = {
     Route['registrations/export'],
   ],
 
+  [Service.Checkin]: [
+    Route['checkin'],
+  ],
+
   [Service.Procedures]: [],
 
   [Service.Integrations]: [],
 
   [Service.Updates]: [],
+
+  [Service.Hub]: [],
+
+  [Service.Landing]: [],
+
+  [Service.Vkma]: [],
 }
 
 /**
@@ -540,7 +546,7 @@ export var getPluralSingularRouteRelation = value => {
 /**
  * @param {keyof Route} value
  */
-export var getRoutePathnamePattern = value => {
+export var getRoutePathname = value => {
   var route = getRoute(value)
 
   if (!(route in RoutePathname))
