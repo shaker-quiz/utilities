@@ -1,16 +1,20 @@
 export var Service = /** @type {const} */ ({
   'Users': 'Users',
   'Roles': 'Roles',
-  'Checkin': 'Checkin',
   'Locations': 'Locations',
   'Cities': 'Cities',
   'Venues': 'Venues',
   'Themes': 'Themes',
   'Games': 'Games',
   'Registrations': 'Registrations',
+  'Files': 'Files',
+  'Checkin': 'Checkin',
   'Procedures': 'Procedures',
   'Integrations': 'Integrations',
   'Updates': 'Updates',
+  'Hub': 'Hub',
+  'Landing': 'Landing',
+  'Vkma': 'Vkma',
 })
 
 export var Services = Object.values(Service)
@@ -536,7 +540,7 @@ export var getPluralSingularRouteRelation = value => {
 /**
  * @param {keyof Route} value
  */
-export var getRoutePathname = value => {
+export var getRoutePathnamePattern = value => {
   var route = getRoute(value)
 
   if (!(route in RoutePathname))
@@ -545,9 +549,21 @@ export var getRoutePathname = value => {
   return RoutePathname[route]
 }
 
+/**
+ * @param {keyof Route} value
+ */
+export var getRoutePathnamePattern = value => {
+  var route = getRoute(value)
+
+  if (!(route in RoutePathname))
+    throw TypeError(`[getRoutePathname] Route '${route}' must be a member of RoutePathname.`)
+
+  return new URLPattern({ pathname: '/' + RoutePathname[route] })
+}
+
 export var hydrateRoutePathname = (value, parameters) => {
   var route = getRoute(value)
-  var pathname = getRoutePathname(route)
+  var pathname = getRoutePathnamePattern(route)
   var params = getRouteParams(route)
 
   return params.reduce(
