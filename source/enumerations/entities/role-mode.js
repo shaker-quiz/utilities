@@ -16,20 +16,22 @@ export var RoleModeWeight = {
 }
 
 /**
- * @param {*} value
+ * @param {keyof typeof RoleMode} value
  */
+var getter = value =>
+  value in RoleMode
+    ? value
+    : RoleMode['unknown']
+
 export var getRoleMode = value => {
   switch (typeof value) {
     case 'string':
-      return value
+      return getter(value)
 
     case 'object':
-      if (typeof value?.mode === 'string')
-        return value.mode
-      else
-        return RoleMode.unknown
+      return getter(value?.mode)
 
     default:
-      return RoleMode.unknown
+      return getter(undefined)
   }
 }

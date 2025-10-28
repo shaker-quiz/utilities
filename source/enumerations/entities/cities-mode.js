@@ -1,16 +1,14 @@
 export var CitiesMode = /** @type {const} */ ({
-  'known': 'known',
-  'unknown': 'unknown',
-  'all': 'all',
-  'many': 'many',
-  'single': 'single',
   'none': 'none',
+  'single': 'single',
+  'many': 'many',
+  'all': 'all',
+  'unknown': 'unknown',
 })
 
 export var CitiesModes = Object.values(CitiesMode)
 
 export var CitiesModeTitle = {
-  [CitiesMode.known]: 'Любые',
   [CitiesMode.all]: 'Все',
   [CitiesMode.many]: 'Несколько',
   [CitiesMode.single]: 'Один',
@@ -19,29 +17,30 @@ export var CitiesModeTitle = {
 }
 
 export var CitiesModeWeigth = {
-  [CitiesMode.known]: 0,
-  [CitiesMode.all]: 1,
-  [CitiesMode.many]: 2,
-  [CitiesMode.single]: 3,
-  [CitiesMode.none]: 4,
-  [CitiesMode.unknown]: 5,
+  [CitiesMode.all]: 0,
+  [CitiesMode.many]: 1,
+  [CitiesMode.single]: 2,
+  [CitiesMode.none]: 3,
+  [CitiesMode.unknown]: 4,
 }
 
 /**
- * @param {*} value
+ * @param {keyof typeof CitiesMode} value
  */
+var getter = value =>
+  value in CitiesMode
+    ? value
+    : CitiesMode['unknown']
+
 export var getCitiesMode = value => {
   switch (typeof value) {
     case 'string':
-      return value
+      return getter(value)
 
     case 'object':
-      if (typeof value?.mode === 'string')
-        return value.mode
-      else
-        return CitiesMode.unknown
+      return getter(value?.mode)
 
     default:
-      return CitiesMode.unknown
+      return getter(undefined)
   }
 }
