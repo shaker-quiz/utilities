@@ -520,6 +520,8 @@ export var getRouteKind = value => {
 
 /**
  * @param {keyof typeof Route} value
+ *
+ * @returns {keyof typeof Service}
  */
 export var getRouteService = value => {
   var route = getRoute(value)
