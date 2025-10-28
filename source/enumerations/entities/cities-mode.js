@@ -1,8 +1,8 @@
 export var CitiesMode = /** @type {const} */ ({
-  'none': 'none',
-  'single': 'single',
-  'many': 'many',
   'all': 'all',
+  'many': 'many',
+  'single': 'single',
+  'none': 'none',
   'unknown': 'unknown',
 })
 
