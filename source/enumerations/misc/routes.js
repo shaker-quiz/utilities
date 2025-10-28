@@ -519,6 +519,20 @@ export var getRouteKind = value => {
 }
 
 /**
+ * @param {keyof typeof Route} value
+ */
+export var getRouteService = value => {
+  var route = getRoute(value)
+
+  if (!(route in RouteService))
+    throw TypeError(
+      `[getRouteService] Route '${route}' must be a member of RouteService.`,
+    )
+
+  return RouteService[route]
+}
+
+/**
  * @param {keyof Route} value
  */
 export var getSingularPluralRouteRelation = value => {
