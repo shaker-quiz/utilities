@@ -1,7 +1,7 @@
 {
   "type": "object",
   "properties": {
-    "role_id": {
+    "id": {
       "type": "string",
       "format": "uuid"
     }
