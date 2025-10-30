@@ -358,6 +358,7 @@ export var RouteService = {
   [Route['cities/country']]: Service.Cities,
   [Route['cities/currency']]: Service.Cities,
   [Route['cities/timezone']]: Service.Cities,
+  [Route['cities/venues']]: Service.Cities,
 
   [Route['venue']]: Service.Venues,
   [Route['venue/city']]: Service.Venues,
