@@ -1,10 +1,6 @@
 {
   "type": "object",
   "properties": {
-    "role_id": {
-      "type": "string",
-      "format": "uuid"
-    },
     "first_name": {
       "type": "string"
     },
