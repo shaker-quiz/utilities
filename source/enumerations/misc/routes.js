@@ -1,6 +1,7 @@
 export var Service = /** @type {const} */ ({
   'Users': 'Users',
   'Roles': 'Roles',
+  'Checkin': 'Checkin',
   'Locations': 'Locations',
   'Cities': 'Cities',
   'Venues': 'Venues',
@@ -8,7 +9,6 @@ export var Service = /** @type {const} */ ({
   'Games': 'Games',
   'Registrations': 'Registrations',
   'Files': 'Files',
-  'Checkin': 'Checkin',
   'Procedures': 'Procedures',
   'Integrations': 'Integrations',
   'Updates': 'Updates',
@@ -20,11 +20,11 @@ export var Service = /** @type {const} */ ({
 export var Services = Object.values(Service)
 
 export var SingularRoute = /** @type {const} */ ({
-  'role': 'role',
   'user': 'user',
   'user/password': 'user/password',
   'user/role': 'user/role',
   'user/cities': 'user/cities',
+  'role': 'role',
   'checkin': 'checkin',
   'country': 'country',
   'currency': 'currency',
@@ -57,11 +57,11 @@ export var SingularRoute = /** @type {const} */ ({
 export var SingularRoutes = Object.values(SingularRoute)
 
 export var PluralRoute = /** @type {const} */ ({
-  'roles': 'roles',
   'users': 'users',
   'users/password': 'users/password',
   'users/role': 'users/role',
   'users/cities': 'users/cities',
+  'roles': 'roles',
   'checkins': 'checkins',
   'countries': 'countries',
   'currencies': 'currencies',
@@ -94,11 +94,11 @@ export var Route = {
 }
 
 export var SingularPluralRouteRelation = {
-  [Route['role']]: Route['roles'],
   [Route['user']]: Route['users'],
   [Route['user/password']]: Route['users/password'],
   [Route['user/role']]: Route['users/role'],
   [Route['user/cities']]: Route['users/cities'],
+  [Route['role']]: Route['roles'],
   [Route['checkin']]: Route['checkins'],
   [Route['country']]: Route['countries'],
   [Route['currency']]: Route['currencies'],
@@ -415,6 +415,10 @@ export var ServiceRoutes = {
     Route['roles'],
   ],
 
+  [Service.Checkin]: [
+    Route['checkin'],
+  ],
+
   [Service.Locations]: [
     Route['country'],
     Route['countries'],
@@ -434,6 +438,7 @@ export var ServiceRoutes = {
     Route['cities/country'],
     Route['cities/currency'],
     Route['cities/timezone'],
+    Route['cities/venues'],
   ],
 
   [Service.Venues]: [
@@ -476,10 +481,6 @@ export var ServiceRoutes = {
     Route['registration/cancellation'],
     Route['registrations'],
     Route['registrations/export'],
-  ],
-
-  [Service.Checkin]: [
-    Route['checkin'],
   ],
 
   [Service.Procedures]: [],
