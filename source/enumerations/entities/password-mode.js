@@ -3,14 +3,14 @@ export var PasswordMode = /** @type {const} */ ({
   'unknown': 'unknown',
 })
 
-export var RoleModes = Object.values(PasswordMode)
+export var PasswordModes = Object.values(PasswordMode)
 
-export var RoleModeTitle = {
+export var PasswordModeTitle = {
   [PasswordMode.known]: 'Назначен',
   [PasswordMode.unknown]: 'Неизвестно',
 }
 
-export var RoleModeWeight = {
+export var PasswordModeWeight = {
   [PasswordMode.known]: 0,
   [PasswordMode.unknown]: 1,
 }
