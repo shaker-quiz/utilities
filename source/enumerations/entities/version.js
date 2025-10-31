@@ -1,8 +1,8 @@
-export var Version = {
+export var Version = /** @type {const} */ ({
   'Actual': 'Actual',
   'Legacy': 'Legacy',
   'Unknown': 'Unknown',
-}
+})
 
 export var Versions = Object.values(Version)
 
@@ -32,19 +32,19 @@ export var ChatappVersionWeight = {
   [Version['Unknown']]: 2,
 }
 
-export var ChatappVersionShape = {
+export var ChatappVersionShape = /** @type {const} */ ({
   [Version['Actual']]: {
     chatapp_legacy: false,
   },
 
-  [Version['Actual']]: {
-    chatapp_legacy: false,
+  [Version['Legacy']]: {
+    chatapp_legacy: true,
   },
 
   [Version['Unknown']]: {
     chatapp_legacy: null,
   },
-}
+})
 
 export var ChatappVersionShapes = Object.entries(ChatappVersionShape)
 
