@@ -23,5 +23,6 @@ export * from './enumerations/entities/role-mode.js'
 export * from './enumerations/entities/role.js'
 export * from './enumerations/entities/venue-status.js'
 export * from './enumerations/entities/venues-mode.js'
+export * from './enumerations/entities/version.js'
 
 export * from './functions/tag.js'
