@@ -81,5 +81,8 @@ export var getAffilation = value => {
       return value in AffilationShape
         ? AffilationShape[value]
         : AffilationShape[Affilation['Unknown']]
+
+    default:
+      return Affilation['Unknown']
   }
 }
