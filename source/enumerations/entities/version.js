@@ -32,6 +32,12 @@ export var ChatappVersionWeight = {
   [Version['Unknown']]: 2,
 }
 
+export var ChatappVersionTitle = {
+  [Version['Actual']]: VersionTitle['Actual'],
+  [Version['Legacy']]: VersionTitle['Legacy'],
+  [Version['Unknown']]: VersionTitle['Unknown'],
+}
+
 export var ChatappVersionShape = /** @type {const} */ ({
   [Version['Actual']]: {
     chatapp_legacy: false,
