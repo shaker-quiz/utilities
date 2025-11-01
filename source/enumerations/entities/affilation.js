@@ -7,59 +7,59 @@ export var Affilation = /** @type {const} */ ({
 export var Affilations = Object.values(Affilation)
 
 export var AffilationWeight = {
-  [Affilation.Branch]: 0,
-  [Affilation.Franchise]: 1,
-  [Affilation.Unknown]: 2,
+  [Affilation['Branch']]: 0,
+  [Affilation['Franchise']]: 1,
+  [Affilation['Unknown']]: 2,
 }
 
 export var AffilationTitle = {
-  [Affilation.Branch]: 'Филиал',
-  [Affilation.Franchise]: 'Франшиза',
-  [Affilation.Unknown]: 'Неизвестно',
+  [Affilation['Branch']]: 'Филиал',
+  [Affilation['Franchise']]: 'Франшиза',
+  [Affilation['Unknown']]: 'Неизвестно',
 }
 
 export var AffilationActionTitle = {
-  [Affilation.Branch]: '',
-  [Affilation.Franchise]: '',
-  [Affilation.Unknown]: '',
+  [Affilation['Branch']]: '',
+  [Affilation['Franchise']]: '',
+  [Affilation['Unknown']]: '',
 }
 
 export var AffilationActionDescpription = {
-  [Affilation.Branch]: '',
-  [Affilation.Franchise]: '',
-  [Affilation.Unknown]: '',
+  [Affilation['Branch']]: '',
+  [Affilation['Franchise']]: '',
+  [Affilation['Unknown']]: '',
 }
 
 export var AffilationColor = {
-  [Affilation.Branch]: 'primary',
-  [Affilation.Franchise]: 'secondary',
-  [Affilation.Unknown]: 'danger',
+  [Affilation['Branch']]: 'primary',
+  [Affilation['Franchise']]: 'secondary',
+  [Affilation['Unknown']]: 'danger',
 }
 
 export var AffilationTextColor = {
-  [Affilation.Branch]: 'text-primary',
-  [Affilation.Franchise]: 'text-secondary',
-  [Affilation.Unknown]: 'text-danger',
+  [Affilation['Branch']]: 'text-primary',
+  [Affilation['Franchise']]: 'text-secondary',
+  [Affilation['Unknown']]: 'text-danger',
 }
 
 /** @type {Record<Affilation, Icon>} */
 export var AffilationIcon = {
-  [Affilation.Branch]: 'hero/outline/building-office-2',
-  [Affilation.Franchise]: 'hero/outline/building-storefront',
-  [Affilation.Unknown]: 'hero/outline/no-symbol',
+  [Affilation['Branch']]: 'hero/outline/building-office-2',
+  [Affilation['Franchise']]: 'hero/outline/building-storefront',
+  [Affilation['Unknown']]: 'hero/outline/no-symbol',
 }
 
 /** @type {Record<Affilation, Pick<CityTable, 'is_franchise'>>} */
 export var AffilationShape = {
-  [Affilation.Branch]: {
+  [Affilation['Branch']]: {
     is_franchise: false,
   },
 
-  [Affilation.Franchise]: {
+  [Affilation['Franchise']]: {
     is_franchise: true,
   },
 
-  [Affilation.Unknown]: {
+  [Affilation['Unknown']]: {
     is_franchise: null,
   },
 }
