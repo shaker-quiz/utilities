@@ -494,6 +494,8 @@
       ]
     }
   },
-  "required": [],
+  "required": [
+    "id"
+  ],
   "additionalProperties": false
 }
