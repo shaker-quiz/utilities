@@ -55,6 +55,9 @@ export var ChatappVersionShape = /** @type {const} */ ({
 export var ChatappVersionShapes = Object.entries(ChatappVersionShape)
 
 export var getChatappVersion = value => {
+  if (value === null)
+    return ChatappVersion['Unknown']
+
   switch (typeof value) {
     case 'object':
       return ChatappVersionShapes

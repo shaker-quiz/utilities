@@ -33,6 +33,9 @@ var getter = value =>
     : CitiesMode['unknown']
 
 export var getCitiesMode = value => {
+  if (value === null)
+    return getter(undefined)
+
   switch (typeof value) {
     case 'string':
       return getter(value)

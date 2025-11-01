@@ -24,6 +24,9 @@ var getter = value =>
     : PasswordMode['unknown']
 
 export var getPasswordMode = value => {
+  if (value === null)
+    return getter(undefined)
+
   switch (typeof value) {
     case 'string':
       return getter(value)

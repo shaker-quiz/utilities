@@ -24,6 +24,9 @@ var getter = value =>
     : RoleMode['unknown']
 
 export var getRoleMode = value => {
+  if (value === null)
+    return getter(undefined)
+
   switch (typeof value) {
     case 'string':
       return getter(value)

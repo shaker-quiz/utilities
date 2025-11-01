@@ -70,6 +70,9 @@ export var AffilationShapes = Object.entries(AffilationShape)
  * @param {Affilation | typeof AffilationShape[Affilation]} value
  */
 export var getAffilation = value => {
+  if (value === null)
+    return Affilation['Unknown']
+
   switch (typeof value) {
     case 'object':
       return AffilationShapes
