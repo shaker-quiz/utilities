@@ -24,7 +24,7 @@
         "AM"
       ]
     },
-    "currency": {
+    "currency_name": {
       "type": "string",
       "enum": [
         "AED",
@@ -688,7 +688,7 @@
     "name",
     "alias",
     "country",
-    "currency",
+    "currency_name",
     "is_franchise",
     "timezone_name"
   ],
