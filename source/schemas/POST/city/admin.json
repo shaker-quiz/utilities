@@ -686,9 +686,9 @@
   },
   "required": [
     "name",
+    "alias",
     "country",
     "currency",
-    "alias",
     "is_franchise",
     "timezone_name"
   ],
