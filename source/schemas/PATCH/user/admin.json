@@ -1,19 +1,30 @@
 {
   "type": "object",
   "properties": {
-    "first_name": {
-      "type": "string"
-    },
-    "last_name": {
+    "email": {
       "type": "string"
     },
     "phone": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
-    "email": {
-      "type": "string"
+    "first_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_name": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   },
-  "required": [],
+  "required": [
+    "email"
+  ],
   "additionalProperties": false
 }
