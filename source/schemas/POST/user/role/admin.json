@@ -6,6 +6,8 @@
       "format": "uuid"
     }
   },
-  "required": [],
+  "required": [
+    "id"
+  ],
   "additionalProperties": false
 }

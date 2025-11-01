@@ -5,6 +5,8 @@
       "type": "string"
     }
   },
-  "required": [],
+  "required": [
+    "password"
+  ],
   "additionalProperties": false
 }
