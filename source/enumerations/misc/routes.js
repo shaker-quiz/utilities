@@ -197,7 +197,7 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['cities/venues']]: 'cities/venues',
 
   [Route['venue']]: 'venue/:venue',
-  [Route['venue/city']]: 'venues/city',
+  [Route['venue/city']]: 'venue/:venue/city',
 
   [Route['venues']]: 'venues',
   [Route['venues/city']]: 'venues/city',
@@ -284,7 +284,7 @@ export var RouteParams = /** @type {const} */ ({
   [Route['venue/city']]: [':venue'],
 
   [Route['venues']]: [],
-  [Route['venues/city']]: [':venue'],
+  [Route['venues/city']]: [],
 
   [Route['theme']]: [':theme'],
   [Route['theme/cover']]: [':theme'],
