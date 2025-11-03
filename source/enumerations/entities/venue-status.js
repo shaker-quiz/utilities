@@ -12,7 +12,7 @@ export var VenueStatuses = [
   VenueStatus['UNKNOWN'],
 ]
 
-export var WritableVenueStatuses = [
+export var PersistedVenueStatuses = [
   VenueStatus['ACTIVE'],
   VenueStatus['ARCHIVE'],
 ]

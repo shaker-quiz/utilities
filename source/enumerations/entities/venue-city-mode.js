@@ -10,6 +10,11 @@ export var VenueCityModes = [
   VenueCityMode['unknown'],
 ]
 
+export var DerivedVenueCityModes = [
+  VenueCityMode['known'],
+  VenueCityMode['unknown'],
+]
+
 export var VenueCityModeTitle = /** @type {const} */ ({
   [VenueCityMode['any']]: 'Любой',
   [VenueCityMode['known']]: 'Назначен',
