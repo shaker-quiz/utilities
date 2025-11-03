@@ -6,7 +6,7 @@ export var VenueCityMode = /** @type {const} */ ({
 
 export var VenueCityModes = Object.values(VenueCityMode)
 
-export var VenueCityMode = /** @type {const} */ ({
+export var VenueCityModeTitle = /** @type {const} */ ({
   'any': 'Любой',
   'known': 'Назначен',
   'unknown': 'Неизвестно',
