@@ -24,7 +24,6 @@ export var VenueStatusTitle = {
   [VenueStatus['UNKNOWN']]: 'Неизвестно',
 }
 
-/** @type {Record<keyof typeof VenueStatus, Icon>} */
 export var VenueStatusIcon = {
   [VenueStatus['ANY']]: 'hero/outline/square-2-stack',
   [VenueStatus['ACTIVE']]: 'hero/outline/check',

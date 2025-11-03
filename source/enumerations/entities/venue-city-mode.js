@@ -4,13 +4,23 @@ export var VenueCityMode = /** @type {const} */ ({
   'unknown': 'unknown',
 })
 
-export var VenueCityModes = Object.values(VenueCityMode)
+export var VenueCityModes = [
+  VenueCityMode['any'],
+  VenueCityMode['known'],
+  VenueCityMode['unknown'],
+]
 
 export var VenueCityModeTitle = /** @type {const} */ ({
-  'any': 'Любой',
-  'known': 'Назначен',
-  'unknown': 'Неизвестно',
+  [VenueCityMode['any']]: 'Любой',
+  [VenueCityMode['known']]: 'Назначен',
+  [VenueCityMode['unknown']]: 'Неизвестно',
 })
+
+export var VenueCityModeIcon = {
+  [VenueCityMode['any']]: 'hero/outline/square-2-stack',
+  [VenueCityMode['known']]: 'hero/outline/check',
+  [VenueCityMode['unknown']]: 'hero/outline/no-symbol',
+}
 
 /**
  * @returns {keyof typeof VenueCityMode}
