@@ -52,4 +52,3 @@ export var getVenueStatus = value => {
       return get(undefined)
   }
 }
-ß
