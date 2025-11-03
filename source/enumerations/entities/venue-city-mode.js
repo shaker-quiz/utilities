@@ -1,6 +1,15 @@
 export var VenueCityMode = /** @type {const} */ ({
+  'any': 'any',
   'known': 'known',
   'unknown': 'unknown',
+})
+
+export var VenueCityModes = Object.values(VenueCityMode)
+
+export var VenueCityMode = /** @type {const} */ ({
+  'any': 'Любой',
+  'known': 'Назначен',
+  'unknown': 'Неизвестно',
 })
 
 /**

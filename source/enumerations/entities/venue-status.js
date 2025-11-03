@@ -1,24 +1,32 @@
 export var VenueStatus = /** @type {const} */ ({
+  'ANY': 'ANY',
   'ACTIVE': 'ACTIVE',
   'ARCHIVE': 'ARCHIVE',
   'UNKNOWN': 'UNKNOWN',
 })
 
-export var VenueStatuses = Object.values(VenueStatus)
+export var VenueStatuses = [
+  VenueStatus['ANY'],
+  VenueStatus['ACTIVE'],
+  VenueStatus['ARCHIVE'],
+  VenueStatus['UNKNOWN'],
+]
 
-export var VenueStatusWeight = {
-  [VenueStatus['ACTIVE']]: 0,
-  [VenueStatus['ARCHIVE']]: 1,
-}
+export var WritableVenueStatuses = [
+  VenueStatus['ACTIVE'],
+  VenueStatus['ARCHIVE'],
+]
 
 export var VenueStatusTitle = {
+  [VenueStatus['ANY']]: 'Любой',
   [VenueStatus['ACTIVE']]: 'Активно',
   [VenueStatus['ARCHIVE']]: 'Архив',
   [VenueStatus['UNKNOWN']]: 'Неизвестно',
 }
 
-/** @type {Record<VenueStatus, Icon>} */
+/** @type {Record<keyof typeof VenueStatus, Icon>} */
 export var VenueStatusIcon = {
+  [VenueStatus['ANY']]: 'hero/outline/square-2-stack',
   [VenueStatus['ACTIVE']]: 'hero/outline/check',
   [VenueStatus['ARCHIVE']]: 'hero/outline/archive-box',
   [VenueStatus['UNKNOWN']]: 'hero/outline/no-symbol',
@@ -44,3 +52,4 @@ export var getVenueStatus = value => {
       return get(undefined)
   }
 }
+ß
