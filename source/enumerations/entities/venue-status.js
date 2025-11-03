@@ -24,6 +24,9 @@ export var VenueStatusIcon = {
   [VenueStatus['UNKNOWN']]: 'hero/outline/no-symbol',
 }
 
+/**
+ * @returns {keyof typeof VenueStatus}
+ */
 var get = value =>
   value in VenueStatus
     ? value
