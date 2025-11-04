@@ -42,8 +42,8 @@ export var VenueAudienceTitle = {
 
 export var VenueAudienceIcon = {
   [VenueAudience['Any']]: 'hero/outline/square-2-stack',
-  [VenueAudience['All']]: 'hero/outline/check-circle',
-  [VenueAudience['Restricted']]: 'hero/outline/x-circle',
+  [VenueAudience['All']]: 'hero/outline/lock-open',
+  [VenueAudience['Restricted']]: 'hero/outline/lock-closed',
   [VenueAudience['Unknown']]: 'hero/outline/no-symbol',
 }
 
