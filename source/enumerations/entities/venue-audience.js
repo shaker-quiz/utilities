@@ -69,7 +69,7 @@ var fromObject = value =>
  */
 var toObject = value =>
   VenueAudienceShapes
-    .find(([, shape]) => shape.is_adult === value?.is_adult)
+    .find(([venueAudience, shape]) => venueAudience === value)
     ?.at(1)
     ?? VenueAudienceShape[VenueAudience['Unknown']]
 
