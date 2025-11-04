@@ -35,8 +35,8 @@ var VenueAudienceShapes = Object.entries(VenueAudienceShape)
 
 export var VenueAudienceTitle = {
   [VenueAudience['Any']]: 'Любая',
-  [VenueAudience['All']]: 'Без ограничений',
-  [VenueAudience['Restricted']]: 'Только взрослые (18+)',
+  [VenueAudience['All']]: 'Открытая',
+  [VenueAudience['Restricted']]: 'Закрытая',
   [VenueAudience['Unknown']]: 'Неизвестно',
 }
 
