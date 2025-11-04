@@ -12,7 +12,7 @@ export var VenueAudiences = [
   VenueAudience['Unknown'],
 ]
 
-export var PersistedVenueStatuses = [
+export var PersistedVenueAudiences = [
   VenueAudience['All'],
   VenueAudience['Restricted'],
 ]
