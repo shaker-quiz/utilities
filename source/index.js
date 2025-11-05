@@ -19,8 +19,9 @@ export * from './enumerations/entities/registration-channel.js'
 export * from './enumerations/entities/registration-lineup.js'
 export * from './enumerations/entities/registration-mailing.js'
 export * from './enumerations/entities/registration-status.js'
-export * from './enumerations/entities/role-mode.js'
 export * from './enumerations/entities/role.js'
+
+export * from './enumerations/entities/user/role-mode.js'
 
 export * from './enumerations/entities/city/timezone-mode.js'
 export * from './enumerations/entities/city/venues-mode.js'
@@ -29,6 +30,7 @@ export * from './enumerations/entities/venue/audience.js'
 export * from './enumerations/entities/venue/city-mode.js'
 export * from './enumerations/entities/venue/status.js'
 
+export * from './enumerations/entities/mode.js'
 export * from './enumerations/entities/version.js'
 
 export * from './functions/tag.js'
