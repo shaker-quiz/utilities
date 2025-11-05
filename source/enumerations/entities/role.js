@@ -37,3 +37,19 @@ export var RoleIcon = {
   [Role['manager']]: 'hero/outline/user',
   [Role['default']]: 'hero/outline/user',
 }
+
+/**
+ * @returns {keyof typeof Role}
+ */
+export var inferRole = value => {
+  switch (typeof value) {
+    case 'string':
+      return value in Role ? Role[value] : Role['default']
+
+    case 'object':
+      return inferRole(value?.role?.name)
+
+    default:
+      return Role['default']
+  }
+}
