@@ -3,6 +3,6 @@ export var RenderMode = /** @type {const} */ ({
   'Chip': 'Chip',
   'Unset': 'Unset',
   'Domain': 'Domain',
-  'System': 'System',
+  'Derived': 'Derived',
   'Indifferent': 'Indifferent',
 })
