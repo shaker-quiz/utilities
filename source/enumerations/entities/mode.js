@@ -18,6 +18,42 @@ export var Modes = [
   Mode['Unknown'],
 ]
 
+export var ModeModes = {
+  [Mode['Any']]: [
+    Mode['Any'],
+    Mode['None'],
+    Mode['Single'],
+    Mode['Many'],
+    Mode['All'],
+    Mode['Known'],
+    Mode['Unknown'],
+  ],
+
+  [Mode['None']]: [
+    Mode['None'],
+  ],
+
+  [Mode['Single']]: [
+    Mode['Single'],
+  ],
+
+  [Mode['Many']]: [
+    Mode['Many'],
+  ],
+
+  [Mode['All']]: [
+    Mode['All'],
+  ],
+
+  [Mode['Known']]: [
+    Mode['Known'],
+  ],
+
+  [Mode['Unknown']]: [
+    Mode['Unknown'],
+  ],
+}
+
 export var ModeNumberGenderTranslation = {
   ru: {
     singular: {
