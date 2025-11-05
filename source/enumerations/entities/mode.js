@@ -64,54 +64,52 @@ export var ModeIcon = {
   [Mode['Unknown']]: 'hero/outline/no-symbol',
 }
 
-export var ModeNumberGenderTranslation = {
-  ru: {
-    singular: {
-      masculine: {
-        [Mode['Any']]: 'Любой',
-        [Mode['None']]: 'Пуст',
-        [Mode['Single']]: 'Один',
-        [Mode['Many']]: 'Много',
-        [Mode['All']]: 'Все',
-        [Mode['Known']]: 'Назначено',
-        [Mode['Unknown']]: 'Неизвестно',
-      },
-
-      feminine: {
-        [Mode['Any']]: 'Любая',
-        [Mode['None']]: 'Пусто',
-        [Mode['Single']]: 'Одна',
-        [Mode['Many']]: 'Много',
-        [Mode['All']]: 'Все',
-        [Mode['Known']]: 'Назначено',
-        [Mode['Unknown']]: 'Неизвестно',
-      },
-
-      neuter: {
-        [Mode['Any']]: 'Любое',
-        [Mode['None']]: 'Пусто',
-        [Mode['Single']]: 'Одно',
-        [Mode['Many']]: 'Много',
-        [Mode['All']]: 'Все',
-        [Mode['Known']]: 'Назначено',
-        [Mode['Unknown']]: 'Неизвестно',
-      },
+export var ModeNumberGenderTitle = {
+  singular: {
+    masculine: {
+      [Mode['Any']]: 'Любой',
+      [Mode['None']]: 'Пуст',
+      [Mode['Single']]: 'Один',
+      [Mode['Many']]: 'Много',
+      [Mode['All']]: 'Все',
+      [Mode['Known']]: 'Назначено',
+      [Mode['Unknown']]: 'Неизвестно',
     },
 
-    plural: {
-      masculine: {},
+    feminine: {
+      [Mode['Any']]: 'Любая',
+      [Mode['None']]: 'Пусто',
+      [Mode['Single']]: 'Одна',
+      [Mode['Many']]: 'Много',
+      [Mode['All']]: 'Все',
+      [Mode['Known']]: 'Назначено',
+      [Mode['Unknown']]: 'Неизвестно',
+    },
 
-      feminine: {},
+    neuter: {
+      [Mode['Any']]: 'Любое',
+      [Mode['None']]: 'Пусто',
+      [Mode['Single']]: 'Одно',
+      [Mode['Many']]: 'Много',
+      [Mode['All']]: 'Все',
+      [Mode['Known']]: 'Назначено',
+      [Mode['Unknown']]: 'Неизвестно',
+    },
+  },
 
-      indeterminate: {
-        [Mode['Any']]: 'Любые',
-        [Mode['None']]: 'Пусто',
-        [Mode['Single']]: 'Один',
-        [Mode['Many']]: 'Много',
-        [Mode['All']]: 'Все',
-        [Mode['Known']]: 'Назначено',
-        [Mode['Unknown']]: 'Неизвестно',
-      },
+  plural: {
+    masculine: {},
+
+    feminine: {},
+
+    indeterminate: {
+      [Mode['Any']]: 'Любые',
+      [Mode['None']]: 'Пусто',
+      [Mode['Single']]: 'Один',
+      [Mode['Many']]: 'Много',
+      [Mode['All']]: 'Все',
+      [Mode['Known']]: 'Назначено',
+      [Mode['Unknown']]: 'Неизвестно',
     },
   },
 }
