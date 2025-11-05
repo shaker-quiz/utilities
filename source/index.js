@@ -21,8 +21,6 @@ export * from './enumerations/entities/registration-mailing.js'
 export * from './enumerations/entities/registration-status.js'
 export * from './enumerations/entities/role.js'
 
-export * from './enumerations/entities/user/role-mode.js'
-
 export * from './enumerations/entities/city/timezone-mode.js'
 export * from './enumerations/entities/city/venues-mode.js'
 
