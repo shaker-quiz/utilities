@@ -1,3 +1,6 @@
+import { Gender } from './gender.js'
+import { Numerosity } from './numerosity.js'
+
 export var Mode = /** @type {const} */ ({
   'Any': 'Any',
   'None': 'None',
@@ -64,52 +67,48 @@ export var ModeIcon = {
   [Mode['Unknown']]: 'hero/outline/no-symbol',
 }
 
-export var ModeNumberGenderTitle = {
-  singular: {
-    masculine: {
+export var ModeTitle = {
+  [Numerosity['Singular']]: {
+    [Gender['Masculine']]: {
       [Mode['Any']]: 'Любой',
-      [Mode['None']]: 'Пуст',
-      [Mode['Single']]: 'Один',
+      [Mode['None']]: 'Отсутствует',
+      [Mode['Single']]: '...',
       [Mode['Many']]: 'Много',
       [Mode['All']]: 'Все',
       [Mode['Known']]: 'Назначено',
-      [Mode['Unknown']]: 'Неизвестно',
+      [Mode['Unknown']]: 'Не назначен',
     },
 
-    feminine: {
+    [Gender['Feminine']]: {
       [Mode['Any']]: 'Любая',
-      [Mode['None']]: 'Пусто',
-      [Mode['Single']]: 'Одна',
+      [Mode['None']]: 'Отсутствует',
+      [Mode['Single']]: '...',
       [Mode['Many']]: 'Много',
       [Mode['All']]: 'Все',
-      [Mode['Known']]: 'Назначено',
-      [Mode['Unknown']]: 'Неизвестно',
+      [Mode['Known']]: 'Назначена',
+      [Mode['Unknown']]: 'Не назначена',
     },
 
-    neuter: {
+    [Gender['Neuter']]: {
       [Mode['Any']]: 'Любое',
-      [Mode['None']]: 'Пусто',
-      [Mode['Single']]: 'Одно',
+      [Mode['None']]: 'Отсутствует',
+      [Mode['Single']]: '...',
       [Mode['Many']]: 'Много',
       [Mode['All']]: 'Все',
       [Mode['Known']]: 'Назначено',
-      [Mode['Unknown']]: 'Неизвестно',
+      [Mode['Unknown']]: 'Не назначено',
     },
   },
 
-  plural: {
-    masculine: {},
-
-    feminine: {},
-
-    indeterminate: {
+  [Numerosity['Plural']]: {
+    [Gender['Indeterminate']]: {
       [Mode['Any']]: 'Любые',
-      [Mode['None']]: 'Пусто',
-      [Mode['Single']]: 'Один',
+      [Mode['None']]: 'Отсутствуют',
+      [Mode['Single']]: '...',
       [Mode['Many']]: 'Много',
       [Mode['All']]: 'Все',
-      [Mode['Known']]: 'Назначено',
-      [Mode['Unknown']]: 'Неизвестно',
+      [Mode['Known']]: 'Назначены',
+      [Mode['Unknown']]: 'Не назначены',
     },
   },
 }
