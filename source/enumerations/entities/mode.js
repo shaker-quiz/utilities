@@ -18,7 +18,7 @@ export var Modes = [
   Mode['Unknown'],
 ]
 
-export const ModeNumberGenderTranslation = {
+export var ModeNumberGenderTranslation = {
   ru: {
     singular: {
       masculine: {
