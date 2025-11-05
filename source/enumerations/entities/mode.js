@@ -59,7 +59,7 @@ export var ModeIcon = {
   [Mode['None']]: 'hero/outline/x-mark',
   [Mode['Single']]: 'hero/outline/no-symbol',
   [Mode['Many']]: 'hero/outline/no-symbol',
-  [Mode['All']]: 'hero/outline/so-symbol',
+  [Mode['All']]: 'hero/outline/no-symbol',
   [Mode['Known']]: 'hero/outline/check',
   [Mode['Unknown']]: 'hero/outline/no-symbol',
 }
