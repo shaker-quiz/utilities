@@ -25,26 +25,18 @@ export var CityTimezoneModeIcon = {
 /**
  * @returns {keyof typeof CityTimezoneMode} value
  */
-var fromString = value =>
+var inferString = value =>
   value in CityTimezoneMode
     ? value
-    : CityTimezoneMode['Unknown']
-
-/**
- * @returns {keyof typeof CityTimezoneMode} value
- */
-var fromObject = value =>
-  value?.mode in CityTimezoneMode
-    ? value.mode
     : CityTimezoneMode['Unknown']
 
 export var inferCityTimezoneMode = value => {
   switch (typeof value) {
     case 'string':
-      return fromString(value)
+      return inferString(value)
 
     case 'object':
-      return fromObject(value)
+      return inferString(value?.mode)
 
     default:
       return CityTimezoneMode['Unknown']

@@ -1,49 +1,44 @@
 export var VenueCityMode = /** @type {const} */ ({
-  'any': 'any',
-  'known': 'known',
-  'unknown': 'unknown',
+  'Any': 'Any',
+  'Known': 'Known',
+  'Unknown': 'Unknown',
 })
 
 export var VenueCityModes = [
-  VenueCityMode['any'],
-  VenueCityMode['known'],
-  VenueCityMode['unknown'],
-]
-
-export var DerivedVenueCityModes = [
-  VenueCityMode['known'],
-  VenueCityMode['unknown'],
+  VenueCityMode['Any'],
+  VenueCityMode['Known'],
+  VenueCityMode['Unknown'],
 ]
 
 export var VenueCityModeTitle = /** @type {const} */ ({
-  [VenueCityMode['any']]: 'Любой',
-  [VenueCityMode['known']]: 'Назначен',
-  [VenueCityMode['unknown']]: 'Неизвестно',
+  [VenueCityMode['Any']]: 'Любой',
+  [VenueCityMode['Known']]: 'Назначен',
+  [VenueCityMode['Unknown']]: 'Неизвестно',
 })
 
 export var VenueCityModeIcon = {
-  [VenueCityMode['any']]: 'hero/outline/square-2-stack',
-  [VenueCityMode['known']]: 'hero/outline/check',
-  [VenueCityMode['unknown']]: 'hero/outline/no-symbol',
+  [VenueCityMode['Any']]: 'hero/outline/square-2-stack',
+  [VenueCityMode['Known']]: 'hero/outline/check',
+  [VenueCityMode['Unknown']]: 'hero/outline/no-symbol',
 }
 
 /**
  * @returns {keyof typeof VenueCityMode}
  */
-var get = value =>
+var inferString = value =>
   value in VenueCityMode
     ? value
-    : VenueCityMode['unknown']
+    : VenueCityMode['Unknown']
 
-export var getVenueCityMode = value => {
+export var inferVenueCityMode = value => {
   switch (typeof value) {
     case 'string':
-      return get(value)
+      return inferString(value)
 
     case 'object':
-      return get(value?.mode)
+      return inferString(value?.mode)
 
     default:
-      return get(undefined)
+      return VenueCityMode['Unknown']
   }
 }
