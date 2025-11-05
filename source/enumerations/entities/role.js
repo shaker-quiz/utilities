@@ -18,14 +18,70 @@ export var Roles = [
   Role['default'],
 ]
 
-export var RoleTitle = {
-  [Role['admin']]: 'Админ',
-  [Role['organizer']]: 'Организатор',
-  [Role['captain']]: 'Капитан',
-  [Role['player']]: 'Игрок',
-  [Role['user']]: 'Пользователь',
-  [Role['manager']]: 'Менеджер',
-  [Role['default']]: 'Неавторизован',
+export var RoleNumberGenderTitle = {
+  singular: {
+    masculine: {
+      [Role['admin']]: 'Администратор',
+      [Role['organizer']]: 'Организатор',
+      [Role['captain']]: 'Капитан',
+      [Role['player']]: 'Игрок',
+      [Role['user']]: 'Пользователь',
+      [Role['manager']]: 'Менеджер',
+      [Role['default']]: 'Гость',
+    },
+
+    feminine: {
+      [Role['admin']]: 'Администраторка',
+      [Role['organizer']]: 'Организаторка',
+      [Role['captain']]: 'Капитанша',
+      [Role['player']]: 'Игрок',
+      [Role['user']]: 'Пользовательница',
+      [Role['manager']]: 'Менеджерка',
+      [Role['default']]: 'Гостья',
+    },
+
+    neuter: {
+      [Role['admin']]: 'Администратор',
+      [Role['organizer']]: 'Организатор',
+      [Role['captain']]: 'Капитан',
+      [Role['player']]: 'Игрок',
+      [Role['user']]: 'Пользователm',
+      [Role['manager']]: 'Менеджер',
+      [Role['default']]: 'Гость',
+    },
+  },
+
+  plural: {
+    masculine: {
+      [Role['admin']]: 'Администраторы',
+      [Role['organizer']]: 'Организаторы',
+      [Role['captain']]: 'Капитаны',
+      [Role['player']]: 'Игроки',
+      [Role['user']]: 'Пользователи',
+      [Role['manager']]: 'Менеджеры',
+      [Role['default']]: 'Гости',
+    },
+
+    feminine: {
+      [Role['admin']]: 'Администраторки',
+      [Role['organizer']]: 'Организаторки',
+      [Role['captain']]: 'Капитанши',
+      [Role['player']]: 'Игроки',
+      [Role['user']]: 'Пользовательницы',
+      [Role['manager']]: 'Менеджерки',
+      [Role['default']]: 'Гости',
+    },
+
+    indeterminate: {
+      [Role['admin']]: 'Администраторы',
+      [Role['organizer']]: 'Организаторы',
+      [Role['captain']]: 'Капитаны',
+      [Role['player']]: 'Игроки',
+      [Role['user']]: 'Пользователи',
+      [Role['manager']]: 'Менеджеры',
+      [Role['default']]: 'Гости',
+    },
+  },
 }
 
 export var RoleIcon = {
