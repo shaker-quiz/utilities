@@ -75,7 +75,7 @@ export var ModeTitle = {
       [Mode['Single']]: 'Один',
       [Mode['Many']]: 'Много',
       [Mode['All']]: 'Все',
-      [Mode['Known']]: 'Назначено',
+      [Mode['Known']]: 'Назначен',
       [Mode['Unknown']]: 'Не назначен',
     },
 
