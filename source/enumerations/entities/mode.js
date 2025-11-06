@@ -72,7 +72,7 @@ export var ModeTitle = {
     [Gender['Masculine']]: {
       [Mode['Any']]: 'Любой',
       [Mode['None']]: 'Отсутствует',
-      [Mode['Single']]: '...',
+      [Mode['Single']]: 'Один',
       [Mode['Many']]: 'Много',
       [Mode['All']]: 'Все',
       [Mode['Known']]: 'Назначено',
@@ -82,7 +82,7 @@ export var ModeTitle = {
     [Gender['Feminine']]: {
       [Mode['Any']]: 'Любая',
       [Mode['None']]: 'Отсутствует',
-      [Mode['Single']]: '...',
+      [Mode['Single']]: 'Одна',
       [Mode['Many']]: 'Много',
       [Mode['All']]: 'Все',
       [Mode['Known']]: 'Назначена',
@@ -92,7 +92,7 @@ export var ModeTitle = {
     [Gender['Neuter']]: {
       [Mode['Any']]: 'Любое',
       [Mode['None']]: 'Отсутствует',
-      [Mode['Single']]: '...',
+      [Mode['Single']]: 'Одно',
       [Mode['Many']]: 'Много',
       [Mode['All']]: 'Все',
       [Mode['Known']]: 'Назначено',
@@ -104,7 +104,7 @@ export var ModeTitle = {
     [Gender['Indeterminate']]: {
       [Mode['Any']]: 'Любые',
       [Mode['None']]: 'Отсутствуют',
-      [Mode['Single']]: '...',
+      [Mode['Single']]: 'Один',
       [Mode['Many']]: 'Много',
       [Mode['All']]: 'Все',
       [Mode['Known']]: 'Назначены',
