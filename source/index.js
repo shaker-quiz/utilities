@@ -32,5 +32,6 @@ export * from './enumerations/venue/city-mode.js'
 export * from './enumerations/venue/status.js'
 
 export * from './functions/hydrate-route-pathname.js'
+export * from './functions/infer.js'
 export * from './functions/route-key.js'
 export * from './functions/tag.js'
