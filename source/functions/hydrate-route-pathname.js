@@ -1,4 +1,4 @@
-import { guardRoute, guardRouteParams, guardRoutePathname } from '../enumerations/routes.js'
+import { guardRoute, guardRouteParams, guardRoutePathname } from '../enumerations/route.js'
 import { isTag } from '../functions/tag.js'
 
 export var hydrateRoutePathname = (maybeRoute, maybeRouteParams) => {

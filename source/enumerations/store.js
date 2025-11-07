@@ -1,4 +1,4 @@
-export var StateKey = {
+export var StoreKey = {
   'checkin': /^GET\/checkin$/,
   'user': /^GET\/user\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/,
   'role': /^GET\/role\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/,
