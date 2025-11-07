@@ -22,23 +22,3 @@ export var Methods = [
   Method['PATCH'],
   Method['DELETE'],
 ]
-
-/**
- * @returns {typeof Method[keyof typeof Method] | typeof Mode['Unknown']}
- */
-export var inferMethod = value =>
-  value in Method
-    ? Method[value]
-    : Mode['Unknown']
-
-/**
- * @throws {TypeError}
- */
-export var guardMethod = value => {
-  var method = inferMethod(value)
-
-  if (method === Mode['Unknown'])
-    throw TypeError(`Cannot infer Method for '${value}'.`)
-
-  return method
-}

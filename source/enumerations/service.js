@@ -39,23 +39,3 @@ export var Services = [
   Service['Vkma'],
   Service['Minio'],
 ]
-
-/**
- * @returns {typeof Service[keyof typeof Service] | typeof Mode['Unknown']}
- */
-export var inferService = value =>
-  value in Service
-    ? Service[value]
-    : Mode['Unknown']
-
-/**
- * @throws {TypeError}
- */
-export var guardService = value => {
-  var service = inferService(value)
-
-  if (service === Mode['Unknown'])
-    throw TypeError(`Cannot infer Service for '${value}'.`)
-
-  return service
-}
