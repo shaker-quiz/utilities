@@ -15,6 +15,7 @@ export var Service = /** @type {const} */ ({
   'Hub': 'Hub',
   'Landing': 'Landing',
   'Vkma': 'Vkma',
+  'Minio': 'Minio',
 })
 
 export var Services = [
@@ -34,4 +35,5 @@ export var Services = [
   Service['Hub'],
   Service['Landing'],
   Service['Vkma'],
+  Service['Minio'],
 ]
