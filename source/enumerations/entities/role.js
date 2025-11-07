@@ -1,4 +1,4 @@
-import { Mode } from './mode.js'
+import { Mode } from '../mode.js'
 
 export var Role = /** @type {const} */ ({
   'admin': 'admin',

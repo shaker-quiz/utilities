@@ -114,12 +114,14 @@ export var ModeTitle = {
 }
 
 /**
- * @returns {keyof typeof Mode}
+ * @returns {typeof Mode[keyof typeof Mode]}
  */
 export var inferMode = value => {
   switch (typeof value) {
     case 'string':
-      return value in Mode ? Mode[value] : Mode['Unknown']
+      return value in Mode
+        ? Mode[value]
+        : Mode['Unknown']
 
     case 'object':
       return inferMode(value?.mode)

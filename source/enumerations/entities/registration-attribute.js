@@ -1,4 +1,4 @@
-import { getTag } from '../../functions/tag.js'
+import { inferTag } from '../../functions/tag.js'
 
 export var RegistrationAttribute = /** @type {const} */ ({
   'Alone': 'Alone',
@@ -58,7 +58,7 @@ export var RegistrationPropertyRegistrationAttribute = {
  * @param {RegistrationAttribute[] | Partial<Pick<RegistrationTable, 'is_alone' | 'is_birthday' | 'is_extensible' | 'is_first'>>} value
  */
 export var getRegistrationAttributes = value => {
-  switch (getTag(value)) {
+  switch (inferTag(value)) {
     case 'Object':
       return RegistrationAttributeRegistrationProperties
         .map(property => value[property] ? RegistrationPropertyRegistrationAttribute[property] : '')

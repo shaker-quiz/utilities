@@ -1,0 +1,561 @@
+import { Mode } from './mode.js'
+import { Numerosity } from './numerosity.js'
+import { Service } from './service.js'
+
+export var Route = /** @type {const} */ ({
+  'checkin': 'checkin',
+  'checkins': 'checkins',
+  'cities': 'cities',
+  'cities/country': 'cities/country',
+  'cities/currency': 'cities/currency',
+  'cities/timezone': 'cities/timezone',
+  'cities/venues': 'cities/venues',
+  'city': 'city',
+  'city/country': 'city/country',
+  'city/currency': 'city/currency',
+  'city/timezone': 'city/timezone',
+  'city/venues': 'city/venues',
+  'countries': 'countries',
+  'country': 'country',
+  'currencies': 'currencies',
+  'currency': 'currency',
+  'game': 'game',
+  'game/city': 'game/city',
+  'game/registrations': 'game/registrations',
+  'game/registrations/export': 'game/registrations/export',
+  'game/summary': 'game/summary',
+  'game/theme': 'game/theme',
+  'game/venue': 'game/venue',
+  'games': 'games',
+  'games/city': 'games/city',
+  'games/registrations': 'games/registrations',
+  'games/registrations/export': 'games/registrations/export',
+  'games/summary': 'games/summary',
+  'games/theme': 'games/theme',
+  'games/venue': 'games/venue',
+  'registration': 'registration',
+  'registration/cancellation': 'registration/cancellation',
+  'registration/channel': 'registration/channel',
+  'registration/confirmation': 'registration/confirmation',
+  'registration/export': 'registration/export',
+  'registration/game': 'registration/game',
+  'registration/mailing': 'registration/mailing',
+  'registrations': 'registrations',
+  'registrations/export': 'registrations/export',
+  'role': 'role',
+  'roles': 'roles',
+  'theme': 'theme',
+  'theme/cover': 'theme/cover',
+  'themes': 'themes',
+  'themes/cover': 'themes/cover',
+  'timezone': 'timezone',
+  'timezones': 'timezones',
+  'user': 'user',
+  'user/cities': 'user/cities',
+  'user/password': 'user/password',
+  'user/role': 'user/role',
+  'users': 'users',
+  'users/cities': 'users/cities',
+  'users/password': 'users/password',
+  'users/role': 'users/role',
+  'venue': 'venue',
+  'venue/city': 'venue/city',
+  'venues': 'venues',
+  'venues/city': 'venues/city',
+})
+
+export var RouteNumerosity = {
+  [Route['checkin']]: Numerosity['Singular'],
+  [Route['checkins']]: Numerosity['Plural'],
+  [Route['cities']]: Numerosity['Plural'],
+  [Route['cities/country']]: Numerosity['Plural'],
+  [Route['cities/currency']]: Numerosity['Plural'],
+  [Route['cities/timezone']]: Numerosity['Plural'],
+  [Route['cities/venues']]: Numerosity['Plural'],
+  [Route['city']]: Numerosity['Singular'],
+  [Route['city/country']]: Numerosity['Singular'],
+  [Route['city/currency']]: Numerosity['Singular'],
+  [Route['city/timezone']]: Numerosity['Singular'],
+  [Route['city/venues']]: Numerosity['Singular'],
+  [Route['countries']]: Numerosity['Plural'],
+  [Route['country']]: Numerosity['Singular'],
+  [Route['currencies']]: Numerosity['Plural'],
+  [Route['currency']]: Numerosity['Singular'],
+  [Route['game']]: Numerosity['Singular'],
+  [Route['game/city']]: Numerosity['Singular'],
+  [Route['game/registrations']]: Numerosity['Singular'],
+  [Route['game/registrations/export']]: Numerosity['Singular'],
+  [Route['game/summary']]: Numerosity['Singular'],
+  [Route['game/theme']]: Numerosity['Singular'],
+  [Route['game/venue']]: Numerosity['Singular'],
+  [Route['games']]: Numerosity['Plural'],
+  [Route['games/city']]: Numerosity['Plural'],
+  [Route['games/registrations']]: Numerosity['Plural'],
+  [Route['games/registrations/export']]: Numerosity['Plural'],
+  [Route['games/summary']]: Numerosity['Plural'],
+  [Route['games/theme']]: Numerosity['Plural'],
+  [Route['games/venue']]: Numerosity['Plural'],
+  [Route['registration']]: Numerosity['Singular'],
+  [Route['registration/cancellation']]: Numerosity['Singular'],
+  [Route['registration/channel']]: Numerosity['Singular'],
+  [Route['registration/confirmation']]: Numerosity['Singular'],
+  [Route['registration/export']]: Numerosity['Singular'],
+  [Route['registration/game']]: Numerosity['Singular'],
+  [Route['registration/mailing']]: Numerosity['Singular'],
+  [Route['registrations']]: Numerosity['Plural'],
+  [Route['registrations/export']]: Numerosity['Plural'],
+  [Route['role']]: Numerosity['Singular'],
+  [Route['roles']]: Numerosity['Plural'],
+  [Route['theme']]: Numerosity['Singular'],
+  [Route['theme/cover']]: Numerosity['Singular'],
+  [Route['themes']]: Numerosity['Plural'],
+  [Route['themes/cover']]: Numerosity['Plural'],
+  [Route['timezone']]: Numerosity['Singular'],
+  [Route['timezones']]: Numerosity['Plural'],
+  [Route['user']]: Numerosity['Singular'],
+  [Route['user/cities']]: Numerosity['Singular'],
+  [Route['user/password']]: Numerosity['Singular'],
+  [Route['user/role']]: Numerosity['Singular'],
+  [Route['users']]: Numerosity['Plural'],
+  [Route['users/cities']]: Numerosity['Plural'],
+  [Route['users/password']]: Numerosity['Plural'],
+  [Route['users/role']]: Numerosity['Plural'],
+  [Route['venue']]: Numerosity['Singular'],
+  [Route['venue/city']]: Numerosity['Singular'],
+  [Route['venues']]: Numerosity['Plural'],
+  [Route['venues/city']]: Numerosity['Plural'],
+}
+
+export var Routes = Object.values(Route)
+
+export var RouteRelation = {
+  [Route['checkin']]: Route['checkins'],
+  [Route['checkins']]: Route['checkin'],
+  [Route['cities']]: Route['city'],
+  [Route['cities/country']]: Route['city/country'],
+  [Route['cities/currency']]: Route['city/currency'],
+  [Route['cities/timezone']]: Route['city/timezone'],
+  [Route['cities/venues']]: Route['city/venues'],
+  [Route['city']]: Route['cities'],
+  [Route['city/country']]: Route['cities/country'],
+  [Route['city/currency']]: Route['cities/currency'],
+  [Route['city/timezone']]: Route['cities/timezone'],
+  [Route['city/venues']]: Route['cities/venues'],
+  [Route['countries']]: Route['country'],
+  [Route['country']]: Route['countries'],
+  [Route['currencies']]: Route['currency'],
+  [Route['currency']]: Route['currencies'],
+  [Route['game']]: Route['games'],
+  [Route['game/city']]: Route['games/city'],
+  [Route['game/registrations']]: Route['games/registrations'],
+  [Route['game/registrations/export']]: Route['games/registrations/export'],
+  [Route['game/summary']]: Route['games/summary'],
+  [Route['game/theme']]: Route['games/theme'],
+  [Route['game/venue']]: Route['games/venue'],
+  [Route['games']]: Route['game'],
+  [Route['games/city']]: Route['game/city'],
+  [Route['games/registrations']]: Route['game/registrations'],
+  [Route['games/registrations/export']]: Route['game/registrations/export'],
+  [Route['games/summary']]: Route['game/summary'],
+  [Route['games/theme']]: Route['game/theme'],
+  [Route['games/venue']]: Route['game/venue'],
+  [Route['registration']]: Route['registrations'],
+  [Route['registration/export']]: Route['registrations/export'],
+  [Route['registrations']]: Route['registration'],
+  [Route['registrations/export']]: Route['registration/export'],
+  [Route['role']]: Route['roles'],
+  [Route['roles']]: Route['role'],
+  [Route['theme']]: Route['themes'],
+  [Route['theme/cover']]: Route['themes/cover'],
+  [Route['themes']]: Route['theme'],
+  [Route['themes/cover']]: Route['theme/cover'],
+  [Route['timezone']]: Route['timezones'],
+  [Route['timezones']]: Route['timezone'],
+  [Route['user']]: Route['users'],
+  [Route['user/cities']]: Route['users/cities'],
+  [Route['user/password']]: Route['users/password'],
+  [Route['user/role']]: Route['users/role'],
+  [Route['users']]: Route['user'],
+  [Route['users/cities']]: Route['user/cities'],
+  [Route['users/role']]: Route['user/role'],
+  [Route['venue']]: Route['venues'],
+  [Route['venue/city']]: Route['venues/city'],
+  [Route['venues']]: Route['venue'],
+  [Route['venues/city']]: Route['venue/city'],
+}
+
+export var RoutePathname = /** @type {const} */ ({
+  [Route['checkin']]: 'checkin',
+  [Route['checkins']]: 'checkins',
+  [Route['cities']]: 'cities',
+  [Route['cities/country']]: 'cities/country',
+  [Route['cities/currency']]: 'cities/currency',
+  [Route['cities/timezone']]: 'cities/timezone',
+  [Route['cities/venues']]: 'cities/venues',
+  [Route['city']]: 'city/:city',
+  [Route['city/country']]: 'city/:city/country',
+  [Route['city/currency']]: 'city/:city/currency',
+  [Route['city/timezone']]: 'city/:city/timezone',
+  [Route['city/venues']]: 'city/:city/venues',
+  [Route['countries']]: 'countries',
+  [Route['country']]: 'country/:country',
+  [Route['currencies']]: 'currencies',
+  [Route['currency']]: 'currency/:currency',
+  [Route['game']]: 'game/:game',
+  [Route['game/city']]: 'game/:game/city',
+  [Route['game/registrations']]: 'game/:game/registrations',
+  [Route['game/registrations/export']]: 'game/:game/registrations/export',
+  [Route['game/summary']]: 'game/:game/summary',
+  [Route['game/theme']]: 'game/:game/theme',
+  [Route['game/venue']]: 'game/:game/venue',
+  [Route['games']]: 'games',
+  [Route['games/city']]: 'games/city',
+  [Route['games/registrations']]: 'games/registrations',
+  [Route['games/registrations/export']]: 'games/registrations/export',
+  [Route['games/summary']]: 'games/summary',
+  [Route['games/theme']]: 'games/theme',
+  [Route['games/venue']]: 'games/venue',
+  [Route['registration']]: 'registration/:registration',
+  [Route['registration/cancellation']]: 'registration/:registration/cancellation',
+  [Route['registration/channel']]: 'registration/:registration/channel',
+  [Route['registration/confirmation']]: 'registration/:registration/confirmation',
+  [Route['registration/export']]: 'registration/:registration/export',
+  [Route['registration/game']]: 'registration/:registration/game',
+  [Route['registration/mailing']]: 'registration/:registration/mailing',
+  [Route['registrations']]: 'registrations',
+  [Route['registrations/export']]: 'registrations/export',
+  [Route['role']]: 'role/:role',
+  [Route['roles']]: 'roles',
+  [Route['theme']]: 'theme/:theme',
+  [Route['theme/cover']]: 'theme/:theme/cover',
+  [Route['themes']]: 'themes',
+  [Route['themes/cover']]: 'themes/cover',
+  [Route['timezone']]: 'timezone/:timezone',
+  [Route['timezones']]: 'timezones',
+  [Route['user']]: 'user/:user',
+  [Route['user/cities']]: 'user/:user/cities',
+  [Route['user/password']]: 'user/:user/password',
+  [Route['user/role']]: 'user/:user/role',
+  [Route['users']]: 'users',
+  [Route['users/cities']]: 'users/cities',
+  [Route['users/role']]: 'users/role',
+  [Route['venue']]: 'venue/:venue',
+  [Route['venue/city']]: 'venue/:venue/city',
+  [Route['venues']]: 'venues',
+  [Route['venues/city']]: 'venues/city',
+})
+
+export var RoutePathnames = Object.values(RoutePathname)
+
+export var RouteParams = /** @type {const} */ ({
+  [Route['checkin']]: [],
+  [Route['checkins']]: [],
+  [Route['cities']]: [],
+  [Route['cities/country']]: [],
+  [Route['cities/currency']]: [],
+  [Route['cities/timezone']]: [],
+  [Route['cities/venues']]: [],
+  [Route['city']]: [':city'],
+  [Route['city/country']]: [':city'],
+  [Route['city/currency']]: [':city'],
+  [Route['city/timezone']]: [':city'],
+  [Route['city/venues']]: [':city'],
+  [Route['countries']]: [],
+  [Route['country']]: [':country'],
+  [Route['currencies']]: [],
+  [Route['currency']]: [':currency'],
+  [Route['game']]: [':game'],
+  [Route['game/city']]: [':game'],
+  [Route['game/registrations']]: [':game'],
+  [Route['game/registrations/export']]: [':game'],
+  [Route['game/summary']]: [':game'],
+  [Route['game/theme']]: [':game'],
+  [Route['game/venue']]: [':game'],
+  [Route['games']]: [],
+  [Route['games/city']]: [],
+  [Route['games/registrations']]: [],
+  [Route['games/registrations/export']]: [],
+  [Route['games/summary']]: [],
+  [Route['games/theme']]: [],
+  [Route['games/venue']]: [],
+  [Route['registration']]: [':registration'],
+  [Route['registration/cancellation']]: [':registration'],
+  [Route['registration/channel']]: [':registration'],
+  [Route['registration/confirmation']]: [':registration'],
+  [Route['registration/export']]: [':registration'],
+  [Route['registration/game']]: [':registration'],
+  [Route['registration/mailing']]: [':registration'],
+  [Route['registrations']]: [],
+  [Route['registrations/export']]: [],
+  [Route['role']]: [':role'],
+  [Route['roles']]: [],
+  [Route['theme']]: [':theme'],
+  [Route['theme/cover']]: [':theme'],
+  [Route['themes']]: [],
+  [Route['themes/cover']]: [],
+  [Route['timezone']]: [':timezone'],
+  [Route['timezones']]: [],
+  [Route['user']]: [':user'],
+  [Route['user/cities']]: [':user'],
+  [Route['user/password']]: [':user'],
+  [Route['user/role']]: [':user'],
+  [Route['users']]: [],
+  [Route['users/cities']]: [],
+  [Route['users/role']]: [],
+  [Route['venue']]: [':venue'],
+  [Route['venue/city']]: [':venue'],
+  [Route['venues']]: [],
+  [Route['venues/city']]: [],
+})
+
+export var RouteService = {
+  [Route['checkin']]: Service['Checkin'],
+  [Route['cities']]: Service['Cities'],
+  [Route['cities/country']]: Service['Cities'],
+  [Route['cities/currency']]: Service['Cities'],
+  [Route['cities/timezone']]: Service['Cities'],
+  [Route['cities/venues']]: Service['Cities'],
+  [Route['city']]: Service['Cities'],
+  [Route['city/country']]: Service['Cities'],
+  [Route['city/currency']]: Service['Cities'],
+  [Route['city/timezone']]: Service['Cities'],
+  [Route['city/venues']]: Service['Cities'],
+  [Route['countries']]: Service['Locations'],
+  [Route['country']]: Service['Locations'],
+  [Route['currencies']]: Service['Locations'],
+  [Route['currency']]: Service['Locations'],
+  [Route['game']]: Service['Games'],
+  [Route['game/city']]: Service['Games'],
+  [Route['game/registrations']]: Service['Games'],
+  [Route['game/registrations/export']]: Service['Games'],
+  [Route['game/summary']]: Service['Games'],
+  [Route['game/theme']]: Service['Games'],
+  [Route['game/venue']]: Service['Games'],
+  [Route['games']]: Service['Games'],
+  [Route['games/city']]: Service['Games'],
+  [Route['games/registrations']]: Service['Games'],
+  [Route['games/registrations/export']]: Service['Games'],
+  [Route['games/summary']]: Service['Games'],
+  [Route['games/theme']]: Service['Games'],
+  [Route['games/venue']]: Service['Games'],
+  [Route['registration']]: Service['Registrations'],
+  [Route['registration/cancellation']]: Service['Registrations'],
+  [Route['registration/channel']]: Service['Registrations'],
+  [Route['registration/confirmation']]: Service['Registrations'],
+  [Route['registration/game']]: Service['Registrations'],
+  [Route['registration/mailing']]: Service['Registrations'],
+  [Route['registrations']]: Service['Registrations'],
+  [Route['registrations/export']]: Service['Registrations'],
+  [Route['role']]: Service['Roles'],
+  [Route['roles']]: Service['Roles'],
+  [Route['theme']]: Service['Themes'],
+  [Route['theme/cover']]: Service['Themes'],
+  [Route['themes']]: Service['Themes'],
+  [Route['themes/cover']]: Service['Themes'],
+  [Route['timezone']]: Service['Locations'],
+  [Route['timezones']]: Service['Locations'],
+  [Route['user']]: Service['Users'],
+  [Route['user/cities']]: Service['Users'],
+  [Route['user/password']]: Service['Users'],
+  [Route['user/role']]: Service['Users'],
+  [Route['users']]: Service['Users'],
+  [Route['users/cities']]: Service['Users'],
+  [Route['users/role']]: Service['Users'],
+  [Route['venue']]: Service['Venues'],
+  [Route['venue/city']]: Service['Venues'],
+  [Route['venues']]: Service['Venues'],
+  [Route['venues/city']]: Service['Venues'],
+}
+
+export var ServiceRoutes = {
+  [Service['Users']]: [
+    Route['user'],
+    Route['user/cities'],
+    Route['user/password'],
+    Route['user/role'],
+    Route['users'],
+    Route['users/cities'],
+    Route['users/role'],
+  ],
+
+  [Service['Roles']]: [
+    Route['role'],
+    Route['roles'],
+  ],
+
+  [Service['Checkin']]: [
+    Route['checkin'],
+  ],
+
+  [Service['Locations']]: [
+    Route['countries'],
+    Route['country'],
+    Route['currencies'],
+    Route['currency'],
+    Route['timezone'],
+    Route['timezones'],
+  ],
+
+  [Service['Cities']]: [
+    Route['cities'],
+    Route['cities/country'],
+    Route['cities/currency'],
+    Route['cities/timezone'],
+    Route['cities/venues'],
+    Route['city'],
+    Route['city/country'],
+    Route['city/currency'],
+    Route['city/timezone'],
+    Route['city/venues'],
+  ],
+
+  [Service['Venues']]: [
+    Route['venue'],
+    Route['venue/city'],
+    Route['venues'],
+    Route['venues/city'],
+  ],
+
+  [Service['Themes']]: [
+    Route['theme'],
+    Route['theme/cover'],
+    Route['themes'],
+    Route['themes/cover'],
+  ],
+
+  [Service['Games']]: [
+    Route['game'],
+    Route['game/city'],
+    Route['game/registrations'],
+    Route['game/registrations/export'],
+    Route['game/summary'],
+    Route['game/theme'],
+    Route['game/venue'],
+    Route['games'],
+    Route['games/city'],
+    Route['games/registrations'],
+    Route['games/registrations/export'],
+    Route['games/summary'],
+    Route['games/theme'],
+    Route['games/venue'],
+  ],
+
+  [Service['Registrations']]: [
+    Route['registration'],
+    Route['registration/cancellation'],
+    Route['registration/channel'],
+    Route['registration/confirmation'],
+    Route['registration/game'],
+    Route['registration/mailing'],
+    Route['registrations'],
+    Route['registrations/export'],
+  ],
+
+  [Service['Procedures']]: [],
+
+  [Service['Integrations']]: [],
+
+  [Service['Updates']]: [],
+
+  [Service['Hub']]: [],
+
+  [Service['Landing']]: [],
+
+  [Service['Vkma']]: [],
+}
+
+/**
+ * @returns {typeof Route[keyof typeof Route] | typeof Mode['Unknown']}
+ */
+export var inferRoute = value =>
+  value in Route
+    ? Route[value]
+    : Mode['Unknown']
+
+/**
+ * @throws {TypeError}
+ */
+export var guardRoute = value => {
+  var route = inferRoute(value)
+
+  if (route === Mode['Unknown'])
+    throw TypeError(`Cannot infer Route for '${value}'.`)
+
+  return route
+}
+
+/**
+ * @returns {typeof RouteNumerosity[keyof typeof RouteNumerosity] | typeof Mode['Unknown']}
+ */
+export var inferRouteNumerosity = value =>
+  value in RouteNumerosity
+    ? RouteNumerosity[value]
+    : Mode['Unknown']
+
+/**
+ * @returns {typeof RouteService[keyof typeof RouteService] | typeof Mode['Unknown']}
+ */
+export var inferRouteService = value =>
+  value in RouteService
+    ? RouteService[value]
+    : Mode['Unknown']
+
+/**
+ * @throws {TypeError}
+ */
+export var guardRouteService = value => {
+  var service = inferRouteService(value)
+
+  if (service === Mode['Unknown'])
+    throw TypeError(`Cannot infer RouteService for '${value}'.`)
+
+  return service
+}
+
+/**
+ * @returns {typeof RouteRelation[keyof typeof RouteRelation] | typeof Mode['Unknown']}
+ */
+export var inferRouteRelation = value =>
+  value in RouteRelation
+    ? RouteRelation[value]
+    : Mode['Unknown']
+
+/**
+ * @returns {typeof RoutePathname[keyof typeof RoutePathname] | typeof Mode['Unknown']}
+ */
+export var inferRoutePathname = value =>
+  value in RoutePathname
+    ? RoutePathname[value]
+    : Mode['Unknown']
+
+/**
+ * @throws {TypeError}
+ */
+export var guardRoutePathname = value => {
+  var pathname = inferRoutePathname(value)
+
+  if (pathname === Mode['Unknown'])
+    throw TypeError(`Cannot infer RoutePathname for '${value}'.`)
+
+  return pathname
+}
+
+/**
+ * @returns {typeof RouteParams[keyof typeof RouteParams] | typeof Mode['Unknown']}
+ */
+export var inferRouteParams = value =>
+  value in RouteParams
+    ? RouteParams[value]
+    : Mode['Unknown']
+
+/**
+ * @throws {TypeError}
+ */
+export var guardRouteParams = value => {
+  var params = inferRouteParams(value)
+
+  if (params === Mode['Unknown'])
+    throw TypeError(`Cannot infer RouteParams for '${value}'.`)
+
+  return params
+}
