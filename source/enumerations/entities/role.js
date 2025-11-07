@@ -1,3 +1,5 @@
+import { Mode } from './mode.js'
+
 export var Role = /** @type {const} */ ({
   'admin': 'admin',
   'organizer': 'organizer',
@@ -5,7 +7,6 @@ export var Role = /** @type {const} */ ({
   'player': 'player',
   'user': 'user',
   'manager': 'manager',
-  'default': 'default',
 })
 
 export var Roles = [
@@ -15,7 +16,6 @@ export var Roles = [
   Role['player'],
   Role['user'],
   Role['manager'],
-  Role['default'],
 ]
 
 export var RoleTitle = {
@@ -25,7 +25,6 @@ export var RoleTitle = {
   [Role['player']]: 'Игрок',
   [Role['user']]: 'Пользователь',
   [Role['manager']]: 'Менеджер',
-  [Role['default']]: 'Гость',
 }
 
 export var RoleIcon = {
@@ -35,21 +34,22 @@ export var RoleIcon = {
   [Role['player']]: 'hero/outline/user',
   [Role['user']]: 'hero/outline/user',
   [Role['manager']]: 'hero/outline/user',
-  [Role['default']]: 'hero/outline/user',
 }
 
 /**
- * @returns {keyof typeof Role}
+ * @returns {keyof typeof Role | typeof Mode['Unknown']}
  */
 export var inferRole = value => {
   switch (typeof value) {
     case 'string':
-      return value in Role ? Role[value] : Role['default']
+      return value in Role
+        ? Role[value]
+        : Mode['Unknown']
 
     case 'object':
       return inferRole(value?.role?.name)
 
     default:
-      return Role['default']
+      return Mode['Unknown']
   }
 }
