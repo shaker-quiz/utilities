@@ -3,7 +3,7 @@ import { guardKey } from '../functions/infer.js'
 import { isTag } from '../functions/tag.js'
 
 export var hydrateRoutePathname = (maybeRoute, maybeRouteParams) => {
-  if (isTag('Array', maybeRouteParams))
+  if (!isTag('Array', maybeRouteParams))
     throw TypeError(`Parameter 'maybeRouteParams' must be 'Array'.`)
 
   var route = guardKey(Route, maybeRoute)
