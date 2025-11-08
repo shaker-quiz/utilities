@@ -27,3 +27,11 @@ export var guardKey = (Enumeration, value) => {
 
   return key
 }
+
+/**
+ * @template {*} E
+ *
+ * @param {E} Enumeration
+ * @param {E[keyof E]} value
+ */
+export var isKey = (Enumeration, value) => value in Enumeration
