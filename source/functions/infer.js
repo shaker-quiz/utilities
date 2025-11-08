@@ -5,6 +5,8 @@ import { Mode } from '../enumerations/mode.js'
  *
  * @param {E} Enumeration
  * @param {E[keyof E]} value
+ *
+ * @returns {E[keyof E]}
  */
 export var inferKey = (Enumeration, value) =>
   value in Enumeration
