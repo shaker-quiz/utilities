@@ -1,4 +1,3 @@
-import { Mode } from './mode.js'
 import { Numerosity } from './numerosity.js'
 import { Service } from './service.js'
 
