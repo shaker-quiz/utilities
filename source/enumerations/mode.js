@@ -53,12 +53,10 @@ export var ModeTitle = {
 }
 
 /** @returns {typeof Mode[keyof typeof Mode]} */
-var infer = value => {
-  if (value in Mode)
-    return Mode[value]
-  else
-    throw TypeError(`Cannot infer mode for value '${value}'.`)
-}
+var infer = value =>
+  value in Mode
+    ? Mode[value]
+    : Mode['Unknown']
 
 /**
  * @returns {typeof Mode[keyof typeof Mode]}
