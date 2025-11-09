@@ -36,20 +36,23 @@ export var RoleIcon = {
   [Role['manager']]: 'hero/outline/user',
 }
 
-/**
- * @returns {keyof typeof Role | typeof Mode['Unknown']}
- */
+/** @returns {typeof Role[keyof typeof Role]} */
+var infer = value => {
+  if (value in Role)
+    return Role[value]
+  else
+    throw TypeError(`Cannot infer role for value '${value}'.`)
+}
+
 export var inferRole = value => {
   switch (typeof value) {
     case 'string':
-      return value in Role
-        ? Role[value]
-        : Mode['Unknown']
+      return infer(value)
 
     case 'object':
-      return inferRole(value?.role?.name)
+      return infer(value?.role?.name)
 
     default:
-      return Mode['Unknown']
+      return infer(undefined)
   }
 }
