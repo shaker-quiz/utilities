@@ -56,3 +56,15 @@ export var inferRole = value => {
       return infer(undefined)
   }
 }
+
+export var inferModedRole = value => {
+  var mode = inferMode(value?.role)
+
+  switch (mode) {
+    case Mode['Known']:
+      return inferRole(value)
+
+    default:
+      return mode
+  }
+}
