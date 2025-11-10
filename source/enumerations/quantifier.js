@@ -1,4 +1,6 @@
 import { inferTag } from '../functions/tag.js'
+import { Gender } from './gender.js'
+import { Numerosity } from './numerosity.js'
 
 export var Quantifier = /** @type {const} */ ({
   'Any': 'Any',
