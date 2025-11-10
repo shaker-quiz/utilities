@@ -9,73 +9,73 @@ export var Quantifier = /** @type {const} */ ({
 })
 
 export var Quantifiers = [
-  Mode['Any'],
-  Mode['None'],
-  Mode['Single'],
-  Mode['Many'],
-  Mode['All'],
+  Quantifier['Any'],
+  Quantifier['None'],
+  Quantifier['Single'],
+  Quantifier['Many'],
+  Quantifier['All'],
 ]
 
 export var QuantifierQuantifiers = {
-  [Mode['Any']]: [
-    Mode['Any'],
-    Mode['None'],
-    Mode['Single'],
-    Mode['Many'],
-    Mode['All'],
+  [Quantifier['Any']]: [
+    Quantifier['Any'],
+    Quantifier['None'],
+    Quantifier['Single'],
+    Quantifier['Many'],
+    Quantifier['All'],
   ],
 
-  [Mode['None']]: [
-    Mode['None'],
+  [Quantifier['None']]: [
+    Quantifier['None'],
   ],
 
-  [Mode['Single']]: [
-    Mode['Single'],
+  [Quantifier['Single']]: [
+    Quantifier['Single'],
   ],
 
-  [Mode['Many']]: [
-    Mode['Many'],
+  [Quantifier['Many']]: [
+    Quantifier['Many'],
   ],
 
-  [Mode['All']]: [
-    Mode['All'],
+  [Quantifier['All']]: [
+    Quantifier['All'],
   ],
 }
 
 export var QuantifierTitle = {
   [Numerosity['Singular']]: {
     [Gender['Masculine']]: {
-      [Mode['Any']]: 'Любой',
-      [Mode['None']]: 'Отсутствует',
-      [Mode['Single']]: 'Один',
-      [Mode['Many']]: 'Много',
-      [Mode['All']]: 'Все',
+      [Quantifier['Any']]: 'Любой',
+      [Quantifier['None']]: 'Отсутствует',
+      [Quantifier['Single']]: 'Один',
+      [Quantifier['Many']]: 'Много',
+      [Quantifier['All']]: 'Все',
     },
 
     [Gender['Feminine']]: {
-      [Mode['Any']]: 'Любая',
-      [Mode['None']]: 'Отсутствует',
-      [Mode['Single']]: 'Одна',
-      [Mode['Many']]: 'Много',
-      [Mode['All']]: 'Все',
+      [Quantifier['Any']]: 'Любая',
+      [Quantifier['None']]: 'Отсутствует',
+      [Quantifier['Single']]: 'Одна',
+      [Quantifier['Many']]: 'Много',
+      [Quantifier['All']]: 'Все',
     },
 
     [Gender['Neuter']]: {
-      [Mode['Any']]: 'Любое',
-      [Mode['None']]: 'Отсутствует',
-      [Mode['Single']]: 'Одно',
-      [Mode['Many']]: 'Много',
-      [Mode['All']]: 'Все',
+      [Quantifier['Any']]: 'Любое',
+      [Quantifier['None']]: 'Отсутствует',
+      [Quantifier['Single']]: 'Одно',
+      [Quantifier['Many']]: 'Много',
+      [Quantifier['All']]: 'Все',
     },
   },
 
   [Numerosity['Plural']]: {
     [Gender['Indeterminate']]: {
-      [Mode['Any']]: 'Любые',
-      [Mode['None']]: 'Отсутствуют',
-      [Mode['Single']]: 'Один',
-      [Mode['Many']]: 'Много',
-      [Mode['All']]: 'Все',
+      [Quantifier['Any']]: 'Любые',
+      [Quantifier['None']]: 'Отсутствуют',
+      [Quantifier['Single']]: 'Один',
+      [Quantifier['Many']]: 'Много',
+      [Quantifier['All']]: 'Все',
     },
   },
 }
@@ -96,9 +96,18 @@ export var inferQuantifier = value => {
           return inferQuantifier(value?.quantifier)
 
         case 'Array':
-          if (value?.length === 1)
+          if (value.length === 1)
             return Quantifier['Single']
-          else if (value?.length > 1)
+          else if (value.length > 1)
+            return Quantifier['Many']
+          else
+            return Quantifier['None']
+
+        case 'Map':
+        case 'Set':
+          if (value.size === 1)
+            return Quantifier['Single']
+          else if (value.size > 1)
             return Quantifier['Many']
           else
             return Quantifier['None']
