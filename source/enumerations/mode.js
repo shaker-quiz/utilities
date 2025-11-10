@@ -53,10 +53,7 @@ export var ModeTitle = {
 }
 
 /** @returns {typeof Mode[keyof typeof Mode]} */
-var infer = value =>
-  value in Mode
-    ? Mode[value]
-    : Mode['Unknown']
+var infer = value => value in Mode ? Mode[value] : Mode['Unknown']
 
 /**
  * @returns {typeof Mode[keyof typeof Mode]}
@@ -70,6 +67,6 @@ export var inferMode = value => {
       return infer(value?.mode)
 
     default:
-      return infer(undefined)
+      return Mode['Unknown']
   }
 }
