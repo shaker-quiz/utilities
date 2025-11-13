@@ -1,100 +1,44 @@
 export var VenueAudience = /** @type {const} */ ({
-  'Any': 'Any',
-  'All': 'All',
+  'Open': 'Open',
   'Restricted': 'Restricted',
-  'Unknown': 'Unknown',
 })
 
 export var VenueAudiences = [
-  VenueAudience['Any'],
-  VenueAudience['All'],
-  VenueAudience['Restricted'],
-  VenueAudience['Unknown'],
-]
-
-export var PersistedVenueAudiences = [
-  VenueAudience['All'],
+  VenueAudience['Open'],
   VenueAudience['Restricted'],
 ]
 
-var VenueAudienceShape = {
-  [VenueAudience['All']]: {
+export var VenueAudienceTitle = {
+  [VenueAudience['Open']]: 'Без ограничений',
+  [VenueAudience['Restricted']]: 'Только взрослые',
+}
+
+export var VenueAudienceIcon = {
+  [VenueAudience['Open']]: 'hero/outline/lock-open',
+  [VenueAudience['Restricted']]: 'hero/outline/lock-closed',
+}
+
+var ValueVenueAudience = {
+  ['false']: VenueAudience['Open'],
+  ['true']: VenueAudience['Restricted'],
+}
+
+var VenueAudienceShape = /** @type {const} */ ({
+  [VenueAudience['Open']]: {
     is_adult: false,
   },
 
   [VenueAudience['Restricted']]: {
     is_adult: true,
   },
+})
 
-  [VenueAudience['Unknown']]: {
-    is_adult: null,
-  },
-}
+/** @returns {keyof typeof VenueAudience | 'Unknown'} */
+export var inferVenueAudience = value =>
+  ValueVenueAudience[value?.is_adult ?? value]
+    ?? 'Unknown'
 
-var VenueAudienceShapes = Object.entries(VenueAudienceShape)
-
-export var VenueAudienceTitle = {
-  [VenueAudience['Any']]: 'Любая',
-  [VenueAudience['All']]: 'Открытая',
-  [VenueAudience['Restricted']]: 'Закрытая',
-  [VenueAudience['Unknown']]: 'Неизвестно',
-}
-
-export var VenueAudienceIcon = {
-  [VenueAudience['Any']]: 'hero/outline/square-2-stack',
-  [VenueAudience['All']]: 'hero/outline/lock-open',
-  [VenueAudience['Restricted']]: 'hero/outline/lock-closed',
-  [VenueAudience['Unknown']]: 'hero/outline/no-symbol',
-}
-
-/**
- * @returns {keyof typeof VenueAudience}
- */
-var fromString = value =>
-  value in VenueAudience
-    ? value
-    : VenueAudience['Unknown']
-
-/**
- * @returns {keyof typeof VenueAudience}
- */
-var fromObject = value =>
-  VenueAudienceShapes
-    .find(([, shape]) => shape.is_adult === value?.is_adult)
-    ?.at(0)
-    ?? VenueAudience['Unknown']
-
-/**
- * @returns {typeof VenueAudienceShape[keyof typeof VenueAudienceShape]}
- */
-var toObject = value =>
-  VenueAudienceShapes
-    .find(([venueAudience, shape]) => venueAudience === value)
-    ?.at(1)
-    ?? VenueAudienceShape[VenueAudience['Unknown']]
-
-/**
- * @returns {keyof typeof VenueAudience}
- */
-export var inferVenueAudience = value => {
-  switch (typeof value) {
-    case 'string':
-      return fromString(value)
-
-    case 'object':
-      return fromObject(value)
-
-    default:
-      return VenueAudience['Unknown']
-  }
-}
-
-export var inferVenueAudienceShape = value => {
-  switch (typeof value) {
-    case 'string':
-      return toObject(value)
-
-    default:
-      return VenueAudienceShape[VenueAudience['Unknown']]
-  }
-}
+/** @returns {typeof VenueAudienceShape[keyof typeof VenueAudienceShape] | { readonly is_adult: null }} */
+export var inferVenueAudienceShape = value =>
+  VenueAudienceShape[value]
+    ?? { is_adult: null }
