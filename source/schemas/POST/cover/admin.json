@@ -8,6 +8,12 @@
     "cover": {
       "type": "string",
       "format": "base64"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
     }
   },
   "required": [
