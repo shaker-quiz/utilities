@@ -1,76 +1,40 @@
-export var Version = /** @type {const} */ ({
+export var ChatappVersion = /** @type {const} */ ({
   'Actual': 'Actual',
   'Legacy': 'Legacy',
-  'Unknown': 'Unknown',
 })
 
-export var Versions = Object.values(Version)
-
-export var VersionWeight = {
-  [Version['Actual']]: 0,
-  [Version['Legacy']]: 1,
-  [Version['Unknown']]: 2,
-}
+export var ChatappVersions = [
+  ChatappVersion['Actual'],
+  ChatappVersion['Legacy'],
+]
 
 export var VersionTitle = {
-  [Version['Actual']]: 'Актуальная',
-  [Version['Legacy']]: 'Старая',
-  [Version['Unknown']]: 'Неизвестно',
+  [ChatappVersion['Actual']]: 'Актуальная',
+  [ChatappVersion['Legacy']]: 'Старая',
 }
 
-export var ChatappVersion = {
-  [Version['Actual']]: Version['Actual'],
-  [Version['Legacy']]: Version['Legacy'],
-  [Version['Unknown']]: Version['Unknown'],
+var ValueChatappVersion = {
+  ['false']: ChatappVersion['Actual'],
+  ['true']: ChatappVersion['Legacy'],
 }
 
-export var ChatappVersions = Object.values(ChatappVersion)
-
-export var ChatappVersionWeight = {
-  [Version['Actual']]: 0,
-  [Version['Legacy']]: 1,
-  [Version['Unknown']]: 2,
-}
-
-export var ChatappVersionTitle = {
-  [Version['Actual']]: VersionTitle['Actual'],
-  [Version['Legacy']]: VersionTitle['Legacy'],
-  [Version['Unknown']]: VersionTitle['Unknown'],
-}
-
-export var ChatappVersionShape = /** @type {const} */ ({
-  [Version['Actual']]: {
+var ChatappVersionShape = /** @type {const} */ ({
+  [ChatappVersion['Actual']]: {
     chatapp_legacy: false,
   },
 
-  [Version['Legacy']]: {
+  [ChatappVersion['Legacy']]: {
     chatapp_legacy: true,
-  },
-
-  [Version['Unknown']]: {
-    chatapp_legacy: null,
   },
 })
 
-export var ChatappVersionShapes = Object.entries(ChatappVersionShape)
+/** @returns {keyof typeof ChatappVersion | 'Unknown'} */
+export var inferChatappVersion = value =>
+  ValueChatappVersion[value?.chatapp_legacy]
+    ?? ChatappVersion[value]
+    ?? 'Unknown'
 
-export var getChatappVersion = value => {
-  if (value === null)
-    return ChatappVersion['Unknown']
-
-  switch (typeof value) {
-    case 'object':
-      return ChatappVersionShapes
-        .find(([, shape]) => shape.chatapp_legacy === value.chatapp_legacy)
-        ?.at(0)
-        ?? ChatappVersion['Unknown']
-
-    case 'string':
-      return value in ChatappVersionShape
-        ? ChatappVersionShape[value]
-        : ChatappVersionShape[ChatappVersion['Unknown']]
-
-    default:
-      return ChatappVersion['Unknown']
-  }
-}
+/** @returns {typeof ChatappVersionShape[keyof typeof ChatappVersionShape] | { readonly chatapp_legacy: null }} */
+export var inferChatappVersionShape = value =>
+  ChatappVersionShape[value]
+    ?? { chatapp_legacy: null }

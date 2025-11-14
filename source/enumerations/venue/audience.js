@@ -35,7 +35,8 @@ var VenueAudienceShape = /** @type {const} */ ({
 
 /** @returns {keyof typeof VenueAudience | 'Unknown'} */
 export var inferVenueAudience = value =>
-  ValueVenueAudience[value?.is_adult ?? value]
+  ValueVenueAudience[value?.is_adult]
+    ?? VenueAudience[value]
     ?? 'Unknown'
 
 /** @returns {typeof VenueAudienceShape[keyof typeof VenueAudienceShape] | { readonly is_adult: null }} */

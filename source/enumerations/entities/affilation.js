@@ -35,7 +35,8 @@ var AffilationShape = {
 
 /** @returns {keyof typeof Affilation | 'Unknown'} */
 export var inferAffilation = value =>
-  ValueAffilation[value?.is_franchise ?? value]
+  ValueAffilation[value?.is_franchise]
+    ?? Affilation[value]
     ?? 'Unknown'
 
 /** @returns {typeof AffilationShape[keyof typeof AffilationShape] | { readonly is_franchise: null }} */
