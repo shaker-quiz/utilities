@@ -1,7 +1,8 @@
+import { Kind } from './kind.js'
 import { Numerosity } from './numerosity.js'
 import { Service } from './service.js'
 
-export var Route = /** @type {const} */ ({
+export const Route = Object.freeze({
   'checkin': 'checkin',
   'checkins': 'checkins',
   'cities': 'cities',
@@ -63,7 +64,7 @@ export var Route = /** @type {const} */ ({
   'venues/city': 'venues/city',
 })
 
-export var RouteNumerosity = {
+export const RouteNumerosity = Object.freeze({
   [Route['checkin']]: Numerosity['Singular'],
   [Route['checkins']]: Numerosity['Plural'],
   [Route['cities']]: Numerosity['Plural'],
@@ -123,11 +124,9 @@ export var RouteNumerosity = {
   [Route['venue/city']]: Numerosity['Singular'],
   [Route['venues']]: Numerosity['Plural'],
   [Route['venues/city']]: Numerosity['Plural'],
-}
+})
 
-export var Routes = Object.values(Route)
-
-export var RouteRelation = {
+export const RouteRelation = Object.freeze({
   [Route['checkin']]: Route['checkins'],
   [Route['checkins']]: Route['checkin'],
   [Route['cities']]: Route['city'],
@@ -181,9 +180,9 @@ export var RouteRelation = {
   [Route['venue/city']]: Route['venues/city'],
   [Route['venues']]: Route['venue'],
   [Route['venues/city']]: Route['venue/city'],
-}
+})
 
-export var RoutePathname = /** @type {const} */ ({
+export const RoutePathname = Object.freeze({
   [Route['checkin']]: 'checkin',
   [Route['checkins']]: 'checkins',
   [Route['cities']]: 'cities',
@@ -244,9 +243,69 @@ export var RoutePathname = /** @type {const} */ ({
   [Route['venues/city']]: 'venues/city',
 })
 
-export var RoutePathnames = Object.values(RoutePathname)
+export const RouteKind = Object.freeze({
+  [Route['checkin']]: Kind['Atomic'],
+  [Route['checkins']]: Kind['Atomic'],
+  [Route['cities']]: Kind['Atomic'],
+  [Route['cities/country']]: Kind['Composite'],
+  [Route['cities/currency']]: Kind['Composite'],
+  [Route['cities/timezone']]: Kind['Composite'],
+  [Route['cities/venues']]: Kind['Composite'],
+  [Route['city']]: Kind['Atomic'],
+  [Route['city/country']]: Kind['Composite'],
+  [Route['city/currency']]: Kind['Composite'],
+  [Route['city/timezone']]: Kind['Composite'],
+  [Route['city/venues']]: Kind['Composite'],
+  [Route['countries']]: Kind['Atomic'],
+  [Route['country']]: Kind['Atomic'],
+  [Route['currencies']]: Kind['Atomic'],
+  [Route['currency']]: Kind['Atomic'],
+  [Route['game']]: Kind['Atomic'],
+  [Route['game/city']]: Kind['Composite'],
+  [Route['game/registrations']]: Kind['Composite'],
+  [Route['game/registrations/export']]: Kind['Procedure'],
+  [Route['game/summary']]: Kind['Composite'],
+  [Route['game/theme']]: Kind['Composite'],
+  [Route['game/venue']]: Kind['Composite'],
+  [Route['games']]: Kind['Atomic'],
+  [Route['games/city']]: Kind['Composite'],
+  [Route['games/registrations']]: Kind['Composite'],
+  [Route['games/registrations/export']]: Kind['Procedure'],
+  [Route['games/summary']]: Kind['Composite'],
+  [Route['games/theme']]: Kind['Composite'],
+  [Route['games/venue']]: Kind['Composite'],
+  [Route['registration']]: Kind['Atomic'],
+  [Route['registration/cancellation']]: Kind['Composite'],
+  [Route['registration/channel']]: Kind['Composite'],
+  [Route['registration/confirmation']]: Kind['Composite'],
+  [Route['registration/export']]: Kind['Procedure'],
+  [Route['registration/game']]: Kind['Composite'],
+  [Route['registration/mailing']]: Kind['Composite'],
+  [Route['registrations']]: Kind['Atomic'],
+  [Route['registrations/export']]: Kind['Procedure'],
+  [Route['role']]: Kind['Atomic'],
+  [Route['roles']]: Kind['Atomic'],
+  [Route['theme']]: Kind['Atomic'],
+  [Route['theme/cover']]: Kind['Composite'],
+  [Route['themes']]: Kind['Atomic'],
+  [Route['themes/cover']]: Kind['Composite'],
+  [Route['timezone']]: Kind['Atomic'],
+  [Route['timezones']]: Kind['Atomic'],
+  [Route['user']]: Kind['Atomic'],
+  [Route['user/cities']]: Kind['Composite'],
+  [Route['user/password']]: Kind['Composite'],
+  [Route['user/role']]: Kind['Composite'],
+  [Route['users']]: Kind['Atomic'],
+  [Route['users/cities']]: Kind['Composite'],
+  [Route['users/password']]: Kind['Composite'],
+  [Route['users/role']]: Kind['Composite'],
+  [Route['venue']]: Kind['Atomic'],
+  [Route['venue/city']]: Kind['Composite'],
+  [Route['venues']]: Kind['Atomic'],
+  [Route['venues/city']]: Kind['Composite'],
+})
 
-export var RouteParams = /** @type {const} */ ({
+export const RouteParams = Object.freeze({
   [Route['checkin']]: [],
   [Route['checkins']]: [],
   [Route['cities']]: [],
@@ -307,7 +366,7 @@ export var RouteParams = /** @type {const} */ ({
   [Route['venues/city']]: [],
 })
 
-export var RouteService = {
+export const RouteService = Object.freeze({
   [Route['checkin']]: Service['Checkin'],
   [Route['cities']]: Service['Cities'],
   [Route['cities/country']]: Service['Cities'],
@@ -364,10 +423,10 @@ export var RouteService = {
   [Route['venue/city']]: Service['Venues'],
   [Route['venues']]: Service['Venues'],
   [Route['venues/city']]: Service['Venues'],
-}
+})
 
-export var ServiceRoutes = {
-  [Service['Users']]: [
+export const ServiceRoutes = Object.freeze({
+  [Service['Users']]: Object.freeze([
     Route['user'],
     Route['user/cities'],
     Route['user/password'],
@@ -375,27 +434,27 @@ export var ServiceRoutes = {
     Route['users'],
     Route['users/cities'],
     Route['users/role'],
-  ],
+  ]),
 
-  [Service['Roles']]: [
+  [Service['Roles']]: Object.freeze([
     Route['role'],
     Route['roles'],
-  ],
+  ]),
 
-  [Service['Checkin']]: [
+  [Service['Checkin']]: Object.freeze([
     Route['checkin'],
-  ],
+  ]),
 
-  [Service['Locations']]: [
+  [Service['Locations']]: Object.freeze([
     Route['countries'],
     Route['country'],
     Route['currencies'],
     Route['currency'],
     Route['timezone'],
     Route['timezones'],
-  ],
+  ]),
 
-  [Service['Cities']]: [
+  [Service['Cities']]: Object.freeze([
     Route['cities'],
     Route['cities/country'],
     Route['cities/currency'],
@@ -406,23 +465,23 @@ export var ServiceRoutes = {
     Route['city/currency'],
     Route['city/timezone'],
     Route['city/venues'],
-  ],
+  ]),
 
-  [Service['Venues']]: [
+  [Service['Venues']]: Object.freeze([
     Route['venue'],
     Route['venue/city'],
     Route['venues'],
     Route['venues/city'],
-  ],
+  ]),
 
-  [Service['Themes']]: [
+  [Service['Themes']]: Object.freeze([
     Route['theme'],
     Route['theme/cover'],
     Route['themes'],
     Route['themes/cover'],
-  ],
+  ]),
 
-  [Service['Games']]: [
+  [Service['Games']]: Object.freeze([
     Route['game'],
     Route['game/city'],
     Route['game/registrations'],
@@ -437,9 +496,9 @@ export var ServiceRoutes = {
     Route['games/summary'],
     Route['games/theme'],
     Route['games/venue'],
-  ],
+  ]),
 
-  [Service['Registrations']]: [
+  [Service['Registrations']]: Object.freeze([
     Route['registration'],
     Route['registration/cancellation'],
     Route['registration/channel'],
@@ -448,17 +507,17 @@ export var ServiceRoutes = {
     Route['registration/mailing'],
     Route['registrations'],
     Route['registrations/export'],
-  ],
+  ]),
 
-  [Service['Procedures']]: [],
+  [Service['Procedures']]: Object.freeze([]),
 
-  [Service['Integrations']]: [],
+  [Service['Integrations']]: Object.freeze([]),
 
-  [Service['Updates']]: [],
+  [Service['Updates']]: Object.freeze([]),
 
-  [Service['Hub']]: [],
+  [Service['Hub']]: Object.freeze([]),
 
-  [Service['Landing']]: [],
+  [Service['Landing']]: Object.freeze([]),
 
-  [Service['Vkma']]: [],
-}
+  [Service['Vkma']]: Object.freeze([]),
+})

@@ -1,4 +1,4 @@
-export var Gender = /** @type {const} */ ({
+export const Gender = Object.freeze({
   'Masculine': 'Masculine',
   'Feminine': 'Feminine',
   'Neuter': 'Neuter',
