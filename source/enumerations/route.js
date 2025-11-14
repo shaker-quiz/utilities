@@ -305,6 +305,42 @@ export const RouteKind = Object.freeze({
   [Route['venues/city']]: Kind['Composite'],
 })
 
+export const CompositeRouteField = Object.freeze({
+  [Route['cities/country']]: 'country',
+  [Route['cities/currency']]: 'currency',
+  [Route['cities/timezone']]: 'timezone',
+  [Route['cities/venues']]: 'venues',
+  [Route['city/country']]: 'country',
+  [Route['city/currency']]: 'currency',
+  [Route['city/timezone']]: 'timezone',
+  [Route['city/venues']]: 'venues',
+  [Route['game/city']]: 'city',
+  [Route['game/registrations']]: 'registrations',
+  [Route['game/summary']]: 'summary',
+  [Route['game/theme']]: 'theme',
+  [Route['game/venue']]: 'venue',
+  [Route['games/city']]: 'city',
+  [Route['games/registrations']]: 'registrations',
+  [Route['games/summary']]: 'summary',
+  [Route['games/theme']]: 'theme',
+  [Route['games/venue']]: 'venue',
+  [Route['registration/cancellation']]: 'cancellation',
+  [Route['registration/channel']]: 'channel',
+  [Route['registration/confirmation']]: 'confirmation',
+  [Route['registration/game']]: 'game',
+  [Route['registration/mailing']]: 'mailing',
+  [Route['theme/cover']]: 'cover',
+  [Route['themes/cover']]: 'cover',
+  [Route['user/cities']]: 'cities',
+  [Route['user/password']]: 'password',
+  [Route['user/role']]: 'role',
+  [Route['users/cities']]: 'cities',
+  [Route['users/password']]: 'password',
+  [Route['users/role']]: 'role',
+  [Route['venue/city']]: 'city',
+  [Route['venues/city']]: 'city',
+})
+
 export const RouteParams = Object.freeze({
   [Route['checkin']]: [],
   [Route['checkins']]: [],
@@ -536,6 +572,9 @@ export const inferRoutePathname = x => RoutePathname[x] ?? 'Unknown'
 
 /** @returns {keyof typeof RouteKind | 'Unknown'} */
 export const inferRouteKind = x => RouteKind[x] ?? 'Unknown'
+
+/** @returns {keyof typeof CompositeRouteField | 'Unknown'} */
+export const inferCompositeRouteField = x => CompositeRouteField[x] ?? 'Unknown'
 
 /** @returns {keyof typeof RouteParams | 'Unknown'} */
 export const inferRouteParams = x => RouteParams[x] ?? 'Unknown'
