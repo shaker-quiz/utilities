@@ -558,29 +558,29 @@ export const ServiceRoutes = Object.freeze({
   [Service['Vkma']]: Object.freeze([]),
 })
 
-/** @returns {keyof typeof Route | 'Unknown'} */
+/** @returns {typeof Route[keyof typeof Route] | 'Unknown'} */
 export const inferRoute = x => Route[x] ?? 'Unknown'
 
-/** @returns {keyof typeof RouteNumerosity | 'Unknown'} */
+/** @returns {typeof RouteNumerosity[keyof typeof RouteNumerosity] | 'Unknown'} */
 export const inferRouteNumerosity = x => RouteNumerosity[x] ?? 'Unknown'
 
-/** @returns {keyof typeof RouteRelation | 'Unknown'} */
+/** @returns {typeof RouteRelation[keyof typeof RouteRelation] | 'Unknown'} */
 export const inferRouteRelation = x => RouteRelation[x] ?? 'Unknown'
 
-/** @returns {keyof typeof RoutePathname | 'Unknown'} */
+/** @returns {typeof RoutePathname[keyof typeof RoutePathname] | 'Unknown'} */
 export const inferRoutePathname = x => RoutePathname[x] ?? 'Unknown'
 
-/** @returns {keyof typeof RouteKind | 'Unknown'} */
+/** @returns {typeof RouteKind[keyof typeof RouteKind] | 'Unknown'} */
 export const inferRouteKind = x => RouteKind[x] ?? 'Unknown'
 
-/** @returns {keyof typeof CompositeRouteField | 'Unknown'} */
+/** @returns {typeof CompositeRouteField[keyof typeof CompositeRouteField] | 'Unknown'} */
 export const inferCompositeRouteField = x => CompositeRouteField[x] ?? 'Unknown'
 
-/** @returns {keyof typeof RouteParams | 'Unknown'} */
+/** @returns {typeof RouteParams[keyof typeof RouteParams] | 'Unknown'} */
 export const inferRouteParams = x => RouteParams[x] ?? 'Unknown'
 
-/** @returns {keyof typeof RouteService | 'Unknown'} */
+/** @returns {typeof RouteService[keyof typeof RouteService] | 'Unknown'} */
 export const inferRouteService = x => RouteService[x] ?? 'Unknown'
 
-/** @returns {keyof typeof ServiceRoutes | 'Unknown'} */
+/** @returns {typeof ServiceRoutes[keyof typeof ServiceRoutes] | 'Unknown'} */
 export const inferServiceRoutes = x => ServiceRoutes[x] ?? 'Unknown'
