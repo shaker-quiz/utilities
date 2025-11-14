@@ -1,4 +1,5 @@
-export var Display = /** @type {const} */ ({
+export const Display = Object.freeze({
   'Tag': 'Tag',
   'Chip': 'Chip',
+  'Alert': 'Alert',
 })
