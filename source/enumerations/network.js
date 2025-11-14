@@ -1,11 +1,7 @@
-import { Mode } from './mode.js'
-
-export var Network = /** @type {const} */ ({
+export const Network = Object.freeze({
   'Docker': 'Docker',
   'Public': 'Public',
 })
 
-export var Networks = [
-  Network['Docker'],
-  Network['Public'],
-]
+/** @returns {keyof typeof Network | 'Unknown'} */
+export const inferNetwork = x => Network[x] ?? 'Unknown'
