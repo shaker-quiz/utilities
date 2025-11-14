@@ -1,3 +1,4 @@
+export * from './enumerations/blend.js'
 export * from './enumerations/constants.js'
 export * from './enumerations/display.js'
 export * from './enumerations/gender.js'
