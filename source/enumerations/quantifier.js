@@ -1,8 +1,7 @@
-import { inferTag } from '../functions/tag.js'
 import { Gender } from './gender.js'
 import { Numerosity } from './numerosity.js'
 
-export var Quantifier = /** @type {const} */ ({
+export const Quantifier = Object.freeze({
   'Any': 'Any',
   'None': 'None',
   'Single': 'Single',
@@ -10,115 +9,79 @@ export var Quantifier = /** @type {const} */ ({
   'All': 'All',
 })
 
-export var Quantifiers = [
+export const Quantifiers = Object.freeze([
   Quantifier['Any'],
   Quantifier['None'],
   Quantifier['Single'],
   Quantifier['Many'],
   Quantifier['All'],
-]
+])
 
-export var QuantifierQuantifiers = {
-  [Quantifier['Any']]: [
+export const QuantifierQuantifiers = Object.freeze({
+  [Quantifier['Any']]: Object.freeze([
     Quantifier['Any'],
     Quantifier['None'],
     Quantifier['Single'],
     Quantifier['Many'],
     Quantifier['All'],
-  ],
+  ]),
 
-  [Quantifier['None']]: [
+  [Quantifier['None']]: Object.freeze([
     Quantifier['None'],
-  ],
+  ]),
 
-  [Quantifier['Single']]: [
+  [Quantifier['Single']]: Object.freeze([
     Quantifier['Single'],
-  ],
+  ]),
 
-  [Quantifier['Many']]: [
+  [Quantifier['Many']]: Object.freeze([
     Quantifier['Many'],
-  ],
+  ]),
 
-  [Quantifier['All']]: [
+  [Quantifier['All']]: Object.freeze([
     Quantifier['All'],
-  ],
-}
+  ]),
+})
 
-export var QuantifierTitle = {
-  [Numerosity['Singular']]: {
-    [Gender['Masculine']]: {
+export const QuantifierTitle = Object.freeze({
+  [Numerosity['Singular']]: Object.freeze({
+    [Gender['Masculine']]: Object.freeze({
       [Quantifier['Any']]: 'Любой',
       [Quantifier['None']]: 'Отсутствует',
       [Quantifier['Single']]: 'Один',
       [Quantifier['Many']]: 'Много',
       [Quantifier['All']]: 'Все',
-    },
+    }),
 
-    [Gender['Feminine']]: {
+    [Gender['Feminine']]: Object.freeze({
       [Quantifier['Any']]: 'Любая',
       [Quantifier['None']]: 'Отсутствует',
       [Quantifier['Single']]: 'Одна',
       [Quantifier['Many']]: 'Много',
       [Quantifier['All']]: 'Все',
-    },
+    }),
 
-    [Gender['Neuter']]: {
+    [Gender['Neuter']]: Object.freeze({
       [Quantifier['Any']]: 'Любое',
       [Quantifier['None']]: 'Отсутствует',
       [Quantifier['Single']]: 'Одно',
       [Quantifier['Many']]: 'Много',
       [Quantifier['All']]: 'Все',
-    },
-  },
+    }),
+  }),
 
-  [Numerosity['Plural']]: {
-    [Gender['Indeterminate']]: {
+  [Numerosity['Plural']]: Object.freeze({
+    [Gender['Indeterminate']]: Object.freeze({
       [Quantifier['Any']]: 'Любые',
       [Quantifier['None']]: 'Отсутствуют',
       [Quantifier['Single']]: 'Один',
       [Quantifier['Many']]: 'Много',
       [Quantifier['All']]: 'Все',
-    },
-  },
-}
+    }),
+  }),
+})
 
-/**
- * @returns {typeof Quantifier[keyof typeof Quantifier]}
- */
-export var inferQuantifier = value => {
-  switch (typeof value) {
-    case 'string':
-      return value in Quantifier
-        ? Quantifier[value]
-        : Quantifier['None']
-
-    case 'object':
-      switch (inferTag(value)) {
-        case 'Object':
-          return inferQuantifier(value?.quantifier)
-
-        case 'Array':
-          if (value.length === 1)
-            return Quantifier['Single']
-          else if (value.length > 1)
-            return Quantifier['Many']
-          else
-            return Quantifier['None']
-
-        case 'Map':
-        case 'Set':
-          if (value.size === 1)
-            return Quantifier['Single']
-          else if (value.size > 1)
-            return Quantifier['Many']
-          else
-            return Quantifier['None']
-
-        default:
-          return Quantifier['None']
-      }
-
-    default:
-      return Quantifier['None']
-  }
-}
+export const inferQuantifier = Object.freeze(
+  /** @returns {typeof Quantifier[keyof typeof Quantifier]} */
+  x => Quantifier[x?.quantifier ?? x] ?? Quantifier['None'],
+)

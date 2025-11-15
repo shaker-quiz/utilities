@@ -3,5 +3,7 @@ export const Network = Object.freeze({
   'Public': 'Public',
 })
 
-/** @returns {keyof typeof Network | 'Unknown'} */
-export const inferNetwork = x => Network[x] ?? 'Unknown'
+export const inferNetwork = Object.freeze(
+  /** @returns {keyof typeof Network | 'Unknown'} */
+  x => Network[x] ?? 'Unknown',
+)

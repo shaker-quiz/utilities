@@ -1,6 +1,4 @@
-export var Runtime = /** @type {const} */ ({
+export const Runtime = Object.freeze({
   'Next': 'Next',
   'React': 'React',
 })
-
-export var Runtimes = Object.values(Runtime)

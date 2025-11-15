@@ -1,6 +1,4 @@
 import { Cardinality } from './cardinality.js'
-import { Kind } from './kind.js'
-import { Numerosity } from './numerosity.js'
 import { Service } from './service.js'
 
 export const Route = Object.freeze({
@@ -125,68 +123,6 @@ export const RouteCardinality = Object.freeze({
   [Route['venues/city']]: Cardinality['N-1'],
 })
 
-export const RouteNumerosity = Object.freeze({
-  [Route['checkin']]: Numerosity['Singular'],
-  [Route['checkins']]: Numerosity['Plural'],
-  [Route['cities']]: Numerosity['Plural'],
-  [Route['cities/country']]: Numerosity['Plural'],
-  [Route['cities/currency']]: Numerosity['Plural'],
-  [Route['cities/timezone']]: Numerosity['Plural'],
-  [Route['cities/venues']]: Numerosity['Plural'],
-  [Route['city']]: Numerosity['Singular'],
-  [Route['city/country']]: Numerosity['Singular'],
-  [Route['city/currency']]: Numerosity['Singular'],
-  [Route['city/timezone']]: Numerosity['Singular'],
-  [Route['city/venues']]: Numerosity['Singular'],
-  [Route['countries']]: Numerosity['Plural'],
-  [Route['country']]: Numerosity['Singular'],
-  [Route['currencies']]: Numerosity['Plural'],
-  [Route['currency']]: Numerosity['Singular'],
-  [Route['game']]: Numerosity['Singular'],
-  [Route['game/city']]: Numerosity['Singular'],
-  [Route['game/registrations']]: Numerosity['Plural'],
-  [Route['game/registrations/export']]: Numerosity['Singular'],
-  [Route['game/summary']]: Numerosity['Singular'],
-  [Route['game/theme']]: Numerosity['Singular'],
-  [Route['game/venue']]: Numerosity['Singular'],
-  [Route['games']]: Numerosity['Plural'],
-  [Route['games/city']]: Numerosity['Plural'],
-  [Route['games/registrations']]: Numerosity['Plural'],
-  [Route['games/registrations/export']]: Numerosity['Plural'],
-  [Route['games/summary']]: Numerosity['Plural'],
-  [Route['games/theme']]: Numerosity['Plural'],
-  [Route['games/venue']]: Numerosity['Plural'],
-  [Route['registration']]: Numerosity['Singular'],
-  [Route['registration/cancellation']]: Numerosity['Singular'],
-  [Route['registration/channel']]: Numerosity['Singular'],
-  [Route['registration/confirmation']]: Numerosity['Singular'],
-  [Route['registration/export']]: Numerosity['Singular'],
-  [Route['registration/game']]: Numerosity['Singular'],
-  [Route['registration/mailing']]: Numerosity['Singular'],
-  [Route['registrations']]: Numerosity['Plural'],
-  [Route['registrations/export']]: Numerosity['Singular'],
-  [Route['role']]: Numerosity['Singular'],
-  [Route['roles']]: Numerosity['Plural'],
-  [Route['theme']]: Numerosity['Singular'],
-  [Route['theme/cover']]: Numerosity['Singular'],
-  [Route['themes']]: Numerosity['Plural'],
-  [Route['themes/cover']]: Numerosity['Plural'],
-  [Route['timezone']]: Numerosity['Singular'],
-  [Route['timezones']]: Numerosity['Plural'],
-  [Route['user']]: Numerosity['Singular'],
-  [Route['user/cities']]: Numerosity['Plural'],
-  [Route['user/password']]: Numerosity['Singular'],
-  [Route['user/role']]: Numerosity['Singular'],
-  [Route['users']]: Numerosity['Plural'],
-  [Route['users/cities']]: Numerosity['Plural'],
-  [Route['users/password']]: Numerosity['Plural'],
-  [Route['users/role']]: Numerosity['Plural'],
-  [Route['venue']]: Numerosity['Singular'],
-  [Route['venue/city']]: Numerosity['Singular'],
-  [Route['venues']]: Numerosity['Plural'],
-  [Route['venues/city']]: Numerosity['Plural'],
-})
-
 export const RouteRelation = Object.freeze({
   [Route['cities']]: Route['city'],
   [Route['cities/country']]: Route['city/country'],
@@ -277,104 +213,6 @@ export const RoutePathname = Object.freeze({
   [Route['venue/city']]: 'venue/:venue/city',
   [Route['venues']]: 'venues',
   [Route['venues/city']]: 'venues/city',
-})
-
-export const RouteKind = Object.freeze({
-  [Route['checkin']]: Kind['Atomic'],
-  [Route['checkins']]: Kind['Atomic'],
-  [Route['cities']]: Kind['Atomic'],
-  [Route['cities/country']]: Kind['Composite'],
-  [Route['cities/currency']]: Kind['Composite'],
-  [Route['cities/timezone']]: Kind['Composite'],
-  [Route['cities/venues']]: Kind['Composite'],
-  [Route['city']]: Kind['Atomic'],
-  [Route['city/country']]: Kind['Composite'],
-  [Route['city/currency']]: Kind['Composite'],
-  [Route['city/timezone']]: Kind['Composite'],
-  [Route['city/venues']]: Kind['Composite'],
-  [Route['countries']]: Kind['Atomic'],
-  [Route['country']]: Kind['Atomic'],
-  [Route['currencies']]: Kind['Atomic'],
-  [Route['currency']]: Kind['Atomic'],
-  [Route['game']]: Kind['Atomic'],
-  [Route['game/city']]: Kind['Composite'],
-  [Route['game/registrations']]: Kind['Composite'],
-  [Route['game/registrations/export']]: Kind['Procedure'],
-  [Route['game/summary']]: Kind['Composite'],
-  [Route['game/theme']]: Kind['Composite'],
-  [Route['game/venue']]: Kind['Composite'],
-  [Route['games']]: Kind['Atomic'],
-  [Route['games/city']]: Kind['Composite'],
-  [Route['games/registrations']]: Kind['Composite'],
-  [Route['games/registrations/export']]: Kind['Procedure'],
-  [Route['games/summary']]: Kind['Composite'],
-  [Route['games/theme']]: Kind['Composite'],
-  [Route['games/venue']]: Kind['Composite'],
-  [Route['registration']]: Kind['Atomic'],
-  [Route['registration/cancellation']]: Kind['Composite'],
-  [Route['registration/channel']]: Kind['Composite'],
-  [Route['registration/confirmation']]: Kind['Composite'],
-  [Route['registration/export']]: Kind['Procedure'],
-  [Route['registration/game']]: Kind['Composite'],
-  [Route['registration/mailing']]: Kind['Composite'],
-  [Route['registrations']]: Kind['Atomic'],
-  [Route['registrations/export']]: Kind['Procedure'],
-  [Route['role']]: Kind['Atomic'],
-  [Route['roles']]: Kind['Atomic'],
-  [Route['theme']]: Kind['Atomic'],
-  [Route['theme/cover']]: Kind['Composite'],
-  [Route['themes']]: Kind['Atomic'],
-  [Route['themes/cover']]: Kind['Composite'],
-  [Route['timezone']]: Kind['Atomic'],
-  [Route['timezones']]: Kind['Atomic'],
-  [Route['user']]: Kind['Atomic'],
-  [Route['user/cities']]: Kind['Composite'],
-  [Route['user/password']]: Kind['Composite'],
-  [Route['user/role']]: Kind['Composite'],
-  [Route['users']]: Kind['Atomic'],
-  [Route['users/cities']]: Kind['Composite'],
-  [Route['users/password']]: Kind['Composite'],
-  [Route['users/role']]: Kind['Composite'],
-  [Route['venue']]: Kind['Atomic'],
-  [Route['venue/city']]: Kind['Composite'],
-  [Route['venues']]: Kind['Atomic'],
-  [Route['venues/city']]: Kind['Composite'],
-})
-
-export const CompositeRouteField = Object.freeze({
-  [Route['cities/country']]: 'country',
-  [Route['cities/currency']]: 'currency',
-  [Route['cities/timezone']]: 'timezone',
-  [Route['cities/venues']]: 'venues',
-  [Route['city/country']]: 'country',
-  [Route['city/currency']]: 'currency',
-  [Route['city/timezone']]: 'timezone',
-  [Route['city/venues']]: 'venues',
-  [Route['game/city']]: 'city',
-  [Route['game/registrations']]: 'registrations',
-  [Route['game/summary']]: 'summary',
-  [Route['game/theme']]: 'theme',
-  [Route['game/venue']]: 'venue',
-  [Route['games/city']]: 'city',
-  [Route['games/registrations']]: 'registrations',
-  [Route['games/summary']]: 'summary',
-  [Route['games/theme']]: 'theme',
-  [Route['games/venue']]: 'venue',
-  [Route['registration/cancellation']]: 'cancellation',
-  [Route['registration/channel']]: 'channel',
-  [Route['registration/confirmation']]: 'confirmation',
-  [Route['registration/game']]: 'game',
-  [Route['registration/mailing']]: 'mailing',
-  [Route['theme/cover']]: 'cover',
-  [Route['themes/cover']]: 'cover',
-  [Route['user/cities']]: 'cities',
-  [Route['user/password']]: 'password',
-  [Route['user/role']]: 'role',
-  [Route['users/cities']]: 'cities',
-  [Route['users/password']]: 'password',
-  [Route['users/role']]: 'role',
-  [Route['venue/city']]: 'city',
-  [Route['venues/city']]: 'city',
 })
 
 export const RouteParams = Object.freeze({
@@ -597,32 +435,37 @@ export const ServiceRoutes = Object.freeze({
   [Service['Vkma']]: Object.freeze([]),
 })
 
-/** @returns {typeof Route[keyof typeof Route] | 'Unknown'} */
-export const inferRoute = x => Route[x] ?? 'Unknown'
+export const inferRoute = Object.freeze(
+  /** @returns {typeof Route[keyof typeof Route] | 'Unknown'} */
+  x => Route[x] ?? 'Unknown',
+)
 
-/** @returns {typeof RouteCardinality[keyof typeof RouteCardinality] | 'Unknown'} */
-export const inferRouteCardinality = x => RouteCardinality[x] ?? 'Unknown'
+export const inferRouteCardinality = Object.freeze(
+  /** @returns {typeof RouteCardinality[keyof typeof RouteCardinality] | 'Unknown'} */
+  x => RouteCardinality[x] ?? 'Unknown',
+)
 
-/** @returns {typeof RouteNumerosity[keyof typeof RouteNumerosity] | 'Unknown'} */
-export const inferRouteNumerosity = x => RouteNumerosity[x] ?? 'Unknown'
+export const inferRouteRelation = Object.freeze(
+  /** @returns {typeof RouteRelation[keyof typeof RouteRelation] | 'Unknown'} */
+  x => RouteRelation[x] ?? 'Unknown',
+)
 
-/** @returns {typeof RouteRelation[keyof typeof RouteRelation] | 'Unknown'} */
-export const inferRouteRelation = x => RouteRelation[x] ?? 'Unknown'
+export const inferRoutePathname = Object.freeze(
+  /** @returns {typeof RoutePathname[keyof typeof RoutePathname] | 'Unknown'} */
+  x => RoutePathname[x] ?? 'Unknown',
+)
 
-/** @returns {typeof RoutePathname[keyof typeof RoutePathname] | 'Unknown'} */
-export const inferRoutePathname = x => RoutePathname[x] ?? 'Unknown'
+export const inferRouteParams = Object.freeze(
+  /** @returns {typeof RouteParams[keyof typeof RouteParams] | 'Unknown'} */
+  x => RouteParams[x] ?? 'Unknown',
+)
 
-/** @returns {typeof RouteKind[keyof typeof RouteKind] | 'Unknown'} */
-export const inferRouteKind = x => RouteKind[x] ?? 'Unknown'
+export const inferRouteService = Object.freeze(
+  /** @returns {typeof RouteService[keyof typeof RouteService] | 'Unknown'} */
+  x => RouteService[x] ?? 'Unknown',
+)
 
-/** @returns {typeof CompositeRouteField[keyof typeof CompositeRouteField] | 'Unknown'} */
-export const inferCompositeRouteField = x => CompositeRouteField[x] ?? 'Unknown'
-
-/** @returns {typeof RouteParams[keyof typeof RouteParams] | 'Unknown'} */
-export const inferRouteParams = x => RouteParams[x] ?? 'Unknown'
-
-/** @returns {typeof RouteService[keyof typeof RouteService] | 'Unknown'} */
-export const inferRouteService = x => RouteService[x] ?? 'Unknown'
-
-/** @returns {typeof ServiceRoutes[keyof typeof ServiceRoutes] | 'Unknown'} */
-export const inferServiceRoutes = x => ServiceRoutes[x] ?? 'Unknown'
+export const inferServiceRoutes = Object.freeze(
+  /** @returns {typeof ServiceRoutes[keyof typeof ServiceRoutes] | 'Unknown'} */
+  x => ServiceRoutes[x] ?? 'Unknown',
+)

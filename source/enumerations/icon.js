@@ -1,4 +1,4 @@
-export var Icons = /** @type {const} */ ([
+export const Icons = Object.freeze([
   'hero/solid/academic-cap',
   'hero/solid/adjustments-horizontal',
   'hero/solid/adjustments-vertical',

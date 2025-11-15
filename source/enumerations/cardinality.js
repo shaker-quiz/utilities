@@ -7,5 +7,7 @@ export const Cardinality = Object.freeze({
   'N-N': 'N-N',
 })
 
-/** @returns {keyof typeof Cardinality | 'Unknown'} */
-export const inferCardinality = x => Cardinality[x] ?? 'Unknown'
+export const inferCardinality = Object.freeze(
+  /** @returns {keyof typeof Cardinality | 'Unknown'} */
+  x => Cardinality[x] ?? 'Unknown',
+)

@@ -1,6 +1,4 @@
-import { Mode } from './mode.js'
-
-export var Service = /** @type {const} */ ({
+export const Service = Object.freeze({
   'Users': 'Users',
   'Roles': 'Roles',
   'Checkin': 'Checkin',
@@ -20,7 +18,7 @@ export var Service = /** @type {const} */ ({
   'Minio': 'Minio',
 })
 
-export var Services = [
+export const Services = Object.freeze([
   Service['Users'],
   Service['Roles'],
   Service['Checkin'],
@@ -38,4 +36,4 @@ export var Services = [
   Service['Landing'],
   Service['Vkma'],
   Service['Minio'],
-]
+])

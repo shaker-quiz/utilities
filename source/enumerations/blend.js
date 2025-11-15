@@ -5,7 +5,7 @@ export const Blend = Object.freeze({
   'Indifferent': 'Indifferent',
 })
 
-/** @returns {typeof Blend[keyof typeof Blend]} */
-export const inferBlend = value =>
-  Blend[value]
-    ?? 'Unset'
+export const inferBlend = Object.freeze(
+  /** @returns {typeof Blend[keyof typeof Blend]} */
+  value => Blend[value] ?? 'Unset',
+)

@@ -18,7 +18,7 @@ export var VenueStatusIcon = {
   [VenueStatus['ARCHIVE']]: 'hero/outline/archive-box',
 }
 
-/** @returns {keyof typeof VenueStatus | 'Unknown'} */
-export var inferVenueStatus = value =>
-  VenueStatus[value?.status ?? value]
-    ?? 'Unknown'
+export var inferVenueStatus = Object.freeze(
+  /** @returns {keyof typeof VenueStatus | 'Unknown'} */
+  x => VenueStatus[x?.status ?? x] ?? 'Unknown',
+)
