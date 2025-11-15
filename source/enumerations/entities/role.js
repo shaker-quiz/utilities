@@ -1,4 +1,4 @@
-export var Role = /** @type {const} */ ({
+export const Role = Object.freeze({
   'admin': 'admin',
   'organizer': 'organizer',
   'captain': 'captain',
@@ -7,34 +7,34 @@ export var Role = /** @type {const} */ ({
   'manager': 'manager',
 })
 
-export var Roles = [
+export const Roles = Object.freeze([
   Role['admin'],
   Role['organizer'],
   Role['captain'],
   Role['player'],
   Role['user'],
   Role['manager'],
-]
+])
 
-export var RoleTitle = {
+export const RoleTitle = Object.freeze({
   [Role['admin']]: 'Администратор',
   [Role['organizer']]: 'Организатор',
   [Role['captain']]: 'Капитан',
   [Role['player']]: 'Игрок',
   [Role['user']]: 'Пользователь',
   [Role['manager']]: 'Менеджер',
-}
+})
 
-export var RoleIcon = {
+export const RoleIcon = Object.freeze({
   [Role['admin']]: 'hero/outline/user',
   [Role['organizer']]: 'hero/outline/user',
   [Role['captain']]: 'hero/outline/user',
   [Role['player']]: 'hero/outline/user',
   [Role['user']]: 'hero/outline/user',
   [Role['manager']]: 'hero/outline/user',
-}
+})
 
-/** @returns {keyof typeof Role | 'Unknown'} */
-export var inferRole = value =>
-  Role[value?.role?.name ?? value]
-    ?? 'Unknown'
+export const inferRole = Object.freeze(
+  /** @returns {keyof typeof Role | 'Unknown'} */
+  x => Role[x?.role?.name ?? x] ?? 'Unknown',
+)
