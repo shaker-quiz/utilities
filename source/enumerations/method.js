@@ -11,3 +11,5 @@ export const Method = Object.freeze({
   'PATCH': 'PATCH',
   'DELETE': 'DELETE',
 })
+
+export const Methods = Object.freeze(Object.values(Method))
