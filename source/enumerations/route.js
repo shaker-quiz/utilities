@@ -65,6 +65,8 @@ export const Route = Object.freeze({
   'venues/city': 'venues/city',
 })
 
+export const Routes = Object.freeze(Object.values(Route))
+
 export const RouteCardinality = Object.freeze({
   [Route['checkin']]: Cardinality['1'],
   [Route['cities']]: Cardinality['N'],
