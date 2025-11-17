@@ -7,7 +7,11 @@ import { hydrateRoutePathname } from './hydrate-route-pathname.js'
  * @param {any} maybeRoute
  * @param {any[]} maybeParameters
  */
-export var routeKey = (maybeMethod, maybeRoute, maybeParameters) =>
-  inferMethod(maybeMethod)
-  + '/'
-  + hydrateRoutePathname(maybeRoute, maybeParameters)
+export var routeKey = (maybeMethod, maybeRoute, maybeParameters) => {
+  var method = inferMethod(maybeMethod)
+
+  if (method === 'Unknown')
+    throw TypeError(`Could not infer method of: '${maybeMethod}'.`)
+
+  return method + '/' + hydrateRoutePathname(maybeRoute, maybeParameters)
+}

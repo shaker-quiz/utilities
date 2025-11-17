@@ -21,7 +21,7 @@ export var hydrateRoutePathname = (maybeRoute, maybeRouteParams) => {
   var routeParams = inferRouteParams(route)
 
   if (routeParams === 'Unknown')
-    throw TypeError(`Could not infer route pathname of: '${route}'.`)
+    throw TypeError(`Could not infer route params of: '${route}'.`)
 
   return routeParams.reduce(
     (pathname, param, index) => pathname.replace(param, maybeRouteParams[index]),
