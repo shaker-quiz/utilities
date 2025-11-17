@@ -2,7 +2,7 @@ import { inferMethod } from '../enumerations/method.js'
 
 import { hydrateRoutePathname } from './hydrate-route-pathname.js'
 
-export const routeKey = Object.freeze(
+export const tag = Object.freeze(
   /**
    * @param {any} maybeMethod
    * @param {any} maybeRoute
