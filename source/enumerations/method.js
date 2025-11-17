@@ -13,3 +13,8 @@ export const Method = Object.freeze({
 })
 
 export const Methods = Object.freeze(Object.values(Method))
+
+export const inferMethod = Object.freeze(
+  /** @returns {keyof typeof Method | 'Unknown'} */
+  x => Method[x] ?? 'Unknown',
+)

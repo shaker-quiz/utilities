@@ -1,7 +1,6 @@
-import { Method } from '../enumerations/method.js'
+import { inferMethod } from '../enumerations/method.js'
 
 import { hydrateRoutePathname } from './hydrate-route-pathname.js'
-import { inferKey } from './infer-key.js'
 
 /**
  * @param {any} maybeMethod
@@ -9,7 +8,6 @@ import { inferKey } from './infer-key.js'
  * @param {any[]} maybeParameters
  */
 export var routeKey = (maybeMethod, maybeRoute, maybeParameters) =>
-  ''
-  + inferKey(Method, maybeMethod)
+  inferMethod(maybeMethod)
   + '/'
   + hydrateRoutePathname(maybeRoute, maybeParameters)

@@ -1,24 +1,30 @@
-import { Route, RouteParams, RoutePathname } from '../enumerations/route.js'
-
-import { inferKey } from './infer-key.js'
-import { isTag } from './tag.js'
+import { inferRoute, inferRouteParams, inferRoutePathname } from '../enumerations/route.js'
 
 /**
  * @param {*} maybeRoute
  * @param {any[]} maybeRouteParams
  */
 export var hydrateRoutePathname = (maybeRoute, maybeRouteParams) => {
-  if (!isTag('Array', maybeRouteParams))
+  if (!Array.isArray(maybeRouteParams))
     throw TypeError(`Parameter 'maybeRouteParams' must be 'Array'.`)
 
-  var route = inferKey(Route, maybeRoute)
+  var route = inferRoute(maybeRoute)
 
-  var pathname = inferKey(RoutePathname, route)
+  if (route === 'Unknown')
+    throw TypeError(`Could not infer route of: '${maybeRoute}'.`)
 
-  var params = inferKey(RouteParams, route)
+  var routePathname = inferRoutePathname(route)
 
-  return params.reduce(
+  if (routePathname === 'Unknown')
+    throw TypeError(`Could not infer route pathname of: '${route}'.`)
+
+  var routeParams = inferRouteParams(route)
+
+  if (routeParams === 'Unknown')
+    throw TypeError(`Could not infer route pathname of: '${route}'.`)
+
+  return routeParams.reduce(
     (pathname, param, index) => pathname.replace(param, maybeRouteParams[index]),
-    pathname,
+    routePathname,
   )
 }
