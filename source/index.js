@@ -14,7 +14,6 @@ export * from './enumerations/quantifier.js'
 export * from './enumerations/route.js'
 export * from './enumerations/runtime.js'
 export * from './enumerations/service.js'
-export * from './enumerations/store.js'
 
 export * from './enumerations/entities/affilation.js'
 export * from './enumerations/entities/game-status.js'

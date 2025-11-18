@@ -17,3 +17,7 @@ export const tag = Object.freeze(
     return method + '/' + hydrateRoutePathname(maybeRoute, maybeParameters)
   },
 )
+
+export const tagexp = Object.freeze((maybeMethod, maybeRoute, maybeParameters) =>
+  new RegExp(tag(maybeMethod, maybeRoute, maybeParameters))
+)
