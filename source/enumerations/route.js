@@ -275,6 +275,7 @@ export const RouteParams = Object.freeze({
   [Route['user/role']]: [':user'],
   [Route['users']]: [],
   [Route['users/cities']]: [],
+  [Route['users/password']]: [],
   [Route['users/role']]: [],
   [Route['venue']]: [':venue'],
   [Route['venue/city']]: [':venue'],
