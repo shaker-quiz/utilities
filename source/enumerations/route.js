@@ -210,6 +210,7 @@ export const RoutePathname = Object.freeze({
   [Route['user/role']]: 'user/:user/role',
   [Route['users']]: 'users',
   [Route['users/cities']]: 'users/cities',
+  [Route['users/password']]: 'users/password',
   [Route['users/role']]: 'users/role',
   [Route['venue']]: 'venue/:venue',
   [Route['venue/city']]: 'venue/:venue/city',
