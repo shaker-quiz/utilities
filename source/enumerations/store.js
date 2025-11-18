@@ -8,6 +8,8 @@ export const StoreKey = Object.freeze({
 
   [Route['user/city']]: new RegExp(`GET/user/${Pattern.UUID.source}/city/${Pattern.UUID.source}`),
 
+  [Route['user/role']]: new RegExp(`GET/user/${Pattern.UUID.source}/role`),
+
   [Route['role']]: new RegExp(`GET/role/${Pattern.UUID.source}`),
 
   [Route['country']]: /GET\/country\/[A-Z]{2}/,
