@@ -1,24 +1,18 @@
 import { inferRoute, inferRouteParams } from '../enumerations/route.js'
 
-export const hydrateRouteParams = Object.freeze(
-  /**
-   * @param {*} maybeRoute
-   * @param {object} maybeParams
-   */
-  (maybeRoute, maybeParams) => {
-    if (typeof maybeParams !== 'object' || maybeParams === null)
-      throw TypeError(`Parameter 'maybeParams' must be 'Object'.`)
+export const hydrateRouteParams = Object.freeze((r, p) => {
+  if (typeof p !== 'object' || p === null)
+    throw TypeError(`Parameter 'maybeParams' must be 'Object'.`)
 
-    var route = inferRoute(maybeRoute)
+  var route = inferRoute(r)
 
-    if (route === 'Unknown')
-      throw TypeError(`Could not infer route of: '${maybeRoute}'.`)
+  if (route === 'Unknown')
+    throw TypeError(`Could not infer route of: '${r}'.`)
 
-    var routeParams = inferRouteParams(route)
+  var routeParams = inferRouteParams(route)
 
-    if (routeParams === 'Unknown')
-      throw TypeError(`Could not infer route params of: '${route}'.`)
+  if (routeParams === 'Unknown')
+    throw TypeError(`Could not infer route params of: '${route}'.`)
 
-    return routeParams.map(key => maybeParams[key.replace(':', '')] ?? key)
-  },
-)
+  return routeParams.map(key => p[key.replace(':', '')] ?? key)
+})

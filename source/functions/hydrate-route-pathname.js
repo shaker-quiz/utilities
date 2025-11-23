@@ -1,32 +1,26 @@
 import { inferRoute, inferRouteParams, inferRoutePathname } from '../enumerations/route.js'
 
-export const hydrateRoutePathname = Object.freeze(
-  /**
-   * @param {*} maybeRoute
-   * @param {any[]} maybeRouteParams
-   */
-  (maybeRoute, maybeRouteParams) => {
-    if (!Array.isArray(maybeRouteParams))
-      throw TypeError(`Parameter 'maybeRouteParams' must be 'Array'.`)
+export const hydrateRoutePathname = Object.freeze((r, p) => {
+  if (!Array.isArray(p))
+    throw TypeError(`Parameter 'maybeRouteParams' must be 'Array'.`)
 
-    var route = inferRoute(maybeRoute)
+  var route = inferRoute(r)
 
-    if (route === 'Unknown')
-      throw TypeError(`Could not infer route of: '${maybeRoute}'.`)
+  if (route === 'Unknown')
+    throw TypeError(`Could not infer route of: '${r}'.`)
 
-    var routePathname = inferRoutePathname(route)
+  var routePathname = inferRoutePathname(route)
 
-    if (routePathname === 'Unknown')
-      throw TypeError(`Could not infer route pathname of: '${route}'.`)
+  if (routePathname === 'Unknown')
+    throw TypeError(`Could not infer route pathname of: '${route}'.`)
 
-    var routeParams = inferRouteParams(route)
+  var routeParams = inferRouteParams(route)
 
-    if (routeParams === 'Unknown')
-      throw TypeError(`Could not infer route params of: '${route}'.`)
+  if (routeParams === 'Unknown')
+    throw TypeError(`Could not infer route params of: '${route}'.`)
 
-    return routeParams.reduce(
-      (pathname, param, index) => pathname.replace(param, maybeRouteParams[index]),
-      routePathname,
-    )
-  },
-)
+  return routeParams.reduce(
+    (pathname, param, index) => pathname.replace(param, p[index]),
+    routePathname,
+  )
+})
