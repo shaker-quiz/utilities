@@ -1,6 +1,7 @@
+import { Mode } from '../mode.js'
 import { Role } from './role.js'
 
-export var GameStatus = /** @type {const} */ ({
+export const GameStatus = Object.freeze({
   'REJECTED': 'REJECTED',
   'MODERATION': 'MODERATION',
   'APPROVED': 'APPROVED',
@@ -12,119 +13,80 @@ export var GameStatus = /** @type {const} */ ({
   'ARCHIVE': 'ARCHIVE',
 })
 
-export var GameStatuses = Object.values(GameStatus)
+export const GameStatuses = Object.freeze(Object.values(GameStatus))
 
-export var GameStatusWeight = {
-  [GameStatus.REJECTED]: 0,
-  [GameStatus.MODERATION]: 1,
-  [GameStatus.APPROVED]: 2,
-  [GameStatus.CLOSED]: 3,
-  [GameStatus.FORINVITES]: 4,
-  [GameStatus.PUBLISHED]: 5,
-  [GameStatus.IS_RESERVE]: 6,
-  [GameStatus.FINISHED]: 7,
-  [GameStatus.ARCHIVE]: 8,
-}
+export const GameStatusTitle = Object.freeze({
+  [GameStatus['REJECTED']]: 'Отклонено',
+  [GameStatus['MODERATION']]: 'На проверке',
+  [GameStatus['APPROVED']]: 'Одобрено',
+  [GameStatus['CLOSED']]: 'Закрыта',
+  [GameStatus['FORINVITES']]: 'По приглашению',
+  [GameStatus['PUBLISHED']]: 'Опубликовано',
+  [GameStatus['IS_RESERVE']]: 'В резерве',
+  [GameStatus['FINISHED']]: 'Завершено',
+  [GameStatus['ARCHIVE']]: 'В архиве',
+})
 
-export var GameStatusTitle = {
-  [GameStatus.REJECTED]: 'Отклонено',
-  [GameStatus.MODERATION]: 'На проверке',
-  [GameStatus.APPROVED]: 'Одобрено',
-  [GameStatus.CLOSED]: 'Закрыта',
-  [GameStatus.FORINVITES]: 'По приглашению',
-  [GameStatus.PUBLISHED]: 'Опубликовано',
-  [GameStatus.IS_RESERVE]: 'В резерве',
-  [GameStatus.FINISHED]: 'Завершено',
-  [GameStatus.ARCHIVE]: 'В архиве',
-}
+export const GameStatusIcon = Object.freeze({
+  [GameStatus['REJECTED']]: 'hero/outline/x-mark',
+  [GameStatus['MODERATION']]: 'hero/outline/clock',
+  [GameStatus['APPROVED']]: 'hero/outline/hand-thumb-up',
+  [GameStatus['CLOSED']]: 'hero/outline/exclamation-triangle',
+  [GameStatus['FORINVITES']]: 'hero/outline/lock-closed',
+  [GameStatus['PUBLISHED']]: 'hero/outline/check-circle',
+  [GameStatus['IS_RESERVE']]: 'hero/outline/user-plus',
+  [GameStatus['FINISHED']]: 'hero/outline/check',
+  [GameStatus['ARCHIVE']]: 'hero/outline/archive-box',
+})
 
-export var GameStatusColor = {
-  [GameStatus.REJECTED]: 'danger',
-  [GameStatus.MODERATION]: 'primary',
-  [GameStatus.APPROVED]: 'success',
-  [GameStatus.CLOSED]: 'warning',
-  [GameStatus.FORINVITES]: 'current',
-  [GameStatus.PUBLISHED]: 'secondary',
-  [GameStatus.IS_RESERVE]: 'blue-900',
-  [GameStatus.FINISHED]: 'success',
-  [GameStatus.ARCHIVE]: 'current',
-}
+export const RoleGameStatusGameStatuses = Object.freeze({
+  [Role['admin']]: Object.freeze({}),
 
-export var GameStatusTextColor = {
-  [GameStatus.REJECTED]: 'text-danger',
-  [GameStatus.MODERATION]: 'text-primary',
-  [GameStatus.APPROVED]: 'text-success',
-  [GameStatus.CLOSED]: 'text-warning',
-  [GameStatus.FORINVITES]: 'text-current',
-  [GameStatus.PUBLISHED]: 'text-secondary',
-  [GameStatus.IS_RESERVE]: 'text-blue-900',
-  [GameStatus.FINISHED]: 'text-success',
-  [GameStatus.ARCHIVE]: 'text-current',
-}
+  [Role['organizer']]: Object.freeze({
+    [GameStatus['APPROVED']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['CLOSED'],
+      GameStatus['FORINVITES'],
+      GameStatus['PUBLISHED'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['FINISHED'],
+      GameStatus['ARCHIVE'],
+    ]),
 
-/** @type {Record<GameStatus, Icon>} */
-export var GameStatusIcon = {
-  [GameStatus.REJECTED]: 'hero/outline/x-mark',
-  [GameStatus.MODERATION]: 'hero/outline/clock',
-  [GameStatus.APPROVED]: 'hero/outline/hand-thumb-up',
-  [GameStatus.CLOSED]: 'hero/outline/exclamation-triangle',
-  [GameStatus.FORINVITES]: 'hero/outline/lock-closed',
-  [GameStatus.PUBLISHED]: 'hero/outline/check-circle',
-  [GameStatus.IS_RESERVE]: 'hero/outline/user-plus',
-  [GameStatus.FINISHED]: 'hero/outline/check',
-  [GameStatus.ARCHIVE]: 'hero/outline/archive-box',
-}
+    [GameStatus['MODERATION']]: Object.freeze([
+      GameStatus['MODERATION'],
+    ]),
 
-/** @type {{ [Key in Role]: Partial<Record<GameStatus, GameStatus[]>> }} */
-export var RoleGameStatusGameStatuses = {
-  [Role.admin]: {},
+    [GameStatus['REJECTED']]: Object.freeze([
+      GameStatus['REJECTED'],
+      GameStatus['MODERATION'],
+    ]),
+  }),
 
-  [Role.organizer]: {
-    [GameStatus.APPROVED]: [
-      GameStatus.APPROVED,
-      GameStatus.CLOSED,
-      GameStatus.FORINVITES,
-      GameStatus.PUBLISHED,
-      GameStatus.IS_RESERVE,
-      GameStatus.FINISHED,
-      GameStatus.ARCHIVE,
-    ],
+  [Mode['Unknown']]: Object.freeze({}),
+})
 
-    [GameStatus.MODERATION]: [
-      GameStatus.MODERATION,
-    ],
+export const RoleDefaultGameStatuses = Object.freeze({
+  [Role['admin']]: Object.freeze([
+    GameStatus['APPROVED'],
+    GameStatus['ARCHIVE'],
+    GameStatus['CLOSED'],
+    GameStatus['FINISHED'],
+    GameStatus['FORINVITES'],
+    GameStatus['IS_RESERVE'],
+    GameStatus['MODERATION'],
+    GameStatus['PUBLISHED'],
+    GameStatus['REJECTED'],
+  ]),
 
-    [GameStatus.REJECTED]: [
-      GameStatus.REJECTED,
-      GameStatus.MODERATION,
-    ],
-  },
+  [Role['organizer']]: Object.freeze([
+    GameStatus['ARCHIVE'],
+    GameStatus['CLOSED'],
+    GameStatus['FINISHED'],
+    GameStatus['FORINVITES'],
+    GameStatus['IS_RESERVE'],
+    GameStatus['PUBLISHED'],
+  ]),
 
-  [Role.default]: {},
-}
-
-/** @type {{ [Key in Role]: GameStatus[] }} */
-export var RoleDefaultGameStatuses = {
-  [Role.admin]: [
-    'APPROVED',
-    'ARCHIVE',
-    'CLOSED',
-    'FINISHED',
-    'FORINVITES',
-    'IS_RESERVE',
-    'MODERATION',
-    'PUBLISHED',
-    'REJECTED',
-  ],
-
-  [Role.organizer]: [
-    'ARCHIVE',
-    'CLOSED',
-    'FINISHED',
-    'FORINVITES',
-    'IS_RESERVE',
-    'PUBLISHED',
-  ],
-
-  [Role.default]: [],
-}
+  [Mode['Unknown']]: Object.freeze([]),
+})
