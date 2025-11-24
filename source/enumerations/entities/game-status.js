@@ -1,3 +1,4 @@
+import { Category } from '../category.js'
 import { Mode } from '../mode.js'
 import { Role } from './role.js'
 
@@ -66,7 +67,7 @@ export const RoleGameStatusGameStatuses = Object.freeze({
   [Mode['Unknown']]: Object.freeze({}),
 })
 
-export const RoleDefaultGameStatuses = Object.freeze({
+export const RoleGameStatuses = Object.freeze({
   [Role['admin']]: Object.freeze([
     GameStatus['APPROVED'],
     GameStatus['ARCHIVE'],
@@ -89,4 +90,13 @@ export const RoleDefaultGameStatuses = Object.freeze({
   ]),
 
   [Mode['Unknown']]: Object.freeze([]),
+})
+
+export const CategoryGameStatuses = Object.freeze({
+  [Category['Active']]: Object.freeze([
+    GameStatus['CLOSED'],
+    GameStatus['FORINVITES'],
+    GameStatus['IS_RESERVE'],
+    GameStatus['PUBLISHED'],
+  ]),
 })
