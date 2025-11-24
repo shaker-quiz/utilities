@@ -99,4 +99,24 @@ export const CategoryGameStatuses = Object.freeze({
     GameStatus['IS_RESERVE'],
     GameStatus['PUBLISHED'],
   ]),
+
+  [GameStatus['REJECTED']]: Object.freeze([
+    GameStatus['REJECTED'],
+  ]),
+
+  [GameStatus['MODERATION']]: Object.freeze([
+    GameStatus['MODERATION'],
+  ]),
+
+  [GameStatus['APPROVED']]: Object.freeze([
+    GameStatus['APPROVED'],
+  ]),
+
+  [GameStatus['FINISHED']]: Object.freeze([
+    GameStatus['FINISHED'],
+  ]),
+
+  [GameStatus['ARCHIVE']]: Object.freeze([
+    GameStatus['ARCHIVE'],
+  ]),
 })
