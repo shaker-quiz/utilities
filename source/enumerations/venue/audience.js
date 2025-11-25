@@ -19,8 +19,8 @@ export const VenueAudienceIcon = Object.freeze({
 })
 
 const ValueVenueAudience = Object.freeze({
-  ['false']: VenueAudience['Open'],
-  ['true']: VenueAudience['Restricted'],
+  'false': VenueAudience['Open'],
+  'true': VenueAudience['Restricted'],
 })
 
 const VenueAudienceShape = /** @type {const} */ (Object.freeze({
@@ -39,6 +39,6 @@ export const inferVenueAudience = Object.freeze(
 )
 
 export const inferVenueAudienceShape = Object.freeze(
-  /** @returns {typeof VenueAudienceShape[keyof typeof VenueAudienceShape] | { readonly is_adult: null }} */
+  /** @returns {typeof VenueAudienceShape[keyof typeof VenueAudienceShape] | { is_adult: null }} */
   x => VenueAudienceShape[x] ?? { is_adult: null },
 )

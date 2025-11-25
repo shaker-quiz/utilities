@@ -22,10 +22,10 @@ export * from './enumerations/entities/registration-attribute.js'
 export * from './enumerations/entities/registration-channel.js'
 export * from './enumerations/entities/registration-lineup.js'
 export * from './enumerations/entities/registration-mailing.js'
-export * from './enumerations/entities/registration-status.js'
 export * from './enumerations/entities/role.js'
 export * from './enumerations/entities/version.js'
 
+export * from './enumerations/registration/status.js'
 export * from './enumerations/venue/audience.js'
 export * from './enumerations/venue/status.js'
 

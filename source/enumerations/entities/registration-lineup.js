@@ -1,75 +1,49 @@
-export var RegistrationLineup = /** @type {const} */ ({
+export const RegistrationLineup = Object.freeze({
   'Main': 'Main',
   'Reserve': 'Reserve',
 })
 
-export var RegistrationLineups = Object.values(RegistrationLineup)
+export const RegistrationLineups = Object.freeze([
+  RegistrationLineup['Main'],
+  RegistrationLineup['Reserve'],
+])
 
-/** @type {Record<RegistrationLineup, number>} */
-export var RegistrationLineupWeight = {
-  [RegistrationLineup.Main]: 0,
-  [RegistrationLineup.Reserve]: 1,
-}
+export const RegistrationLineupTitle = Object.freeze({
+  [RegistrationLineup['Main']]: 'Основа',
+  [RegistrationLineup['Reserve']]: 'Резерв',
+})
 
-/** @type {Record<RegistrationLineup, string>} */
-export var RegistrationLineupTitle = {
-  [RegistrationLineup.Main]: 'Основа',
-  [RegistrationLineup.Reserve]: 'Резерв',
-}
+export const RegistrationLineupIcon = Object.freeze({
+  [RegistrationLineup['Main']]: 'hero/outline/user-circle',
+  [RegistrationLineup['Reserve']]: 'hero/outline/pause-circle',
+})
 
-/** @type {Record<RegistrationLineup, Icon>} */
-export var RegistrationLineupIcon = {
-  [RegistrationLineup.Main]: 'hero/outline/user-circle',
-  [RegistrationLineup.Reserve]: 'hero/outline/pause-circle',
-}
+export const RegistrationLineupEmoji = Object.freeze({
+  [RegistrationLineup['Main']]: '🟢',
+  [RegistrationLineup['Reserve']]: '🟡',
+})
 
-/** @type {Record<RegistrationLineup, string>} */
-export var RegistrationLineupEmoji = {
-  [RegistrationLineup.Main]: '🟢',
-  [RegistrationLineup.Reserve]: '🟡',
-}
+export const ValueRegistrationLineup = Object.freeze({
+  'false': RegistrationLineup['Main'],
+  'true': RegistrationLineup['Reserve'],
+})
 
-/** @type {Record<RegistrationLineup, string>} */
-export var RegistrationLineupColor = {
-  [RegistrationLineup.Main]: 'text-primary',
-  [RegistrationLineup.Reserve]: 'text-secondary',
-}
-
-/** @type {Record<RegistrationLineup, Pick<RegistrationTable, 'is_reserve'>>} */
-export var RegistrationLineupShape = {
-  [RegistrationLineup.Main]: {
+export const RegistrationLineupShape = Object.freeze({
+  [RegistrationLineup['Main']]: Object.freeze({
     is_reserve: false,
-  },
+  }),
 
-  [RegistrationLineup.Reserve]: {
+  [RegistrationLineup['Reserve']]: Object.freeze({
     is_reserve: true,
-  },
-}
+  }),
+})
 
-/**
- * @param {RegistrationLineup | typeof RegistrationLineupShape[RegistrationLineup]} value
- */
-export var getRegistrationLineup = value => {
-  switch (typeof value) {
-    case 'object':
-      let found = Object
-        .entries(RegistrationLineupShape)
-        .find(([, object]) => object.is_reserve === value.is_reserve)
-        ?.at(0)
+export const inferRegistrationLineup = Object.freeze(
+  /** @returns {keyof typeof RegistrationLineup | 'Unknown'} */
+  x => ValueRegistrationLineup[x?.is_reserve] ?? RegistrationLineup[x] ?? 'Unknown',
+)
 
-      if (!RegistrationLineups.includes(found))
-        throw TypeError(
-          `[Function: getRegistrationLineup] Parameter 'found': '${found}' must be a member of 'Lineups'.`,
-        )
-
-      return found
-
-    case 'string':
-      if (!RegistrationLineups.includes(value))
-        throw TypeError(
-          `[Function: getRegistrationLineup] Parameter 'value': '${value}' must be a member of 'Lineups'.`,
-        )
-
-      return RegistrationLineupShape[value]
-  }
-}
+export const inferRegistrationLineupShape = Object.freeze(
+  /** @returns {typeof RegistrationLineupShape[keyof typeof RegistrationLineupShape] | { is_reserve: null }} */
+  x => RegistrationLineupShape[x] ?? { is_reserve: null },
+)
