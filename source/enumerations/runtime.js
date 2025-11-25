@@ -1,4 +1,6 @@
 export const Runtime = Object.freeze({
-  'Next': 'Next',
-  'React': 'React',
+  'Bun': 'Bun',
+  'Deno': 'Deno',
+  'Node': 'Node',
+  'Vite': 'Vite',
 })

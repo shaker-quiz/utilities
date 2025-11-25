@@ -1,3 +1,6 @@
+import { Mode } from './mode.js'
+import { Runtime } from './runtime.js'
+
 export const Service = Object.freeze({
   'Users': 'Users',
   'Roles': 'Roles',
@@ -37,3 +40,23 @@ export const Services = Object.freeze([
   Service['Vkma'],
   Service['Minio'],
 ])
+
+export const ServiceRuntime = Object.freeze({
+  [Service['Users']]: Runtime['Deno'],
+  [Service['Roles']]: Runtime['Deno'],
+  [Service['Checkin']]: Runtime['Deno'],
+  [Service['Locations']]: Runtime['Deno'],
+  [Service['Cities']]: Runtime['Deno'],
+  [Service['Venues']]: Runtime['Deno'],
+  [Service['Themes']]: Runtime['Deno'],
+  [Service['Games']]: Runtime['Deno'],
+  [Service['Registrations']]: Runtime['Deno'],
+  [Service['Files']]: Runtime['Bun'],
+  [Service['Procedures']]: Runtime['Bun'],
+  [Service['Integrations']]: Runtime['Bun'],
+  [Service['Updates']]: Runtime['Bun'],
+  [Service['Hub']]: Runtime['Node'],
+  [Service['Landing']]: Runtime['Node'],
+  [Service['Vkma']]: Runtime['Vite'],
+  [Service['Minio']]: Mode['Unknown'],
+})
