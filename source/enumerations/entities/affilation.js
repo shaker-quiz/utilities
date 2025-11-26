@@ -16,6 +16,7 @@ export const AffilationTitle = Object.freeze({
 export const AffilationIcon = Object.freeze({
   [Affilation['Branch']]: 'hero/outline/building-office-2',
   [Affilation['Franchise']]: 'hero/outline/building-storefront',
+  ['Unknown']: 'hero/outline/no-symbol',
 })
 
 const ValueAffilation = Object.freeze({

@@ -13,6 +13,12 @@ export const VersionTitle = Object.freeze({
   [Version['Legacy']]: 'Старая',
 })
 
+export const VersionIcon = Object.freeze({
+  [Version['Actual']]: 'hero/outline/no-symbol',
+  [Version['Legacy']]: 'hero/outline/no-symbol',
+  ['Unknown']: 'hero/outline/no-symbol',
+})
+
 const ValueChatappVersion = Object.freeze({
   'false': Version['Actual'],
   'true': Version['Legacy'],
