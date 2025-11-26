@@ -1,40 +1,43 @@
-export var ChatappVersion = /** @type {const} */ ({
+export const Version = Object.freeze({
   'Actual': 'Actual',
   'Legacy': 'Legacy',
 })
 
-export var ChatappVersions = [
-  ChatappVersion['Actual'],
-  ChatappVersion['Legacy'],
-]
+export const Versions = Object.freeze([
+  Version['Actual'],
+  Version['Legacy'],
+])
 
-export var VersionTitle = {
-  [ChatappVersion['Actual']]: 'Актуальная',
-  [ChatappVersion['Legacy']]: 'Старая',
-}
-
-var ValueChatappVersion = {
-  ['false']: ChatappVersion['Actual'],
-  ['true']: ChatappVersion['Legacy'],
-}
-
-var ChatappVersionShape = /** @type {const} */ ({
-  [ChatappVersion['Actual']]: {
-    chatapp_legacy: false,
-  },
-
-  [ChatappVersion['Legacy']]: {
-    chatapp_legacy: true,
-  },
+export const VersionTitle = Object.freeze({
+  [Version['Actual']]: 'Актуальная',
+  [Version['Legacy']]: 'Старая',
 })
 
-/** @returns {keyof typeof ChatappVersion | 'Unknown'} */
-export var inferChatappVersion = value =>
-  ValueChatappVersion[value?.chatapp_legacy]
-    ?? ChatappVersion[value]
-    ?? 'Unknown'
+const ValueChatappVersion = Object.freeze({
+  'false': Version['Actual'],
+  'true': Version['Legacy'],
+})
 
-/** @returns {typeof ChatappVersionShape[keyof typeof ChatappVersionShape] | { readonly chatapp_legacy: null }} */
-export var inferChatappVersionShape = value =>
+const ChatappVersionShape = Object.freeze({
+  [Version['Actual']]: Object.freeze({
+    chatapp_legacy: false,
+  }),
+
+  [Version['Legacy']]: Object.freeze({
+    chatapp_legacy: true,
+  }),
+})
+
+/** @returns {keyof typeof Version | 'Unknown'} */
+export const inferChatappVersion = Object.freeze(value =>
+  ValueChatappVersion[value?.chatapp_legacy]
+    ?? ValueChatappVersion[value]
+    ?? Version[value]
+    ?? 'Unknown'
+)
+
+/** @returns {typeof ChatappVersionShape[keyof typeof ChatappVersionShape] | { chatapp_legacy: null }} */
+export const inferChatappVersionShape = Object.freeze(value =>
   ChatappVersionShape[value]
     ?? { chatapp_legacy: null }
+)

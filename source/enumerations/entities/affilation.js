@@ -19,26 +19,30 @@ export const AffilationIcon = Object.freeze({
 })
 
 const ValueAffilation = Object.freeze({
-  [false]: Affilation['Branch'],
-  [true]: Affilation['Franchise'],
+  'false': Affilation['Branch'],
+  'true': Affilation['Franchise'],
 })
 
 const AffilationShape = Object.freeze({
-  [Affilation['Branch']]: {
+  [Affilation['Branch']]: Object.freeze({
     is_franchise: false,
-  },
+  }),
 
-  [Affilation['Franchise']]: {
+  [Affilation['Franchise']]: Object.freeze({
     is_franchise: true,
-  },
+  }),
 })
 
 /** @returns {keyof typeof Affilation | 'Unknown'} */
-export const inferAffilation = value =>
+export const inferAffilation = Object.freeze(value =>
   ValueAffilation[value?.is_franchise]
     ?? ValueAffilation[value]
     ?? Affilation[value]
     ?? 'Unknown'
+)
 
 /** @returns {typeof AffilationShape[keyof typeof AffilationShape] | { is_franchise: null }} */
-export const inferAffilationShape = value => AffilationShape[value] ?? { is_franchise: null }
+export const inferAffilationShape = Object.freeze(value =>
+  AffilationShape[value]
+    ?? { is_franchise: null }
+)
