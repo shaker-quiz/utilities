@@ -29,7 +29,7 @@ const ChatappVersionShape = Object.freeze({
 })
 
 /** @returns {keyof typeof Version | 'Unknown'} */
-export const inferChatappVersion = Object.freeze(value =>
+export const inferVersion = Object.freeze(value =>
   ValueChatappVersion[value?.chatapp_legacy]
     ?? ValueChatappVersion[value]
     ?? Version[value]
@@ -37,7 +37,7 @@ export const inferChatappVersion = Object.freeze(value =>
 )
 
 /** @returns {typeof ChatappVersionShape[keyof typeof ChatappVersionShape] | { chatapp_legacy: null }} */
-export const inferChatappVersionShape = Object.freeze(value =>
+export const inferVersionShape = Object.freeze(value =>
   ChatappVersionShape[value]
     ?? { chatapp_legacy: null }
 )
