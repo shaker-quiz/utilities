@@ -167,6 +167,11 @@ export const RouteRelation = Object.freeze({
   [Route['venues/city']]: Route['venue/city'],
 })
 
+export const RouteItems = Object.freeze({
+  [Route['user/role']]: Route['roles'],
+  [Route['user/city']]: Route['cities'],
+})
+
 export const RoutePathname = Object.freeze({
   [Route['checkin']]: 'checkin',
   [Route['cities']]: 'cities',
@@ -482,6 +487,11 @@ export const inferRouteCardinality = Object.freeze(
 export const inferRouteRelation = Object.freeze(
   /** @returns {typeof RouteRelation[keyof typeof RouteRelation] | 'Unknown'} */
   x => RouteRelation[x] ?? 'Unknown',
+)
+
+export const inferRouteItems = Object.freeze(
+  /** @returns {typeof RouteItems[keyof typeof RouteItems] | 'Unknown'} */
+  x => RouteItems[x] ?? 'Unknown',
 )
 
 export const inferRoutePathname = Object.freeze(
