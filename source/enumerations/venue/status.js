@@ -1,5 +1,5 @@
 export const VenueStatus = Object.freeze({
-  'ACTIVE': 'ACTIVE',
+  'Active': 'Active',
   'ARCHIVE': 'ARCHIVE',
 })
 
