@@ -9,8 +9,8 @@ export const VenueAudiences = Object.freeze([
 ])
 
 export const VenueAudienceTitle = Object.freeze({
-  [VenueAudience['Open']]: 'Без ограничений',
-  [VenueAudience['Restricted']]: 'Только взрослые',
+  [VenueAudience['Open']]: 'Все',
+  [VenueAudience['Restricted']]: 'Взрослые',
 })
 
 export const VenueAudienceIcon = Object.freeze({
