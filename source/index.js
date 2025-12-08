@@ -25,9 +25,12 @@ export * from './enumerations/entities/registration-mailing.js'
 export * from './enumerations/entities/role.js'
 export * from './enumerations/entities/version.js'
 
-export * from './enumerations/registration/status.js'
 export * from './enumerations/venue/audience.js'
 export * from './enumerations/venue/status.js'
+
+export * from './enumerations/theme/status.js'
+
+export * from './enumerations/registration/status.js'
 
 export * from './functions/hydrate-route-params.js'
 export * from './functions/hydrate-route-pathname.js'
