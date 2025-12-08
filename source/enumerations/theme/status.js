@@ -3,7 +3,7 @@ export const ThemeStatus = Object.freeze({
   'Archive': 'Archive',
 })
 
-/** @satisfies {Array<keyof typeof ThemeStatus>} */
+/** @satisfies {Readonly<Array<keyof typeof ThemeStatus>>} */
 export const ThemeStatuses = Object.freeze([
   'Active',
   'Archive',

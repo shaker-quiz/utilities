@@ -1,21 +1,24 @@
 export const VenueStatus = Object.freeze({
   'Active': 'Active',
-  'ARCHIVE': 'ARCHIVE',
+  'Archive': 'Archive',
 })
 
+/** @satisfies {Array<keyof typeof VenueStatus>} */
 export const VenueStatuses = Object.freeze([
-  VenueStatus['ACTIVE'],
-  VenueStatus['ARCHIVE'],
+  'Active',
+  'Archive',
 ])
 
+/** @satisfies {Record<keyof typeof VenueStatus, string>} */
 export const VenueStatusTitle = Object.freeze({
-  [VenueStatus['ACTIVE']]: 'Активно',
-  [VenueStatus['ARCHIVE']]: 'Архив',
+  'Active': 'Активно',
+  'Archive': 'Архив',
 })
 
+/** @satisfies {Record<keyof typeof VenueStatus, string>} */
 export const VenueStatusIcon = Object.freeze({
-  [VenueStatus['ACTIVE']]: 'hero/outline/check',
-  [VenueStatus['ARCHIVE']]: 'hero/outline/archive-box',
+  'Active': 'hero/outline/check',
+  'Archive': 'hero/outline/archive-box',
 })
 
 export const inferVenueStatus = Object.freeze(
