@@ -47,7 +47,7 @@ export const QuantifierTitle = Object.freeze({
   [Numerosity['Singular']]: Object.freeze({
     [Gender['Masculine']]: Object.freeze({
       [Quantifier['Any']]: 'Любой',
-      [Quantifier['None']]: 'Отсутствует',
+      [Quantifier['None']]: 'Нет',
       [Quantifier['Single']]: 'Один',
       [Quantifier['Many']]: 'Много',
       [Quantifier['All']]: 'Все',
@@ -55,7 +55,7 @@ export const QuantifierTitle = Object.freeze({
 
     [Gender['Feminine']]: Object.freeze({
       [Quantifier['Any']]: 'Любая',
-      [Quantifier['None']]: 'Отсутствует',
+      [Quantifier['None']]: 'Нет',
       [Quantifier['Single']]: 'Одна',
       [Quantifier['Many']]: 'Много',
       [Quantifier['All']]: 'Все',
@@ -63,7 +63,7 @@ export const QuantifierTitle = Object.freeze({
 
     [Gender['Neuter']]: Object.freeze({
       [Quantifier['Any']]: 'Любое',
-      [Quantifier['None']]: 'Отсутствует',
+      [Quantifier['None']]: 'Нет',
       [Quantifier['Single']]: 'Одно',
       [Quantifier['Many']]: 'Много',
       [Quantifier['All']]: 'Все',
@@ -73,7 +73,7 @@ export const QuantifierTitle = Object.freeze({
   [Numerosity['Plural']]: Object.freeze({
     [Gender['Indeterminate']]: Object.freeze({
       [Quantifier['Any']]: 'Любые',
-      [Quantifier['None']]: 'Отсутствуют',
+      [Quantifier['None']]: 'Нет',
       [Quantifier['Single']]: 'Один',
       [Quantifier['Many']]: 'Много',
       [Quantifier['All']]: 'Все',
