@@ -3,22 +3,22 @@ export const Affilation = Object.freeze({
   'Franchise': 'Franchise',
 })
 
+/** @satisfies {Array<keyof typeof Affilation>} */
 export const Affilations = Object.freeze([
-  Affilation['Branch'],
-  Affilation['Franchise'],
-  'Unknown',
+  'Branch',
+  'Franchise',
 ])
 
+/** @satisfies {Record<keyof typeof Affilation, string>} */
 export const AffilationTitle = Object.freeze({
-  [Affilation['Branch']]: 'Филиал',
-  [Affilation['Franchise']]: 'Франшиза',
-  ['Unknown']: 'Неизвестно',
+  'Branch': 'Филиал',
+  'Franchise': 'Франшиза',
 })
 
+/** @satisfies {Record<keyof typeof Affilation, string>} */
 export const AffilationIcon = Object.freeze({
-  [Affilation['Branch']]: 'hero/outline/building-office-2',
-  [Affilation['Franchise']]: 'hero/outline/building-storefront',
-  ['Unknown']: 'hero/outline/no-symbol',
+  'Branch': 'hero/outline/building-office-2',
+  'Franchise': 'hero/outline/building-storefront',
 })
 
 /** @returns {keyof typeof Affilation | 'Unknown'} */
