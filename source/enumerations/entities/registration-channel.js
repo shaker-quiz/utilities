@@ -1,26 +1,26 @@
-export var RegistrationChannel = /** @type {const} */ ({
+export const Channel = Object.freeze({
   'vkontakte': 'vkontakte',
   'telegramBot': 'telegramBot',
   'email': 'email',
 })
 
-export var RegistrationChannels = Object.values(RegistrationChannel)
+/** @satisfies {Array<keyof typeof Channel>} */
+export const Channels = Object.freeze([
+  'vkontakte',
+  'telegramBot',
+  'email',
+])
 
-export var RegistrationChannelWeight = {
-  [RegistrationChannel.vkontakte]: 0,
-  [RegistrationChannel.telegramBot]: 1,
-  [RegistrationChannel.email]: 2,
-}
+/** @satisfies {Record<keyof typeof Channel, string>} */
+export const ChannelTitle = Object.freeze({
+  'vkontakte': 'Вконтакте',
+  'telegramBot': 'Телеграм',
+  'email': 'Электронная почта',
+})
 
-export var RegistationChannelTitle = {
-  [RegistrationChannel.vkontakte]: 'Вконтакте',
-  [RegistrationChannel.telegramBot]: 'Телеграм',
-  [RegistrationChannel.email]: 'Электронная почта',
-}
-
-/** @type {Record<RegistrationChannel, Icon>} */
-export var RegistationChannelIcon = {
-  [RegistrationChannel.vkontakte]: 'brand/solid/vk',
-  [RegistrationChannel.telegramBot]: 'brand/solid/telegram',
-  [RegistrationChannel.email]: 'hero/solid/at-symbol',
-}
+/** @satisfies {Record<keyof typeof Channel, string>} */
+export const ChannelIcon = Object.freeze({
+  'vkontakte': 'brand/solid/vk',
+  'telegramBot': 'brand/solid/telegram',
+  'email': 'hero/solid/at-symbol',
+})
