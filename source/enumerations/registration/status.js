@@ -4,59 +4,35 @@ export const RegistrationStatus = Object.freeze({
   'Cancelled': 'Cancelled',
 })
 
+/** @satisfies {Array<keyof typeof RegistrationStatus>} */
 export const RegistrationStatuses = Object.freeze([
-  RegistrationStatus['Created'],
-  RegistrationStatus['Confirmed'],
-  RegistrationStatus['Cancelled'],
+  'Created',
+  'Confirmed',
+  'Cancelled',
 ])
 
+/** @satisfies {Record<keyof typeof RegistrationStatus, string>} */
 export const RegistrationStatusTitle = Object.freeze({
-  [RegistrationStatus['Confirmed']]: 'Подтверждена',
-  [RegistrationStatus['Created']]: 'Создана',
-  [RegistrationStatus['Cancelled']]: 'Отменена',
+  'Confirmed': 'Подтверждена',
+  'Created': 'Создана',
+  'Cancelled': 'Отменена',
 })
 
+/** @satisfies {Record<keyof typeof RegistrationStatus, string>} */
 export const RegistrationStatusIcon = Object.freeze({
-  [RegistrationStatus['Confirmed']]: 'hero/outline/check-circle',
-  [RegistrationStatus['Created']]: 'hero/outline/check',
-  [RegistrationStatus['Cancelled']]: 'hero/outline/x-mark',
+  'Confirmed': 'hero/outline/check-circle',
+  'Created': 'hero/outline/check',
+  'Cancelled': 'hero/outline/x-mark',
 })
 
+/** @satisfies {Record<keyof typeof RegistrationStatus, string>} */
 export const RegistrationStatusEmoji = Object.freeze({
-  [RegistrationStatus['Confirmed']]: '✅',
-  [RegistrationStatus['Created']]: '📝',
-  [RegistrationStatus['Cancelled']]: '❌',
-})
-
-const ValueRegistrationStatus = Object.freeze({
-  'false/false': RegistrationStatus['Created'],
-  'false/true': RegistrationStatus['Confirmed'],
-  'true/false': RegistrationStatus['Cancelled'],
-})
-
-const RegistrationStatusShape = Object.freeze({
-  [RegistrationStatus['Created']]: Object.freeze({
-    is_canceled: false,
-    is_confirm: false,
-  }),
-
-  [RegistrationStatus['Confirmed']]: Object.freeze({
-    is_canceled: false,
-    is_confirm: true,
-  }),
-
-  [RegistrationStatus['Cancelled']]: Object.freeze({
-    is_canceled: true,
-    is_confirm: false,
-  }),
+  'Confirmed': '✅',
+  'Created': '📝',
+  'Cancelled': '❌',
 })
 
 export const inferRegistrationStatus = Object.freeze(
   /** @returns {keyof typeof RegistrationStatus | 'Unknown'} */
-  x => ValueRegistrationStatus[x?.is_canceled + '/' + x?.is_confirm] ?? ValueRegistrationStatus[x] ?? 'Unknown',
-)
-
-export const inferRegistrationStatusShape = Object.freeze(
-  /** @returns {typeof RegistrationStatusShape[keyof typeof RegistrationStatusShape] | { is_canceled: null, is_confirm: null }} */
-  x => RegistrationStatusShape[x] ?? { is_canceled: null, is_confirm: null },
+  x => RegistrationStatus[x?.status ?? x] ?? 'Unknown',
 )
