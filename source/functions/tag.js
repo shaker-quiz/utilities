@@ -8,19 +8,19 @@ export const tag = Object.freeze(
    * @template {keyof typeof import('../enumerations/route.js').Route} R
    * @template {typeof import('../enumerations/route.js').RoutePathname[R]} P
    *
-   * @param {M} m
-   * @param {R} r
-   * @param {string[]} p
+   * @param {M} method
+   * @param {R} route
+   * @param {any[]} params
    *
    * @returns {`${M}/${P}`}
    */
-  (m, r, p) => {
-    var method = inferMethod(m)
+  (method, route, params) => {
+    var method = inferMethod(method)
 
     if (method === 'Unknown')
-      throw TypeError(`Could not infer method of: '${m}'.`)
+      throw TypeError(`Could not infer method of: '${method}'.`)
 
-    return method + '/' + hydrateRoutePathname(r, p)
+    return method + '/' + hydrateRoutePathname(route, params)
   },
 )
 
@@ -29,9 +29,9 @@ export const tagexp = Object.freeze(
    * @template {keyof typeof import('../enumerations/method.js').Method} M
    * @template {keyof typeof import('../enumerations/route.js').Route} R
    *
-   * @param {M} m
-   * @param {R} r
-   * @param {string[]} p
+   * @param {M} method
+   * @param {R} route
+   * @param {any[]} params
    */
-  (m, r, p) => new RegExp(`^${tag(m, r, p)}$`),
+  (method, route, params) => new RegExp(`^${tag(method, route, params)}$`),
 )

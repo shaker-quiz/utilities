@@ -34,5 +34,5 @@ export * from './enumerations/registration/status.js'
 
 export * from './functions/hydrate-route-params.js'
 export * from './functions/hydrate-route-pathname.js'
-export * from './functions/key.js'
 export * from './functions/string-tag.js'
+export * from './functions/tag.js'
