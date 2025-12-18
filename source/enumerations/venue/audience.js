@@ -1,44 +1,27 @@
 export const VenueAudience = Object.freeze({
   'Open': 'Open',
-  'Restricted': 'Restricted',
+  'Adults': 'Adults',
 })
 
+/** @satisfies {Array<keyof typeof VenueAudience>} */
 export const VenueAudiences = Object.freeze([
-  VenueAudience['Open'],
-  VenueAudience['Restricted'],
+  'Open',
+  'Adults',
 ])
 
+/** @satisfies {Record<keyof typeof VenueAudience, string>} */
 export const VenueAudienceTitle = Object.freeze({
-  [VenueAudience['Open']]: 'Все',
-  [VenueAudience['Restricted']]: 'Взрослые',
+  'Open': 'Все',
+  'Adults': 'Взрослые',
 })
 
+/** @satisfies {Record<keyof typeof VenueAudience, string>} */
 export const VenueAudienceIcon = Object.freeze({
-  [VenueAudience['Open']]: 'hero/outline/lock-open',
-  [VenueAudience['Restricted']]: 'hero/outline/lock-closed',
+  'Open': 'hero/outline/lock-open',
+  'Adults': 'hero/outline/lock-closed',
 })
-
-const ValueVenueAudience = Object.freeze({
-  'false': VenueAudience['Open'],
-  'true': VenueAudience['Restricted'],
-})
-
-const VenueAudienceShape = /** @type {const} */ (Object.freeze({
-  [VenueAudience['Open']]: {
-    is_adult: false,
-  },
-
-  [VenueAudience['Restricted']]: {
-    is_adult: true,
-  },
-}))
 
 export const inferVenueAudience = Object.freeze(
   /** @returns {keyof typeof VenueAudience | 'Unknown'} */
-  x => ValueVenueAudience[x?.is_adult] ?? VenueAudience[x] ?? 'Unknown',
-)
-
-export const inferVenueAudienceShape = Object.freeze(
-  /** @returns {typeof VenueAudienceShape[keyof typeof VenueAudienceShape] | { is_adult: null }} */
-  x => VenueAudienceShape[x] ?? { is_adult: null },
+  x => VenueAudience[x?.audience ?? x] ?? 'Unknown',
 )
