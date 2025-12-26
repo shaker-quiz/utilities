@@ -1,5 +1,5 @@
-import { inferMethod } from '../system/method.js'
-
+import { Method } from '../entities/mode.js'
+import { Relation } from '../prototypes/relation.js'
 import { hydrateRoutePathname } from './hydrate-route-pathname.js'
 
 export const tag = Object.freeze(
@@ -15,10 +15,9 @@ export const tag = Object.freeze(
    * @returns {`${MethodTemplate}/${RoutePathnameTemplate}`}
    */
   (method, route, params) => {
-    var m = inferMethod(method)
-
-    if (m === 'Unknown')
-      throw TypeError(`Could not infer method of: '${method}'.`)
+    var m = Relation
+      .of(Method)
+      .require(method)
 
     return m + '/' + hydrateRoutePathname(route, params)
   },

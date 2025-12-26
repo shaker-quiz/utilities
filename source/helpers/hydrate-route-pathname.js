@@ -1,5 +1,7 @@
-import { checkRoute } from '../application/route.js'
-import { inferRouteParams, inferRoutePathname } from '../system/route.js'
+import { RoutePathnameParams } from '../entities/route-pathname-params.js'
+import { RoutePathname } from '../entities/route-pathname.js'
+import { Route } from '../entities/route.js'
+import { Relation } from '../prototypes/relation.js'
 
 export const hydrateRoutePathname = Object.freeze(
   /**
@@ -12,21 +14,18 @@ export const hydrateRoutePathname = Object.freeze(
     if (!Array.isArray(params))
       throw TypeError(`Parameter 'params' must be 'Array'.`)
 
-    var $route = checkRoute(route)
+    var r = Relation
+      .of(Route)
+      .require(route)
 
-    var $routePathname = inferRoutePathname($route)
+    var rp = Relation
+      .of(RoutePathname)
+      .require(r)
 
-    if ($routePathname === 'Unknown')
-      throw TypeError(`Could not infer route pathname of: '${$route}'.`)
+    var rpp = Relation
+      .of(RoutePathnameParams)
+      .require(r)
 
-    var rpm = inferRouteParams($route)
-
-    if (rpm === 'Unknown')
-      throw TypeError(`Could not infer route params of: '${$route}'.`)
-
-    return rpm.reduce(
-      (pathname, param, index) => pathname.replace(param, params[index]),
-      $routePathname,
-    )
+    return rpp.reduce((rp, rpp, i) => rp.replace(rpp, params[i]), rp)
   },
 )
