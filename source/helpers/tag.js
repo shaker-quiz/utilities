@@ -1,4 +1,4 @@
-import { Method } from '../entities/mode.js'
+import { Method } from '../entities/method.js'
 import { Relation } from '../prototypes/relation.js'
 import { hydrateRoutePathname } from './hydrate-route-pathname.js'
 
