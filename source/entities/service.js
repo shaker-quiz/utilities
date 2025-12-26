@@ -18,22 +18,4 @@ export const Service = Object.freeze({
   'Minio': 'Minio',
 })
 
-export const Services = Object.freeze([
-  'Users',
-  'Roles',
-  'Checkin',
-  'Locations',
-  'Cities',
-  'Venues',
-  'Themes',
-  'Games',
-  'Registrations',
-  'Files',
-  'Procedures',
-  'Integrations',
-  'Updates',
-  'Hub',
-  'Landing',
-  'Vkma',
-  'Minio',
-])
+export const Services = Object.freeze(Object.values(Service))
