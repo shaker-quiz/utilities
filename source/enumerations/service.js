@@ -17,6 +17,7 @@ export const Service = Object.freeze({
   'Updates': 'Updates',
   'Hub': 'Hub',
   'Landing': 'Landing',
+  'Telegram': 'Telegram',
   'Vkma': 'Vkma',
   'Minio': 'Minio',
 })
@@ -37,6 +38,7 @@ export const Services = Object.freeze([
   Service['Updates'],
   Service['Hub'],
   Service['Landing'],
+  Service['Telegram'],
   Service['Vkma'],
   Service['Minio'],
 ])
@@ -57,6 +59,7 @@ export const ServiceRuntime = Object.freeze({
   [Service['Updates']]: Runtime['Bun'],
   [Service['Hub']]: Runtime['Node'],
   [Service['Landing']]: Runtime['Node'],
+  [Service['Telegram']]: Runtime['Node'],
   [Service['Vkma']]: Runtime['Vite'],
   [Service['Minio']]: Mode['Unknown'],
 })
