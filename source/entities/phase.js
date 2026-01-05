@@ -13,11 +13,3 @@ export const Phases = Object.freeze([
   'Aborted',
   'Failed',
 ])
-
-export const PhaseIcon = Object.freeze({
-  'Idle': 'hero/outline/clock',
-  'Loading': 'hero/outline/clock',
-  'Loaded': 'hero/outline/check',
-  'Aborted': 'hero/outline/signal-slash',
-  'Failed': 'hero/outline/x-mark',
-})

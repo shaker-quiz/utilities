@@ -12,13 +12,6 @@ export const RegistrationStatuses = Object.freeze([
 ])
 
 /** @satisfies {Record<keyof typeof RegistrationStatus, string>} */
-export const RegistrationStatusIcon = Object.freeze({
-  'Confirmed': 'hero/outline/check-circle',
-  'Created': 'hero/outline/check',
-  'Cancelled': 'hero/outline/x-mark',
-})
-
-/** @satisfies {Record<keyof typeof RegistrationStatus, string>} */
 export const RegistrationStatusEmoji = Object.freeze({
   'Confirmed': '✅',
   'Created': '📝',

@@ -8,11 +8,6 @@ export const RegistrationLineups = Object.freeze([
   'Reserve',
 ])
 
-export const RegistrationLineupIcon = Object.freeze({
-  'Main': 'hero/outline/user-circle',
-  'Reserve': 'hero/outline/pause-circle',
-})
-
 export const RegistrationLineupEmoji = Object.freeze({
   'Main': '🟢',
   'Reserve': '🟡',

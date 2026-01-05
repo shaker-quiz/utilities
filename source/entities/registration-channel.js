@@ -9,9 +9,3 @@ export const RegistrationChannels = Object.freeze([
   'telegramBot',
   'email',
 ])
-
-export const RegistrationChannelIcon = Object.freeze({
-  'vkontakte': 'brand/solid/vk',
-  'telegramBot': 'brand/solid/telegram',
-  'email': 'hero/solid/at-symbol',
-})

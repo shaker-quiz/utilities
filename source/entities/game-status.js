@@ -16,18 +16,6 @@ export const GameStatus = Object.freeze({
 
 export const GameStatuses = Object.freeze(Object.values(GameStatus))
 
-export const GameStatusIcon = Object.freeze({
-  'REJECTED': 'hero/outline/x-mark',
-  'MODERATION': 'hero/outline/clock',
-  'APPROVED': 'hero/outline/hand-thumb-up',
-  'CLOSED': 'hero/outline/exclamation-triangle',
-  'FORINVITES': 'hero/outline/lock-closed',
-  'PUBLISHED': 'hero/outline/check-circle',
-  'IS_RESERVE': 'hero/outline/user-plus',
-  'FINISHED': 'hero/outline/check',
-  'ARCHIVE': 'hero/outline/archive-box',
-})
-
 export const RoleGameStatusGameStatuses = Object.freeze({
   [Role['admin']]: Object.freeze({}),
 

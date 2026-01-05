@@ -8,9 +8,3 @@ export const CityAffilations = Object.freeze([
   'Branch',
   'Franchise',
 ])
-
-/** @satisfies {Record<keyof typeof CityAffilation, string>} */
-export const CityAffilationIcon = Object.freeze({
-  'Branch': 'hero/outline/building-office-2',
-  'Franchise': 'hero/outline/building-storefront',
-})

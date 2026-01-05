@@ -9,13 +9,6 @@ export const RegistrationAttribute = Object.freeze({
 
 export const RegistrationAttributes = Object.freeze(Object.values(RegistrationAttribute))
 
-export const RegistrationAttributeIcon = Object.freeze({
-  [RegistrationAttribute.Alone]: 'hero/outline/user',
-  [RegistrationAttribute.Newcomer]: 'hero/outline/sparkles',
-  [RegistrationAttribute.Birthday]: 'hero/outline/cake',
-  [RegistrationAttribute.Public]: 'hero/outline/user-plus',
-})
-
 export const RegistrationAttributeEmoji = Object.freeze({
   [RegistrationAttribute.Alone]: '👤',
   [RegistrationAttribute.Newcomer]: '✨',

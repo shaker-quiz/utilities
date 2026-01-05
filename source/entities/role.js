@@ -14,12 +14,3 @@ export const Roles = Object.freeze([
   'user',
   'manager',
 ])
-
-export const RoleIcon = Object.freeze({
-  'admin': 'hero/outline/user',
-  'organizer': 'hero/outline/user',
-  'captain': 'hero/outline/user',
-  'player': 'hero/outline/user',
-  'user': 'hero/outline/user',
-  'manager': 'hero/outline/user',
-})
