@@ -1,6 +1,6 @@
 import { Method } from '../entities/method.js'
-import { Relation } from '../prototypes/relation.js'
 import { hydrateRoutePathname } from './hydrate-route-pathname.js'
+import { access } from '../helpers/access.js'
 
 export const tag = Object.freeze(
   /**
@@ -15,9 +15,7 @@ export const tag = Object.freeze(
    * @returns {`${MethodTemplate}/${RoutePathnameTemplate}`}
    */
   (method, route, params) => {
-    var m = Relation
-      .of(Method)
-      .require(method)
+    var m = access(Method, method)
 
     return m + '/' + hydrateRoutePathname(route, params)
   },
