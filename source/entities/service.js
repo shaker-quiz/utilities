@@ -14,6 +14,7 @@ export const Service = Object.freeze({
   'Updates': 'Updates',
   'Hub': 'Hub',
   'Landing': 'Landing',
+  'Telegram': 'Telegram',
   'Vkma': 'Vkma',
   'Minio': 'Minio',
 })
