@@ -9,6 +9,7 @@ export const Route = Object.freeze({
   'city/country': 'city/country',
   'city/currency': 'city/currency',
   'city/timezone': 'city/timezone',
+  'city/vk_group_token': 'city/vk_group_token',
   'city/venue': 'city/venue',
   'city/venues': 'city/venues',
   'countries': 'countries',
