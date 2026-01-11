@@ -12,6 +12,7 @@ export const RouteCardinality = Object.freeze({
   [Route['city/country']]: Cardinality['1-1'],
   [Route['city/currency']]: Cardinality['1-1'],
   [Route['city/timezone']]: Cardinality['1-1'],
+  [Route['city/vk_group_token']]: Cardinality['1-1'],
   [Route['city/venue']]: Cardinality['1-1'],
   [Route['city/venues']]: Cardinality['1-N'],
   [Route['countries']]: Cardinality['N'],
