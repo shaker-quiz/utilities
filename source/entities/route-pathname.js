@@ -11,6 +11,7 @@ export const RoutePathname = Object.freeze({
   [Route['city/country']]: 'city/:city/country',
   [Route['city/currency']]: 'city/:city/currency',
   [Route['city/timezone']]: 'city/:city/timezone',
+  [Route['city/vk_group_token']]: 'city/:city/vk_group_token',
   [Route['city/venue']]: 'city/:city/venue/:venue',
   [Route['city/venues']]: 'city/:city/venues',
   [Route['countries']]: 'countries',
