@@ -6,7 +6,7 @@ export const RoutePathnameParams = (() => {
   let object = {}
 
   for (const route in RoutePathname)
-    object[route] = RoutePathname[route].match(/(:(\w)+)/g)
+    object[route] = RoutePathname[route].match(/(:(\w)+)/g) ?? []
 
   return Object.freeze(object)
 })()
