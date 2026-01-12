@@ -1,5 +1,5 @@
 export const access = (value, key) => {
-  if (Object.hasOwn(this.value, key))
+  if (Object.hasOwn(value, key))
     return value[key]
   else
     throw TypeError(`Could not require key '${key}' from Relation '${JSON.stringify(value)}'.`)
