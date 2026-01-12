@@ -89,9 +89,6 @@ const RelationProp = new Map([
 ])
 
 export const access = (Relation, value) => {
-  if (!RelationProp.has(Relation))
-    throw TypeError(`Relation ${JSON.stringify(Relation)} is unknown.`)
-
   const node = RelationNode.get(Relation)
 
   const prop = RelationProp.get(Relation)
@@ -104,9 +101,9 @@ export const access = (Relation, value) => {
     throw TypeError(`Could not require key '${value}' from Relation '${JSON.stringify(Relation)}'.`)
 }
 
-export const tryAccess = (value, key) => {
+export const tryAccess = (Relation, value) => {
   try {
-    return access(value, key)
+    return access(Relation, value)
   } catch (error) {
     return 'Unknown'
   }
