@@ -99,7 +99,7 @@ export const RouteCardinalityRoute = Object.freeze({
   },
 
   [Route['users/role']]: {
-    [Cardinality['1-N']]: Route['user/role'],
+    [Cardinality['1-1']]: Route['user/role'],
   },
 
   [Route['venues']]: {
