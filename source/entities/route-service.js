@@ -57,6 +57,7 @@ export const RouteService = Object.freeze({
   [Route['registration/confirmation']]: Service['Registrations'],
   [Route['registration/city']]: Service['Registrations'],
   [Route['registration/game']]: Service['Registrations'],
+  [Route['registration/game/theme']]: Service['Registrations'],
   [Route['registration/mailing']]: Service['Registrations'],
   [Route['registrations']]: Service['Registrations'],
   [Route['registrations/city']]: Service['Registrations'],

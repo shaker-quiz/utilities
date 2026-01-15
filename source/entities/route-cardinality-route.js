@@ -39,11 +39,11 @@ export const RouteCardinalityRoute = Object.freeze({
   },
 
   [Route['games/registrations']]: {
-    [Cardinality['1']]: Route['game/registrations'],
+    [Cardinality['1-N']]: Route['game/registrations'],
   },
 
   [Route['games/summary']]: {
-    [Cardinality['1']]: Route['game/summary'],
+    [Cardinality['1-1']]: Route['game/summary'],
   },
 
   [Route['games/theme']]: {
@@ -79,7 +79,7 @@ export const RouteCardinalityRoute = Object.freeze({
   },
 
   [Route['themes/cover']]: {
-    [Cardinality['1']]: Route['theme/cover'],
+    [Cardinality['1-1']]: Route['theme/cover'],
   },
 
   [Route['timezones']]: {
@@ -87,7 +87,7 @@ export const RouteCardinalityRoute = Object.freeze({
   },
 
   [Route['user/cities']]: {
-    [Cardinality['1']]: Route['user/cities'],
+    [Cardinality['1-N']]: Route['user/cities'],
   },
 
   [Route['users']]: {
@@ -95,11 +95,11 @@ export const RouteCardinalityRoute = Object.freeze({
   },
 
   [Route['users/cities']]: {
-    [Cardinality['1']]: Route['user/cities'],
+    [Cardinality['1-N']]: Route['user/cities'],
   },
 
   [Route['users/role']]: {
-    [Cardinality['1']]: Route['user/role'],
+    [Cardinality['1-1']]: Route['user/role'],
   },
 
   [Route['venues']]: {
@@ -107,6 +107,6 @@ export const RouteCardinalityRoute = Object.freeze({
   },
 
   [Route['venues/city']]: {
-    [Cardinality['1']]: Route['venue/city'],
+    [Cardinality['1-1']]: Route['venue/city'],
   },
 })

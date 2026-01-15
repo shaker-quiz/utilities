@@ -40,6 +40,7 @@ export const ServiceRoutes = Object.freeze({
     Route['city/country'],
     Route['city/currency'],
     Route['city/timezone'],
+    Route['city/vk_group_token'],
     Route['city/venues'],
   ]),
 
@@ -81,6 +82,7 @@ export const ServiceRoutes = Object.freeze({
     Route['registration/confirmation'],
     Route['registration/city'],
     Route['registration/game'],
+    Route['registration/game/theme'],
     Route['registration/mailing'],
     Route['registrations'],
     Route['registrations/city'],
