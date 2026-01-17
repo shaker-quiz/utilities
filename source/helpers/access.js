@@ -1,5 +1,4 @@
 import { Blend } from '../entities/blend.js'
-import { CardinalityRoutes } from '../entities/cardinality-routes.js'
 import { Cardinality } from '../entities/cardinality.js'
 import { Category } from '../entities/category.js'
 import { CityAffilation } from '../entities/city-affilation.js'
@@ -21,21 +20,19 @@ import { RegistrationLineup } from '../entities/registration-lineup.js'
 import { RegistrationMailing } from '../entities/registration-mailing.js'
 import { RegistrationStatus } from '../entities/registration-status.js'
 import { Role } from '../entities/role.js'
-import { RouteCardinalityRoute } from '../entities/route-cardinality-route.js'
 import { RouteCardinality } from '../entities/route-cardinality.js'
-import { RoutePathnameParams } from '../entities/route-pathname-params.js'
+import { RouteParameter } from '../entities/route-parameter.js'
 import { RoutePathname } from '../entities/route-pathname.js'
-import { RouteService } from '../entities/route-service.js'
+import { RouteService, ServiceRoutes } from '../entities/route-service.js'
 import { Route } from '../entities/route.js'
 import { Runtime } from '../entities/runtime.js'
-import { ServiceRoutes } from '../entities/service-routes.js'
 import { ServiceRuntime } from '../entities/service-runtime.js'
 import { Service } from '../entities/service.js'
 import { ThemeStatus } from '../entities/theme-status.js'
 import { VenueAudience } from '../entities/venue-audience.js'
 import { VenueStatus } from '../entities/venue-status.js'
 
-const RelationNode = new Map([
+const Node = new Map([
   [CityAffilation, 'city'],
   [CityChatappVersion, 'city'],
   [GameStatus, 'game'],
@@ -49,9 +46,8 @@ const RelationNode = new Map([
   [VenueStatus, 'venue'],
 ])
 
-const RelationProp = new Map([
+const Prop = new Map([
   [Blend, 'blend'],
-  [CardinalityRoutes, 'routes'],
   [Cardinality, 'cardinality'],
   [Category, 'category'],
   [CityAffilation, 'affilation'],
@@ -73,9 +69,8 @@ const RelationProp = new Map([
   [RegistrationMailing, 'mailing'],
   [RegistrationStatus, 'status'],
   [Role, 'name'],
-  [RouteCardinalityRoute, 'cardinality_route'],
   [RouteCardinality, 'cardinality'],
-  [RoutePathnameParams, 'pathname_params'],
+  [RouteParameter, 'parameter'],
   [RoutePathname, 'pathname'],
   [RouteService, 'service'],
   [Route, 'route'],
@@ -88,17 +83,53 @@ const RelationProp = new Map([
   [VenueStatus, 'status'],
 ])
 
-export const access = (Relation, value) => {
-  const node = RelationNode.get(Relation)
+const Tag = new Map([
+  [Blend, 'Blend'],
+  [Cardinality, 'Cardinality'],
+  [Category, 'Category'],
+  [CityAffilation, 'CityAffilation'],
+  [CityChatappVersion, 'CityChatappVersion'],
+  [Constants, 'Constants'],
+  [Display, 'Display'],
+  [GameStatus, 'GameStatus'],
+  [Gender, 'Gender'],
+  [Icon, 'Icon'],
+  [Method, 'Method'],
+  [Mode, 'Mode'],
+  [Network, 'Network'],
+  [Numerosity, 'Numerosity'],
+  [Pattern, 'Pattern'],
+  [Phase, 'Phase'],
+  [Quantifier, 'Quantifier'],
+  [RegistrationChannel, 'RegistrationChannel'],
+  [RegistrationLineup, 'RegistrationLineup'],
+  [RegistrationMailing, 'RegistrationMailing'],
+  [RegistrationStatus, 'RegistrationStatus'],
+  [Role, 'Role'],
+  [RouteCardinality, 'RouteCardinality'],
+  [RouteParameter, 'RouteParameter'],
+  [RoutePathname, 'RoutePathname'],
+  [RouteService, 'RouteService'],
+  [Route, 'Route'],
+  [Runtime, 'Runtime'],
+  [ServiceRuntime, 'ServiceRuntime'],
+  [Service, 'Service'],
+  [ThemeStatus, 'ThemeStatus'],
+  [VenueAudience, 'VenueAudience'],
+  [VenueStatus, 'VenueStatus'],
+])
 
-  const prop = RelationProp.get(Relation)
+export const access = (Relation, value) => {
+  const node = Node.get(Relation)
+
+  const prop = Prop.get(Relation)
 
   const read = value?.[node]?.[prop] ?? value?.[prop] ?? value
 
   if (Object.hasOwn(Relation, read))
     return Relation[read]
   else
-    throw TypeError(`Could not require key '${value}' from Relation '${JSON.stringify(Relation)}'.`)
+    throw TypeError(`Could not require key '${value}' from '${Tag.get(Relation)}'.`)
 }
 
 export const tryAccess = (Relation, value) => {

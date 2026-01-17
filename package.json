@@ -12,6 +12,6 @@
     "default": "./source/index.js"
   },
   "scripts": {
-    "prepublishOnly": "bun ./scripts/route-cardinality.js && bun ./scripts/route-parameter.js && bun ./scripts/route-pathname.js && bun ./scripts/route-relation.js"
+    "prepublishOnly": "bun ./scripts/route-cardinality.js && bun ./scripts/route-parameter.js && bun ./scripts/route-pathname.js && bun ./scripts/route-relation.js && bun ./scripts/route-service.js"
   }
 }
