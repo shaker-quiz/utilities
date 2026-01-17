@@ -1,0 +1,3 @@
+export const RouteCardinalities = Object.freeze( /** @type {const} */ (/* RouteCardinalities */))
+
+export const RouteCardinality = Object.freeze(/** @type {const} */ (/* RouteCardinality */))

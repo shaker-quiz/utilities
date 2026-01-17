@@ -1,0 +1,41 @@
+export const Keys = Object.freeze(
+  /** @type {const} */ ([
+    'checkin',
+    'user',
+    'users',
+    'role',
+    'roles',
+    'country',
+    'countries',
+    'currency',
+    'currencies',
+    'timezone',
+    'timezones',
+    'city',
+    'cities',
+    'venue',
+    'venues',
+    'theme',
+    'themes',
+    'cover',
+    'game',
+    'games',
+    'registration',
+    'registrations',
+    'export',
+    'password',
+    'vk_group_token',
+    'summary',
+    'mailing',
+    'channel',
+    'confirmation',
+    'cancellation',
+  ]),
+)
+
+export const Key = Object.freeze(
+  /** @type {{ [x in typeof Keys[number]]: x }} */ (Keys.reduce(
+    (o, x) => (o[x] = x, o),
+    {},
+  )),
+)
