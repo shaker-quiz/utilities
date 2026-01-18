@@ -1,6 +1,7 @@
 import { Method } from '../entities/method.js'
+
+import { access } from './access.js'
 import { hydrateRoutePathname } from './hydrate-route-pathname.js'
-import { access } from '../helpers/access.js'
 
 export const tag = Object.freeze(
   /**
@@ -8,16 +9,16 @@ export const tag = Object.freeze(
    * @template {keyof typeof import('../system/route.js').Route} RouteTemplate
    * @template {typeof import('../system/route.js').RoutePathname[RouteTemplate]} RoutePathnameTemplate
    *
-   * @param {MethodTemplate} method
-   * @param {RouteTemplate} route
-   * @param {any[]} params
+   * @param {MethodTemplate} maybeMethod
+   * @param {RouteTemplate} maybeRoute
+   * @param {any[]} maybeParams
    *
    * @returns {`${MethodTemplate}/${RoutePathnameTemplate}`}
    */
-  (method, route, params) => {
-    var m = access(Method, method)
+  (maybeMethod, maybeRoute, maybeParams) => {
+    var method = access(Method, maybeMethod)
 
-    return m + '/' + hydrateRoutePathname(route, params)
+    return method + '/' + hydrateRoutePathname(maybeRoute, maybeParams)
   },
 )
 
@@ -26,9 +27,9 @@ export const tagexp = Object.freeze(
    * @template {keyof typeof import('../system/method.js').Method} MethodTemplate
    * @template {keyof typeof import('../system/route.js').Route} RouteTemplate
    *
-   * @param {MethodTemplate} method
-   * @param {RouteTemplate} route
-   * @param {any[]} params
+   * @param {MethodTemplate} maybeMethod
+   * @param {RouteTemplate} maybeRoute
+   * @param {any[]} maybeParams
    */
-  (method, route, params) => new RegExp(`^${tag(method, route, params)}$`),
+  (maybeMethod, maybeRoute, maybeParams) => new RegExp(`^${tag(maybeMethod, maybeRoute, maybeParams)}$`),
 )

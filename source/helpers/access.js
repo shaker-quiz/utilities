@@ -119,22 +119,42 @@ const Tag = new Map([
   [VenueStatus, 'VenueStatus'],
 ])
 
-export const access = (Relation, value) => {
-  const node = Node.get(Relation)
+/**
+ * @template Relation
+ * @template {keyof Relation} Key
+ *
+ * @param {Relation} relation
+ * @param {Key} value
+ *
+ * @returns {Relation[Key]}
+ *
+ * @throws {TypeError}
+ */
+export const access = (relation, value) => {
+  const node = Node.get(relation)
 
-  const prop = Prop.get(Relation)
+  const prop = Prop.get(relation)
 
   const read = value?.[node]?.[prop] ?? value?.[prop] ?? value
 
-  if (Object.hasOwn(Relation, read))
-    return Relation[read]
+  if (Object.hasOwn(relation, read))
+    return relation[read]
   else
-    throw TypeError(`Could not require key '${value}' from '${Tag.get(Relation)}'.`)
+    throw TypeError(`Could not require key '${value}' from '${Tag.get(relation)}'.`)
 }
 
-export const tryAccess = (Relation, value) => {
+/**
+ * @template Relation
+ * @template {keyof Relation} Key
+ *
+ * @param {Relation} relation
+ * @param {Key} value
+ *
+ * @returns {Relation[Key] | 'Unknown'}
+ */
+export const tryAccess = (relation, value) => {
   try {
-    return access(Relation, value)
+    return access(relation, value)
   } catch (error) {
     return 'Unknown'
   }
