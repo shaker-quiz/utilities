@@ -3,3 +3,5 @@
 export const RoutePathnames = Object.freeze( /** @type {const} */ (/* RoutePathnames */))
 
 export const RoutePathname = Object.freeze(/** @type {const} */ (/* RoutePathname */))
+
+export const PathnameRoute = Object.freeze(/** @type {const} */ (/* PathnameRoute */))
