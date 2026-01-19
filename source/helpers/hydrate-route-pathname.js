@@ -23,6 +23,7 @@ export const hydrateRoutePathname = Object.freeze(
 
     return params
       .split('/')
+      .filter(Boolean)
       .reduce((pathname, param, index) => pathname.replace(param, maybeParams[index]), pathname)
   },
 )
