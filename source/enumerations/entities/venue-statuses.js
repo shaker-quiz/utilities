@@ -1,4 +1,4 @@
 export var VenueStatuses = /** @type {const} */ ([
-  'ACTIVE',
-  'ARCHIVE',
+  'Active',
+  'Archive',
 ])
