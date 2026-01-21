@@ -1,4 +1,4 @@
-name: Publish
+name: Publish antiquewhite
 
 on:
   pull_request:
