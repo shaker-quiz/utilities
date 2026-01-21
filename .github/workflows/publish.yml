@@ -28,4 +28,5 @@ jobs:
       - run: npm version patch
       - run: npm ci
       - run: npm publish --tag antiquewhite
+      - run: git commit -am "Commit artifacts"
       - run: git push --follow-tags
