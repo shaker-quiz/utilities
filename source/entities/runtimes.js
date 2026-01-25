@@ -3,6 +3,7 @@ export const Runtimes = Object.freeze(
     'Bun',
     'Deno',
     'Node',
+    'Next',
     'Vite',
   ]),
 )
