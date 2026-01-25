@@ -11,12 +11,10 @@ export const ServiceRuntime = Object.freeze({
   [Service['Themes']]: Runtime['Bun'],
   [Service['Games']]: Runtime['Bun'],
   [Service['Registrations']]: Runtime['Bun'],
-  [Service['Files']]: Runtime['Bun'],
   [Service['Procedures']]: Runtime['Bun'],
   [Service['Integrations']]: Runtime['Bun'],
   [Service['Updates']]: Runtime['Bun'],
   [Service['Hub']]: Runtime['Node'],
   [Service['Landing']]: Runtime['Node'],
-  [Service['Telegram']]: Runtime['Node'],
   [Service['Vkma']]: Runtime['Vite'],
 })
