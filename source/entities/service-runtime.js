@@ -15,8 +15,8 @@ export const ServiceRuntime = Object.freeze({
   [Service['Procedures']]: Runtime['Bun'],
   [Service['Integrations']]: Runtime['Bun'],
   [Service['Updates']]: Runtime['Bun'],
-  [Service['Hub']]: Runtime['Node'],
-  [Service['Landing']]: Runtime['Node'],
+  [Service['Hub']]: Runtime['Next'],
+  [Service['Landing']]: Runtime['Next'],
   [Service['Telegram']]: Runtime['Node'],
   [Service['Vkma']]: Runtime['Vite'],
 })
