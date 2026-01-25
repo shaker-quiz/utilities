@@ -73,10 +73,3 @@ export const Routes = Object.freeze(
     'registrations/export',
   ]),
 )
-
-export const Route = Object.freeze(
-  /** @type {{ [x in typeof Routes[number]]: x }} */ (Routes.reduce(
-    (o, x) => (o[x] = x, o),
-    {},
-  )),
-)

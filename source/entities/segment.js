@@ -1,5 +1,6 @@
 import { Key } from './key.js'
-import { Service } from './service.js'
+import { Pattern } from './pattern.js'
+import { Service } from './services.js'
 
 export const Segments = Object.freeze(
   /** @type {const} */ ([
@@ -9,6 +10,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: Service['Checkin'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -17,6 +19,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['users'],
         service: Service['Users'],
+        pattern: Pattern.UUID.source,
       }),
     ),
     Object.freeze(
@@ -25,6 +28,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['user'],
         service: Service['Users'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -33,6 +37,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['roles'],
         service: Service['Roles'],
+        pattern: Pattern.UUID.source,
       }),
     ),
     Object.freeze(
@@ -41,6 +46,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['role'],
         service: Service['Roles'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -49,6 +55,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['countries'],
         service: Service['Locations'],
+        pattern: Pattern.COUNTRY_CODE.source,
       }),
     ),
     Object.freeze(
@@ -57,6 +64,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['country'],
         service: Service['Locations'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -65,6 +73,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['currencies'],
         service: Service['Locations'],
+        pattern: Pattern.CURRENCY_CODE.source,
       }),
     ),
     Object.freeze(
@@ -73,6 +82,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['currency'],
         service: Service['Locations'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -81,6 +91,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['timezones'],
         service: Service['Locations'],
+        pattern: Pattern.TIMEZONE_NAME.source,
       }),
     ),
     Object.freeze(
@@ -89,6 +100,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['timezone'],
         service: Service['Locations'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -97,6 +109,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['cities'],
         service: Service['Cities'],
+        pattern: Pattern.UUID.source,
       }),
     ),
     Object.freeze(
@@ -105,6 +118,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['city'],
         service: Service['Cities'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -113,6 +127,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['venues'],
         service: Service['Venues'],
+        pattern: Pattern.UUID.source,
       }),
     ),
     Object.freeze(
@@ -121,6 +136,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['venue'],
         service: Service['Venues'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -129,6 +145,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['themes'],
         service: Service['Themes'],
+        pattern: Pattern.UUID.source,
       }),
     ),
     Object.freeze(
@@ -137,6 +154,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['theme'],
         service: Service['Themes'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -145,6 +163,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: undefined,
+        pattern: Pattern.UUID.source,
       }),
     ),
     Object.freeze(
@@ -153,6 +172,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['games'],
         service: Service['Games'],
+        pattern: Pattern.UUID.source,
       }),
     ),
     Object.freeze(
@@ -161,6 +181,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['game'],
         service: Service['Games'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -169,6 +190,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['registrations'],
         service: Service['Registrations'],
+        pattern: Pattern.UUID.source,
       }),
     ),
     Object.freeze(
@@ -177,6 +199,7 @@ export const Segments = Object.freeze(
         cardinality: 'n',
         relation: Key['registration'],
         service: Service['Registrations'],
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -185,6 +208,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: undefined,
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -193,6 +217,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: undefined,
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -201,6 +226,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: undefined,
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -209,6 +235,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: undefined,
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -217,6 +244,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: undefined,
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -225,6 +253,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: undefined,
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -233,6 +262,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: undefined,
+        pattern: undefined,
       }),
     ),
     Object.freeze(
@@ -241,15 +271,17 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: undefined,
         service: undefined,
+        pattern: undefined,
       }),
     ),
   ]),
 )
 
 export const Segment = Object.freeze(
-  /** @type {{ [x in typeof Segments[number]['key']]: Extract<typeof Segments[number], { key: x }> }} */ (Segments
-    .reduce(
+  /** @type {{ [x in typeof Segments[number]['key']]: Extract<typeof Segments[number], { key: x }> }} */ (
+    Segments.reduce(
       (o, x) => (o[x.key] = x, o),
       {},
-    )),
+    )
+  ),
 )
