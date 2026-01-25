@@ -1,5 +1,5 @@
-import { Runtime } from './runtime.js'
-import { Service } from './service.js'
+import { Runtime } from './runtimes.js'
+import { Service } from './services.js'
 
 export const ServiceRuntime = Object.freeze({
   [Service['Users']]: Runtime['Bun'],

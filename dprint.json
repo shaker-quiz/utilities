@@ -10,9 +10,6 @@
     "importDeclaration.forceSingleLine": true
   },
   "json": {},
-  "markdown": {},
-  "dockerfile": {},
-  "yaml": {},
   "excludes": [
     "**/node_modules",
     "**/*-lock.json"

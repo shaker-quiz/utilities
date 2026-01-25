@@ -34,8 +34,10 @@ export const Keys = Object.freeze(
 )
 
 export const Key = Object.freeze(
-  /** @type {{ [x in typeof Keys[number]]: x }} */ (Keys.reduce(
-    (o, x) => (o[x] = x, o),
-    {},
-  )),
+  /** @type {{ [x in typeof Keys[number]]: x }} */ (
+    Keys.reduce(
+      (o, x) => (o[x] = x, o),
+      {},
+    )
+  ),
 )
