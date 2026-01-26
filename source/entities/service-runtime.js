@@ -1,3 +1,4 @@
+import { Mode } from './mode.js'
 import { Runtime } from './runtimes.js'
 import { Service } from './services.js'
 
@@ -11,12 +12,13 @@ export const ServiceRuntime = Object.freeze({
   [Service['Themes']]: Runtime['Bun'],
   [Service['Games']]: Runtime['Bun'],
   [Service['Registrations']]: Runtime['Bun'],
-  [Service['Files']]: Runtime['Bun'],
   [Service['Procedures']]: Runtime['Bun'],
-  [Service['Integrations']]: Runtime['Bun'],
   [Service['Updates']]: Runtime['Bun'],
   [Service['Hub']]: Runtime['Next'],
   [Service['Landing']]: Runtime['Next'],
-  [Service['Telegram']]: Runtime['Node'],
   [Service['Vkma']]: Runtime['Vite'],
+  [Service['Telegram']]: Runtime['Bun'],
+  [Service['Chatapp']]: Runtime['Bun'],
+  [Service['Bitrix']]: Runtime['Bun'],
+  [Service['Minio']]: Mode['Unknown'],
 })
