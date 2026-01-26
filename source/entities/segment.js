@@ -274,6 +274,42 @@ export const Segments = Object.freeze(
         pattern: undefined,
       }),
     ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['telegram'],
+        cardinality: '1',
+        relation: undefined,
+        service: Service['Telegram'],
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['chatapp'],
+        cardinality: '1',
+        relation: undefined,
+        service: Service['Chatapp'],
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['bitrix'],
+        cardinality: '1',
+        relation: undefined,
+        service: Service['Bitrix'],
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['webhook'],
+        cardinality: '1',
+        relation: undefined,
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
   ]),
 )
 

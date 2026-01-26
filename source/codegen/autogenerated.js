@@ -74,6 +74,12 @@ export const Route = Object.freeze(
     'registrations/game': 'registrations/game',
     'registrations/game/theme': 'registrations/game/theme',
     'registrations/export': 'registrations/export',
+    'telegram/webhook': 'telegram/webhook',
+    'telegram/registration/mailing': 'telegram/registration/mailing',
+    'chatapp/webhook': 'chatapp/webhook',
+    'chatapp/registration': 'chatapp/registration',
+    'chatapp/registration/mailing': 'chatapp/registration/mailing',
+    'bitrix/registration': 'bitrix/registration',
   }),
 )
 
@@ -151,6 +157,12 @@ export const RouteCardinality = Object.freeze(
     'registrations/game': 'n/1',
     'registrations/game/theme': 'n/1',
     'registrations/export': 'n/1',
+    'telegram/webhook': '1/1',
+    'telegram/registration/mailing': '1/1',
+    'chatapp/webhook': '1/1',
+    'chatapp/registration': '1/1',
+    'chatapp/registration/mailing': '1/1',
+    'bitrix/registration': '1/1',
   }),
 )
 
@@ -228,6 +240,12 @@ export const RoutePathname = Object.freeze(
     'registrations/game': 'registrations/game/:game',
     'registrations/game/theme': 'registrations/game/:game/theme/:theme',
     'registrations/export': 'registrations/export',
+    'telegram/webhook': 'telegram/webhook',
+    'telegram/registration/mailing': 'telegram/registration/:registration/mailing',
+    'chatapp/webhook': 'chatapp/webhook',
+    'chatapp/registration': 'chatapp/registration/:registration',
+    'chatapp/registration/mailing': 'chatapp/registration/:registration/mailing',
+    'bitrix/registration': 'bitrix/registration/:registration',
   }),
 )
 
@@ -305,6 +323,12 @@ export const PathnameRoute = Object.freeze(
     'registrations/game/:game': 'registrations/game',
     'registrations/game/:game/theme/:theme': 'registrations/game/theme',
     'registrations/export': 'registrations/export',
+    'telegram/webhook': 'telegram/webhook',
+    'telegram/registration/:registration/mailing': 'telegram/registration/mailing',
+    'chatapp/webhook': 'chatapp/webhook',
+    'chatapp/registration/:registration': 'chatapp/registration',
+    'chatapp/registration/:registration/mailing': 'chatapp/registration/mailing',
+    'bitrix/registration/:registration': 'bitrix/registration',
   }),
 )
 
@@ -513,6 +537,20 @@ export const PathnameParameters = Object.freeze(
       ':theme',
     ],
     'registrations/export': [],
+    'telegram/webhook': [],
+    'telegram/registration/:registration/mailing': [
+      ':registration',
+    ],
+    'chatapp/webhook': [],
+    'chatapp/registration/:registration': [
+      ':registration',
+    ],
+    'chatapp/registration/:registration/mailing': [
+      ':registration',
+    ],
+    'bitrix/registration/:registration': [
+      ':registration',
+    ],
   }),
 )
 
@@ -606,6 +644,12 @@ export const RouteBreakdown = Object.freeze(
     'registrations/game': 'registration/game',
     'registrations/game/theme': 'registration/game/theme',
     'registrations/export': 'registration/export',
+    'telegram/webhook': 'telegram/webhook',
+    'telegram/registration/mailing': 'telegram/registration/mailing',
+    'chatapp/webhook': 'chatapp/webhook',
+    'chatapp/registration': 'chatapp/registration',
+    'chatapp/registration/mailing': 'chatapp/registration/mailing',
+    'bitrix/registration': 'bitrix/registration',
   }),
 )
 
@@ -683,6 +727,12 @@ export const RouteService = Object.freeze(
     'registrations/game': 'Registrations',
     'registrations/game/theme': 'Registrations',
     'registrations/export': 'Registrations',
+    'telegram/webhook': 'Telegram',
+    'telegram/registration/mailing': 'Telegram',
+    'chatapp/webhook': 'Chatapp',
+    'chatapp/registration': 'Chatapp',
+    'chatapp/registration/mailing': 'Chatapp',
+    'bitrix/registration': 'Bitrix',
   }),
 )
 
@@ -777,6 +827,18 @@ export const ServiceRoutes = Object.freeze(
       'registrations/game',
       'registrations/game/theme',
       'registrations/export',
+    ],
+    'Telegram': [
+      'telegram/webhook',
+      'telegram/registration/mailing',
+    ],
+    'Chatapp': [
+      'chatapp/webhook',
+      'chatapp/registration',
+      'chatapp/registration/mailing',
+    ],
+    'Bitrix': [
+      'bitrix/registration',
     ],
   }),
 )
