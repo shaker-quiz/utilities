@@ -72,5 +72,11 @@ export const Routes = Object.freeze(
     'registrations/game',
     'registrations/game/theme',
     'registrations/export',
+    'telegram/webhook',
+    'telegram/registration/mailing',
+    'chatapp/webhook',
+    'chatapp/registration',
+    'chatapp/registration/mailing',
+    'bitrix/registration',
   ]),
 )

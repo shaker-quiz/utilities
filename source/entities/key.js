@@ -30,6 +30,10 @@ export const Keys = Object.freeze(
     'channel',
     'confirmation',
     'cancellation',
+    'telegram',
+    'chatapp',
+    'bitrix',
+    'webhook',
   ]),
 )
 

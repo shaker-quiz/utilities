@@ -18,6 +18,9 @@ export const Services = Object.freeze(
     'Telegram',
     'Vkma',
     'Minio',
+    'Telegram',
+    'Chatapp',
+    'Bitrix',
   ]),
 )
 
