@@ -66,7 +66,6 @@ export const Routes = Object.freeze(
     'registration/game/theme',
     'registration/game/theme/cover',
     'registration/game/venue',
-    'registration/mailing',
     'registrations',
     'registrations/city',
     'registrations/game',
