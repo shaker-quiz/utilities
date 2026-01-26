@@ -79,3 +79,12 @@ export const Routes = Object.freeze(
     'bitrix/registration',
   ]),
 )
+
+export const Route = Object.freeze(
+  /** @type {{ [x in typeof Routes[number]]: x }} */ (
+    Routes.reduce(
+      (o, x) => (o[x] = x, o),
+      {},
+    )
+  ),
+)
