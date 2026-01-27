@@ -5,6 +5,7 @@ export const Role = Object.freeze({
   'player': 'player',
   'user': 'user',
   'manager': 'manager',
+  'service': 'service',
 })
 
 export const Roles = Object.freeze([
@@ -13,4 +14,5 @@ export const Roles = Object.freeze([
   'player',
   'user',
   'manager',
+  'service',
 ])
