@@ -258,6 +258,15 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
+        key: Key['creation'],
+        cardinality: '1',
+        relation: undefined,
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
         key: Key['confirmation'],
         cardinality: '1',
         relation: undefined,
@@ -268,6 +277,24 @@ export const Segments = Object.freeze(
     Object.freeze(
       /** @type {const} */ ({
         key: Key['cancellation'],
+        cardinality: '1',
+        relation: undefined,
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['allocation'],
+        cardinality: '1',
+        relation: undefined,
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['reservation'],
         cardinality: '1',
         relation: undefined,
         service: undefined,
