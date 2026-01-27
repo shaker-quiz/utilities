@@ -1,10 +1,15 @@
-export const CityAffilation = Object.freeze({
-  'Branch': 'Branch',
-  'Franchise': 'Franchise',
-})
+export const CityAffilations = Object.freeze(
+  /** @type {const} */ ([
+    'Branch',
+    'Franchise',
+  ]),
+)
 
-/** @satisfies {Array<keyof typeof CityAffilation>} */
-export const CityAffilations = Object.freeze([
-  'Branch',
-  'Franchise',
-])
+export const CityAffilation = Object.freeze(
+  /** @type {{ [x in typeof CityAffilations[number]]: x }} */ (
+    CityAffilations.reduce(
+      (o, x) => (o[x] = x, o),
+      {},
+    )
+  ),
+)

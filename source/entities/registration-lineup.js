@@ -1,12 +1,18 @@
-export const RegistrationLineup = Object.freeze({
-  'Main': 'Main',
-  'Reserve': 'Reserve',
-})
+export const RegistrationLineups = Object.freeze(
+  /** @type {const} */ ([
+    'Main',
+    'Reserve',
+  ]),
+)
 
-export const RegistrationLineups = Object.freeze([
-  'Main',
-  'Reserve',
-])
+export const RegistrationLineup = Object.freeze(
+  /** @type {{ [x in typeof RegistrationLineups[number]]: x }} */ (
+    RegistrationLineups.reduce(
+      (o, x) => (o[x] = x, o),
+      {},
+    )
+  ),
+)
 
 export const RegistrationLineupEmoji = Object.freeze({
   'Main': '🟢',

@@ -2,19 +2,28 @@ import { Category } from './category.js'
 import { Mode } from './mode.js'
 import { Role } from './role.js'
 
-export const GameStatus = Object.freeze({
-  'REJECTED': 'REJECTED',
-  'MODERATION': 'MODERATION',
-  'APPROVED': 'APPROVED',
-  'CLOSED': 'CLOSED',
-  'FORINVITES': 'FORINVITES',
-  'PUBLISHED': 'PUBLISHED',
-  'IS_RESERVE': 'IS_RESERVE',
-  'FINISHED': 'FINISHED',
-  'ARCHIVE': 'ARCHIVE',
-})
+export const GameStatuses = Object.freeze(
+  /** @type {const} */ ([
+    'APPROVED',
+    'ARCHIVE',
+    'CLOSED',
+    'FINISHED',
+    'FORINVITES',
+    'IS_RESERVE',
+    'MODERATION',
+    'PUBLISHED',
+    'REJECTED',
+  ]),
+)
 
-export const GameStatuses = Object.freeze(Object.values(GameStatus))
+export const GameStatus = Object.freeze(
+  /** @type {{ [x in typeof GameStatuses[number]]: x }} */ (
+    GameStatuses.reduce(
+      (o, x) => (o[x] = x, o),
+      {},
+    )
+  ),
+)
 
 export const RoleGameStatusGameStatuses = Object.freeze({
   [Role['admin']]: Object.freeze({}),
