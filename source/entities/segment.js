@@ -162,7 +162,7 @@ export const Segments = Object.freeze(
         key: Key['cover'],
         cardinality: '1',
         relation: undefined,
-        service: undefined,
+        service: Service['Minio'],
         pattern: Pattern.UUID.source,
       }),
     ),
