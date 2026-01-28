@@ -258,6 +258,24 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
+        key: Key['status'],
+        cardinality: '1',
+        relation: Key['statuses'],
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['statuses'],
+        cardinality: 'n',
+        relation: Key['status'],
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
         key: Key['creation'],
         cardinality: '1',
         relation: undefined,
@@ -279,6 +297,24 @@ export const Segments = Object.freeze(
         key: Key['cancellation'],
         cardinality: '1',
         relation: undefined,
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['lineup'],
+        cardinality: '1',
+        relation: Key['lineups'],
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['lineups'],
+        cardinality: 'n',
+        relation: Key['lineup'],
         service: undefined,
         pattern: undefined,
       }),
