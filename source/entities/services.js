@@ -13,7 +13,6 @@ export const Services = Object.freeze(
     'Updates',
     'Hub',
     'Landing',
-    'Telegram',
     'Vkma',
     'Telegram',
     'Chatapp',
