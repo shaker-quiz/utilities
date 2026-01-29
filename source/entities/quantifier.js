@@ -1,41 +1,44 @@
-export const Quantifier = Object.freeze({
-  'Any': 'Any',
-  'None': 'None',
-  'Single': 'Single',
-  'Many': 'Many',
-  'All': 'All',
-})
-
-export const Quantifiers = Object.freeze([
-  'Any',
-  'None',
-  'Single',
-  'Many',
-  'All',
-])
-
-export const QuantifierQuantifiers = Object.freeze({
-  'Any': Object.freeze([
+export const Quantifiers = Object.freeze(
+  /** @type {const} */ ([
     'Any',
     'None',
     'Single',
     'Many',
     'All',
   ]),
+)
 
-  'None': Object.freeze([
-    'None',
+export const Quantifier = Object.freeze(
+  /** @type {{ [x in typeof Quantifiers[number]]: x }} */ (
+    Quantifiers.reduce(
+      (o, x) => (o[x] = x, o),
+      {},
+    )
+  ),
+)
+
+export const QuantifierQuantifiers = Object.freeze({
+  [Quantifier['Any']]: Object.freeze([
+    Quantifier['Any'],
+    Quantifier['None'],
+    Quantifier['Single'],
+    Quantifier['Many'],
+    Quantifier['All'],
   ]),
 
-  'Single': Object.freeze([
-    'Single',
+  [Quantifier['None']]: Object.freeze([
+    Quantifier['None'],
   ]),
 
-  'Many': Object.freeze([
-    'Many',
+  [Quantifier['Single']]: Object.freeze([
+    Quantifier['Single'],
   ]),
 
-  'All': Object.freeze([
-    'All',
+  [Quantifier['Many']]: Object.freeze([
+    Quantifier['Many'],
+  ]),
+
+  [Quantifier['All']]: Object.freeze([
+    Quantifier['All'],
   ]),
 })
