@@ -18,7 +18,7 @@ export const Services = Object.freeze(
     'Telegram',
     'Chatapp',
     'Bitrix',
-    'Vercel',
+    'Reposter',
     'Minio',
   ]),
 )
