@@ -1,6 +1,7 @@
 export const Roles = Object.freeze(
   /** @type {const} */ ([
     'admin',
+    'organizer',
     'captain',
     'player',
     'user',
