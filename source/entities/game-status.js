@@ -26,7 +26,115 @@ export const GameStatus = Object.freeze(
 )
 
 export const RoleGameStatusGameStatuses = Object.freeze({
-  [Role['admin']]: Object.freeze({}),
+  [Role['admin']]: Object.freeze({
+    [GameStatus['APPROVED']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['ARCHIVE'],
+      GameStatus['CLOSED'],
+      GameStatus['FINISHED'],
+      GameStatus['FORINVITES'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['MODERATION'],
+      GameStatus['PUBLISHED'],
+      GameStatus['REJECTED'],
+    ]),
+
+    [GameStatus['ARCHIVE']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['ARCHIVE'],
+      GameStatus['CLOSED'],
+      GameStatus['FINISHED'],
+      GameStatus['FORINVITES'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['MODERATION'],
+      GameStatus['PUBLISHED'],
+      GameStatus['REJECTED'],
+    ]),
+
+    [GameStatus['CLOSED']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['ARCHIVE'],
+      GameStatus['CLOSED'],
+      GameStatus['FINISHED'],
+      GameStatus['FORINVITES'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['MODERATION'],
+      GameStatus['PUBLISHED'],
+      GameStatus['REJECTED'],
+    ]),
+
+    [GameStatus['FINISHED']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['ARCHIVE'],
+      GameStatus['CLOSED'],
+      GameStatus['FINISHED'],
+      GameStatus['FORINVITES'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['MODERATION'],
+      GameStatus['PUBLISHED'],
+      GameStatus['REJECTED'],
+    ]),
+
+    [GameStatus['FORINVITES']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['ARCHIVE'],
+      GameStatus['CLOSED'],
+      GameStatus['FINISHED'],
+      GameStatus['FORINVITES'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['MODERATION'],
+      GameStatus['PUBLISHED'],
+      GameStatus['REJECTED'],
+    ]),
+
+    [GameStatus['IS_RESERVE']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['ARCHIVE'],
+      GameStatus['CLOSED'],
+      GameStatus['FINISHED'],
+      GameStatus['FORINVITES'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['MODERATION'],
+      GameStatus['PUBLISHED'],
+      GameStatus['REJECTED'],
+    ]),
+
+    [GameStatus['MODERATION']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['ARCHIVE'],
+      GameStatus['CLOSED'],
+      GameStatus['FINISHED'],
+      GameStatus['FORINVITES'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['MODERATION'],
+      GameStatus['PUBLISHED'],
+      GameStatus['REJECTED'],
+    ]),
+
+    [GameStatus['PUBLISHED']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['ARCHIVE'],
+      GameStatus['CLOSED'],
+      GameStatus['FINISHED'],
+      GameStatus['FORINVITES'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['MODERATION'],
+      GameStatus['PUBLISHED'],
+      GameStatus['REJECTED'],
+    ]),
+
+    [GameStatus['REJECTED']]: Object.freeze([
+      GameStatus['APPROVED'],
+      GameStatus['ARCHIVE'],
+      GameStatus['CLOSED'],
+      GameStatus['FINISHED'],
+      GameStatus['FORINVITES'],
+      GameStatus['IS_RESERVE'],
+      GameStatus['MODERATION'],
+      GameStatus['PUBLISHED'],
+      GameStatus['REJECTED'],
+    ]),
+  }),
 
   [Role['organizer']]: Object.freeze({
     [GameStatus['APPROVED']]: Object.freeze([
@@ -39,9 +147,21 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['ARCHIVE'],
     ]),
 
+    [GameStatus['ARCHIVE']]: Object.freeze([]),
+
+    [GameStatus['CLOSED']]: Object.freeze([]),
+
+    [GameStatus['FINISHED']]: Object.freeze([]),
+
+    [GameStatus['FORINVITES']]: Object.freeze([]),
+
+    [GameStatus['IS_RESERVE']]: Object.freeze([]),
+
     [GameStatus['MODERATION']]: Object.freeze([
       GameStatus['MODERATION'],
     ]),
+
+    [GameStatus['PUBLISHED']]: Object.freeze([]),
 
     [GameStatus['REJECTED']]: Object.freeze([
       GameStatus['REJECTED'],
@@ -49,7 +169,25 @@ export const RoleGameStatusGameStatuses = Object.freeze({
     ]),
   }),
 
-  [Mode['Unknown']]: Object.freeze({}),
+  [Mode['Unknown']]: Object.freeze({
+    [GameStatus['APPROVED']]: Object.freeze([]),
+
+    [GameStatus['ARCHIVE']]: Object.freeze([]),
+
+    [GameStatus['CLOSED']]: Object.freeze([]),
+
+    [GameStatus['FINISHED']]: Object.freeze([]),
+
+    [GameStatus['FORINVITES']]: Object.freeze([]),
+
+    [GameStatus['IS_RESERVE']]: Object.freeze([]),
+
+    [GameStatus['MODERATION']]: Object.freeze([]),
+
+    [GameStatus['PUBLISHED']]: Object.freeze([]),
+
+    [GameStatus['REJECTED']]: Object.freeze([]),
+  }),
 })
 
 export const RoleGameStatuses = Object.freeze({
