@@ -192,6 +192,260 @@ export const RoutePathname = Object.freeze(
   }),
 )
 
+export const RouteParameters = Object.freeze(
+  /** @type {const} */ ({
+    'role': [
+      ':role',
+    ],
+    'roles': [],
+    'user': [
+      ':user',
+    ],
+    'user/password': [
+      ':user',
+    ],
+    'user/role': [
+      ':user',
+      ':role',
+    ],
+    'user/city': [
+      ':user',
+      ':city',
+    ],
+    'user/cities': [
+      ':user',
+    ],
+    'users': [],
+    'users/password': [],
+    'users/role': [
+      ':role',
+    ],
+    'users/cities': [],
+    'checkin': [],
+    'cities': [],
+    'cities/country': [
+      ':country',
+    ],
+    'cities/currency': [
+      ':currency',
+    ],
+    'cities/timezone': [
+      ':timezone',
+    ],
+    'cities/venues': [],
+    'city': [
+      ':city',
+    ],
+    'city/vk_group_token': [
+      ':city',
+    ],
+    'city/country': [
+      ':city',
+      ':country',
+    ],
+    'city/currency': [
+      ':city',
+      ':currency',
+    ],
+    'city/timezone': [
+      ':city',
+      ':timezone',
+    ],
+    'city/venue': [
+      ':city',
+      ':venue',
+    ],
+    'city/venues': [
+      ':city',
+    ],
+    'country': [
+      ':country',
+    ],
+    'countries': [],
+    'currency': [
+      ':currency',
+    ],
+    'currencies': [],
+    'timezone': [
+      ':timezone',
+    ],
+    'timezones': [],
+    'venue': [
+      ':venue',
+    ],
+    'venue/city': [
+      ':venue',
+      ':city',
+    ],
+    'venues': [],
+    'venues/city': [
+      ':city',
+    ],
+    'theme': [
+      ':theme',
+    ],
+    'theme/cover': [
+      ':theme',
+      ':cover',
+    ],
+    'themes': [],
+    'themes/cover': [
+      ':cover',
+    ],
+    'themes/games': [],
+    'game': [
+      ':game',
+    ],
+    'game/status': [
+      ':game',
+    ],
+    'game/statuses': [
+      ':game',
+    ],
+    'game/city': [
+      ':game',
+      ':city',
+    ],
+    'game/registrations': [
+      ':game',
+    ],
+    'game/registrations/status': [
+      ':game',
+    ],
+    'game/registrations/lineup': [
+      ':game',
+    ],
+    'game/registrations/export': [
+      ':game',
+    ],
+    'game/summary': [
+      ':game',
+    ],
+    'game/theme': [
+      ':game',
+      ':theme',
+    ],
+    'game/theme/cover': [
+      ':game',
+      ':theme',
+      ':cover',
+    ],
+    'game/venue': [
+      ':game',
+      ':venue',
+    ],
+    'games': [],
+    'games/status': [],
+    'games/city': [
+      ':city',
+    ],
+    'games/registrations': [],
+    'games/registrations/export': [],
+    'games/summary': [],
+    'games/theme': [
+      ':theme',
+    ],
+    'games/theme/cover': [
+      ':theme',
+      ':cover',
+    ],
+    'games/venue': [
+      ':venue',
+    ],
+    'registration': [
+      ':registration',
+    ],
+    'registration/status': [
+      ':registration',
+    ],
+    'registration/statuses': [
+      ':registration',
+    ],
+    'registration/creation': [
+      ':registration',
+    ],
+    'registration/confirmation': [
+      ':registration',
+    ],
+    'registration/cancellation': [
+      ':registration',
+    ],
+    'registration/lineup': [
+      ':registration',
+    ],
+    'registration/lineups': [
+      ':registration',
+    ],
+    'registration/allocation': [
+      ':registration',
+    ],
+    'registration/reservation': [
+      ':registration',
+    ],
+    'registration/channel': [
+      ':registration',
+    ],
+    'registration/export': [
+      ':registration',
+    ],
+    'registration/city': [
+      ':registration',
+      ':city',
+    ],
+    'registration/game': [
+      ':registration',
+      ':game',
+    ],
+    'registration/game/theme': [
+      ':registration',
+      ':game',
+      ':theme',
+    ],
+    'registration/game/theme/cover': [
+      ':registration',
+      ':game',
+      ':theme',
+      ':cover',
+    ],
+    'registration/game/venue': [
+      ':registration',
+      ':game',
+      ':venue',
+    ],
+    'registrations': [],
+    'registrations/status': [],
+    'registrations/lineup': [],
+    'registrations/city': [
+      ':city',
+    ],
+    'registrations/game': [
+      ':game',
+    ],
+    'registrations/game/status': [
+      ':game',
+    ],
+    'registrations/game/theme': [
+      ':game',
+      ':theme',
+    ],
+    'registrations/export': [],
+    'telegram/webhook': [],
+    'telegram/registration/mailing': [
+      ':registration',
+    ],
+    'chatapp/webhook': [],
+    'chatapp/registration': [
+      ':registration',
+    ],
+    'chatapp/registration/mailing': [
+      ':registration',
+    ],
+    'bitrix/registration': [
+      ':registration',
+    ],
+  }),
+)
+
 export const PathnameRoute = Object.freeze(
   /** @type {const} */ ({
     'role/:role': 'role',
