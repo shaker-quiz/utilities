@@ -59,6 +59,10 @@ let RoutePathname = Routes
   .map(x => `'${x}': '${pathname(x)}'`)
   .join(',\n    ')
 
+let RouteParameters = Routes
+  .map(x => `'${x}': ${JSON.stringify(parameters(pathname(x)), null, 2)}`)
+  .join(',\n    ')
+
 let PathnameRoute = Routes
   .map(x => `'${pathname(x)}': '${x}'`)
   .join(',\n    ')
@@ -90,6 +94,7 @@ Bun.write(
   template
     .replace('/* route -> cardinality */', RouteCardinality)
     .replace('/* route -> pathname */', RoutePathname)
+    .replace('/* route -> parameters */', RouteParameters)
     .replace('/* pathname -> route */', PathnameRoute)
     .replace('/* pathname -> parameters */', PathnameParameters)
     .replace('/* parameter -> pattern */', ParameterPattern)

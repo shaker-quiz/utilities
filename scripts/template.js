@@ -12,6 +12,12 @@ export const RoutePathname = Object.freeze(
   }),
 )
 
+export const RouteParameters = Object.freeze(
+  /** @type {const} */ ({
+    /* route -> parameters */
+  }),
+)
+
 export const PathnameRoute = Object.freeze(
   /** @type {const} */ ({
     /* pathname -> route */
