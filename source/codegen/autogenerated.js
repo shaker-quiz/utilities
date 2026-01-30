@@ -36,6 +36,7 @@ export const RouteCardinality = Object.freeze(
     'venue/city': '1/1',
     'venues': 'n',
     'venues/city': 'n/1',
+    'cover': '1',
     'theme': '1',
     'theme/cover': '1/1',
     'themes': 'n',
@@ -132,6 +133,7 @@ export const RoutePathname = Object.freeze(
     'venue/city': 'venue/:venue/city/:city',
     'venues': 'venues',
     'venues/city': 'venues/city/:city',
+    'cover': 'cover/:cover',
     'theme': 'theme/:theme',
     'theme/cover': 'theme/:theme/cover/:cover',
     'themes': 'themes',
@@ -280,6 +282,9 @@ export const RouteParameters = Object.freeze(
     'venues': [],
     'venues/city': [
       ':city',
+    ],
+    'cover': [
+      ':cover',
     ],
     'theme': [
       ':theme',
@@ -482,6 +487,7 @@ export const PathnameRoute = Object.freeze(
     'venue/:venue/city/:city': 'venue/city',
     'venues': 'venues',
     'venues/city/:city': 'venues/city',
+    'cover/:cover': 'cover',
     'theme/:theme': 'theme',
     'theme/:theme/cover/:cover': 'theme/cover',
     'themes': 'themes',
@@ -630,6 +636,9 @@ export const PathnameParameters = Object.freeze(
     'venues': [],
     'venues/city/:city': [
       ':city',
+    ],
+    'cover/:cover': [
+      ':cover',
     ],
     'theme/:theme': [
       ':theme',
@@ -848,6 +857,7 @@ export const RouteBreakdown = Object.freeze(
     'venue/city': 'venue/city',
     'venues': 'venue',
     'venues/city': 'venue/city',
+    'cover': 'cover',
     'theme': 'theme',
     'theme/cover': 'theme/cover',
     'themes': 'theme',
@@ -944,6 +954,7 @@ export const RouteService = Object.freeze(
     'venue/city': 'Venues',
     'venues': 'Venues',
     'venues/city': 'Venues',
+    'cover': 'Minio',
     'theme': 'Themes',
     'theme/cover': 'Themes',
     'themes': 'Themes',
@@ -1051,6 +1062,9 @@ export const ServiceRoutes = Object.freeze(
       'venue/city',
       'venues',
       'venues/city',
+    ],
+    'Minio': [
+      'cover',
     ],
     'Themes': [
       'theme',
