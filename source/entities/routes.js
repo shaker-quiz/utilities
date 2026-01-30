@@ -34,6 +34,7 @@ export const Routes = Object.freeze(
     'venue/city',
     'venues',
     'venues/city',
+    'cover',
     'theme',
     'theme/cover',
     'themes',
