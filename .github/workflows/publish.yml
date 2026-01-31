@@ -42,5 +42,4 @@ jobs:
         run: |
           gh workflow run publish.yml \
             -R ${{ github.repository_owner }}/url \
-            -f pr=false
-            -f utilities=true
+            -f pr=false -f utilities=true
