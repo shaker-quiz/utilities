@@ -4,4 +4,5 @@ export const Pattern = Object.freeze({
   COUNTRY_CODE: /[A-Z]{2}/,
   CURRENCY_CODE: /[A-Z]{3}/,
   TIMEZONE_NAME: /[A-Za-z]+\/(?:[A-Za-z]+(?:_[A-Za-z]+)?)+/,
+  STRING: /\w+/,
 })

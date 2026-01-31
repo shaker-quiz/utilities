@@ -262,7 +262,7 @@ export const Segments = Object.freeze(
         cardinality: '1',
         relation: Key['statuses'],
         service: undefined,
-        pattern: undefined,
+        pattern: Pattern.STRING.source,
       }),
     ),
     Object.freeze(
