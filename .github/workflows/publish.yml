@@ -35,11 +35,15 @@ jobs:
   update:
     needs: publish
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo: [ url, contracts ]
     steps:
-      - name: Update ${{ github.repository_owner }}/url
+      - name: Update and Publish ${{ github.repository_owner }}/${{ matrix.repo }}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           gh workflow run publish.yml \
-            -R ${{ github.repository_owner }}/url \
+            -R "${{ github.repository_owner }}/${{ matrix.repo }}" \
             -f pr=false -f utilities=true
