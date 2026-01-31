@@ -1,4 +1,4 @@
-name: Update package (aquamarine)
+name: Publish package (aquamarine)
 
 on:
   pull_request:
@@ -24,9 +24,8 @@ jobs:
           ref: aquamarine
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: latest
       - uses: oven-sh/setup-bun@v2
-      - run: npm install -g npm@latest
       - run: git config user.name "github-actions[bot]"
       - run: git config user.email "github-actions[bot]@users.noreply.github.com"
       - run: npm version patch
