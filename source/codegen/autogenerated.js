@@ -71,8 +71,6 @@ export const RouteCardinality = Object.freeze(
     'registration/cancellation': '1/1',
     'registration/lineup': '1/1',
     'registration/lineups': '1/n',
-    'registration/allocation': '1/1',
-    'registration/reservation': '1/1',
     'registration/channel': '1/1',
     'registration/export': '1/1',
     'registration/city': '1/1',
@@ -168,8 +166,6 @@ export const RoutePathname = Object.freeze(
     'registration/cancellation': 'registration/:registration/cancellation',
     'registration/lineup': 'registration/:registration/lineup',
     'registration/lineups': 'registration/:registration/lineups',
-    'registration/allocation': 'registration/:registration/allocation',
-    'registration/reservation': 'registration/:registration/reservation',
     'registration/channel': 'registration/:registration/channel',
     'registration/export': 'registration/:registration/export',
     'registration/city': 'registration/:registration/city/:city',
@@ -386,12 +382,6 @@ export const RouteParameters = Object.freeze(
     'registration/lineups': [
       ':registration',
     ],
-    'registration/allocation': [
-      ':registration',
-    ],
-    'registration/reservation': [
-      ':registration',
-    ],
     'registration/channel': [
       ':registration',
     ],
@@ -530,8 +520,6 @@ export const PathnameRoute = Object.freeze(
     'registration/:registration/cancellation': 'registration/cancellation',
     'registration/:registration/lineup': 'registration/lineup',
     'registration/:registration/lineups': 'registration/lineups',
-    'registration/:registration/allocation': 'registration/allocation',
-    'registration/:registration/reservation': 'registration/reservation',
     'registration/:registration/channel': 'registration/channel',
     'registration/:registration/export': 'registration/export',
     'registration/:registration/city/:city': 'registration/city',
@@ -748,12 +736,6 @@ export const PathnameParameters = Object.freeze(
     'registration/:registration/lineups': [
       ':registration',
     ],
-    'registration/:registration/allocation': [
-      ':registration',
-    ],
-    'registration/:registration/reservation': [
-      ':registration',
-    ],
     'registration/:registration/channel': [
       ':registration',
     ],
@@ -909,8 +891,6 @@ export const RouteBreakdown = Object.freeze(
     'registration/cancellation': 'registration/cancellation',
     'registration/lineup': 'registration/lineup',
     'registration/lineups': 'registration/lineups',
-    'registration/allocation': 'registration/allocation',
-    'registration/reservation': 'registration/reservation',
     'registration/channel': 'registration/channel',
     'registration/export': 'registration/export',
     'registration/city': 'registration/city',
@@ -1006,8 +986,6 @@ export const RouteService = Object.freeze(
     'registration/cancellation': 'Registrations',
     'registration/lineup': 'Registrations',
     'registration/lineups': 'Registrations',
-    'registration/allocation': 'Registrations',
-    'registration/reservation': 'Registrations',
     'registration/channel': 'Registrations',
     'registration/export': 'Registrations',
     'registration/city': 'Registrations',
@@ -1122,8 +1100,6 @@ export const ServiceRoutes = Object.freeze(
       'registration/cancellation',
       'registration/lineup',
       'registration/lineups',
-      'registration/allocation',
-      'registration/reservation',
       'registration/channel',
       'registration/export',
       'registration/city',
