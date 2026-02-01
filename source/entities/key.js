@@ -35,8 +35,6 @@ export const Keys = Object.freeze(
     'cancellation',
     'lineup',
     'lineups',
-    'allocation',
-    'reservation',
     'telegram',
     'chatapp',
     'bitrix',
