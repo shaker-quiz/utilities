@@ -69,8 +69,6 @@ export const Routes = Object.freeze(
     'registration/cancellation',
     'registration/lineup',
     'registration/lineups',
-    'registration/allocation',
-    'registration/reservation',
     'registration/channel',
     'registration/export',
     'registration/city',
