@@ -321,24 +321,6 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
-        key: Key['allocation'],
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: Key['reservation'],
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
         key: Key['telegram'],
         cardinality: '1',
         relation: undefined,
