@@ -40,6 +40,7 @@ export const Keys = Object.freeze(
     'bitrix',
     'webhook',
     'source',
+    'id',
   ]),
 )
 
