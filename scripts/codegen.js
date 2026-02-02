@@ -21,14 +21,27 @@ let parameters = pathname =>
     .split('/')
     .filter(x => x.includes(':'))
 
-let breakdown = route => {
-  let segments = route.split('/')
+// let breakdown = route => {
+//   let segments = route.split('/')
 
-  return segments
-    .slice(segments.length >= 3 ? -2 : 0)
-    .map(x => Segment[x].cardinality === '1' ? x : Segment[x].relation)
+//   return segments
+//     .slice(segments.length >= 3 ? -2 : 0)
+//     .map(x => Segment[x].cardinality === '1' ? x : Segment[x].relation)
+//     .join('/')
+// }
+
+let breakdown = route =>
+  route
+    .split('/')
+    .map((x, i) => {
+      if (i > 0)
+        return x
+      else if (Segment[x].cardinality === '1')
+        return x
+      else
+        return Segment[x].relation
+    })
     .join('/')
-}
 
 let service = route =>
   route
