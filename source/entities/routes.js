@@ -5,6 +5,7 @@ export const Routes = Object.freeze(
     'user',
     'user/password',
     'user/role',
+    'user/role/id',
     'user/city',
     'user/cities',
     'users',
