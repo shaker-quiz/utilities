@@ -21,15 +21,6 @@ let parameters = pathname =>
     .split('/')
     .filter(x => x.includes(':'))
 
-// let breakdown = route => {
-//   let segments = route.split('/')
-
-//   return segments
-//     .slice(segments.length >= 3 ? -2 : 0)
-//     .map(x => Segment[x].cardinality === '1' ? x : Segment[x].relation)
-//     .join('/')
-// }
-
 let breakdown = route =>
   route
     .split('/')
@@ -42,6 +33,15 @@ let breakdown = route =>
         return Segment[x].relation
     })
     .join('/')
+
+let relation = route => {
+  let segments = route.split('/')
+
+  return segments
+    .slice(segments.length >= 3 ? -2 : 0)
+    .map(x => Segment[x].cardinality === '1' ? x : Segment[x].relation)
+    .join('/')
+}
 
 let service = route =>
   route
@@ -97,6 +97,10 @@ let RouteBreakdown = Routes
   .map(x => `'${x}': '${breakdown(x)}'`)
   .join(',\n    ')
 
+let RouteRelation = Routes
+  .map(x => `'${x}': '${relation(x)}'`)
+  .join(',\n    ')
+
 let RouteService = Routes
   .map(x => `'${x}': '${service(x)}'`)
   .join(',\n    ')
@@ -117,6 +121,7 @@ Bun.write(
     .replace('/* pathname -> parameters */', PathnameParameters)
     .replace('/* parameter -> pattern */', ParameterPattern)
     .replace('/* route -> breakdown */', RouteBreakdown)
+    .replace('/* route -> relation */', RouteRelation)
     .replace('/* route -> service */', RouteService)
     .replace('/* service -> routes */', ServiceRoutes),
 )

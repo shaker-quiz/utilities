@@ -48,6 +48,12 @@ export const RouteBreakdown = Object.freeze(
   }),
 )
 
+export const RouteRelation = Object.freeze(
+  /** @type {const} */ ({
+    /* route -> relation */
+  }),
+)
+
 export const RouteService = Object.freeze(
   /** @type {const} */ ({
     /* route -> service */
