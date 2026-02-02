@@ -92,6 +92,7 @@ export const RouteExcessiveCardinality = Object.freeze(
     'chatapp/registration': '1/1',
     'chatapp/registration/mailing': '1/1/1',
     'bitrix/registration': '1/1',
+    'source': '1',
   }),
 )
 
