@@ -45,6 +45,7 @@ export const RouteExcessiveCardinality = Object.freeze(
     'game': '1',
     'game/status': '1/1',
     'game/city': '1/1',
+    'game/registration': '1/1',
     'game/registrations': '1/n',
     'game/registrations/status': '1/n/1',
     'game/registrations/lineup': '1/n/1',
@@ -138,6 +139,7 @@ export const RouteCardinality = Object.freeze(
     'game': '1',
     'game/status': '1/1',
     'game/city': '1/1',
+    'game/registration': '1/1',
     'game/registrations': '1/n',
     'game/registrations/status': '1/1',
     'game/registrations/lineup': '1/1',
@@ -231,6 +233,7 @@ export const RoutePathname = Object.freeze(
     'game': 'game/:game',
     'game/status': 'game/:game/status/:status',
     'game/city': 'game/:game/city/:city',
+    'game/registration': 'game/:game/registration/:registration',
     'game/registrations': 'game/:game/registrations',
     'game/registrations/status': 'game/:game/registrations/status/:status',
     'game/registrations/lineup': 'game/:game/registrations/lineup',
@@ -393,6 +396,10 @@ export const RouteParameters = Object.freeze(
     'game/city': [
       ':game',
       ':city',
+    ],
+    'game/registration': [
+      ':game',
+      ':registration',
     ],
     'game/registrations': [
       ':game',
@@ -575,6 +582,7 @@ export const PathnameRoute = Object.freeze(
     'game/:game': 'game',
     'game/:game/status/:status': 'game/status',
     'game/:game/city/:city': 'game/city',
+    'game/:game/registration/:registration': 'game/registration',
     'game/:game/registrations': 'game/registrations',
     'game/:game/registrations/status/:status': 'game/registrations/status',
     'game/:game/registrations/lineup': 'game/registrations/lineup',
@@ -737,6 +745,10 @@ export const PathnameParameters = Object.freeze(
     'game/:game/city/:city': [
       ':game',
       ':city',
+    ],
+    'game/:game/registration/:registration': [
+      ':game',
+      ':registration',
     ],
     'game/:game/registrations': [
       ':game',
@@ -936,6 +948,7 @@ export const RouteBreakdown = Object.freeze(
     'game': 'game',
     'game/status': 'game/status',
     'game/city': 'game/city',
+    'game/registration': 'game/registration',
     'game/registrations': 'game/registration',
     'game/registrations/status': 'registration/status',
     'game/registrations/lineup': 'registration/lineup',
@@ -1029,6 +1042,7 @@ export const RouteService = Object.freeze(
     'game': 'Games',
     'game/status': 'Games',
     'game/city': 'Games',
+    'game/registration': 'Games',
     'game/registrations': 'Games',
     'game/registrations/status': 'Games',
     'game/registrations/lineup': 'Games',
@@ -1139,6 +1153,7 @@ export const ServiceRoutes = Object.freeze(
       'game',
       'game/status',
       'game/city',
+      'game/registration',
       'game/registrations',
       'game/registrations/status',
       'game/registrations/lineup',
