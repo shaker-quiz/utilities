@@ -39,6 +39,7 @@ export const Keys = Object.freeze(
     'chatapp',
     'bitrix',
     'webhook',
+    'source',
   ]),
 )
 

@@ -355,6 +355,15 @@ export const Segments = Object.freeze(
         pattern: undefined,
       }),
     ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: Key['source'],
+        cardinality: '1',
+        relation: undefined,
+        service: Service['Updates'],
+        pattern: undefined,
+      }),
+    ),
   ]),
 )
 

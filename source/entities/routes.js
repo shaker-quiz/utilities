@@ -90,6 +90,7 @@ export const Routes = Object.freeze(
     'chatapp/registration',
     'chatapp/registration/mailing',
     'bitrix/registration',
+    'source',
   ]),
 )
 
