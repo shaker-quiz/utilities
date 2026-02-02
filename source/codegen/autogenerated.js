@@ -92,6 +92,7 @@ export const RouteCardinality = Object.freeze(
     'chatapp/registration': '1/1',
     'chatapp/registration/mailing': '1/1',
     'bitrix/registration': '1/1',
+    'source': '1',
   }),
 )
 
@@ -187,6 +188,7 @@ export const RoutePathname = Object.freeze(
     'chatapp/registration': 'chatapp/registration/:registration',
     'chatapp/registration/mailing': 'chatapp/registration/:registration/mailing',
     'bitrix/registration': 'bitrix/registration/:registration',
+    'source': 'source',
   }),
 )
 
@@ -446,6 +448,7 @@ export const RouteParameters = Object.freeze(
     'bitrix/registration': [
       ':registration',
     ],
+    'source': [],
   }),
 )
 
@@ -541,6 +544,7 @@ export const PathnameRoute = Object.freeze(
     'chatapp/registration/:registration': 'chatapp/registration',
     'chatapp/registration/:registration/mailing': 'chatapp/registration/mailing',
     'bitrix/registration/:registration': 'bitrix/registration',
+    'source': 'source',
   }),
 )
 
@@ -800,6 +804,7 @@ export const PathnameParameters = Object.freeze(
     'bitrix/registration/:registration': [
       ':registration',
     ],
+    'source': [],
   }),
 )
 
@@ -912,6 +917,7 @@ export const RouteBreakdown = Object.freeze(
     'chatapp/registration': 'chatapp/registration',
     'chatapp/registration/mailing': 'chatapp/registration/mailing',
     'bitrix/registration': 'bitrix/registration',
+    'source': 'source',
   }),
 )
 
@@ -1007,6 +1013,7 @@ export const RouteService = Object.freeze(
     'chatapp/registration': 'Chatapp',
     'chatapp/registration/mailing': 'Chatapp',
     'bitrix/registration': 'Bitrix',
+    'source': 'Updates',
   }),
 )
 
@@ -1127,6 +1134,9 @@ export const ServiceRoutes = Object.freeze(
     ],
     'Bitrix': [
       'bitrix/registration',
+    ],
+    'Updates': [
+      'source',
     ],
   }),
 )
