@@ -43,6 +43,7 @@ export const Routes = Object.freeze(
     'game',
     'game/status',
     'game/city',
+    'game/registration',
     'game/registrations',
     'game/registrations/status',
     'game/registrations/lineup',
