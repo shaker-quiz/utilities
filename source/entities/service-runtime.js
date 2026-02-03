@@ -21,5 +21,6 @@ export const ServiceRuntime = Object.freeze({
   [Service['Chatapp']]: Runtime['Bun'],
   [Service['Bitrix']]: Runtime['Bun'],
   [Service['Reposter']]: Runtime['Node'],
+  [Service['Raffle']]: Runtime['Node'],
   [Service['Minio']]: Mode['Unknown'],
 })
