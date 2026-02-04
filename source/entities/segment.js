@@ -366,7 +366,7 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
-        key: Key['id'],
+        key: Key['search'],
         cardinality: '1',
         relation: undefined,
         service: undefined,

@@ -3,7 +3,6 @@ export const Routes = Object.freeze(
     'role',
     'roles',
     'user',
-    'user/id',
     'user/password',
     'user/role',
     'user/city',
@@ -42,7 +41,6 @@ export const Routes = Object.freeze(
     'themes/cover',
     'themes/games',
     'game',
-    'game/id',
     'game/status',
     'game/city',
     'game/registration',
@@ -57,6 +55,7 @@ export const Routes = Object.freeze(
     'game/theme/cover',
     'game/venue',
     'games',
+    'games/search',
     'games/status',
     'games/city',
     'games/registrations',
@@ -79,6 +78,7 @@ export const Routes = Object.freeze(
     'registration/game/theme/cover',
     'registration/game/venue',
     'registrations',
+    'registrations/search',
     'registrations/status',
     'registrations/lineup',
     'registrations/city',
@@ -92,7 +92,7 @@ export const Routes = Object.freeze(
     'chatapp/registration',
     'chatapp/registration/mailing',
     'bitrix/registration',
-    'source',
+    'source'
   ]),
 )
 
