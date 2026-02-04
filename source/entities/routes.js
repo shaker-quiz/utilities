@@ -39,8 +39,6 @@ export const Routes = Object.freeze(
     'theme',
     'theme/cover',
     'themes/search',
-    'themes/games',
-    'themes/games/search',
     'game',
     'game/status',
     'game/city',
