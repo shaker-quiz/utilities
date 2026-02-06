@@ -249,31 +249,31 @@ export const RoutePathname = Object.freeze(
     'themes': 'themes',
     'themes/search': 'themes/search',
     'game/search': 'game/:game/search',
-    'game/status/search': 'game/:game/status/:status/search',
+    'game/status/search': 'game/:game/status/search',
     'game/city/search': 'game/:game/city/:city/search',
     'game/summary/search': 'game/:game/summary/search',
     'game/theme/search': 'game/:game/theme/:theme/search',
     'game/theme/cover/search': 'game/:game/theme/:theme/cover/:cover/search',
     'game/venue/search': 'game/:game/venue/:venue/search',
     'game/registration': 'game/:game/registration/:registration',
-    'game/registration/status': 'game/:game/registration/:registration/status/:status',
+    'game/registration/status': 'game/:game/registration/:registration/status',
     'game/registration/lineup': 'game/:game/registration/:registration/lineup',
     'game/registrations': 'game/:game/registrations',
-    'game/registrations/status': 'game/:game/registrations/status/:status',
+    'game/registrations/status': 'game/:game/registrations/status',
     'game/registrations/lineup': 'game/:game/registrations/lineup',
     'game/summary': 'game/:game/summary',
     'game/theme': 'game/:game/theme/:theme',
     'game/theme/cover': 'game/:game/theme/:theme/cover/:cover',
     'game/venue': 'game/:game/venue/:venue',
     'games/search': 'games/search',
-    'games/status/search': 'games/status/:status/search',
+    'games/status/search': 'games/status/search',
     'games/city/search': 'games/city/:city/search',
     'games/summary/search': 'games/summary/search',
     'games/theme/search': 'games/theme/:theme/search',
     'games/theme/cover/search': 'games/theme/:theme/cover/:cover/search',
     'games/venue/search': 'games/venue/:venue/search',
     'registration/search': 'registration/:registration/search',
-    'registration/status/search': 'registration/:registration/status/:status/search',
+    'registration/status/search': 'registration/:registration/status/search',
     'registration/creation': 'registration/:registration/creation',
     'registration/confirmation': 'registration/:registration/confirmation',
     'registration/cancellation': 'registration/:registration/cancellation',
@@ -286,11 +286,11 @@ export const RoutePathname = Object.freeze(
     'registration/game/theme/cover/search': 'registration/:registration/game/:game/theme/:theme/cover/:cover/search',
     'registration/game/venue/search': 'registration/:registration/game/:game/venue/:venue/search',
     'registrations/search': 'registrations/search',
-    'registrations/status/search': 'registrations/status/:status/search',
+    'registrations/status/search': 'registrations/status/search',
     'registrations/lineup/search': 'registrations/lineup/search',
     'registrations/city/search': 'registrations/city/:city/search',
     'registrations/game/search': 'registrations/game/:game/search',
-    'registrations/game/status/search': 'registrations/game/:game/status/:status/search',
+    'registrations/game/status/search': 'registrations/game/:game/status/search',
     'registrations/game/theme/search': 'registrations/game/:game/theme/:theme/search',
     'registrations/game/venue/search': 'registrations/game/:game/venue/:venue/search',
     'telegram/webhook': 'telegram/webhook',
@@ -423,7 +423,6 @@ export const RouteParameters = Object.freeze(
     ],
     'game/status/search': [
       ':game',
-      ':status',
     ],
     'game/city/search': [
       ':game',
@@ -452,7 +451,6 @@ export const RouteParameters = Object.freeze(
     'game/registration/status': [
       ':game',
       ':registration',
-      ':status',
     ],
     'game/registration/lineup': [
       ':game',
@@ -463,7 +461,6 @@ export const RouteParameters = Object.freeze(
     ],
     'game/registrations/status': [
       ':game',
-      ':status',
     ],
     'game/registrations/lineup': [
       ':game',
@@ -485,9 +482,7 @@ export const RouteParameters = Object.freeze(
       ':venue',
     ],
     'games/search': [],
-    'games/status/search': [
-      ':status',
-    ],
+    'games/status/search': [],
     'games/city/search': [
       ':city',
     ],
@@ -507,7 +502,6 @@ export const RouteParameters = Object.freeze(
     ],
     'registration/status/search': [
       ':registration',
-      ':status',
     ],
     'registration/creation': [
       ':registration',
@@ -552,9 +546,7 @@ export const RouteParameters = Object.freeze(
       ':venue',
     ],
     'registrations/search': [],
-    'registrations/status/search': [
-      ':status',
-    ],
+    'registrations/status/search': [],
     'registrations/lineup/search': [],
     'registrations/city/search': [
       ':city',
@@ -564,7 +556,6 @@ export const RouteParameters = Object.freeze(
     ],
     'registrations/game/status/search': [
       ':game',
-      ':status',
     ],
     'registrations/game/theme/search': [
       ':game',
@@ -639,31 +630,31 @@ export const PathnameRoute = Object.freeze(
     'themes': 'themes',
     'themes/search': 'themes/search',
     'game/:game/search': 'game/search',
-    'game/:game/status/:status/search': 'game/status/search',
+    'game/:game/status/search': 'game/status/search',
     'game/:game/city/:city/search': 'game/city/search',
     'game/:game/summary/search': 'game/summary/search',
     'game/:game/theme/:theme/search': 'game/theme/search',
     'game/:game/theme/:theme/cover/:cover/search': 'game/theme/cover/search',
     'game/:game/venue/:venue/search': 'game/venue/search',
     'game/:game/registration/:registration': 'game/registration',
-    'game/:game/registration/:registration/status/:status': 'game/registration/status',
+    'game/:game/registration/:registration/status': 'game/registration/status',
     'game/:game/registration/:registration/lineup': 'game/registration/lineup',
     'game/:game/registrations': 'game/registrations',
-    'game/:game/registrations/status/:status': 'game/registrations/status',
+    'game/:game/registrations/status': 'game/registrations/status',
     'game/:game/registrations/lineup': 'game/registrations/lineup',
     'game/:game/summary': 'game/summary',
     'game/:game/theme/:theme': 'game/theme',
     'game/:game/theme/:theme/cover/:cover': 'game/theme/cover',
     'game/:game/venue/:venue': 'game/venue',
     'games/search': 'games/search',
-    'games/status/:status/search': 'games/status/search',
+    'games/status/search': 'games/status/search',
     'games/city/:city/search': 'games/city/search',
     'games/summary/search': 'games/summary/search',
     'games/theme/:theme/search': 'games/theme/search',
     'games/theme/:theme/cover/:cover/search': 'games/theme/cover/search',
     'games/venue/:venue/search': 'games/venue/search',
     'registration/:registration/search': 'registration/search',
-    'registration/:registration/status/:status/search': 'registration/status/search',
+    'registration/:registration/status/search': 'registration/status/search',
     'registration/:registration/creation': 'registration/creation',
     'registration/:registration/confirmation': 'registration/confirmation',
     'registration/:registration/cancellation': 'registration/cancellation',
@@ -676,11 +667,11 @@ export const PathnameRoute = Object.freeze(
     'registration/:registration/game/:game/theme/:theme/cover/:cover/search': 'registration/game/theme/cover/search',
     'registration/:registration/game/:game/venue/:venue/search': 'registration/game/venue/search',
     'registrations/search': 'registrations/search',
-    'registrations/status/:status/search': 'registrations/status/search',
+    'registrations/status/search': 'registrations/status/search',
     'registrations/lineup/search': 'registrations/lineup/search',
     'registrations/city/:city/search': 'registrations/city/search',
     'registrations/game/:game/search': 'registrations/game/search',
-    'registrations/game/:game/status/:status/search': 'registrations/game/status/search',
+    'registrations/game/:game/status/search': 'registrations/game/status/search',
     'registrations/game/:game/theme/:theme/search': 'registrations/game/theme/search',
     'registrations/game/:game/venue/:venue/search': 'registrations/game/venue/search',
     'telegram/webhook': 'telegram/webhook',
@@ -811,9 +802,8 @@ export const PathnameParameters = Object.freeze(
     'game/:game/search': [
       ':game',
     ],
-    'game/:game/status/:status/search': [
+    'game/:game/status/search': [
       ':game',
-      ':status',
     ],
     'game/:game/city/:city/search': [
       ':game',
@@ -839,10 +829,9 @@ export const PathnameParameters = Object.freeze(
       ':game',
       ':registration',
     ],
-    'game/:game/registration/:registration/status/:status': [
+    'game/:game/registration/:registration/status': [
       ':game',
       ':registration',
-      ':status',
     ],
     'game/:game/registration/:registration/lineup': [
       ':game',
@@ -851,9 +840,8 @@ export const PathnameParameters = Object.freeze(
     'game/:game/registrations': [
       ':game',
     ],
-    'game/:game/registrations/status/:status': [
+    'game/:game/registrations/status': [
       ':game',
-      ':status',
     ],
     'game/:game/registrations/lineup': [
       ':game',
@@ -875,9 +863,7 @@ export const PathnameParameters = Object.freeze(
       ':venue',
     ],
     'games/search': [],
-    'games/status/:status/search': [
-      ':status',
-    ],
+    'games/status/search': [],
     'games/city/:city/search': [
       ':city',
     ],
@@ -895,9 +881,8 @@ export const PathnameParameters = Object.freeze(
     'registration/:registration/search': [
       ':registration',
     ],
-    'registration/:registration/status/:status/search': [
+    'registration/:registration/status/search': [
       ':registration',
-      ':status',
     ],
     'registration/:registration/creation': [
       ':registration',
@@ -942,9 +927,7 @@ export const PathnameParameters = Object.freeze(
       ':venue',
     ],
     'registrations/search': [],
-    'registrations/status/:status/search': [
-      ':status',
-    ],
+    'registrations/status/search': [],
     'registrations/lineup/search': [],
     'registrations/city/:city/search': [
       ':city',
@@ -952,9 +935,8 @@ export const PathnameParameters = Object.freeze(
     'registrations/game/:game/search': [
       ':game',
     ],
-    'registrations/game/:game/status/:status/search': [
+    'registrations/game/:game/status/search': [
       ':game',
-      ':status',
     ],
     'registrations/game/:game/theme/:theme/search': [
       ':game',
@@ -995,7 +977,6 @@ export const ParameterPattern = Object.freeze(
     ':cover': '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}',
     ':game': '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}',
     ':registration': '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}',
-    ':status': '\w+',
   }),
 )
 
