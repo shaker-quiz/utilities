@@ -1089,6 +1089,47 @@ export const RouteBreakdown = Object.freeze(
   }),
 )
 
+export const SearchBreakdown = Object.freeze(
+  /** @type {const} */ ({
+    'venue/search': 'venue',
+    'venues/search': 'venues',
+    'venue/city/search': 'venue/city',
+    'venues/city/search': 'venues/city',
+    'theme/search': 'theme',
+    'themes/search': 'themes',
+    'game/search': 'game',
+    'game/status/search': 'game/status',
+    'game/city/search': 'game/city',
+    'game/summary/search': 'game/summary',
+    'game/theme/search': 'game/theme',
+    'game/theme/cover/search': 'game/theme/cover',
+    'game/venue/search': 'game/venue',
+    'games/search': 'games',
+    'games/status/search': 'games/status',
+    'games/city/search': 'games/city',
+    'games/summary/search': 'games/summary',
+    'games/theme/search': 'games/theme',
+    'games/theme/cover/search': 'games/theme/cover',
+    'games/venue/search': 'games/venue',
+    'registration/search': 'registration',
+    'registration/status/search': 'registration/status',
+    'registration/lineup/search': 'registration/lineup',
+    'registration/city/search': 'registration/city',
+    'registration/game/search': 'registration/game',
+    'registration/game/theme/search': 'registration/game/theme',
+    'registration/game/theme/cover/search': 'registration/game/theme/cover',
+    'registration/game/venue/search': 'registration/game/venue',
+    'registrations/search': 'registrations',
+    'registrations/status/search': 'registrations/status',
+    'registrations/lineup/search': 'registrations/lineup',
+    'registrations/city/search': 'registrations/city',
+    'registrations/game/search': 'registrations/game',
+    'registrations/game/status/search': 'registrations/game/status',
+    'registrations/game/theme/search': 'registrations/game/theme',
+    'registrations/game/venue/search': 'registrations/game/venue',
+  }),
+)
+
 export const RouteRelation = Object.freeze(
   /** @type {const} */ ({
     'user': 'user',
