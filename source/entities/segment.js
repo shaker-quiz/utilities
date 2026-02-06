@@ -27,7 +27,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'users',
         cardinality: 'n',
-        relation: 'user',
+        singular: 'user',
+        plural: 'users',
         service: Service['Users'],
         pattern: undefined,
       }),
@@ -36,7 +37,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'role',
         cardinality: '1',
-        relation: 'roles',
+        singular: 'role',
+        plural: 'roles',
         service: Service['Roles'],
         pattern: Pattern.UUID.source,
       }),
@@ -45,7 +47,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'roles',
         cardinality: 'n',
-        relation: 'role',
+        singular: 'role',
+        plural: 'roles',
         service: Service['Roles'],
         pattern: undefined,
       }),
@@ -54,7 +57,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'country',
         cardinality: '1',
-        relation: 'countries',
+        singular: 'country',
+        plural: 'countries',
         service: Service['Locations'],
         pattern: Pattern.COUNTRY_CODE.source,
       }),
@@ -63,7 +67,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'countries',
         cardinality: 'n',
-        relation: 'country',
+        singular: 'country',
+        plural: 'countries',
         service: Service['Locations'],
         pattern: undefined,
       }),
@@ -72,7 +77,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'currency',
         cardinality: '1',
-        relation: 'currencies',
+        singular: 'currency',
+        plural: 'currencies',
         service: Service['Locations'],
         pattern: Pattern.CURRENCY_CODE.source,
       }),
@@ -81,7 +87,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'currencies',
         cardinality: 'n',
-        relation: 'currency',
+        singular: 'currency',
+        plural: 'currencies',
         service: Service['Locations'],
         pattern: undefined,
       }),
@@ -90,7 +97,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'timezone',
         cardinality: '1',
-        relation: 'timezones',
+        singular: 'timezone',
+        plural: 'timezones',
         service: Service['Locations'],
         pattern: Pattern.TIMEZONE_NAME.source,
       }),
@@ -99,7 +107,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'timezones',
         cardinality: 'n',
-        relation: 'timezone',
+        singular: 'timezone',
+        plural: 'timezones',
         service: Service['Locations'],
         pattern: undefined,
       }),
@@ -108,7 +117,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'city',
         cardinality: '1',
-        relation: 'cities',
+        singular: 'city',
+        plural: 'cities',
         service: Service['Cities'],
         pattern: Pattern.UUID.source,
       }),
@@ -117,7 +127,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'cities',
         cardinality: 'n',
-        relation: 'city',
+        singular: 'city',
+        plural: 'cities',
         service: Service['Cities'],
         pattern: undefined,
       }),
@@ -126,7 +137,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'venue',
         cardinality: '1',
-        relation: 'venues',
+        singular: 'venue',
+        plural: 'venues',
         service: Service['Venues'],
         pattern: Pattern.UUID.source,
       }),
@@ -135,7 +147,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'venues',
         cardinality: 'n',
-        relation: 'venue',
+        singular: 'venue',
+        plural: 'venues',
         service: Service['Venues'],
         pattern: undefined,
       }),
@@ -144,7 +157,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'theme',
         cardinality: '1',
-        relation: 'themes',
+        singular: 'theme',
+        plural: 'themes',
         service: Service['Themes'],
         pattern: Pattern.UUID.source,
       }),
@@ -153,25 +167,18 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'themes',
         cardinality: 'n',
-        relation: 'theme',
+        singular: 'theme',
+        plural: 'themes',
         service: Service['Themes'],
         pattern: undefined,
       }),
     ),
     Object.freeze(
       /** @type {const} */ ({
-        key: 'cover',
-        cardinality: '1',
-        relation: undefined,
-        service: Service['Minio'],
-        pattern: Pattern.UUID.source,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
         key: 'game',
         cardinality: '1',
-        relation: 'games',
+        singular: 'game',
+        plural: 'games',
         service: Service['Games'],
         pattern: Pattern.UUID.source,
       }),
@@ -180,7 +187,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'games',
         cardinality: 'n',
-        relation: 'game',
+        singular: 'game',
+        plural: 'games',
         service: Service['Games'],
         pattern: undefined,
       }),
@@ -189,7 +197,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'registration',
         cardinality: '1',
-        relation: 'registrations',
+        singular: 'registration',
+        plural: 'registrations',
         service: Service['Registrations'],
         pattern: Pattern.UUID.source,
       }),
@@ -198,62 +207,9 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'registrations',
         cardinality: 'n',
-        relation: 'registration',
+        singular: 'registration',
+        plural: 'registrations',
         service: Service['Registrations'],
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'export',
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'password',
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'vk_group_token',
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'summary',
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'mailing',
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'channel',
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
         pattern: undefined,
       }),
     ),
@@ -261,7 +217,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'status',
         cardinality: '1',
-        relation: 'statuses',
+        singular: 'status',
+        plural: 'statuses',
         service: undefined,
         pattern: Pattern.STRING.source,
       }),
@@ -270,34 +227,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'statuses',
         cardinality: 'n',
-        relation: 'status',
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'creation',
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'confirmation',
-        cardinality: '1',
-        relation: undefined,
-        service: undefined,
-        pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'cancellation',
-        cardinality: '1',
-        relation: undefined,
+        singular: 'status',
+        plural: 'statuses',
         service: undefined,
         pattern: undefined,
       }),
@@ -306,7 +237,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'lineup',
         cardinality: '1',
-        relation: 'lineups',
+        singular: 'lineup',
+        plural: 'lineups',
         service: undefined,
         pattern: undefined,
       }),
@@ -315,7 +247,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'lineups',
         cardinality: 'n',
-        relation: 'lineup',
+        singular: 'lineup',
+        plural: 'lineups',
         service: undefined,
         pattern: undefined,
       }),
@@ -324,7 +257,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'telegram',
         cardinality: '1',
-        relation: undefined,
+        singular: 'telegram',
+        plural: 'telegrams',
         service: Service['Telegram'],
         pattern: undefined,
       }),
@@ -333,7 +267,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'chatapp',
         cardinality: '1',
-        relation: undefined,
+        singular: 'chatapp',
+        plural: 'chatapps',
         service: Service['Chatapp'],
         pattern: undefined,
       }),
@@ -342,7 +277,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'bitrix',
         cardinality: '1',
-        relation: undefined,
+        singular: 'bitrix',
+        plural: 'bitrixes',
         service: Service['Bitrix'],
         pattern: undefined,
       }),
@@ -351,7 +287,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'webhook',
         cardinality: '1',
-        relation: undefined,
+        singular: 'webhook',
+        plural: 'webhooks',
         service: undefined,
         pattern: undefined,
       }),
@@ -360,7 +297,8 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'source',
         cardinality: '1',
-        relation: undefined,
+        singular: 'source',
+        plural: 'sources',
         service: Service['Updates'],
         pattern: undefined,
       }),
@@ -369,7 +307,108 @@ export const Segments = Object.freeze(
       /** @type {const} */ ({
         key: 'search',
         cardinality: '1',
-        relation: undefined,
+        singular: 'search',
+        plural: 'searches',
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'cover',
+        cardinality: '1',
+        singular: 'cover',
+        plural: 'covers',
+        service: Service['Minio'],
+        pattern: Pattern.UUID.source,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'export',
+        cardinality: '1',
+        singular: 'export',
+        plural: 'exports',
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'password',
+        cardinality: '1',
+        singular: 'password',
+        plural: 'passwords',
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'vk_group_token',
+        cardinality: '1',
+        singular: 'vk_group_token',
+        plural: 'vk_group_tokens',
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'summary',
+        cardinality: '1',
+        singular: 'summary',
+        plural: 'summaries',
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'mailing',
+        cardinality: '1',
+        singular: 'mailing',
+        plural: 'mailings',
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'channel',
+        cardinality: '1',
+        singular: 'channel',
+        plural: 'channels',
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'creation',
+        cardinality: '1',
+        singular: 'creation',
+        plural: 'creations',
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'confirmation',
+        cardinality: '1',
+        singular: 'confirmation',
+        plural: 'confirmations',
+        service: undefined,
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'cancellation',
+        cardinality: '1',
+        singular: 'cancellation',
+        plural: 'cancellations',
         service: undefined,
         pattern: undefined,
       }),
