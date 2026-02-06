@@ -1,16 +1,36 @@
 import { Segment } from '../entities/segment.js'
 
 /**
+ * @param {string} maybeString
+ *
+ * @example
+ * route('user/role') // 'user/role'
+ * route('game/registrations') // 'game/registrations'
+ */
+export const route = maybeString => {
+  if (typeof maybeString !== 'string')
+    throw TypeError(`Parameter 'maybeString' must be String.`)
+
+  const segments = maybeString.split('/')
+
+  if (segments.length < 1)
+    throw TypeError(`Parameter 'maybeString' must contain at least one segment.`)
+
+  for (const segment of segments)
+    if (!Object.hasOwn(Segment, segment))
+      throw TypeError(`[route] Could not access segment Segment['${segment}'].`)
+
+  return segments.join('/')
+}
+
+/**
  * @param {string} segment
  *
  * @example
- * routeSegment('user') // 'user/:user'
- * routeSegment('roles') // 'roles'
+ * segment('user') // 'user/:user'
+ * segment('roles') // 'roles'
  */
-export const routeSegment = segment => {
-  if (!Object.hasOwn(Segment, segment))
-    throw TypeError(`Could not access Segment['${segment}'].`)
-
+export const segment = segment => {
   if (Segment[segment].pattern === null)
     return segment
   else if (Segment[segment].cardinality === '1')
@@ -26,22 +46,18 @@ export const routeSegment = segment => {
  * routePathname('user/role') // 'user/:user/role/:role'
  * routePathname('game/registrations') // 'game/:game/registrations'
  */
-export const routePathname = maybeRoute => {
-  if (typeof maybeRoute !== 'string')
-    throw TypeError(`Parameter 'route' must be String.`)
-
-  const segments = maybeRoute.split('/')
-
-  if (segments.length < 1)
-    throw TypeError(`Parameter 'route' must contain at least one segment.`)
-
-  return segments
-    .map(routeSegment)
+export const routePathname = maybeRoute =>
+  route(maybeRoute)
+    .split('/')
+    .map(segment)
     .join('/')
-}
 
 /**
  * @param {string} maybeRoute
+ *
+ * @example
+ * routeParameters('user/role') // [':user', ':role']
+ * routeParameters('game/registrations') // [':game']
  */
 export const routeParameters = maybeRoute =>
   routePathname(maybeRoute)
@@ -51,6 +67,10 @@ export const routeParameters = maybeRoute =>
 /**
  * @param {string} maybeRoute
  * @param {object} object
+ *
+ * @example
+ * routeParametersFromObject('user/role', { ':user': 1, ':role': 2 }) // [1, 2]
+ * routeParametersFromObject('game/registrations', { ':game': 1 }) // [1]
  */
 export const routeParametersFromObject = (maybeRoute, object) =>
   routeParameters(maybeRoute)
@@ -71,6 +91,10 @@ export const routeProperties = maybeRoute =>
 /**
  * @param {string} maybeRoute
  * @param {object} object
+ *
+ * @example
+ * routePropertiesFromObject('user/role', { user_id: 1, role_id: 2 }) // [1, 2]
+ * routePropertiesFromObject('game/registrations', { game_id: 1 }) // [1]
  */
 export const routePropertiesFromObject = (maybeRoute, object) =>
   routeProperties(maybeRoute)
@@ -80,6 +104,10 @@ export const routePropertiesFromObject = (maybeRoute, object) =>
 /**
  * @param {string} maybeRoute
  * @param {any[]} maybeParams
+ *
+ * @example
+ * hydrateRoutePathname('user/role', [1, 2]) // 'user/1/role/2'
+ * hydrateRoutePathname('game/registrations', [1]) // 'game/1/registrations'
  */
 export const hydrateRoutePathname = (maybeRoute, maybeParams) => {
   if (!Array.isArray(maybeParams))
