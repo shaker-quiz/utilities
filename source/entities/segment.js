@@ -11,6 +11,7 @@ export const Segments = Object.freeze(
         plural: 'checkins',
         service: Service['Checkin'],
         pattern: null,
+        kind: 'Operation',
       }),
     ),
     Object.freeze(
@@ -21,6 +22,7 @@ export const Segments = Object.freeze(
         plural: 'users',
         service: Service['Users'],
         pattern: Pattern.UUID.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -31,6 +33,7 @@ export const Segments = Object.freeze(
         plural: 'users',
         service: Service['Users'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -41,6 +44,7 @@ export const Segments = Object.freeze(
         plural: 'roles',
         service: Service['Roles'],
         pattern: Pattern.UUID.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -51,6 +55,7 @@ export const Segments = Object.freeze(
         plural: 'roles',
         service: Service['Roles'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -61,6 +66,7 @@ export const Segments = Object.freeze(
         plural: 'countries',
         service: Service['Locations'],
         pattern: Pattern.COUNTRY_CODE.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -71,6 +77,7 @@ export const Segments = Object.freeze(
         plural: 'countries',
         service: Service['Locations'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -81,6 +88,7 @@ export const Segments = Object.freeze(
         plural: 'currencies',
         service: Service['Locations'],
         pattern: Pattern.CURRENCY_CODE.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -91,6 +99,7 @@ export const Segments = Object.freeze(
         plural: 'currencies',
         service: Service['Locations'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -101,6 +110,7 @@ export const Segments = Object.freeze(
         plural: 'timezones',
         service: Service['Locations'],
         pattern: Pattern.TIMEZONE_NAME.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -111,6 +121,7 @@ export const Segments = Object.freeze(
         plural: 'timezones',
         service: Service['Locations'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -121,6 +132,7 @@ export const Segments = Object.freeze(
         plural: 'cities',
         service: Service['Cities'],
         pattern: Pattern.UUID.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -131,6 +143,7 @@ export const Segments = Object.freeze(
         plural: 'cities',
         service: Service['Cities'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -141,6 +154,7 @@ export const Segments = Object.freeze(
         plural: 'venues',
         service: Service['Venues'],
         pattern: Pattern.UUID.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -151,6 +165,7 @@ export const Segments = Object.freeze(
         plural: 'venues',
         service: Service['Venues'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -161,6 +176,7 @@ export const Segments = Object.freeze(
         plural: 'themes',
         service: Service['Themes'],
         pattern: Pattern.UUID.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -171,6 +187,7 @@ export const Segments = Object.freeze(
         plural: 'themes',
         service: Service['Themes'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -181,6 +198,7 @@ export const Segments = Object.freeze(
         plural: 'covers',
         service: Service['Minio'],
         pattern: Pattern.UUID.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -191,6 +209,7 @@ export const Segments = Object.freeze(
         plural: 'covers',
         service: Service['Minio'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -201,6 +220,7 @@ export const Segments = Object.freeze(
         plural: 'games',
         service: Service['Games'],
         pattern: Pattern.UUID.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -211,6 +231,7 @@ export const Segments = Object.freeze(
         plural: 'games',
         service: Service['Games'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -221,6 +242,7 @@ export const Segments = Object.freeze(
         plural: 'registrations',
         service: Service['Registrations'],
         pattern: Pattern.UUID.source,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -231,6 +253,7 @@ export const Segments = Object.freeze(
         plural: 'registrations',
         service: Service['Registrations'],
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -240,7 +263,8 @@ export const Segments = Object.freeze(
         singular: 'status',
         plural: 'statuses',
         service: null,
-        pattern: Pattern.STRING.source,
+        pattern: null,
+        kind: 'Property',
       }),
     ),
     Object.freeze(
@@ -251,6 +275,7 @@ export const Segments = Object.freeze(
         plural: 'statuses',
         service: null,
         pattern: null,
+        kind: 'Property',
       }),
     ),
     Object.freeze(
@@ -261,6 +286,7 @@ export const Segments = Object.freeze(
         plural: 'lineups',
         service: null,
         pattern: null,
+        kind: 'Property',
       }),
     ),
     Object.freeze(
@@ -271,6 +297,7 @@ export const Segments = Object.freeze(
         plural: 'lineups',
         service: null,
         pattern: null,
+        kind: 'Property',
       }),
     ),
     Object.freeze(
@@ -281,6 +308,7 @@ export const Segments = Object.freeze(
         plural: 'telegrams',
         service: Service['Telegram'],
         pattern: null,
+        kind: 'Integration',
       }),
     ),
     Object.freeze(
@@ -291,6 +319,7 @@ export const Segments = Object.freeze(
         plural: 'chatapps',
         service: Service['Chatapp'],
         pattern: null,
+        kind: 'Integration',
       }),
     ),
     Object.freeze(
@@ -301,6 +330,7 @@ export const Segments = Object.freeze(
         plural: 'bitrixes',
         service: Service['Bitrix'],
         pattern: null,
+        kind: 'Integration',
       }),
     ),
     Object.freeze(
@@ -311,6 +341,7 @@ export const Segments = Object.freeze(
         plural: 'webhooks',
         service: null,
         pattern: null,
+        kind: 'Integration',
       }),
     ),
     Object.freeze(
@@ -321,6 +352,7 @@ export const Segments = Object.freeze(
         plural: 'sources',
         service: Service['Updates'],
         pattern: null,
+        kind: 'Integration',
       }),
     ),
     Object.freeze(
@@ -331,6 +363,7 @@ export const Segments = Object.freeze(
         plural: 'searches',
         service: null,
         pattern: null,
+        kind: 'Integration',
       }),
     ),
     Object.freeze(
@@ -341,6 +374,7 @@ export const Segments = Object.freeze(
         plural: 'exports',
         service: null,
         pattern: null,
+        kind: 'Operation',
       }),
     ),
     Object.freeze(
@@ -351,6 +385,7 @@ export const Segments = Object.freeze(
         plural: 'passwords',
         service: null,
         pattern: null,
+        kind: 'Property',
       }),
     ),
     Object.freeze(
@@ -361,6 +396,7 @@ export const Segments = Object.freeze(
         plural: 'vk_group_tokens',
         service: null,
         pattern: null,
+        kind: 'Property',
       }),
     ),
     Object.freeze(
@@ -371,6 +407,7 @@ export const Segments = Object.freeze(
         plural: 'summaries',
         service: null,
         pattern: null,
+        kind: 'Aggregation',
       }),
     ),
     Object.freeze(
@@ -381,6 +418,7 @@ export const Segments = Object.freeze(
         plural: 'mailings',
         service: null,
         pattern: null,
+        kind: 'Entity',
       }),
     ),
     Object.freeze(
@@ -391,6 +429,7 @@ export const Segments = Object.freeze(
         plural: 'channels',
         service: null,
         pattern: null,
+        kind: 'Property',
       }),
     ),
     Object.freeze(
@@ -401,6 +440,7 @@ export const Segments = Object.freeze(
         plural: 'creations',
         service: null,
         pattern: null,
+        kind: 'Operation',
       }),
     ),
     Object.freeze(
@@ -411,6 +451,7 @@ export const Segments = Object.freeze(
         plural: 'confirmations',
         service: null,
         pattern: null,
+        kind: 'Operation',
       }),
     ),
     Object.freeze(
@@ -421,6 +462,7 @@ export const Segments = Object.freeze(
         plural: 'cancellations',
         service: null,
         pattern: null,
+        kind: 'Operation',
       }),
     ),
   ]),

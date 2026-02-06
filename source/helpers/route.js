@@ -24,6 +24,26 @@ export const route = maybeString => {
 }
 
 /**
+ * @param {string} maybeRoute
+ *
+ * @example
+ * routeBreakdown('users/role') // ['role']
+ * routeBreakdown('games/search') // ['game']
+ */
+export const routeBreakdown = maybeRoute => {
+  let singulars = route(maybeRoute)
+    .split('/')
+    .filter(segment => ['Entity', 'Property', 'Aggregation', 'Operation'].includes(Segment[segment].kind))
+    .map(segment => Segment[segment].singular)
+
+  let lastIndex = singulars.findLastIndex(segment => Segment[segment].kind === 'Entity')
+
+  return singulars
+    .slice(lastIndex, singulars.length)
+    .join('/')
+}
+
+/**
  * @param {string} segment
  *
  * @example
