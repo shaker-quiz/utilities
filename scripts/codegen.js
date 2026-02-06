@@ -34,6 +34,12 @@ let breakdown = route =>
     })
     .join('/')
 
+let searchBreakdown = route =>
+  route
+    .split('/')
+    .filter(x => x !== Segment['search'].key)
+    .join('/')
+
 let relation = route => {
   let segments = route.split('/')
 
@@ -97,6 +103,11 @@ let RouteBreakdown = Routes
   .map(x => `'${x}': '${breakdown(x)}'`)
   .join(',\n    ')
 
+let SearchBreakdown = Routes
+  .filter(x => x.includes('search'))
+  .map(x => `'${x}': '${searchBreakdown(x)}'`)
+  .join(',\n    ')
+
 let RouteRelation = Routes
   .map(x => `'${x}': '${relation(x)}'`)
   .join(',\n    ')
@@ -121,6 +132,7 @@ Bun.write(
     .replace('/* pathname -> parameters */', PathnameParameters)
     .replace('/* parameter -> pattern */', ParameterPattern)
     .replace('/* route -> breakdown */', RouteBreakdown)
+    .replace('/* search -> breakdown */', SearchBreakdown)
     .replace('/* route -> relation */', RouteRelation)
     .replace('/* route -> service */', RouteService)
     .replace('/* service -> routes */', ServiceRoutes),

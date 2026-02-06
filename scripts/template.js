@@ -48,6 +48,12 @@ export const RouteBreakdown = Object.freeze(
   }),
 )
 
+export const SearchBreakdown = Object.freeze(
+  /** @type {const} */ ({
+    /* search -> breakdown */
+  }),
+)
+
 export const RouteRelation = Object.freeze(
   /** @type {const} */ ({
     /* route -> relation */
