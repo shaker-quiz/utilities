@@ -30,7 +30,7 @@ let breakdown = route =>
       else if (Segment[x].cardinality === '1')
         return x
       else
-        return Segment[x].relation
+        return Segment[x].singular
     })
     .join('/')
 
@@ -45,7 +45,7 @@ let relation = route => {
 
   return segments
     .slice(segments.length >= 3 ? -2 : 0)
-    .map(x => Segment[x].cardinality === '1' ? x : Segment[x].relation)
+    .map(x => Segment[x].cardinality === '1' ? x : Segment[x].singular)
     .join('/')
 }
 

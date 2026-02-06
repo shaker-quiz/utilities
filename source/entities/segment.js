@@ -175,6 +175,26 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
+        key: 'cover',
+        cardinality: '1',
+        singular: 'cover',
+        plural: 'covers',
+        service: Service['Minio'],
+        pattern: Pattern.UUID.source,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'covers',
+        cardinality: 'n',
+        singular: 'cover',
+        plural: 'covers',
+        service: Service['Minio'],
+        pattern: undefined,
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
         key: 'game',
         cardinality: '1',
         singular: 'game',
@@ -311,16 +331,6 @@ export const Segments = Object.freeze(
         plural: 'searches',
         service: undefined,
         pattern: undefined,
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'cover',
-        cardinality: '1',
-        singular: 'cover',
-        plural: 'covers',
-        service: Service['Minio'],
-        pattern: Pattern.UUID.source,
       }),
     ),
     Object.freeze(
