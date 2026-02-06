@@ -43,6 +43,17 @@ export const routeBreakdown = maybeRoute => {
     .join('/')
 }
 
+/**
+ * @param {string} maybeRoute
+ *
+ * @example
+ * routeCardinality('users/role') // 'n'
+ * routeCardinality('games/search') // 'n'
+ * routeCardinality('city/venues') // 'n'
+ * routeCardinality('cities/venues') // 'n'
+ * routeCardinality('game') // '1'
+ * routeCardinality('game/summary') // '1'
+ */
 export const routeCardinality = maybeRoute => {
   let [head, ...segments] = route(maybeRoute)
     .split('/')
