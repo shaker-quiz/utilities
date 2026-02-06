@@ -18,7 +18,7 @@ export const route = maybeString => {
 
   for (const segment of segments)
     if (!Object.hasOwn(Segment, segment))
-      throw TypeError(`[route] Could not access segment Segment['${segment}'].`)
+      throw TypeError(`Could not access segment Segment['${segment}'].`)
 
   return segments.join('/')
 }
@@ -124,4 +124,23 @@ export const hydrateRoutePathname = (maybeRoute, maybeParams) => {
         : accumulator,
     pathname,
   )
+}
+
+/**
+ * @param {string} maybeRoute
+ *
+ * @example
+ * routeService('user/role') // 'Users'
+ * routeService('game/registrations') // 'Games'
+ */
+export const routeService = maybeRoute => {
+  let [head] = route(maybeRoute).split('/')
+
+  if (!Object.hasOwn(Segment, head))
+    throw TypeError(`Could not access Segment['${head}'].`)
+
+  if (Segment[head].service === null)
+    throw TypeError(`Segment['${head}'] does not have a service.`)
+
+  return Segment[head].service
 }

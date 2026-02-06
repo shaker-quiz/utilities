@@ -1,6 +1,6 @@
 import { Method } from '../entities/method.js'
 
-import { hydrateRoutePathname } from './route-pathname.js'
+import { hydrateRoutePathname } from './route.js'
 
 /**
  * @template {keyof typeof  import('@shakerquiz/utilities').Method} M
