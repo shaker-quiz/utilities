@@ -43,6 +43,20 @@ export const routeBreakdown = maybeRoute => {
     .join('/')
 }
 
+export const routeCardinality = maybeRoute => {
+  let [head, ...segments] = route(maybeRoute)
+    .split('/')
+    .filter(segment => Segment[segment].kind === 'Entity')
+    .map(segment => Segment[segment].cardinality)
+
+  if (head === 'n')
+    return 'n'
+  else if (segments.includes('n'))
+    return 'n'
+  else
+    return '1'
+}
+
 /**
  * @param {string} segment
  *
