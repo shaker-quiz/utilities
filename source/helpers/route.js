@@ -117,7 +117,7 @@ export const routeParameters = maybeRoute =>
  * routeParametersFromObject('user/role', { ':user': 1, ':role': 2 }) // [1, 2]
  * routeParametersFromObject('game/registrations', { ':game': 1 }) // [1]
  */
-export const routeParametersFromObject = (maybeRoute, object) =>
+export const takeRouteParametersFromObject = (maybeRoute, object) =>
   routeParameters(maybeRoute)
     .map(prop => object[prop])
     .filter(Boolean)
@@ -141,7 +141,7 @@ export const routeProperties = maybeRoute =>
  * routePropertiesFromObject('user/role', { user_id: 1, role_id: 2 }) // [1, 2]
  * routePropertiesFromObject('game/registrations', { game_id: 1 }) // [1]
  */
-export const routePropertiesFromObject = (maybeRoute, object) =>
+export const takeRoutePropertiesFromObject = (maybeRoute, object) =>
   routeProperties(maybeRoute)
     .map(prop => object[prop])
     .filter(Boolean)
