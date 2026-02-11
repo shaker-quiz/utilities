@@ -47,26 +47,18 @@ export const routeBreakdown = maybeRoute => {
  * @param {string} maybeRoute
  *
  * @example
- * routeCardinality('users/role') // 'n'
- * routeCardinality('games/search') // 'n'
- * routeCardinality('city/venues') // 'n'
- * routeCardinality('cities/venues') // 'n'
+ * routeCardinality('users/role/search') // 'n/1/1'
+ * routeCardinality('games/search') // 'n/1'
+ * routeCardinality('city/venues') // '1/n'
+ * routeCardinality('cities/venues') // 'n/n'
  * routeCardinality('game') // '1'
- * routeCardinality('game/summary') // '1'
+ * routeCardinality('game/summary') // '1/1'
  */
-export const routeCardinality = maybeRoute => {
-  let [head, ...segments] = route(maybeRoute)
+export const routeCardinality = maybeRoute =>
+  route(maybeRoute)
     .split('/')
-    .filter(segment => Segment[segment].kind === 'Entity')
     .map(segment => Segment[segment].cardinality)
-
-  if (head === 'n')
-    return 'n'
-  else if (segments.includes('n'))
-    return 'n'
-  else
-    return '1'
-}
+    .join('/')
 
 /**
  * @param {string} segment
