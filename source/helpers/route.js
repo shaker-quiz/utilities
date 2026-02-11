@@ -35,6 +35,7 @@ export const routeBreakdown = maybeRoute =>
     .split('/')
     .filter(segment => ['Entity', 'Property', 'Aggregation', 'Operation'].includes(Segment[segment].kind))
     .map(segment => Segment[segment].singular)
+    .join('/')
 
 /**
  * @param {string} maybeRoute
