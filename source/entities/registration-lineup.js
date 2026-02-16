@@ -1,3 +1,5 @@
+import { Quantifier } from './quantifier.js'
+
 export const RegistrationLineups = Object.freeze(
   /** @type {const} */ ([
     'Main',
@@ -19,4 +21,19 @@ export const RegistrationLineupEmoji = Object.freeze({
   'Main': '🟢',
   'Reserve': '🟡',
   'Unspecifed': '⚫️',
+})
+
+export const CategoryRegistrationLineups = Object.freeze({
+  [Quantifier['Any']]: Object.freeze([
+    RegistrationLineup['Main'],
+    RegistrationLineup['Reserve'],
+  ]),
+
+  [RegistrationLineup['Main']]: Object.freeze([
+    RegistrationLineup['Main'],
+  ]),
+
+  [RegistrationLineup['Reserve']]: Object.freeze([
+    RegistrationLineup['Reserve'],
+  ]),
 })
