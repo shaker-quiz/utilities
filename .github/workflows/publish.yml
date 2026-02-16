@@ -1,4 +1,4 @@
-name: Publish @shakerquiz/utilities@aquamarine
+name: Publish @shakerquiz/utilities
 
 on:
   pull_request:
