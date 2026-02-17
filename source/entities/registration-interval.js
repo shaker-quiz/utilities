@@ -1,6 +1,18 @@
 import { Interval } from './interval.js'
 
 export const CategoryRegistrationIntervals = Object.freeze({
+  [Interval['1 day']]: Object.freeze([
+    Interval['1 day'],
+  ]),
+
+  [Interval['3 days']]: Object.freeze([
+    Interval['3 days'],
+  ]),
+
+  [Interval['1 week']]: Object.freeze([
+    Interval['1 week'],
+  ]),
+
   [Interval['1 month']]: Object.freeze([
     Interval['1 month'],
   ]),
