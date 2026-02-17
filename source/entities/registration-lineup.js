@@ -4,7 +4,7 @@ export const RegistrationLineups = Object.freeze(
   /** @type {const} */ ([
     'Main',
     'Reserve',
-    'Unspecifed',
+    'Unspecified',
   ]),
 )
 
@@ -20,7 +20,7 @@ export const RegistrationLineup = Object.freeze(
 export const RegistrationLineupEmoji = Object.freeze({
   'Main': '🟢',
   'Reserve': '🟡',
-  'Unspecifed': '⚫️',
+  'Unspecified': '⚫️',
 })
 
 export const CategoryRegistrationLineups = Object.freeze({
