@@ -280,6 +280,39 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
+        key: 'creation',
+        cardinality: '1',
+        singular: 'creation',
+        plural: 'creations',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'confirmation',
+        cardinality: '1',
+        singular: 'confirmation',
+        plural: 'confirmations',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'cancellation',
+        cardinality: '1',
+        singular: 'cancellation',
+        plural: 'cancellations',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
         key: 'lineup',
         cardinality: '1',
         singular: 'lineup',
@@ -298,6 +331,28 @@ export const Segments = Object.freeze(
         service: null,
         pattern: null,
         kind: 'Property',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'promotion',
+        cardinality: '1',
+        singular: 'promotion',
+        plural: 'promotions',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'reservation',
+        cardinality: '1',
+        singular: 'reservation',
+        plural: 'reservations',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
       }),
     ),
     Object.freeze(
@@ -430,39 +485,6 @@ export const Segments = Object.freeze(
         service: null,
         pattern: null,
         kind: 'Property',
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'creation',
-        cardinality: '1',
-        singular: 'creation',
-        plural: 'creations',
-        service: null,
-        pattern: null,
-        kind: 'Operation',
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'confirmation',
-        cardinality: '1',
-        singular: 'confirmation',
-        plural: 'confirmations',
-        service: null,
-        pattern: null,
-        kind: 'Operation',
-      }),
-    ),
-    Object.freeze(
-      /** @type {const} */ ({
-        key: 'cancellation',
-        cardinality: '1',
-        singular: 'cancellation',
-        plural: 'cancellations',
-        service: null,
-        pattern: null,
-        kind: 'Operation',
       }),
     ),
   ]),
