@@ -39,7 +39,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        repo: [ url, contracts ]
+        repo: [ url, contracts, translations ]
     steps:
       - name: Update and Publish ${{ github.repository_owner }}/${{ matrix.repo }}
         env:
