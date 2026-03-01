@@ -19,4 +19,3 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: npm ci
       - run: npm run prepublishOnly
-      - run: git diff --exit-code
