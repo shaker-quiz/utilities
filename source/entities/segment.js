@@ -487,6 +487,17 @@ export const Segments = Object.freeze(
         kind: 'Property',
       }),
     ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'dialog',
+        cardinality: '1',
+        singular: 'dialog',
+        plural: 'dialogs',
+        service: null,
+        pattern: null,
+        kind: 'Property',
+      }),
+    ),
   ]),
 )
 
