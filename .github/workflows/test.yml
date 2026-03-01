@@ -1,0 +1,22 @@
+name: Test @shakerquiz/utilities
+
+on:
+  pull_request:
+    branches:
+      - aquamarine
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+      - uses: oven-sh/setup-bun@v2
+      - run: npm ci
+      - run: npm run prepublishOnly
+      - run: git diff --exit-code
