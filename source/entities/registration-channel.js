@@ -1,16 +1,16 @@
-export const RegistrationChannels = Object.freeze(
-  /** @type {const} */ ([
-    'vkontakte',
-    'telegramBot',
-    'email',
-  ]),
-)
+export const RegistrationChannel = /** @type {const} */ ({
+  'Vkontakte': 'Vkontakte',
+  'Telegram': 'Telegram',
+  'Email': 'Email',
+})
 
-export const RegistrationChannel = Object.freeze(
-  /** @type {{ [x in typeof RegistrationChannels[number]]: x }} */ (
-    RegistrationChannels.reduce(
-      (o, x) => (o[x] = x, o),
-      {},
-    )
-  ),
-)
+export const RegistrationChannels = Object.values(RegistrationChannel)
+
+export const RegistrationConfirmedChannel = /** @type {const} */ ({
+  'Vkontakte': 'Vkontakte',
+  'Telegram': 'Telegram',
+  'Email': 'Email',
+  'Unspecified': 'Unspecified',
+})
+
+export const RegistrationConfirmedChannels = Object.values(RegistrationConfirmedChannel)
