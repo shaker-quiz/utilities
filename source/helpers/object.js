@@ -7,7 +7,7 @@ export const hasOwn = Object.hasOwn
  * @param {object} o
  * @param {PropertyKey} v
  *
- * @returns {any}
+ * @returns {*}
  */
 export const tryOwn = (o, v) => hasOwn(o, v) ? o[v] : undefined
 
@@ -27,4 +27,20 @@ export const getOwn = (o, v) => {
     throw TypeError(`Property '${v}' is not undefined.`)
 
   return o[v]
+}
+
+export const set = (object, key, value) => {
+  var result = { ...object }
+
+  result[key] = value
+
+  return result
+}
+
+export const remove = (object, key) => {
+  var result = { ...object }
+
+  delete result[key]
+
+  return result
 }

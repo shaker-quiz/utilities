@@ -6,6 +6,9 @@ export let settle = value =>
       reason => (/** @type {const} */ ({ status: 'rejected', reason })),
     )
 
+/**
+ * @param {Parameters<typeof Promise.try>[0]} fn
+ */
 export let trySettle = (fn, ...args) =>
   Promise
     .try(fn, ...args)
