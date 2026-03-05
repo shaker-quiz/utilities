@@ -11,6 +11,7 @@ export const Methods = Object.freeze(
     'PATCH',
     'POST',
     'PUT',
+    'HEAD',
   ]),
 )
 
