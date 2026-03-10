@@ -19,3 +19,11 @@ export const remove = (collection, key) => {
 
   return result
 }
+
+export const clear = collection => {
+  var result = new Map(collection)
+
+  result.clear()
+
+  return result
+}
