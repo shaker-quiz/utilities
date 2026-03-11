@@ -137,13 +137,25 @@ export const RoleGameStatusGameStatuses = Object.freeze({
 
     [GameStatus['Archive']]: Object.freeze([]),
 
-    [GameStatus['Close']]: Object.freeze([]),
+    [GameStatus['Close']]: Object.freeze([
+      GameStatus['Publish'],
+      GameStatus['Invite'],
+      GameStatus['Reserve'],
+    ]),
 
     [GameStatus['Finish']]: Object.freeze([]),
 
-    [GameStatus['Invite']]: Object.freeze([]),
+    [GameStatus['Invite']]: Object.freeze([
+      GameStatus['Close'],
+      GameStatus['Publish'],
+      GameStatus['Reserve'],
+    ]),
 
-    [GameStatus['Reserve']]: Object.freeze([]),
+    [GameStatus['Reserve']]: Object.freeze([
+      GameStatus['Close'],
+      GameStatus['Invite'],
+      GameStatus['Publish'],
+    ]),
 
     [GameStatus['Moderate']]: Object.freeze([]),
 
