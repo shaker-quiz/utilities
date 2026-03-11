@@ -5,6 +5,17 @@ export const Segments = Object.freeze(
   /** @type {const} */ ([
     Object.freeze(
       /** @type {const} */ ({
+        key: '',
+        cardinality: '1',
+        singular: '',
+        plural: '',
+        service: null,
+        pattern: null,
+        kind: 'Entity',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
         key: 'checkin',
         cardinality: '1',
         singular: 'checkin',
