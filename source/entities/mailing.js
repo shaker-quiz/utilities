@@ -89,11 +89,9 @@ export let TelegramMailingTemplate = /** @type {const} */ ({
 })
 
 export let TelegramMailingFeature = /** @type {const} */ ({
-  'Text': 'Text',
   'Registration/Created': 'Registration/Created',
   'Registration/Status/Changed': 'Registration/Status/Changed',
-  'Registration/Lineup/Changed': 'Registration/Lineup/Changed',
-  'Registration/Channel/Confirmed': 'Registration/Channel/Confirmed',
+  'Text': 'Text',
 })
 
 export let TelegramMailingFeatureContextTemplate = {
