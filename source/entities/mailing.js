@@ -4,6 +4,7 @@ export let MailingFeature = /** @type {const} */ ({
   'Registration/Status/Changed': 'Registration/Status/Changed',
   'Registration/Lineup/Changed': 'Registration/Lineup/Changed',
   'Registration/Confirmation': 'Registration/Confirmation',
+  'Registration/Restored': 'Registration/Restored',
   'Text': 'Text',
 })
 
@@ -31,6 +32,10 @@ export let ChatappMailingTemplate = /** @type {const} */ ({
   'Registration/Promoted/Team': 'Registration/Promoted/Team',
   'Registration/Reserved/Alone': 'Registration/Reserved/Alone',
   'Registration/Reserved/Team': 'Registration/Reserved/Team',
+  'Registration/Restored/Alone/Main': 'Registration/Restored/Alone/Main',
+  'Registration/Restored/Alone/Reserve': 'Registration/Restored/Alone/Reserve',
+  'Registration/Restored/Team/Main': 'Registration/Restored/Team/Main',
+  'Registration/Restored/Team/Reserve': 'Registration/Restored/Team/Reserve',
 })
 
 export let ChatappMailingFeature = /** @type {const} */ ({
@@ -39,6 +44,7 @@ export let ChatappMailingFeature = /** @type {const} */ ({
   [MailingFeature['Registration/Status/Changed']]: MailingFeature['Registration/Status/Changed'],
   [MailingFeature['Registration/Lineup/Changed']]: MailingFeature['Registration/Lineup/Changed'],
   [MailingFeature['Registration/Confirmation']]: MailingFeature['Registration/Confirmation'],
+  [MailingFeature['Registration/Restored']]: MailingFeature['Registration/Restored'],
   [MailingFeature['Text']]: MailingFeature['Text'],
 })
 
@@ -85,6 +91,13 @@ export let ChatappMailingFeatureContextTemplate = /** @type {const} */ ({
   [ChatappMailingFeature['Text']]: {
     'Text': 'Text',
   },
+
+  [ChatappMailingFeature['Registration/Restored']]: {
+    'Alone/Main':    ChatappMailingTemplate['Registration/Restored/Alone/Main'],
+    'Alone/Reserve': ChatappMailingTemplate['Registration/Restored/Alone/Reserve'],
+    'Team/Main':     ChatappMailingTemplate['Registration/Restored/Team/Main'],
+    'Team/Reserve':  ChatappMailingTemplate['Registration/Restored/Team/Reserve'],
+  },
 })
 
 export let TelegramMailingTemplate = /** @type {const} */ ({
@@ -95,11 +108,16 @@ export let TelegramMailingTemplate = /** @type {const} */ ({
   'Registration/Created/Main/Celebrant': 'Registration/Created/Main/Celebrant',
   'Registration/Created/Reserve/Basic': 'Registration/Created/Reserve/Basic',
   'Registration/Created/Reserve/Celebrant': 'Registration/Created/Reserve/Celebrant',
+  'Registration/Restored/Main/Basic':        'Registration/Restored/Main/Basic',
+  'Registration/Restored/Main/Celebrant':    'Registration/Restored/Main/Celebrant',
+  'Registration/Restored/Reserve/Basic':     'Registration/Restored/Reserve/Basic',
+  'Registration/Restored/Reserve/Celebrant': 'Registration/Restored/Reserve/Celebrant',
 })
 
 export let TelegramMailingFeature = /** @type {const} */ ({
   [MailingFeature['Registration/Created']]: MailingFeature['Registration/Created'],
   [MailingFeature['Registration/Status/Changed']]: MailingFeature['Registration/Status/Changed'],
+  [MailingFeature['Registration/Restored']]: MailingFeature['Registration/Restored'],
   [MailingFeature['Text']]: MailingFeature['Text'],
 })
 
@@ -116,5 +134,12 @@ export let TelegramMailingFeatureContextTemplate = {
     'Confirmed/Reserve': null,
     'Cancelled/Main': TelegramMailingTemplate['Registration/Cancelled/Main'],
     'Cancelled/Reserve': TelegramMailingTemplate['Registration/Cancelled/Reserve'],
+  },
+
+  [TelegramMailingFeature['Registration/Restored']]: {
+    'Main/Basic':        TelegramMailingTemplate['Registration/Restored/Main/Basic'],
+    'Main/Celebrant':    TelegramMailingTemplate['Registration/Restored/Main/Celebrant'],
+    'Reserve/Basic':     TelegramMailingTemplate['Registration/Restored/Reserve/Basic'],
+    'Reserve/Celebrant': TelegramMailingTemplate['Registration/Restored/Reserve/Celebrant'],
   },
 }
