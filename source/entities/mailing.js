@@ -77,3 +77,37 @@ export let ChatappMailingFeatureContextTemplate = /** @type {const} */ ({
     'Text': 'Text',
   },
 })
+
+export let TelegramMailingTemplate = /** @type {const} */ ({
+  'Registration/Cancelled/Main': 'Registration/Cancelled/Main',
+  'Registration/Cancelled/Reserve': 'Registration/Cancelled/Reserve',
+  'Registration/Confirmed/Main': 'Registration/Confirmed/Main',
+  'Registration/Created/Main/Basic': 'Registration/Created/Main/Basic',
+  'Registration/Created/Main/Celebrant': 'Registration/Created/Main/Celebrant',
+  'Registration/Created/Reserve/Basic': 'Registration/Created/Reserve/Basic',
+  'Registration/Created/Reserve/Celebrant': 'Registration/Created/Reserve/Celebrant',
+})
+
+export let TelegramMailingFeature = /** @type {const} */ ({
+  'Text': 'Text',
+  'Registration/Created': 'Registration/Created',
+  'Registration/Status/Changed': 'Registration/Status/Changed',
+  'Registration/Lineup/Changed': 'Registration/Lineup/Changed',
+  'Registration/Channel/Confirmed': 'Registration/Channel/Confirmed',
+})
+
+export let TelegramMailingFeatureContextTemplate = {
+  [TelegramMailingFeature['Registration/Created']]: {
+    'Main/Basic': TelegramMailingTemplate['Registration/Created/Main/Basic'],
+    'Main/Celebrant': TelegramMailingTemplate['Registration/Created/Main/Celebrant'],
+    'Reserve/Basic': TelegramMailingTemplate['Registration/Created/Reserve/Basic'],
+    'Reserve/Celebrant': TelegramMailingTemplate['Registration/Created/Reserve/Celebrant'],
+  },
+
+  [TelegramMailingFeature['Registration/Status/Changed']]: {
+    'Confirmed/Main': TelegramMailingTemplate['Registration/Confirmed/Main'],
+    'Confirmed/Reserve': null,
+    'Cancelled/Main': TelegramMailingTemplate['Registration/Cancelled/Main'],
+    'Cancelled/Reserve': TelegramMailingTemplate['Registration/Cancelled/Reserve'],
+  },
+}
