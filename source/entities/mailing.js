@@ -1,3 +1,12 @@
+export let MailingFeature = /** @type {const} */ ({
+  'Registration/Created': 'Registration/Created',
+  'Registration/Channel/Confirmed': 'Registration/Channel/Confirmed',
+  'Registration/Status/Changed': 'Registration/Status/Changed',
+  'Registration/Lineup/Changed': 'Registration/Lineup/Changed',
+  'Registration/Confirmation': 'Registration/Confirmation',
+  'Text': 'Text',
+})
+
 export let ChatappMailingTemplate = /** @type {const} */ ({
   'Registration/Cancelled': 'Registration/Cancelled',
   'Registration/Channel/Confirmed/Alone/Main': 'Registration/Channel/Confirmed/Alone/Main',
@@ -25,12 +34,12 @@ export let ChatappMailingTemplate = /** @type {const} */ ({
 })
 
 export let ChatappMailingFeature = /** @type {const} */ ({
-  'Registration/Created': 'Registration/Created',
-  'Registration/Channel/Confirmed': 'Registration/Channel/Confirmed',
-  'Registration/Status/Changed': 'Registration/Status/Changed',
-  'Registration/Lineup/Changed': 'Registration/Lineup/Changed',
-  'Registration/Confirmation': 'Registration/Confirmation',
-  'Text': 'Text',
+  [MailingFeature['Registration/Created']]: MailingFeature['Registration/Created'],
+  [MailingFeature['Registration/Channel/Confirmed']]: MailingFeature['Registration/Channel/Confirmed'],
+  [MailingFeature['Registration/Status/Changed']]: MailingFeature['Registration/Status/Changed'],
+  [MailingFeature['Registration/Lineup/Changed']]: MailingFeature['Registration/Lineup/Changed'],
+  [MailingFeature['Registration/Confirmation']]: MailingFeature['Registration/Confirmation'],
+  [MailingFeature['Text']]: MailingFeature['Text'],
 })
 
 export let ChatappMailingFeatureContextTemplate = /** @type {const} */ ({
@@ -89,9 +98,9 @@ export let TelegramMailingTemplate = /** @type {const} */ ({
 })
 
 export let TelegramMailingFeature = /** @type {const} */ ({
-  'Registration/Created': 'Registration/Created',
-  'Registration/Status/Changed': 'Registration/Status/Changed',
-  'Text': 'Text',
+  [MailingFeature['Registration/Created']]: MailingFeature['Registration/Created'],
+  [MailingFeature['Registration/Status/Changed']]: MailingFeature['Registration/Status/Changed'],
+  [MailingFeature['Text']]: MailingFeature['Text'],
 })
 
 export let TelegramMailingFeatureContextTemplate = {
