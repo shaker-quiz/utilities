@@ -3,6 +3,7 @@ export const RegistrationReinstatement = /** @type {const} */ ({
   'Fulfilled': 'Fulfilled',
   'Rejected': 'Rejected',
   'Active': 'Active',
+  'Scheduled': 'Scheduled',
 })
 
 export const RegistrationReinstatements = Object.values(RegistrationReinstatement)
