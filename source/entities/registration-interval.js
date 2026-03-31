@@ -29,5 +29,5 @@ export const CategoryRegistrationIntervals = Object.freeze({
     Interval['1 year'],
   ]),
 
-  [Interval['all time']]: Object.freeze([]),
+  [Interval['all time']]: undefined,
 })
