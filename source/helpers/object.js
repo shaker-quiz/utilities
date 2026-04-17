@@ -1,46 +1,74 @@
 /**
- * @type {typeof Object.hasOwn}
+ * @param {object} o
+ * @param {...PropertyKey} ks
  */
-export const hasOwn = Object.hasOwn
+export const hasOwn = (o, ...ks) => {
+  if (o === null)
+    return false
+  else if (o === undefined)
+    return false
+  else if (ks.length < 1)
+    return false
+  else
+    return ks.every(v => Object.hasOwn(o, v))
+}
 
 /**
  * @param {object} o
- * @param {PropertyKey} v
+ * @param {PropertyKey} k
  *
  * @returns {*}
  */
-export const tryOwn = (o, v) => hasOwn(o, v) ? o[v] : undefined
+export const tryOwn = (o, k) => hasOwn(o, k) ? o[k] : undefined
 
 /**
  * @param {object} o
- * @param {PropertyKey} v
+ * @param {PropertyKey} k
  *
  * @throws {TypeError}
  *
  * @returns {any}
  */
-export const getOwn = (o, v) => {
-  if (!hasOwn(o, v))
-    throw TypeError(`Property '${v}' is not assigned.`)
+export const getOwn = (o, k) => {
+  if (!hasOwn(o, k))
+    throw TypeError(`Property '${k}' is not assigned.`)
 
-  if (tryOwn(o, v) === undefined)
-    throw TypeError(`Property '${v}' is not undefined.`)
+  var v = tryOwn(o, k)
 
-  return o[v]
+  if (v === undefined)
+    throw TypeError(`Property '${k}' is undefined.`)
+
+  return v
 }
 
-export const set = (object, key, value) => {
-  var result = { ...object }
+/**
+ * @param {object} o
+ * @param {PropertyKey} k
+ * @param {any} v
+ */
+export const setOwn = (o, k, v) => ({ ...o, [k]: v })
 
-  result[key] = value
+/**
+ * @deprecated
+ *
+ * @param {object} o
+ * @param {PropertyKey} k
+ * @param {any} v
+ */
+export const set = setOwn
 
-  return result
-}
+/**
+ * @param {object} o
+ * @param {...object} os
+ */
+export const assignOwn = (o, ...os) => Object.assign({}, o, ...os)
 
-export const remove = (object, key) => {
-  var result = { ...object }
+/**
+ * @param {object} o
+ * @param {PropertyKey} k
+ */
+export const removeOwn = (o, k) => {
+  var { [k]: _, ...x } = o
 
-  delete result[key]
-
-  return result
+  return x
 }
