@@ -71,6 +71,8 @@ export const Routes = Object.freeze(
     'registration/search',
     'registration/status/search',
     'registration/creation',
+    'registration/creation/landing/team',
+    'registration/creation/landing/group',
     'registration/confirmation',
     'registration/cancellation',
     'registration/lineup/search',
