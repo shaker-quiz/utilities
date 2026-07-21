@@ -1,30 +1,27 @@
-export const Services = Object.freeze(
-  /** @type {const} */ ([
-    'Users',
-    'Roles',
-    'Checkin',
-    'Locations',
-    'Cities',
-    'Venues',
-    'Themes',
-    'Games',
-    'Registrations',
-    'Procedures',
-    'Updates',
-    'Hub',
-    'Landing',
-    'Vkma',
-    'Telegram',
-    'Chatapp',
-    'Bitrix',
-    'Reposter',
-    'Raffle',
-    'Minio',
-  ]),
-)
+export let Service = /** @type {const} */ ({
+  Users: 'Users',
+  Roles: 'Roles',
+  Checkin: 'Checkin',
+  Locations: 'Locations',
+  Cities: 'Cities',
+  Venues: 'Venues',
+  Themes: 'Themes',
+  Games: 'Games',
+  Registrations: 'Registrations',
+  Procedures: 'Procedures',
+  Updates: 'Updates',
+  Hub: 'Hub',
+  Landing: 'Landing',
+  Vkma: 'Vkma',
+  Telegram: 'Telegram',
+  Chatapp: 'Chatapp',
+  Bitrix: 'Bitrix',
+  Vk: 'Vk',
+  Max: 'Max',
+  VkOrganizer: 'VkOrganizer',
+  Reposter: 'Reposter',
+  Raffle: 'Raffle',
+  Minio: 'Minio',
+})
 
-export const Service = Object.freeze(
-  /** @type {{ [x in typeof Services[number]]: x }} */ (
-    Services.reduce((o, x) => (o[x] = x, o), {})
-  ),
-)
+export let Services = Object.values(Service)
