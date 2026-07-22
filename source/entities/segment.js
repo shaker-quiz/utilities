@@ -313,6 +313,17 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
+        key: 'vkma',
+        cardinality: '1',
+        singular: 'vkma',
+        plural: 'vkmas',
+        service: null,
+        pattern: null,
+        kind: 'Integration',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
         key: 'team',
         cardinality: '1',
         singular: 'team',

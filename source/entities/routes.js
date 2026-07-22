@@ -73,6 +73,8 @@ export const Routes = Object.freeze(
     'registration/creation',
     'registration/creation/landing/team',
     'registration/creation/landing/group',
+    'registration/creation/vkma/team',
+    'registration/creation/vkma/group',
     'registration/confirmation',
     'registration/cancellation',
     'registration/lineup/search',
