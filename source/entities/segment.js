@@ -324,6 +324,17 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
+        key: 'hub',
+        cardinality: '1',
+        singular: 'hub',
+        plural: 'hubs',
+        service: null,
+        pattern: null,
+        kind: 'Integration',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
         key: 'team',
         cardinality: '1',
         singular: 'team',
