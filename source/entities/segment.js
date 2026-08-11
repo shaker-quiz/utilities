@@ -599,6 +599,17 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
+        key: 'message',
+        cardinality: '1',
+        singular: 'message',
+        plural: 'messages',
+        service: null,
+        pattern: null,
+        kind: 'Entity',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
         key: 'channel',
         cardinality: '1',
         singular: 'channel',
