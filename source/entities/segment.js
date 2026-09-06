@@ -313,6 +313,61 @@ export const Segments = Object.freeze(
     ),
     Object.freeze(
       /** @type {const} */ ({
+        key: 'publication',
+        cardinality: '1',
+        singular: 'publication',
+        plural: 'publications',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'invitation',
+        cardinality: '1',
+        singular: 'invitation',
+        plural: 'invitations',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'closure',
+        cardinality: '1',
+        singular: 'closure',
+        plural: 'closures',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'completion',
+        cardinality: '1',
+        singular: 'completion',
+        plural: 'completions',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
+        key: 'archivation',
+        cardinality: '1',
+        singular: 'archivation',
+        plural: 'archivations',
+        service: null,
+        pattern: null,
+        kind: 'Operation',
+      }),
+    ),
+    Object.freeze(
+      /** @type {const} */ ({
         key: 'approval',
         cardinality: '1',
         singular: 'approval',
