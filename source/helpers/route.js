@@ -134,16 +134,13 @@ export const takeRoutePropertiesFromObject = (maybeRoute, object) =>
 
 /**
  * @param {string} maybeRoute
- * @param {any[]} maybeParams
+ * @param {any[]} [maybeParams]
  *
  * @example
  * hydrateRoutePathname('user/role', [1, 2]) // 'user/1/role/2'
  * hydrateRoutePathname('game/registrations', [1]) // 'game/1/registrations'
  */
-export const hydrateRoutePathname = (maybeRoute, maybeParams) => {
-  if (!Array.isArray(maybeParams))
-    throw TypeError(`Parameter 'params' must be Array.`)
-
+export const hydrateRoutePathname = (maybeRoute, maybeParams = []) => {
   const pathname = routePathname(maybeRoute)
 
   const parameters = routeParameters(maybeRoute)
