@@ -1,15 +1,15 @@
-name: Test @shakerquiz/utilities
+name: Codegen @shakerquiz/utilities
 
 on:
   pull_request:
     branches:
-      - aquamarine
+      - main
 
 permissions:
   contents: read
 
 jobs:
-  test:
+  codegen:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
