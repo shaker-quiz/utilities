@@ -304,6 +304,4 @@ export const DiscoverableGameStatuses = [
   GameStatus.Reserve,
   GameStatus.Invite,
   GameStatus.Close,
-  GameStatus.Cancel,
-  GameStatus.Finish,
 ]
