@@ -1,4 +1,4 @@
-export const Interval = Object.freeze({
+export const Interval = /** @type {const} */ ({
   '1 day': '1 day',
   '3 days': '3 days',
   '1 week': '1 week',
@@ -9,4 +9,4 @@ export const Interval = Object.freeze({
   'all time': 'all time',
 })
 
-export const Intervals = Object.freeze(Object.values(Interval))
+export const Intervals = Object.values(Interval)

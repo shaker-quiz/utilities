@@ -8,16 +8,16 @@ export const GameVisibility = /** @type {const} */ ({
 export const GameVisibilities = Object.values(GameVisibility)
 
 export const CategoryGameVisibilities = /** @type {const} */ ({
-  [Quantifier['Any']]: [
-    GameVisibility['Visible'],
-    GameVisibility['Hidden'],
+  [Quantifier.Any]: [
+    GameVisibility.Visible,
+    GameVisibility.Hidden,
   ],
 
-  [GameVisibility['Visible']]: [
-    GameVisibility['Visible'],
+  [GameVisibility.Visible]: [
+    GameVisibility.Visible,
   ],
 
-  [GameVisibility['Hidden']]: [
-    GameVisibility['Hidden'],
+  [GameVisibility.Hidden]: [
+    GameVisibility.Hidden,
   ],
 })

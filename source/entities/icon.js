@@ -1,4 +1,4 @@
-export const Icon = Object.freeze({
+export const Icon = /** @type {const} */ ({
   'hero/solid/academic-cap': 'hero/solid/academic-cap',
   'hero/solid/adjustments-horizontal': 'hero/solid/adjustments-horizontal',
   'hero/solid/adjustments-vertical': 'hero/solid/adjustments-vertical',
@@ -651,4 +651,4 @@ export const Icon = Object.freeze({
   'vk/solid/logo': 'vk/solid/logo',
 })
 
-export const Icons = Object.freeze(Object.values(Icon))
+export const Icons = Object.values(Icon)

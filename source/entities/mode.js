@@ -1,15 +1,6 @@
-export const Modes = Object.freeze(
-  /** @type {const} */ ([
-    'Known',
-    'Unknown',
-  ]),
-)
+export const Mode = /** @type {const} */ ({
+  'Known': 'Known',
+  'Unknown': 'Unknown',
+})
 
-export const Mode = Object.freeze(
-  /** @type {{ [x in typeof Modes[number]]: x }} */ (
-    Modes.reduce(
-      (o, x) => (o[x] = x, o),
-      {},
-    )
-  ),
-)
+export const Modes = Object.values(Mode)

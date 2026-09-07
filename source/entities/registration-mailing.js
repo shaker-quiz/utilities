@@ -1,24 +1,15 @@
-export const RegistrationMailings = Object.freeze(
-  /** @type {const} */ ([
-    'Idle',
-    'Pending',
-    'Delivered',
-    'Failed',
-  ]),
-)
+export const RegistrationMailing = /** @type {const} */ ({
+  'Idle': 'Idle',
+  'Pending': 'Pending',
+  'Delivered': 'Delivered',
+  'Failed': 'Failed',
+})
 
-export const RegistrationMailing = Object.freeze(
-  /** @type {{ [x in typeof RegistrationMailings[number]]: x }} */ (
-    RegistrationMailings.reduce(
-      (o, x) => (o[x] = x, o),
-      {},
-    )
-  ),
-)
+export const RegistrationMailings = Object.values(RegistrationMailing)
 
-export const RegistrationMailingColor = Object.freeze({
-  'Idle': 'default',
-  'Pending': 'warning',
-  'Delivered': 'success',
-  'Failed': 'danger',
+export const RegistrationMailingColor = /** @type {const} */ ({
+  [RegistrationMailing.Idle]: 'default',
+  [RegistrationMailing.Pending]: 'warning',
+  [RegistrationMailing.Delivered]: 'success',
+  [RegistrationMailing.Failed]: 'danger',
 })

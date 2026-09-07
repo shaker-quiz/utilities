@@ -1,13 +1,8 @@
-export const Gender = Object.freeze({
+export const Gender = /** @type {const} */ ({
   'Masculine': 'Masculine',
   'Feminine': 'Feminine',
   'Neuter': 'Neuter',
   'Indeterminate': 'Indeterminate',
 })
 
-export const Genders = Object.freeze([
-  'Masculine',
-  'Feminine',
-  'Neuter',
-  'Indeterminate',
-])
+export const Genders = Object.values(Gender)
