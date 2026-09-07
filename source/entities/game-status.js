@@ -17,9 +17,9 @@ export const GameStatus = /** @type {const} */ ({
 
 export const GameStatuses = Object.values(GameStatus)
 
-export const RoleGameStatusGameStatuses = Object.freeze({
-  [Role['Admin']]: Object.freeze({
-    [GameStatus['Approve']]: Object.freeze([
+export const RoleGameStatusGameStatuses = {
+  [Role.Admin]: {
+    [GameStatus['Approve']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -30,9 +30,9 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
+    ],
 
-    [GameStatus['Archive']]: Object.freeze([
+    [GameStatus['Archive']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -43,9 +43,9 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
+    ],
 
-    [GameStatus['Cancel']]: Object.freeze([
+    [GameStatus['Cancel']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -56,9 +56,9 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
+    ],
 
-    [GameStatus['Close']]: Object.freeze([
+    [GameStatus['Close']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -69,9 +69,9 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
+    ],
 
-    [GameStatus['Finish']]: Object.freeze([
+    [GameStatus['Finish']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -82,9 +82,9 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
+    ],
 
-    [GameStatus['Invite']]: Object.freeze([
+    [GameStatus['Invite']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -95,9 +95,9 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
+    ],
 
-    [GameStatus['Reserve']]: Object.freeze([
+    [GameStatus['Reserve']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -108,9 +108,9 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
+    ],
 
-    [GameStatus['Moderate']]: Object.freeze([
+    [GameStatus['Moderate']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -121,9 +121,9 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
+    ],
 
-    [GameStatus['Publish']]: Object.freeze([
+    [GameStatus['Publish']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -134,9 +134,9 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
+    ],
 
-    [GameStatus['Reject']]: Object.freeze([
+    [GameStatus['Reject']]: [
       GameStatus['Approve'],
       GameStatus['Archive'],
       GameStatus['Cancel'],
@@ -147,89 +147,89 @@ export const RoleGameStatusGameStatuses = Object.freeze({
       GameStatus['Moderate'],
       GameStatus['Publish'],
       GameStatus['Reject'],
-    ]),
-  }),
+    ],
+  },
 
-  [Role['Organizer']]: Object.freeze({
-    [GameStatus['Approve']]: Object.freeze([
+  [Role.Organizer]: {
+    [GameStatus['Approve']]: [
       GameStatus['Cancel'],
       GameStatus['Close'],
       GameStatus['Invite'],
       GameStatus['Publish'],
       GameStatus['Reserve'],
-    ]),
+    ],
 
-    [GameStatus['Archive']]: Object.freeze([]),
+    [GameStatus['Archive']]: [],
 
-    [GameStatus['Cancel']]: Object.freeze([
+    [GameStatus['Cancel']]: [
       GameStatus['Close'],
       GameStatus['Invite'],
       GameStatus['Publish'],
       GameStatus['Reserve'],
-    ]),
+    ],
 
-    [GameStatus['Close']]: Object.freeze([
+    [GameStatus['Close']]: [
       GameStatus['Cancel'],
       GameStatus['Publish'],
       GameStatus['Invite'],
       GameStatus['Reserve'],
-    ]),
+    ],
 
-    [GameStatus['Finish']]: Object.freeze([]),
+    [GameStatus['Finish']]: [],
 
-    [GameStatus['Invite']]: Object.freeze([
+    [GameStatus['Invite']]: [
       GameStatus['Cancel'],
       GameStatus['Close'],
       GameStatus['Publish'],
       GameStatus['Reserve'],
-    ]),
+    ],
 
-    [GameStatus['Reserve']]: Object.freeze([
+    [GameStatus['Reserve']]: [
       GameStatus['Cancel'],
       GameStatus['Close'],
       GameStatus['Invite'],
       GameStatus['Publish'],
-    ]),
+    ],
 
-    [GameStatus['Moderate']]: Object.freeze([]),
+    [GameStatus['Moderate']]: [],
 
-    [GameStatus['Publish']]: Object.freeze([
+    [GameStatus['Publish']]: [
       GameStatus['Cancel'],
       GameStatus['Close'],
       GameStatus['Invite'],
       GameStatus['Reserve'],
-    ]),
+    ],
 
-    [GameStatus['Reject']]: Object.freeze([
+    [GameStatus['Reject']]: [
       GameStatus['Moderate'],
-    ]),
-  }),
+    ],
+  },
 
-  [Mode['Unknown']]: Object.freeze({
-    [GameStatus['Approve']]: Object.freeze([]),
+  [Mode['Unknown']]: {
+    [GameStatus['Approve']]: [],
 
-    [GameStatus['Archive']]: Object.freeze([]),
+    [GameStatus['Archive']]: [],
 
-    [GameStatus['Cancel']]: Object.freeze([]),
+    [GameStatus['Cancel']]: [],
 
-    [GameStatus['Close']]: Object.freeze([]),
+    [GameStatus['Close']]: [],
 
-    [GameStatus['Finish']]: Object.freeze([]),
+    [GameStatus['Finish']]: [],
 
-    [GameStatus['Invite']]: Object.freeze([]),
+    [GameStatus['Invite']]: [],
 
-    [GameStatus['Reserve']]: Object.freeze([]),
+    [GameStatus['Reserve']]: [],
 
-    [GameStatus['Moderate']]: Object.freeze([]),
+    [GameStatus['Moderate']]: [],
 
-    [GameStatus['Publish']]: Object.freeze([]),
+    [GameStatus['Publish']]: [],
 
-    [GameStatus['Reject']]: Object.freeze([]),
-  }),
-})
+    [GameStatus['Reject']]: [],
+  },
+}
 
-export const RoleGameStatuses = Object.freeze({
-  [Role['Admin']]: Object.freeze([
+export const RoleGameStatuses = {
+  [Role.Admin]: [
     GameStatus['Approve'],
     GameStatus['Archive'],
     GameStatus['Cancel'],
@@ -240,9 +240,9 @@ export const RoleGameStatuses = Object.freeze({
     GameStatus['Moderate'],
     GameStatus['Publish'],
     GameStatus['Reject'],
-  ]),
+  ],
 
-  [Role['Organizer']]: Object.freeze([
+  [Role.Organizer]: [
     GameStatus['Archive'],
     GameStatus['Cancel'],
     GameStatus['Close'],
@@ -251,40 +251,40 @@ export const RoleGameStatuses = Object.freeze({
     GameStatus['Reserve'],
     GameStatus['Moderate'],
     GameStatus['Publish'],
-  ]),
+  ],
 
-  [Mode['Unknown']]: Object.freeze([]),
-})
+  [Mode['Unknown']]: [],
+}
 
-export const CategoryGameStatuses = Object.freeze({
-  [Category['Active']]: Object.freeze([
+export const CategoryGameStatuses = {
+  [Category['Active']]: [
     GameStatus['Close'],
     GameStatus['Invite'],
     GameStatus['Reserve'],
     GameStatus['Publish'],
-  ]),
+  ],
 
-  [GameStatus['Reject']]: Object.freeze([
+  [GameStatus['Reject']]: [
     GameStatus['Reject'],
-  ]),
+  ],
 
-  [GameStatus['Moderate']]: Object.freeze([
+  [GameStatus['Moderate']]: [
     GameStatus['Moderate'],
-  ]),
+  ],
 
-  [GameStatus['Approve']]: Object.freeze([
+  [GameStatus['Approve']]: [
     GameStatus['Approve'],
-  ]),
+  ],
 
-  [GameStatus['Cancel']]: Object.freeze([
+  [GameStatus['Cancel']]: [
     GameStatus['Cancel'],
-  ]),
+  ],
 
-  [GameStatus['Finish']]: Object.freeze([
+  [GameStatus['Finish']]: [
     GameStatus['Finish'],
-  ]),
+  ],
 
-  [GameStatus['Archive']]: Object.freeze([
+  [GameStatus['Archive']]: [
     GameStatus['Archive'],
-  ]),
-})
+  ],
+}

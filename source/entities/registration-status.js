@@ -1,45 +1,35 @@
 import { Quantifier } from './quantifier.js'
 
-export const RegistrationStatuses = Object.freeze(
-  /** @type {const} */ ([
-    'Created',
-    'Confirmed',
-    'Cancelled',
-  ]),
-)
-
-export const RegistrationStatus = Object.freeze(
-  /** @type {{ [x in typeof RegistrationStatuses[number]]: x }} */ (
-    RegistrationStatuses.reduce(
-      (o, x) => (o[x] = x, o),
-      {},
-    )
-  ),
-)
-
-/** @satisfies {Record<keyof typeof RegistrationStatus, string>} */
-export const RegistrationStatusEmoji = Object.freeze({
-  'Confirmed': '✅',
-  'Created': '📝',
-  'Cancelled': '❌',
+export const RegistrationStatus = /** @type {const} */ ({
+  'Created': 'Created',
+  'Confirmed': 'Confirmed',
+  'Cancelled': 'Cancelled',
 })
 
-export const CategoryRegistrationStatuses = Object.freeze({
-  [Quantifier['Any']]: Object.freeze([
-    RegistrationStatus['Created'],
-    RegistrationStatus['Confirmed'],
-    RegistrationStatus['Cancelled'],
-  ]),
+export const RegistrationStatuses = Object.values(RegistrationStatus)
 
-  [RegistrationStatus['Created']]: Object.freeze([
-    RegistrationStatus['Created'],
-  ]),
+export const RegistrationStatusEmoji = {
+  [RegistrationStatus.Confirmed]: '✅',
+  [RegistrationStatus.Created]: '📝',
+  [RegistrationStatus.Cancelled]: '❌',
+}
 
-  [RegistrationStatus['Confirmed']]: Object.freeze([
-    RegistrationStatus['Confirmed'],
-  ]),
+export const CategoryRegistrationStatuses = {
+  [Quantifier.Any]: [
+    RegistrationStatus.Created,
+    RegistrationStatus.Confirmed,
+    RegistrationStatus.Cancelled,
+  ],
 
-  [RegistrationStatus['Cancelled']]: Object.freeze([
-    RegistrationStatus['Cancelled'],
-  ]),
-})
+  [RegistrationStatus.Created]: [
+    RegistrationStatus.Created,
+  ],
+
+  [RegistrationStatus.Confirmed]: [
+    RegistrationStatus.Confirmed,
+  ],
+
+  [RegistrationStatus.Cancelled]: [
+    RegistrationStatus.Cancelled,
+  ],
+}

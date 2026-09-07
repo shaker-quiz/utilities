@@ -8,16 +8,16 @@ export const RegistrationVisibility = /** @type {const} */ ({
 export const RegistrationVisibilities = Object.values(RegistrationVisibility)
 
 export const CategoryRegistrationVisibilities = /** @type {const} */ ({
-  [Quantifier['Any']]: [
-    RegistrationVisibility['Visible'],
-    RegistrationVisibility['Hidden'],
+  [Quantifier.Any]: [
+    RegistrationVisibility.Visible,
+    RegistrationVisibility.Hidden,
   ],
 
-  [RegistrationVisibility['Visible']]: [
-    RegistrationVisibility['Visible'],
+  [RegistrationVisibility.Visible]: [
+    RegistrationVisibility.Visible,
   ],
 
-  [RegistrationVisibility['Hidden']]: [
-    RegistrationVisibility['Hidden'],
+  [RegistrationVisibility.Hidden]: [
+    RegistrationVisibility.Hidden,
   ],
 })

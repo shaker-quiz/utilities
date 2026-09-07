@@ -1,13 +1,6 @@
-export const ThemeStatuses = Object.freeze(
-  /** @type {const} */ ([
-    'Active',
-    'Archive',
-  ]),
-)
+export const ThemeStatus = /** @type {const} */ ({
+  'Active': 'Active',
+  'Archive': 'Archive',
+})
 
-export const ThemeStatus = Object.freeze(
-  /** @type {{ [x in typeof ThemeStatuses[number]]: x }} */ (ThemeStatuses.reduce(
-    (o, x) => (o[x] = x, o),
-    {},
-  )),
-)
+export const ThemeStatuses = Object.values(ThemeStatus)

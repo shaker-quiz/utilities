@@ -1,4 +1,4 @@
-export const Constants = Object.freeze({
+export const Constants = /** @type {const} */ ({
   /**
    * @see https://www.rfc-editor.org/rfc/rfc9562.html#name-nil-uuid
    */
@@ -7,5 +7,5 @@ export const Constants = Object.freeze({
   MillisecondsInMinute: 60_000,
   MillisecondsInHour: 3_600_000,
   MillisecondsInDay: 86_400_000,
-  MillisecondsInWeek: 604_800_000
+  MillisecondsInWeek: 604_800_000,
 })

@@ -1,4 +1,4 @@
-export const Numerosity = Object.freeze({
+export const Numerosity = /** @type {const} */ ({
   'Singular': 'Singular',
   'Dual': 'Dual',
   'Plural': 'Plural',

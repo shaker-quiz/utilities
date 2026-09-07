@@ -1,18 +1,9 @@
-export const Phases = Object.freeze(
-  /** @type {const} */ ([
-    'Idle',
-    'Loading',
-    'Loaded',
-    'Aborted',
-    'Failed',
-  ]),
-)
+export const Phase = /** @type {const} */ ({
+  'Idle': 'Idle',
+  'Loading': 'Loading',
+  'Loaded': 'Loaded',
+  'Aborted': 'Aborted',
+  'Failed': 'Failed',
+})
 
-export const Phase = Object.freeze(
-  /** @type {{ [x in typeof Phases[number]]: x }} */ (
-    Phases.reduce(
-      (o, x) => (o[x] = x, o),
-      {},
-    )
-  ),
-)
+export const Phases = Object.values(Phase)

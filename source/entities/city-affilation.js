@@ -1,15 +1,6 @@
-export const CityAffilations = Object.freeze(
-  /** @type {const} */ ([
-    'Branch',
-    'Franchise',
-  ]),
-)
+export const CityAffilation = /** @type {const} */ ({
+  'Branch': 'Branch',
+  'Franchise': 'Franchise',
+})
 
-export const CityAffilation = Object.freeze(
-  /** @type {{ [x in typeof CityAffilations[number]]: x }} */ (
-    CityAffilations.reduce(
-      (o, x) => (o[x] = x, o),
-      {},
-    )
-  ),
-)
+export const CityAffilations = Object.values(CityAffilation)
