@@ -3,7 +3,7 @@ name: Codegen @shakerquiz/utilities
 on:
   pull_request:
     branches:
-      - aquamarine
+      - main
 
 permissions:
   contents: read
