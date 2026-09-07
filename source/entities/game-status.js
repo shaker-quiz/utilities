@@ -3,288 +3,307 @@ import { Mode } from './mode.js'
 import { Role } from './role.js'
 
 export const GameStatus = /** @type {const} */ ({
-  'Approve': 'Approve',
-  'Archive': 'Archive',
-  'Cancel': 'Cancel',
-  'Close': 'Close',
-  'Finish': 'Finish',
-  'Invite': 'Invite',
-  'Reserve': 'Reserve',
-  'Moderate': 'Moderate',
-  'Publish': 'Publish',
-  'Reject': 'Reject',
+  Moderate: 'Moderate',
+  Reject: 'Reject',
+  Approve: 'Approve',
+  Publish: 'Publish',
+  Reserve: 'Reserve',
+  Invite: 'Invite',
+  Close: 'Close',
+  Cancel: 'Cancel',
+  Finish: 'Finish',
+  Archive: 'Archive',
 })
 
 export const GameStatuses = Object.values(GameStatus)
 
 export const RoleGameStatusGameStatuses = {
   [Role.Admin]: {
-    [GameStatus['Approve']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Moderate]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
 
-    [GameStatus['Archive']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Reject]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
 
-    [GameStatus['Cancel']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Approve]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
 
-    [GameStatus['Close']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Publish]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
 
-    [GameStatus['Finish']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Reserve]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
 
-    [GameStatus['Invite']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Invite]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
 
-    [GameStatus['Reserve']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Close]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
 
-    [GameStatus['Moderate']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Cancel]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
 
-    [GameStatus['Publish']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Finish]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
 
-    [GameStatus['Reject']]: [
-      GameStatus['Approve'],
-      GameStatus['Archive'],
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Finish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
-      GameStatus['Moderate'],
-      GameStatus['Publish'],
-      GameStatus['Reject'],
+    [GameStatus.Archive]: [
+      GameStatus.Moderate,
+      GameStatus.Reject,
+      GameStatus.Approve,
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
+      GameStatus.Finish,
+      GameStatus.Archive,
     ],
   },
 
   [Role.Organizer]: {
-    [GameStatus['Approve']]: [
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Invite'],
-      GameStatus['Publish'],
-      GameStatus['Reserve'],
+    [GameStatus.Moderate]: [],
+
+    [GameStatus.Reject]: [
+      GameStatus.Moderate,
     ],
 
-    [GameStatus['Archive']]: [],
-
-    [GameStatus['Cancel']]: [
-      GameStatus['Close'],
-      GameStatus['Invite'],
-      GameStatus['Publish'],
-      GameStatus['Reserve'],
+    [GameStatus.Approve]: [
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
     ],
 
-    [GameStatus['Close']]: [
-      GameStatus['Cancel'],
-      GameStatus['Publish'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
+    [GameStatus.Publish]: [
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
     ],
 
-    [GameStatus['Finish']]: [],
-
-    [GameStatus['Invite']]: [
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Publish'],
-      GameStatus['Reserve'],
+    [GameStatus.Reserve]: [
+      GameStatus.Publish,
+      GameStatus.Invite,
+      GameStatus.Close,
+      GameStatus.Cancel,
     ],
 
-    [GameStatus['Reserve']]: [
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Invite'],
-      GameStatus['Publish'],
+    [GameStatus.Invite]: [
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Close,
+      GameStatus.Cancel,
     ],
 
-    [GameStatus['Moderate']]: [],
-
-    [GameStatus['Publish']]: [
-      GameStatus['Cancel'],
-      GameStatus['Close'],
-      GameStatus['Invite'],
-      GameStatus['Reserve'],
+    [GameStatus.Close]: [
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Cancel,
     ],
 
-    [GameStatus['Reject']]: [
-      GameStatus['Moderate'],
+    [GameStatus.Cancel]: [
+      GameStatus.Publish,
+      GameStatus.Reserve,
+      GameStatus.Invite,
+      GameStatus.Close,
     ],
+
+    [GameStatus.Archive]: [],
+
+    [GameStatus.Finish]: [],
   },
 
-  [Mode['Unknown']]: {
-    [GameStatus['Approve']]: [],
+  [Mode.Unknown]: {
+    [GameStatus.Moderate]: [],
 
-    [GameStatus['Archive']]: [],
+    [GameStatus.Approve]: [],
 
-    [GameStatus['Cancel']]: [],
+    [GameStatus.Reject]: [],
 
-    [GameStatus['Close']]: [],
+    [GameStatus.Publish]: [],
 
-    [GameStatus['Finish']]: [],
+    [GameStatus.Reserve]: [],
 
-    [GameStatus['Invite']]: [],
+    [GameStatus.Invite]: [],
 
-    [GameStatus['Reserve']]: [],
+    [GameStatus.Close]: [],
 
-    [GameStatus['Moderate']]: [],
+    [GameStatus.Cancel]: [],
 
-    [GameStatus['Publish']]: [],
+    [GameStatus.Finish]: [],
 
-    [GameStatus['Reject']]: [],
+    [GameStatus.Archive]: [],
   },
 }
 
 export const RoleGameStatuses = {
   [Role.Admin]: [
-    GameStatus['Approve'],
-    GameStatus['Archive'],
-    GameStatus['Cancel'],
-    GameStatus['Close'],
-    GameStatus['Finish'],
-    GameStatus['Invite'],
-    GameStatus['Reserve'],
-    GameStatus['Moderate'],
-    GameStatus['Publish'],
-    GameStatus['Reject'],
+    GameStatus.Moderate,
+    GameStatus.Reject,
+    GameStatus.Approve,
+    GameStatus.Publish,
+    GameStatus.Reserve,
+    GameStatus.Invite,
+    GameStatus.Close,
+    GameStatus.Cancel,
+    GameStatus.Finish,
+    GameStatus.Archive,
   ],
 
   [Role.Organizer]: [
-    GameStatus['Archive'],
-    GameStatus['Cancel'],
-    GameStatus['Close'],
-    GameStatus['Finish'],
-    GameStatus['Invite'],
-    GameStatus['Reserve'],
-    GameStatus['Moderate'],
-    GameStatus['Publish'],
+    GameStatus.Moderate,
+    GameStatus.Publish,
+    GameStatus.Reserve,
+    GameStatus.Invite,
+    GameStatus.Close,
+    GameStatus.Cancel,
+    GameStatus.Finish,
+    GameStatus.Archive,
   ],
 
-  [Mode['Unknown']]: [],
+  [Mode.Unknown]: [],
 }
 
 export const CategoryGameStatuses = {
-  [Category['Active']]: [
-    GameStatus['Close'],
-    GameStatus['Invite'],
-    GameStatus['Reserve'],
-    GameStatus['Publish'],
+  [Category.Active]: [
+    GameStatus.Publish,
+    GameStatus.Reserve,
+    GameStatus.Invite,
+    GameStatus.Close,
   ],
 
-  [GameStatus['Reject']]: [
-    GameStatus['Reject'],
+  [GameStatus.Moderate]: [
+    GameStatus.Moderate,
   ],
 
-  [GameStatus['Moderate']]: [
-    GameStatus['Moderate'],
+  [GameStatus.Reject]: [
+    GameStatus.Reject,
   ],
 
-  [GameStatus['Approve']]: [
-    GameStatus['Approve'],
+  [GameStatus.Approve]: [
+    GameStatus.Approve,
   ],
 
-  [GameStatus['Cancel']]: [
-    GameStatus['Cancel'],
+  [GameStatus.Cancel]: [
+    GameStatus.Cancel,
   ],
 
-  [GameStatus['Finish']]: [
-    GameStatus['Finish'],
+  [GameStatus.Finish]: [
+    GameStatus.Finish,
   ],
 
-  [GameStatus['Archive']]: [
-    GameStatus['Archive'],
+  [GameStatus.Archive]: [
+    GameStatus.Archive,
   ],
 }
+
+export const AddressableGameStatuses = [
+  GameStatus.Publish,
+  GameStatus.Reserve,
+  GameStatus.Invite,
+  GameStatus.Close,
+  GameStatus.Cancel,
+  GameStatus.Finish,
+  GameStatus.Archive,
+]
+
+export const DiscoverableGameStatuses = [
+  GameStatus.Publish,
+  GameStatus.Reserve,
+  GameStatus.Invite,
+  GameStatus.Close,
+  GameStatus.Cancel,
+  GameStatus.Finish,
+]
