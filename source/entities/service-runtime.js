@@ -12,6 +12,7 @@ export let ServiceRuntime = {
   [Service.Themes]: Runtime.Bun,
   [Service.Games]: Runtime.Bun,
   [Service.Registrations]: Runtime.Bun,
+  [Service.Participants]: Runtime.Bun,
   [Service.Procedures]: Runtime.Bun,
   [Service.Updates]: Runtime.Bun,
   [Service.Hub]: Runtime.Next,
