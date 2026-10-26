@@ -8,6 +8,7 @@ export let Service = /** @type {const} */ ({
   Themes: 'Themes',
   Games: 'Games',
   Registrations: 'Registrations',
+  Participants: 'Participants',
   Procedures: 'Procedures',
   Updates: 'Updates',
   Hub: 'Hub',

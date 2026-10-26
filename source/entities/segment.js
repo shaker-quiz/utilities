@@ -219,6 +219,24 @@ export const Segments = /** @type {const} */ ([
     kind: 'Entity',
   }),
   /** @type {const} */ ({
+    key: 'participant',
+    cardinality: '1',
+    singular: 'participant',
+    plural: 'participants',
+    service: Service.Participants,
+    pattern: Pattern.UUID.source,
+    kind: 'Entity',
+  }),
+  /** @type {const} */ ({
+    key: 'participants',
+    cardinality: 'n',
+    singular: 'participant',
+    plural: 'participants',
+    service: Service.Participants,
+    pattern: null,
+    kind: 'Entity',
+  }),
+  /** @type {const} */ ({
     key: 'status',
     cardinality: '1',
     singular: 'status',
@@ -566,7 +584,7 @@ export const Segments = /** @type {const} */ ([
     singular: 'mailing',
     plural: 'mailings',
     service: null,
-    pattern: null,
+    pattern: Pattern.UUID.source,
     kind: 'Entity',
   }),
   /** @type {const} */ ({
@@ -575,7 +593,7 @@ export const Segments = /** @type {const} */ ([
     singular: 'message',
     plural: 'messages',
     service: null,
-    pattern: null,
+    pattern: Pattern.UUID.source,
     kind: 'Entity',
   }),
   /** @type {const} */ ({
@@ -584,7 +602,7 @@ export const Segments = /** @type {const} */ ([
     singular: 'channel',
     plural: 'channels',
     service: null,
-    pattern: null,
+    pattern: Pattern.STRING.source,
     kind: 'Property',
   }),
   /** @type {const} */ ({
