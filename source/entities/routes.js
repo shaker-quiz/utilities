@@ -95,6 +95,7 @@ export const Route = /** @type {const} */ ({
   'registrations/game/status/search': 'registrations/game/status/search',
   'registrations/game/theme/search': 'registrations/game/theme/search',
   'registrations/game/venue/search': 'registrations/game/venue/search',
+  'channel': 'channel',
   'participant': 'participant',
   'participant/channel': 'participant/channel',
   'participant/mailing': 'participant/mailing',
