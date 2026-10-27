@@ -601,7 +601,7 @@ export const Segments = /** @type {const} */ ([
     cardinality: '1',
     singular: 'channel',
     plural: 'channels',
-    service: null,
+    service: Service.Participants,
     pattern: Pattern.STRING.source,
     kind: 'Property',
   }),
