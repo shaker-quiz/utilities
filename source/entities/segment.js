@@ -583,7 +583,7 @@ export const Segments = /** @type {const} */ ([
     cardinality: '1',
     singular: 'mailing',
     plural: 'mailings',
-    service: null,
+    service: Service.Participants,
     pattern: Pattern.UUID.source,
     kind: 'Entity',
   }),
