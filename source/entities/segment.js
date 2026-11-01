@@ -606,6 +606,15 @@ export const Segments = /** @type {const} */ ([
     kind: 'Property',
   }),
   /** @type {const} */ ({
+    key: 'channels',
+    cardinality: 'n',
+    singular: 'channel',
+    plural: 'channels',
+    service: Service.Participants,
+    pattern: null,
+    kind: 'Property',
+  }),
+  /** @type {const} */ ({
     key: 'dialog',
     cardinality: '1',
     singular: 'dialog',
