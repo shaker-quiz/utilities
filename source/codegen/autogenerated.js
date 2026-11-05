@@ -1291,6 +1291,9 @@ export const ParameterPattern = Object.freeze(
     ':mailing': '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}',
     ':message': '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}',
     ':channel': '\w+',
+    ':vkontakte-channel': '\w+',
+    ':telegram-channel': '\w+',
+    ':email-channel': '\w+',
   }),
 )
 
