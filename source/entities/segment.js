@@ -642,6 +642,15 @@ export const Segments = /** @type {const} */ ([
     kind: 'Property',
   }),
   /** @type {const} */ ({
+    key: 'telegram-message',
+    cardinality: '1',
+    singular: 'telegram-message',
+    plural: 'telegram-messages',
+    service: Service.Participants,
+    pattern: Pattern.UUID.source,
+    kind: 'Entity',
+  }),
+  /** @type {const} */ ({
     key: 'dialog',
     cardinality: '1',
     singular: 'dialog',
