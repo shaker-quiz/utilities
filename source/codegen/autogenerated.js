@@ -1294,6 +1294,7 @@ export const ParameterPattern = Object.freeze(
     ':vkontakte-channel': '\w+',
     ':telegram-channel': '\w+',
     ':email-channel': '\w+',
+    ':telegram-message': '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}',
   }),
 )
 
