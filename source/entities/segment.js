@@ -4,6 +4,7 @@ import { Service } from './services.js'
 export const Segments = /** @type {const} */ ([
   /** @type {const} */ ({
     key: '',
+    alias: '',
     cardinality: '1',
     singular: '',
     plural: '',
@@ -13,6 +14,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'checkin',
+    alias: '',
     cardinality: '1',
     singular: 'checkin',
     plural: 'checkins',
@@ -22,6 +24,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'user',
+    alias: '',
     cardinality: '1',
     singular: 'user',
     plural: 'users',
@@ -31,6 +34,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'users',
+    alias: '',
     cardinality: 'n',
     singular: 'user',
     plural: 'users',
@@ -40,6 +44,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'role',
+    alias: '',
     cardinality: '1',
     singular: 'role',
     plural: 'roles',
@@ -49,6 +54,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'roles',
+    alias: '',
     cardinality: 'n',
     singular: 'role',
     plural: 'roles',
@@ -58,6 +64,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'country',
+    alias: '',
     cardinality: '1',
     singular: 'country',
     plural: 'countries',
@@ -67,6 +74,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'countries',
+    alias: '',
     cardinality: 'n',
     singular: 'country',
     plural: 'countries',
@@ -76,6 +84,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'currency',
+    alias: '',
     cardinality: '1',
     singular: 'currency',
     plural: 'currencies',
@@ -85,6 +94,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'currencies',
+    alias: '',
     cardinality: 'n',
     singular: 'currency',
     plural: 'currencies',
@@ -94,6 +104,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'timezone',
+    alias: '',
     cardinality: '1',
     singular: 'timezone',
     plural: 'timezones',
@@ -103,6 +114,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'timezones',
+    alias: '',
     cardinality: 'n',
     singular: 'timezone',
     plural: 'timezones',
@@ -112,6 +124,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'city',
+    alias: '',
     cardinality: '1',
     singular: 'city',
     plural: 'cities',
@@ -121,6 +134,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'cities',
+    alias: '',
     cardinality: 'n',
     singular: 'city',
     plural: 'cities',
@@ -130,6 +144,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'venue',
+    alias: '',
     cardinality: '1',
     singular: 'venue',
     plural: 'venues',
@@ -139,6 +154,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'venues',
+    alias: '',
     cardinality: 'n',
     singular: 'venue',
     plural: 'venues',
@@ -148,6 +164,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'theme',
+    alias: '',
     cardinality: '1',
     singular: 'theme',
     plural: 'themes',
@@ -157,6 +174,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'themes',
+    alias: '',
     cardinality: 'n',
     singular: 'theme',
     plural: 'themes',
@@ -166,6 +184,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'cover',
+    alias: '',
     cardinality: '1',
     singular: 'cover',
     plural: 'covers',
@@ -175,6 +194,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'covers',
+    alias: '',
     cardinality: 'n',
     singular: 'cover',
     plural: 'covers',
@@ -184,6 +204,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'game',
+    alias: '',
     cardinality: '1',
     singular: 'game',
     plural: 'games',
@@ -193,6 +214,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'games',
+    alias: '',
     cardinality: 'n',
     singular: 'game',
     plural: 'games',
@@ -202,6 +224,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'registration',
+    alias: '',
     cardinality: '1',
     singular: 'registration',
     plural: 'registrations',
@@ -211,6 +234,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'registrations',
+    alias: '',
     cardinality: 'n',
     singular: 'registration',
     plural: 'registrations',
@@ -220,6 +244,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'participant',
+    alias: '',
     cardinality: '1',
     singular: 'participant',
     plural: 'participants',
@@ -229,6 +254,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'participants',
+    alias: '',
     cardinality: 'n',
     singular: 'participant',
     plural: 'participants',
@@ -238,6 +264,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'status',
+    alias: '',
     cardinality: '1',
     singular: 'status',
     plural: 'statuses',
@@ -247,6 +274,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'statuses',
+    alias: '',
     cardinality: 'n',
     singular: 'status',
     plural: 'statuses',
@@ -256,6 +284,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'creation',
+    alias: '',
     cardinality: '1',
     singular: 'creation',
     plural: 'creations',
@@ -265,6 +294,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'verification',
+    alias: '',
     cardinality: '1',
     singular: 'verification',
     plural: 'verifications',
@@ -274,6 +304,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'publication',
+    alias: '',
     cardinality: '1',
     singular: 'publication',
     plural: 'publications',
@@ -283,6 +314,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'invitation',
+    alias: '',
     cardinality: '1',
     singular: 'invitation',
     plural: 'invitations',
@@ -292,6 +324,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'closure',
+    alias: '',
     cardinality: '1',
     singular: 'closure',
     plural: 'closures',
@@ -301,6 +334,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'completion',
+    alias: '',
     cardinality: '1',
     singular: 'completion',
     plural: 'completions',
@@ -310,6 +344,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'archivation',
+    alias: '',
     cardinality: '1',
     singular: 'archivation',
     plural: 'archivations',
@@ -319,6 +354,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'approval',
+    alias: '',
     cardinality: '1',
     singular: 'approval',
     plural: 'approvals',
@@ -328,6 +364,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'rejection',
+    alias: '',
     cardinality: '1',
     singular: 'rejection',
     plural: 'rejections',
@@ -337,6 +374,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'submission',
+    alias: '',
     cardinality: '1',
     singular: 'submission',
     plural: 'submissions',
@@ -346,6 +384,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'landing',
+    alias: '',
     cardinality: '1',
     singular: 'landing',
     plural: 'landings',
@@ -355,6 +394,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'vkma',
+    alias: '',
     cardinality: '1',
     singular: 'vkma',
     plural: 'vkmas',
@@ -364,6 +404,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'hub',
+    alias: '',
     cardinality: '1',
     singular: 'hub',
     plural: 'hubs',
@@ -373,6 +414,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'team',
+    alias: '',
     cardinality: '1',
     singular: 'team',
     plural: 'teams',
@@ -382,6 +424,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'group',
+    alias: '',
     cardinality: '1',
     singular: 'group',
     plural: 'groups',
@@ -391,6 +434,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'confirmation',
+    alias: '',
     cardinality: '1',
     singular: 'confirmation',
     plural: 'confirmations',
@@ -400,6 +444,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'cancellation',
+    alias: '',
     cardinality: '1',
     singular: 'cancellation',
     plural: 'cancellations',
@@ -409,6 +454,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'reinstatement',
+    alias: '',
     cardinality: '1',
     singular: 'reinstatement',
     plural: 'reinstatements',
@@ -418,6 +464,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'restoration',
+    alias: '',
     cardinality: '1',
     singular: 'restoration',
     plural: 'restorations',
@@ -427,6 +474,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'lineup',
+    alias: '',
     cardinality: '1',
     singular: 'lineup',
     plural: 'lineups',
@@ -436,6 +484,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'lineups',
+    alias: '',
     cardinality: 'n',
     singular: 'lineup',
     plural: 'lineups',
@@ -445,6 +494,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'promotion',
+    alias: '',
     cardinality: '1',
     singular: 'promotion',
     plural: 'promotions',
@@ -454,6 +504,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'reservation',
+    alias: '',
     cardinality: '1',
     singular: 'reservation',
     plural: 'reservations',
@@ -463,6 +514,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'telegram',
+    alias: '',
     cardinality: '1',
     singular: 'telegram',
     plural: 'telegrams',
@@ -472,6 +524,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'chatapp',
+    alias: '',
     cardinality: '1',
     singular: 'chatapp',
     plural: 'chatapps',
@@ -481,6 +534,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'bitrix',
+    alias: '',
     cardinality: '1',
     singular: 'bitrix',
     plural: 'bitrixes',
@@ -490,6 +544,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'vk',
+    alias: '',
     cardinality: '1',
     singular: 'vk',
     plural: 'vks',
@@ -499,6 +554,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'max',
+    alias: '',
     cardinality: '1',
     singular: 'max',
     plural: 'maxes',
@@ -508,6 +564,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'vk-organizer',
+    alias: '',
     cardinality: '1',
     singular: 'vk-organizer',
     plural: 'vk-organizers',
@@ -517,6 +574,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'webhook',
+    alias: '',
     cardinality: '1',
     singular: 'webhook',
     plural: 'webhooks',
@@ -526,6 +584,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'source',
+    alias: '',
     cardinality: '1',
     singular: 'source',
     plural: 'sources',
@@ -535,6 +594,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'search',
+    alias: '',
     cardinality: '1',
     singular: 'search',
     plural: 'searches',
@@ -544,6 +604,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'export',
+    alias: '',
     cardinality: '1',
     singular: 'export',
     plural: 'exports',
@@ -553,6 +614,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'password',
+    alias: '',
     cardinality: '1',
     singular: 'password',
     plural: 'passwords',
@@ -562,6 +624,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'vk_group_token',
+    alias: '',
     cardinality: '1',
     singular: 'vk_group_token',
     plural: 'vk_group_tokens',
@@ -571,6 +634,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'summary',
+    alias: '',
     cardinality: '1',
     singular: 'summary',
     plural: 'summaries',
@@ -580,6 +644,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'mailing',
+    alias: '',
     cardinality: '1',
     singular: 'mailing',
     plural: 'mailings',
@@ -589,6 +654,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'message',
+    alias: '',
     cardinality: '1',
     singular: 'message',
     plural: 'messages',
@@ -598,6 +664,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'channel',
+    alias: '',
     cardinality: '1',
     singular: 'channel',
     plural: 'channels',
@@ -607,6 +674,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'channels',
+    alias: '',
     cardinality: 'n',
     singular: 'channel',
     plural: 'channels',
@@ -616,6 +684,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'vkontakte-channel',
+    alias: '',
     cardinality: '1',
     singular: 'vkontakte-channel',
     plural: 'vkontakte-channels',
@@ -625,6 +694,27 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'telegram-channel',
+    alias: '',
+    cardinality: '1',
+    singular: 'telegram-channel',
+    plural: 'telegram-channels',
+    service: Service.Participants,
+    pattern: Pattern.STRING.source,
+    kind: 'Property',
+  }),
+  /** @type {const} */ ({
+    key: 'sender-telegram-channel',
+    alias: 'telegram-channel',
+    cardinality: '1',
+    singular: 'telegram-channel',
+    plural: 'telegram-channels',
+    service: Service.Participants,
+    pattern: Pattern.STRING.source,
+    kind: 'Property',
+  }),
+  /** @type {const} */ ({
+    key: 'recipient-telegram-channel',
+    alias: 'telegram-channel',
     cardinality: '1',
     singular: 'telegram-channel',
     plural: 'telegram-channels',
@@ -634,6 +724,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'email-channel',
+    alias: '',
     cardinality: '1',
     singular: 'email-channel',
     plural: 'email-channels',
@@ -643,6 +734,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'telegram-message',
+    alias: '',
     cardinality: '1',
     singular: 'telegram-message',
     plural: 'telegram-messages',
@@ -652,6 +744,7 @@ export const Segments = /** @type {const} */ ([
   }),
   /** @type {const} */ ({
     key: 'dialog',
+    alias: '',
     cardinality: '1',
     singular: 'dialog',
     plural: 'dialogs',
